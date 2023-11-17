@@ -1206,6 +1206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1738295512630207, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c570ae4561db50544881a163d8e07d96, type: 3}
     - target: {fileID: 114657646356797094, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_text
       value: Tryb Swobodny
@@ -1308,7 +1312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224177948002065142, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 424
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 224824425875582994, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1462,6 +1466,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3279359233489626283, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c570ae4561db50544881a163d8e07d96, type: 3}
     - target: {fileID: 3683380609654443529, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1536,15 +1544,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4490364207855544419, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Spacing
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4490364207855544419, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4490364207855544419, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Padding.m_Right
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4574745408086510745, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_LocalScale.x
@@ -1578,6 +1586,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5367504143035053488, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c570ae4561db50544881a163d8e07d96, type: 3}
     - target: {fileID: 6009426973097193429, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1624,15 +1636,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7842797821612719532, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Spacing
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7842797821612719532, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7842797821612719532, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Padding.m_Right
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8670759148382296135, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1656,15 +1668,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9052389376761688415, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Spacing
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9052389376761688415, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9052389376761688415, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
       propertyPath: m_Padding.m_Right
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70df46f1664a25d4b9ed9f150dbe5715, type: 3}
