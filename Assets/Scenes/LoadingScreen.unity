@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35e74ede3d3104ab41959ce16b83b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: MainMenu
+  SceneName: LoginPanel
   PercentLoading: {fileID: 1054705960}
 --- !u!1001 &322069411
 PrefabInstance:
