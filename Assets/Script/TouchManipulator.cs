@@ -4,14 +4,27 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TouchManipulator : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class TouchManipulator : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public RectTransform canvasRectTransform;
     public RectTransform selectedRectTransform;
+    public Transform person;
     private Vector2 initialTouchPosition;
     private Vector3 offsetToImageCenter;
     private float originalDistance;
     private Vector3 originalScale;
+    private Vector3 lastScale;
+
+    public RectTransform mapRectTransform;
+    public GPSMap2 gpsMap2Script;
+
+    // Oryginalna skala mapy
+    private Vector3 originalMapScale;
+
+    private void Awake()
+    {
+        originalMapScale = mapRectTransform.localScale;
+    }
 
     void Start()
     {
@@ -23,6 +36,7 @@ public class TouchManipulator : MonoBehaviour, IDragHandler, IPointerDownHandler
                 canvasRectTransform = canvas.transform as RectTransform;
             }
         }
+        lastScale = selectedRectTransform.localScale;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -48,19 +62,7 @@ public class TouchManipulator : MonoBehaviour, IDragHandler, IPointerDownHandler
             Touch touchOne = Input.GetTouch(1);
             originalDistance = Vector2.Distance(touchZero.position, touchOne.position);
             originalScale = selectedRectTransform.localScale;
-        }
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (selectedRectTransform == null) return;
-
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRectTransform, eventData.position, eventData.pressEventCamera, out Vector2 localPointerPosition))
-        {
-            Vector3 newPosition = new Vector3(localPointerPosition.x, localPointerPosition.y, selectedRectTransform.localPosition.z) + offsetToImageCenter;
-            newPosition.x = Mathf.Clamp(newPosition.x, -canvasRectTransform.rect.width / 2, canvasRectTransform.rect.width / 2);
-            newPosition.y = Mathf.Clamp(newPosition.y, -canvasRectTransform.rect.height / 2, canvasRectTransform.rect.height / 2);
-            selectedRectTransform.localPosition = newPosition;
+            
         }
     }
 
@@ -71,11 +73,12 @@ public class TouchManipulator : MonoBehaviour, IDragHandler, IPointerDownHandler
             Touch touchZero = Input.GetTouch(0);
             Touch touchOne = Input.GetTouch(1);
             float currentDistance = Vector2.Distance(touchZero.position, touchOne.position);
-
+            
             if (originalDistance != 0)
             {
                 float scaleFactor = currentDistance / originalDistance;
                 selectedRectTransform.localScale = new Vector3(originalScale.x * scaleFactor, originalScale.y * scaleFactor, originalScale.z);
+                PlayerPrefs.SetFloat("LastScale", selectedRectTransform.localScale.x);
             }
         }
     }

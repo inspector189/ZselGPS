@@ -249,8 +249,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: tulci.keystore'
-  AndroidKeyaliasName: zselgps
+  AndroidKeystoreName: '{inproject}: patryk.keystore'
+  AndroidKeyaliasName: gps
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
