@@ -15,12 +15,15 @@ using Vulcanova.Uonet.Signing;
 public class PolecenieApiVulcan : MonoBehaviour
 {
     public TextMeshProUGUI textMesh; // Przypisz pole TextMeshProUGUI z Unity Inspector
-    public string token;
+    public TMP_InputField tokenInputField;
     public string symbol = "wloclawek";
-    public string pin;
+    public TMP_InputField pinInputField;
 
-    private async void Start()
+    public async void LoginProcess()
     {
+        string token = tokenInputField.text; // Pobierz wartość tokenu z InputFielda
+        string pin = pinInputField.text; // Pobierz wartość PINu z InputFielda
+
         // Setup request signer
         var firebaseToken = await FirebaseTokenFetcher.FetchFirebaseTokenAsync();
         var (pk, cert) = KeyPairGenerator.GenerateKeyPair();
@@ -50,6 +53,7 @@ public class PolecenieApiVulcan : MonoBehaviour
         var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
 
         var firstAccount = registerHebeResponse.Envelope[0];
+
 
         textMesh.text = $"Imie i nazwisko: {firstAccount.Pupil.FirstName} {firstAccount.Pupil.Surname} \nKlasa: {firstAccount.ClassDisplay}\nNazwa szkoly: {firstAccount.Unit.Name}";
     }
