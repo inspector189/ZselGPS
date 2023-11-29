@@ -12,6 +12,8 @@ using Vulcanova.Uonet.Api.Grades;
 using Vulcanova.Uonet.Crypto;
 using Vulcanova.Uonet.Firebase;
 using Vulcanova.Uonet.Signing;
+using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class User
 {
@@ -24,13 +26,61 @@ public class PolecenieApiVulcan : MonoBehaviour
     public TextMeshProUGUI textMesh; // Przypisz pole TextMeshProUGUI z Unity Inspector
     public TMP_InputField tokenInputField;
     public string symbol = "wloclawek";
+    public string ScenaName;
+    private string savedToken = "";
+    private string savedPin = "";
     public TMP_InputField pinInputField;
     private List<User> usersList = new List<User>();
+    private void Start()
+    {
+        LoadUsers();
+        TryAutoLogin();
+    }
+
+    private void LoadUsers()
+    {
+        string serializedUsers = PlayerPrefs.GetString("SavedUsers");
+        if (!string.IsNullOrEmpty(serializedUsers))
+        {
+            usersList = JsonConvert.DeserializeObject<List<User>>(serializedUsers);
+        }
+    }
+    private void SaveUsers()
+    {
+        string serializedUsers = JsonConvert.SerializeObject(usersList);
+        PlayerPrefs.SetString("SavedUsers", serializedUsers);
+        Debug.Log(PlayerPrefs.GetString("SavedUsers"));
+        PlayerPrefs.Save();
+    }
+    private void TryAutoLogin()
+    {
+        if (PlayerPrefs.HasKey("ZapisanyToken") && PlayerPrefs.HasKey("ZapisanyPin"))
+        {
+            string savedToken = PlayerPrefs.GetString("ZapisanyToken");
+            string savedPin = PlayerPrefs.GetString("ZapisanyPin");
+
+            Debug.Log("Znaleziono zapisane dane:");
+            Debug.Log("Token: " + savedToken);
+            Debug.Log("Pin: " + savedPin);
+
+            // Tutaj możesz wywołać funkcję logowania automatycznego
+            LoginAutomatically(savedToken, savedPin);
+        }
+    }
+    public void SetTextVisibility(bool isVisible)
+    {
+        textMesh.enabled = isVisible;
+    }
     public async void LoginProcess()
     {
+        
         string token = tokenInputField.text; // Pobierz wartość tokenu z InputFielda
         string pin = pinInputField.text; // Pobierz wartość PINu z InputFielda
+        PlayerPrefs.SetString("ZapisanyToken", token);
+        PlayerPrefs.SetString("ZapisanyPin", pin);
+        PlayerPrefs.Save();
 
+        
         // Setup request signer
         var firebaseToken = await FirebaseTokenFetcher.FetchFirebaseTokenAsync();
         var (pk, cert) = KeyPairGenerator.GenerateKeyPair();
@@ -65,17 +115,44 @@ public class PolecenieApiVulcan : MonoBehaviour
                
         };
             usersList.Add(newUser);
+            SaveUsers();
+  
         }
       catch (Exception e)
         {
             Debug.Log("Tworzenie użytkownika nie powiodło się: " + e.Message);
+            textMesh.text = "Tworzenie użytkownika nie powiodło się";
+            SetTextVisibility(true);
         }
 
 var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
 
         var firstAccount = registerHebeResponse.Envelope[0];
 
+        // SceneManager.LoadScene(ScenaName);
+        Debug.Log(firstAccount.Pupil.FirstName);
+        LoginAutomatically(savedToken, savedPin);
 
-        textMesh.text = $"Imie i nazwisko: {firstAccount.Pupil.FirstName} {firstAccount.Pupil.Surname} \nKlasa: {firstAccount.ClassDisplay}\nNazwa szkoly: {firstAccount.Unit.Name}";
+        PlayerPrefs.SetString("imie", firstAccount.Pupil.FirstName);
+        PlayerPrefs.SetString("nazwisko", firstAccount.Pupil.Surname);
+        PlayerPrefs.SetString("klasa", firstAccount.ClassDisplay);
+        
+        //textMesh.text = $"Imie i nazwisko: {firstAccount.Pupil.FirstName} {firstAccount.Pupil.Surname} \nKlasa: {firstAccount.ClassDisplay}\nNazwa szkoly: {firstAccount.Unit.Name}";
+    }
+    private async void LoginAutomatically(string token, string pin)
+    {
+        
+        SceneManager.LoadScene(ScenaName);
+        
+    }
+    public void ClearUserList()
+    {
+        usersList.Clear();
+        Debug.Log("Wyczyszczono listę użytkowników.");
+    }
+   
+    private void OnDestroy()
+    {
+        SaveUsers();
     }
 }

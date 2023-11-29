@@ -16,7 +16,13 @@ public class GPSMap2 : MonoBehaviour
     private bool gyroEnabled;
     private Gyroscope gyro;
     public GameObject person;
-
+    public Toggle tgl;
+    public TextMeshProUGUI slidertext;
+    public Image mapa;
+    public Sprite parter;
+    public Sprite pietro1;
+    public Sprite pietro2;
+    public Slider slider;
     private float updateInterval = 0.1f;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
@@ -48,7 +54,7 @@ public class GPSMap2 : MonoBehaviour
         {
             if (timeSinceLastLocationUpdate >= timeBetweenLocationUpdates)
             {
-
+                Debug.Log(Input.location.isEnabledByUser);
                 if (Input.location.isEnabledByUser)
                 {
                     Input.location.Start();
@@ -56,6 +62,44 @@ public class GPSMap2 : MonoBehaviour
                     float latitude = Input.location.lastData.latitude;
                     float longitude = Input.location.lastData.longitude;
                     float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
+
+                    if(tgl.isOn)
+                    {
+                        float wysokosc = slider.value;
+                        slider.enabled = true;
+                        if (wysokosc >= 56 && wysokosc < 59)
+                        {
+                            mapa.sprite = parter;
+                        }
+                        else if (wysokosc >= 59 && wysokosc < 62)
+                        {
+                            mapa.sprite = pietro1;
+                        }
+                        else if (wysokosc >= 62 && wysokosc <= 65)
+                        {
+                            mapa.sprite = pietro2;
+                        }
+
+                    }
+                    else
+                    {
+                        float wysokosc = Input.location.lastData.altitude;
+                        slider.enabled = false;
+                        if (wysokosc >= 56 && wysokosc < 59)
+                        {
+                            mapa.sprite = parter;
+                        }
+                        else if (wysokosc >= 59 && wysokosc < 62)
+                        {
+                            mapa.sprite = pietro1;
+                        }
+                        else if (wysokosc >= 62 && wysokosc <= 65)
+                        {
+                            mapa.sprite = pietro2;
+                        }
+
+                    }
+
 
                     // Dodaj wa¿on¹ pozycjê do avg (AveragePosition)
                     avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
@@ -81,6 +125,7 @@ public class GPSMap2 : MonoBehaviour
     void Update()
     {
 
+        slidertext.text = (slider.value).ToString();
 
         gyroEnabled = SystemInfo.supportsGyroscope;
         if (gyroEnabled)
@@ -92,15 +137,9 @@ public class GPSMap2 : MonoBehaviour
             // Zaktualizuj kierunek kropki na podstawie ¿yroskopu
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
-
     }
-
     private Vector2 CalcPosition()
     {
-
-        //Vector2 ret = new Vector2();
-
-
         //aktualne uœrednione po³o¿enie urz¹dzenia
         Vector2 act = avg.GetAveragePosition();
 
