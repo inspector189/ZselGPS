@@ -18,6 +18,7 @@ public class GPSMap2 : MonoBehaviour
     public GameObject person;
     public Toggle tgl;
     public TextMeshProUGUI slidertext;
+    public TextMeshProUGUI precyzjatext;
     public Image mapa;
     public Sprite parter;
     public Sprite pietro1;
@@ -62,8 +63,10 @@ public class GPSMap2 : MonoBehaviour
                     float latitude = Input.location.lastData.latitude;
                     float longitude = Input.location.lastData.longitude;
                     float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
+                    float accuracy = Input.location.lastData.horizontalAccuracy;
 
-                    if(tgl.isOn)
+                    precyzjatext.text = "Precyzja: " + accuracy;
+                    if (tgl.isOn)
                     {
                         float wysokosc = slider.value;
                         slider.enabled = true;
