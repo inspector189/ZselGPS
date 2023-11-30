@@ -8,26 +8,29 @@ using UnityEngine.UI;
 
 public class GPSMap2 : MonoBehaviour
 {
-    //œredni promieñ ziemi w metrach    
     const double r = 6371000.0f;
-    //punkty odniesienia w których znajduje siê punkt pocz¹tkowy obiektu
     const double origin_lati = 52.668395f;
     const double origin_longi = 19.042718f;
-    private bool gyroEnabled;
+
     private Gyroscope gyro;
+    private bool gyroEnabled;
     public GameObject person;
     public Toggle tgl;
     public TextMeshProUGUI slidertext;
     public TextMeshProUGUI precyzjatext;
+    public TextMeshProUGUI wysokosctext;
     public Image mapa;
     public Sprite parter;
     public Sprite pietro1;
     public Sprite pietro2;
     public Slider slider;
+
     private float updateInterval = 0.1f;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
 
+
+    private AveragePosition avg = new AveragePosition();
     // Start is called before the first frame update
     void Start()
     {
@@ -64,8 +67,11 @@ public class GPSMap2 : MonoBehaviour
                     float longitude = Input.location.lastData.longitude;
                     float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
                     float accuracy = Input.location.lastData.horizontalAccuracy;
+                    float wysokosc2 = Input.location.lastData.altitude;
+
 
                     precyzjatext.text = "Precyzja: " + accuracy;
+                    wysokosctext.text = "Wysokoœæ: " + wysokosc2;
                     if (tgl.isOn)
                     {
                         float wysokosc = slider.value;
@@ -141,25 +147,48 @@ public class GPSMap2 : MonoBehaviour
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
     }
-    private Vector2 CalcPosition()
+    private Vector3 CalcPosition()
     {
-        //aktualne uœrednione po³o¿enie urz¹dzenia
         Vector2 act = avg.GetAveragePosition();
-
-        //rozpiêtoœæ po³udnikowa w metrach na stopieñ szerokoœci geograficznej
         double rlong = 111200.0f;
-
-        //rozpiêtoœæ równole¿nikowa w metrach na stopieñ d³ugoœci geograficznej
         double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
-
-        //przeskalowanie na odleg³oœci w metrach od punktów pocz¹tkowych;
 
         Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt)), ((float)((act.y - origin_lati) * rlong)));
 
+        Debug.Log(origin_longi + " " + origin_lati);
 
-        return dorigin / 50f;
+        if(dorigin.x < 0 && dorigin.y < 0) // lewy dolny (pracownie itd)
+        {
+            Vector2 unityPosition = new Vector2(dorigin.x, dorigin.y);
+
+            return mapa.transform.TransformPoint(unityPosition);
+        }
+
+        if (dorigin.x > 0 && dorigin.y < 0) // prawy górny (basen itd)
+        {
+            Vector2 unityPosition = new Vector2(dorigin.x * 15.7f, (dorigin.y) + 650);
+
+            return mapa.transform.TransformPoint(unityPosition);
+        }
+        if (dorigin.x < 0 && dorigin.y > 0) // lewy górny (hala itd)
+        {
+            Vector2 unityPosition = new Vector2(dorigin.x, dorigin.y);
+
+            return mapa.transform.TransformPoint(unityPosition);
+        }
+        if (dorigin.x > 0 && dorigin.y > 0) 
+        {
+            Vector2 unityPosition = new Vector2(dorigin.x, dorigin.y);
+
+            return mapa.transform.TransformPoint(unityPosition);
+        }
+
+
+        Vector2 unityPosition2 = new Vector2(dorigin.x, dorigin.y);
+
+        return mapa.transform.TransformPoint(unityPosition2);
+
+
     }
 
-
-    private AveragePosition avg = new AveragePosition();
 }
