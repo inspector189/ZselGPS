@@ -27,12 +27,14 @@ public class PolecenieApiVulcan : MonoBehaviour
     public TMP_InputField tokenInputField;
     public string symbol = "wloclawek";
     public string ScenaName;
+    public GameObject spinner;
     private string savedToken = "";
     private string savedPin = "";
     public TMP_InputField pinInputField;
     private List<User> usersList = new List<User>();
     private void Start()
     {
+        spinner.SetActive(false);
         LoadUsers();
         TryAutoLogin();
     }
@@ -73,7 +75,7 @@ public class PolecenieApiVulcan : MonoBehaviour
     }
     public async void LoginProcess()
     {
-        
+        spinner.SetActive(true);
         string token = tokenInputField.text; // Pobierz wartość tokenu z InputFielda
         string pin = pinInputField.text; // Pobierz wartość PINu z InputFielda
         PlayerPrefs.SetString("ZapisanyToken", token);
