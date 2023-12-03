@@ -24,9 +24,12 @@ public class GPSMap2 : MonoBehaviour
     private float updateInterval = 0.1f;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
-
+    private Vector3 lastPosition;
+    private Vector3 lastVelocity;
+    private Vector3 currentAcceleration;
     public TextMeshProUGUI precyzjaTekst;
-
+    Vector2 lastGPSPosition = Vector2.zero;
+    bool usingGPS = false;
     void Start()
     {
         if (Application.platform == RuntimePlatform.Android)
@@ -37,7 +40,15 @@ public class GPSMap2 : MonoBehaviour
             }
         }
         Input.compass.enabled = true;
-
+        if (SystemInfo.supportsAccelerometer)
+        {
+            // Włącz akcelerometr
+            Input.gyro.enabled = true;
+        }
+        else
+        {
+            Debug.LogError("Akcelerometr nie jest obsługiwany na tym urządzeniu!");
+        }
 
         if (SystemInfo.supportsGyroscope)
         {
@@ -134,18 +145,92 @@ public class GPSMap2 : MonoBehaviour
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
     }
+    Vector3 GetAccelerometerData()
+    {
+        // Sprawdź, czy akcelerometr jest dostępny
+        if (SystemInfo.supportsAccelerometer)
+        {
+            // Odczytaj dane z akcelerometru
+            Debug.Log(Input.acceleration);
+            return Input.acceleration;
+        }
+        else
+        {
+            Debug.LogError("Akcelerometr nie jest obsługiwany na tym urządzeniu!");
+            return Vector3.zero;
+        }
+    }
     private Vector2 CalcPosition()
     {
+
         Vector2 act = avg.GetAveragePosition();
+        float accuracy = Input.location.lastData.horizontalAccuracy;
+        accuracy = 7;
+        if (accuracy <= 5)
+        {
+            double rlong = 111200.0f;
 
-        double rlong = 111200.0f;
+            double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
 
-        double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
+            Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
+            lastGPSPosition = dorigin / 50f;
+            usingGPS = true;
 
-        Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
+            return lastGPSPosition;
+        }
+        else
+        {/*
+            double rlong = 111200.0f;
 
+            double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
 
-        return dorigin / 50f;
+            Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
+
+            person.transform.position = dorigin/50f;
+
+            Vector3 currentVelocity = (person.transform.position - lastPosition) / Time.deltaTime;
+
+            if (Time.deltaTime > 0)
+            {
+                currentAcceleration = (currentVelocity - lastVelocity) / Time.deltaTime;
+            }
+            else
+            {
+                currentAcceleration = Vector2.zero;
+            }
+
+            lastPosition = person.transform.position;
+            lastVelocity = currentVelocity;
+
+            // Tutaj możesz wykorzystać currentAcceleration lub currentVelocity do symulacji ruchu kropki na mapie
+            Vector2 simulatedMapPosition = new Vector2(currentVelocity.x, currentVelocity.y); // Przykładowe użycie prędkości dla pozycji kropki
+
+            return simulatedMapPosition;*/
+
+            Vector3 currentAcceleration = GetAccelerometerData(); // Pobierz dane przyspieszenia
+            Debug.Log(currentAcceleration);
+            // Stała opisująca czułość interpolacji - możesz dostosować ją do potrzeb
+            float interpolationFactor = 0.5f;
+
+            // Interpolacja liniowa na podstawie danych z akcelerometru
+            Vector2 interpolatedPosition = Vector2.zero;
+
+            // Aktualizacja interpolowanej pozycji na podstawie danych z akcelerometru
+            interpolatedPosition.x += currentAcceleration.x * interpolationFactor;
+            interpolatedPosition.y += currentAcceleration.y * interpolationFactor;
+            interpolatedPosition /= 50f;
+            if (usingGPS)
+            {
+                // Użyj ostatniej dokładnej pozycji GPS jako punktu odniesienia dla interpolacji
+                interpolatedPosition += lastGPSPosition;
+                Debug.Log(interpolatedPosition);
+            }
+
+            // Skalowanie interpolowanej pozycji (jeśli to konieczne)
+             // Możesz dostosować skalowanie do swoich potrzeb
+
+            return interpolatedPosition;
+        }
     }
 
     private AveragePosition avg = new AveragePosition();
