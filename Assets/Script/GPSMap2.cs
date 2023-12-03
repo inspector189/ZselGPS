@@ -139,8 +139,7 @@ public class GPSMap2 : MonoBehaviour
     {
 
         Vector2 act = avg.GetAveragePosition();
-       // float accuracy = Input.location.lastData.horizontalAccuracy;
-        float accuracy = 7;
+        float accuracy = Input.location.lastData.horizontalAccuracy;
         if (accuracy <= 5)
         {
             double rlong = 111200.0f;
@@ -189,7 +188,6 @@ public class GPSMap2 : MonoBehaviour
             Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
 
             Vector3 currentAcceleration = Input.acceleration; // Pobierz dane przyspieszenia
-            Debug.Log(Input.acceleration);
             // Stała opisująca czułość interpolacji - możesz dostosować ją do potrzeb
             float interpolationFactor = 0.001f;
 
