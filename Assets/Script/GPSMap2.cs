@@ -61,6 +61,9 @@ public class GPSMap2 : MonoBehaviour
                     yield return new WaitUntil(() => Input.location.status == LocationServiceStatus.Running);
                     float latitude = Input.location.lastData.latitude;
                     float longitude = Input.location.lastData.longitude;
+                    float accuracy = Input.location.lastData.horizontalAccuracy;
+
+                    PlayerPrefs.SetFloat("accuracy", accuracy);
                     float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
 
                     precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
@@ -139,7 +142,7 @@ public class GPSMap2 : MonoBehaviour
     {
 
         Vector2 act = avg.GetAveragePosition();
-        float accuracy = Input.location.lastData.horizontalAccuracy;
+        float accuracy = PlayerPrefs.GetFloat("accuracy");
         if (accuracy <= 5)
         {
             double rlong = 111200.0f;
