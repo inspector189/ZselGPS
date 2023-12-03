@@ -141,7 +141,7 @@ var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiE
         
         //textMesh.text = $"Imie i nazwisko: {firstAccount.Pupil.FirstName} {firstAccount.Pupil.Surname} \nKlasa: {firstAccount.ClassDisplay}\nNazwa szkoly: {firstAccount.Unit.Name}";
     }
-    private async void LoginAutomatically(string token, string pin)
+    private void LoginAutomatically(string token, string pin)
     {
         
         SceneManager.LoadScene(ScenaName);

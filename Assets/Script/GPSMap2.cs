@@ -40,15 +40,6 @@ public class GPSMap2 : MonoBehaviour
             }
         }
         Input.compass.enabled = true;
-        if (SystemInfo.supportsAccelerometer)
-        {
-            // Włącz akcelerometr
-            Input.gyro.enabled = true;
-        }
-        else
-        {
-            Debug.LogError("Akcelerometr nie jest obsługiwany na tym urządzeniu!");
-        }
 
         if (SystemInfo.supportsGyroscope)
         {
@@ -64,7 +55,6 @@ public class GPSMap2 : MonoBehaviour
         {
             if (timeSinceLastLocationUpdate >= timeBetweenLocationUpdates)
             {
-                Debug.Log(Input.location.isEnabledByUser);
                 if (Input.location.isEnabledByUser)
                 {
                     Input.location.Start();
@@ -145,27 +135,12 @@ public class GPSMap2 : MonoBehaviour
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
     }
-    Vector3 GetAccelerometerData()
-    {
-        // Sprawdź, czy akcelerometr jest dostępny
-        if (SystemInfo.supportsAccelerometer)
-        {
-            // Odczytaj dane z akcelerometru
-            Debug.Log(Input.acceleration);
-            return Input.acceleration;
-        }
-        else
-        {
-            Debug.LogError("Akcelerometr nie jest obsługiwany na tym urządzeniu!");
-            return Vector3.zero;
-        }
-    }
     private Vector2 CalcPosition()
     {
 
         Vector2 act = avg.GetAveragePosition();
-        float accuracy = Input.location.lastData.horizontalAccuracy;
-        accuracy = 7;
+       // float accuracy = Input.location.lastData.horizontalAccuracy;
+        float accuracy = 7;
         if (accuracy <= 5)
         {
             double rlong = 111200.0f;
@@ -207,10 +182,16 @@ public class GPSMap2 : MonoBehaviour
 
             return simulatedMapPosition;*/
 
-            Vector3 currentAcceleration = GetAccelerometerData(); // Pobierz dane przyspieszenia
-            Debug.Log(currentAcceleration);
+            double rlong = 111200.0f;
+
+            double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
+
+            Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
+
+            Vector3 currentAcceleration = Input.acceleration; // Pobierz dane przyspieszenia
+            Debug.Log(Input.acceleration);
             // Stała opisująca czułość interpolacji - możesz dostosować ją do potrzeb
-            float interpolationFactor = 0.5f;
+            float interpolationFactor = 0.001f;
 
             // Interpolacja liniowa na podstawie danych z akcelerometru
             Vector2 interpolatedPosition = Vector2.zero;
@@ -218,6 +199,9 @@ public class GPSMap2 : MonoBehaviour
             // Aktualizacja interpolowanej pozycji na podstawie danych z akcelerometru
             interpolatedPosition.x += currentAcceleration.x * interpolationFactor;
             interpolatedPosition.y += currentAcceleration.y * interpolationFactor;
+
+            dorigin.x += interpolatedPosition.x;
+            dorigin.y += interpolatedPosition.y;
             interpolatedPosition /= 50f;
             if (usingGPS)
             {
@@ -229,7 +213,7 @@ public class GPSMap2 : MonoBehaviour
             // Skalowanie interpolowanej pozycji (jeśli to konieczne)
              // Możesz dostosować skalowanie do swoich potrzeb
 
-            return interpolatedPosition;
+            return dorigin / 50;
         }
     }
 
