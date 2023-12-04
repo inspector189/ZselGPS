@@ -5,14 +5,11 @@ using UnityEngine.UI;
 
 public class PanelController : MonoBehaviour
 {
-   
-    public GameObject Panel;
-
     public void ClosePanel()
     {
-       
-            Panel.SetActive(false);
-      
+        Debug.Log("Test");
+        PlayerPrefs.SetInt("panelStatus", 1);
+        PlayerPrefs.SetInt("panelCzynnosc", 0);
     }
    
 }

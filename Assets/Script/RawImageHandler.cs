@@ -25,7 +25,8 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler
             {
                 // Wykonaj akcj� przycisku (symulacja klikni�cia)
                 Debug.Log("Kliknieto przycisk w scenie kamery.");
-                Panel.SetActive(true);
+                PlayerPrefs.SetInt("panelStatus", 1);
+                PlayerPrefs.SetInt("panelCzynnosc", 1);
             }
         }
     }
