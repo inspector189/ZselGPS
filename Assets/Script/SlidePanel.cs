@@ -1,17 +1,18 @@
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UIElements;
 
 public class SlidePanel : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 1.0f; // Prêdkoœæ przesuwania panelu
     public float speed2 = 1.0f;// Prêdkoœæ przesuwania
     public GameObject panel; // Panel, który bêdzie przesuwany
     public GameObject panel2; // Panel, który bêdzie przesuwany
 
     public bool isOpen = false; // Czy panel jest otwarty
 
-    public float closedPositionY = -1204.901f; // Pozycja zamkniêcia
-    public float openPositionY = -525.1f; // Pozycja otwarcia
+    public float closedPositionY = -1204.901f; // Pozycja zamkniêcia panelu
+    public float openPositionY = -525.1f; // Pozycja otwarcia panelu
     private float targetPositionY; // Docelowa pozycja Y panelu
 
     public float closedPositionY2 = 0f; // Pozycja zamkniêcia
@@ -24,6 +25,9 @@ public class SlidePanel : MonoBehaviour
 
     private RectTransform rectTransform; // RectTransform panelu
     private RectTransform rectTransform2; // RectTransform panelu
+
+    public Camera cameraToMove; // Kamera do zmiany rozmiaru
+    public float cameraResizeSpeed = 1.0f; // Prêdkoœæ zmiany rozmiaru kamery
 
     void Start()
     {
@@ -54,7 +58,7 @@ public class SlidePanel : MonoBehaviour
 
     void Update()
     {
-        
+
         if (rectTransform != null && rectTransform2 != null)
         {
             // Animuj pozycjê Y panelu
@@ -73,16 +77,38 @@ public class SlidePanel : MonoBehaviour
 
     public void TogglePanel()
     {
-        if(PlayerPrefs.GetInt("panelStatus") == 1)
+        if (PlayerPrefs.GetInt("panelStatus") == 1)
         {
+
+            if (isOpen)
+            {
+                StartCoroutine(ChangeCameraSize(1.0f, cameraResizeSpeed)); // P³ynne oddalanie kamery
+            }
             if (rectTransform == null) return;
 
-                isOpen = !isOpen;
+            isOpen = !isOpen;
             targetPositionY = isOpen ? openPositionY : closedPositionY;
             targetPositionY2 = isOpen ? openPositionY2 : closedPositionY2;
             targetHeight = isOpen ? openHeight : closedHeight;
+
+            
+
             PlayerPrefs.SetInt("panelStatus", 0);
         }
-        
+    }
+
+    IEnumerator ChangeCameraSize(float targetSize, float duration)
+    {
+        float startSize = cameraToMove.orthographicSize;
+        float time = 0;
+
+        while (time < duration)
+        {
+            cameraToMove.orthographicSize = Mathf.Lerp(startSize, targetSize, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        cameraToMove.orthographicSize = targetSize;
     }
 }

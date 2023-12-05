@@ -6,7 +6,7 @@ public class CenterCameraOnObject : MonoBehaviour
     public GameObject objectToCenter;
 
     // Funkcja do wywo³ania z przycisku
-    public void Update()
+    public void CenterCamera()
     {
         if (cameraToMove != null && objectToCenter != null)
         {

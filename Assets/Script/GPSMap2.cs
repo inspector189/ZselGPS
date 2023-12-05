@@ -7,7 +7,11 @@ using UnityEngine.UI;
 
 
 public class GPSMap2 : MonoBehaviour
-{ 
+{
+    public GameObject parterGO;
+    public GameObject pietro1GO;
+    public GameObject pietro2GO;
+
     const double r = 6371000.0f;
     const double origin_lati = 52.668395f;
     const double origin_longi = 19.042718f;
@@ -74,17 +78,28 @@ public class GPSMap2 : MonoBehaviour
                         slider.enabled = true;
                         if (wysokosc >= 56 && wysokosc < 59)
                         {
+                            parterGO.SetActive(true);
+                            pietro1GO.SetActive(false);
+                            pietro2GO.SetActive(false);
+                            PlayerPrefs.SetInt("pietro", 0);
                             mapa.sprite = parter;
                         }
                         else if (wysokosc >= 59 && wysokosc < 62)
                         {
+                            parterGO.SetActive(false);
+                            pietro1GO.SetActive(true);
+                            pietro2GO.SetActive(false);
+                            PlayerPrefs.SetInt("pietro", 1);
                             mapa.sprite = pietro1;
                         }
                         else if (wysokosc >= 62 && wysokosc <= 65)
                         {
+                            parterGO.SetActive(false);
+                            pietro1GO.SetActive(false);
+                            pietro2GO.SetActive(true);
+                            PlayerPrefs.SetInt("pietro", 2);
                             mapa.sprite = pietro2;
                         }
-
                     }
                     else
                     {
@@ -92,14 +107,26 @@ public class GPSMap2 : MonoBehaviour
                         slider.enabled = false;
                         if (wysokosc >= 56 && wysokosc < 59)
                         {
+                            parterGO.SetActive(true);
+                            pietro1GO.SetActive(false);
+                            pietro2GO.SetActive(false);
+                            PlayerPrefs.SetInt("pietro", 0);
                             mapa.sprite = parter;
                         }
                         else if (wysokosc >= 59 && wysokosc < 62)
                         {
+                            parterGO.SetActive(false);
+                            pietro1GO.SetActive(true);
+                            pietro2GO.SetActive(false);
+                            PlayerPrefs.SetInt("pietro", 1);
                             mapa.sprite = pietro1;
                         }
                         else if (wysokosc >= 62 && wysokosc <= 65)
                         {
+                            parterGO.SetActive(false);
+                            pietro1GO.SetActive(false);
+                            pietro2GO.SetActive(true);
+                            PlayerPrefs.SetInt("pietro", 2);
                             mapa.sprite = pietro2;
                         }
 
