@@ -13,7 +13,7 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     public float targetOrthographicSize = 0.45f;
 
     private float timeOfLastClick = 0f;
-    private const float maxClickDuration = 0.25f; // Maksymalny czas trwania pojedynczego kliknięcia
+    private const float maxClickDuration = 0.15f; // Maksymalny czas trwania pojedynczego kliknięcia
 
     public void OnPointerDown(PointerEventData eventData)
     {
