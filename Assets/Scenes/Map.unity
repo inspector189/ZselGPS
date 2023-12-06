@@ -2764,7 +2764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2bfe9f7f28d5b4d45b71eaff664fe7c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be9443e7b8b7bb14aa2fb4ebf824566c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5456,8 +5456,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -33, y: -681}
-  m_SizeDelta: {x: 296.3, y: 136.1}
+  m_AnchoredPosition: {x: -108.2, y: -802.2}
+  m_SizeDelta: {x: 165.5, y: 114.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427119474
 MonoBehaviour:
@@ -5727,8 +5727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 398, y: -256.1}
-  m_SizeDelta: {x: 316.5, y: 84.3}
+  m_AnchoredPosition: {x: 1004.3, y: -387}
+  m_SizeDelta: {x: 1435.9, y: 252.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446662145
 MonoBehaviour:
@@ -5813,7 +5813,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -48.089554, y: 0, z: -735.5429, w: 0}
+  m_margin: {x: -48.089554, y: 0, z: -0.5997315, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7544,7 +7544,7 @@ RectTransform:
   - {fileID: 237580761}
   - {fileID: 1715746402}
   m_Father: {fileID: 2120161081}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7739,6 +7739,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618182782}
   m_CullTransparentMesh: 0
+--- !u!1 &620885031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620885032}
+  - component: {fileID: 620885034}
+  - component: {fileID: 620885033}
+  m_Layer: 5
+  m_Name: ObszarWsparcia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &620885032
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620885031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2120161081}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 26.5, y: 80.5}
+  m_SizeDelta: {x: 3154.2, y: 1432.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &620885033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620885031}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &620885034
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620885031}
+  m_CullTransparentMesh: 1
 --- !u!1 &622791667
 GameObject:
   m_ObjectHideFlags: 0
@@ -14909,7 +14985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -564, y: -912}
+  m_AnchoredPosition: {x: -564, y: -1067}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1303932038
@@ -17700,7 +17776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 408
   OpisSali: 
   buttonRectTransform: {fileID: 1922670150}
   targetOrthographicSize: 0.3
@@ -17718,7 +17794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1465776681}
   targetOrthographicSize: 0.3
@@ -17736,7 +17812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Gabinet Medyczny 410
   OpisSali: 
   buttonRectTransform: {fileID: 1854775879}
   targetOrthographicSize: 0.3
@@ -17754,7 +17830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 422
   OpisSali: 
   buttonRectTransform: {fileID: 252867117}
   targetOrthographicSize: 0.3
@@ -17772,7 +17848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 421
   OpisSali: 
   buttonRectTransform: {fileID: 826785342}
   targetOrthographicSize: 0.3
@@ -17790,7 +17866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 420
   OpisSali: 
   buttonRectTransform: {fileID: 158572168}
   targetOrthographicSize: 0.3
@@ -17808,7 +17884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Pracownia Wysokich Napi\u0119\u0107 419"
   OpisSali: 
   buttonRectTransform: {fileID: 175084158}
   targetOrthographicSize: 0.3
@@ -17826,7 +17902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 418
   OpisSali: 
   buttonRectTransform: {fileID: 384832015}
   targetOrthographicSize: 0.3
@@ -17844,7 +17920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze 418
   OpisSali: 
   buttonRectTransform: {fileID: 449503420}
   targetOrthographicSize: 0.3
@@ -17862,7 +17938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 416
   OpisSali: 
   buttonRectTransform: {fileID: 1558271996}
   targetOrthographicSize: 0.3
@@ -17880,7 +17956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 415
   OpisSali: 
   buttonRectTransform: {fileID: 1170669554}
   targetOrthographicSize: 0.3
@@ -17898,7 +17974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze 414
   OpisSali: 
   buttonRectTransform: {fileID: 2109868208}
   targetOrthographicSize: 0.3
@@ -17916,7 +17992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1788157267}
   targetOrthographicSize: 0.3
@@ -17934,7 +18010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 423
   OpisSali: 
   buttonRectTransform: {fileID: 1008587125}
   targetOrthographicSize: 0.3
@@ -17952,7 +18028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 411
   OpisSali: 
   buttonRectTransform: {fileID: 1322686578}
   targetOrthographicSize: 0.3
@@ -17970,7 +18046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 411A
   OpisSali: 
   buttonRectTransform: {fileID: 591165045}
   targetOrthographicSize: 0.3
@@ -17988,7 +18064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia 412
   OpisSali: 
   buttonRectTransform: {fileID: 1627492557}
   targetOrthographicSize: 0.3
@@ -18006,7 +18082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 424
   OpisSali: 
   buttonRectTransform: {fileID: 860187626}
   targetOrthographicSize: 0.3
@@ -18024,7 +18100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: SALA 425
+  NazwaSali: Pracownia Komputerowa 425
   OpisSali: TEST
   buttonRectTransform: {fileID: 161231139}
   targetOrthographicSize: 0.3
@@ -18042,7 +18118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 2008256036}
   targetOrthographicSize: 0.3
@@ -18060,7 +18136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1957629142}
   targetOrthographicSize: 0.3
@@ -18078,7 +18154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1349254090}
   targetOrthographicSize: 0.3
@@ -18096,7 +18172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Pomieszczenie Samorz\u0105du 101"
   OpisSali: 
   buttonRectTransform: {fileID: 304111475}
   targetOrthographicSize: 0.3
@@ -18114,7 +18190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 105
   OpisSali: 
   buttonRectTransform: {fileID: 2030635396}
   targetOrthographicSize: 0.3
@@ -18132,7 +18208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 106
   OpisSali: 
   buttonRectTransform: {fileID: 1967946708}
   targetOrthographicSize: 0.3
@@ -18150,7 +18226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 107
   OpisSali: 
   buttonRectTransform: {fileID: 103537143}
   targetOrthographicSize: 0.3
@@ -18168,7 +18244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Pok\xF3j Nauczycielski 108"
   OpisSali: 
   buttonRectTransform: {fileID: 143400456}
   targetOrthographicSize: 0.3
@@ -18186,8 +18262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
-  OpisSali: 
+  NazwaSali: Gabinet v-ce Dyrektora 109
+  OpisSali: "Lepiej nie wchodzi\u0107"
   buttonRectTransform: {fileID: 1610016609}
   targetOrthographicSize: 0.3
 --- !u!114 &1599872638
@@ -18204,7 +18280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 110
   OpisSali: 
   buttonRectTransform: {fileID: 1100549423}
   targetOrthographicSize: 0.3
@@ -18222,7 +18298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze
   OpisSali: 
   buttonRectTransform: {fileID: 430278787}
   targetOrthographicSize: 0.3
@@ -18240,7 +18316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 112
   OpisSali: 
   buttonRectTransform: {fileID: 1899086232}
   targetOrthographicSize: 0.3
@@ -18258,7 +18334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 407
   OpisSali: 
   buttonRectTransform: {fileID: 420799799}
   targetOrthographicSize: 0.3
@@ -18276,7 +18352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Gabinet v-ce Dyrektora
   OpisSali: 
   buttonRectTransform: {fileID: 275610440}
   targetOrthographicSize: 0.3
@@ -18294,7 +18370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Elektryczno-Elektroniczna 405
   OpisSali: 
   buttonRectTransform: {fileID: 624492625}
   targetOrthographicSize: 0.3
@@ -18312,7 +18388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze
   OpisSali: 
   buttonRectTransform: {fileID: 1526419482}
   targetOrthographicSize: 0.3
@@ -18330,7 +18406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Elektryczno-Elektroniczna 403
   OpisSali: 
   buttonRectTransform: {fileID: 1693987622}
   targetOrthographicSize: 0.3
@@ -18348,7 +18424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze 402
   OpisSali: 
   buttonRectTransform: {fileID: 523553727}
   targetOrthographicSize: 0.3
@@ -18366,7 +18442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Komputerowa 401
   OpisSali: 
   buttonRectTransform: {fileID: 1919054729}
   targetOrthographicSize: 0.3
@@ -18384,7 +18460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Sala Cwicze\u0144"
   OpisSali: 
   buttonRectTransform: {fileID: 1053070516}
   targetOrthographicSize: 0.3
@@ -18402,7 +18478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Magazyn
   OpisSali: 
   buttonRectTransform: {fileID: 979656129}
   targetOrthographicSize: 0.3
@@ -18420,7 +18496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Hala Sportowa
   OpisSali: 
   buttonRectTransform: {fileID: 190948180}
   targetOrthographicSize: 0.3
@@ -18438,7 +18514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Dy\u017Curka"
   OpisSali: 
   buttonRectTransform: {fileID: 549399295}
   targetOrthographicSize: 0.3
@@ -18456,7 +18532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Sala \u0106wicze\u0144"
   OpisSali: 
   buttonRectTransform: {fileID: 985944919}
   targetOrthographicSize: 0.3
@@ -18474,7 +18550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Si\u0142ownia"
   OpisSali: 
   buttonRectTransform: {fileID: 576099220}
   targetOrthographicSize: 0.3
@@ -18492,7 +18568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 606848946}
   targetOrthographicSize: 0.3
@@ -18510,7 +18586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 2107302161}
   targetOrthographicSize: 0.3
@@ -18528,7 +18604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1700545303}
   targetOrthographicSize: 0.3
@@ -18546,7 +18622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia
   OpisSali: 
   buttonRectTransform: {fileID: 1937804838}
   targetOrthographicSize: 0.3
@@ -18564,7 +18640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia
   OpisSali: 
   buttonRectTransform: {fileID: 158128556}
   targetOrthographicSize: 0.3
@@ -18582,7 +18658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia
   OpisSali: 
   buttonRectTransform: {fileID: 601111544}
   targetOrthographicSize: 0.3
@@ -18600,7 +18676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia
   OpisSali: 
   buttonRectTransform: {fileID: 605526121}
   targetOrthographicSize: 0.3
@@ -18618,7 +18694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia 317
   OpisSali: 
   buttonRectTransform: {fileID: 1021305138}
   targetOrthographicSize: 0.3
@@ -18636,7 +18712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia 318
   OpisSali: 
   buttonRectTransform: {fileID: 1054244575}
   targetOrthographicSize: 0.3
@@ -18654,7 +18730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze 316
   OpisSali: 
   buttonRectTransform: {fileID: 647652789}
   targetOrthographicSize: 0.3
@@ -18672,7 +18748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia 315
   OpisSali: 
   buttonRectTransform: {fileID: 2072848526}
   targetOrthographicSize: 0.3
@@ -18690,7 +18766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 941131941}
   targetOrthographicSize: 0.3
@@ -18708,7 +18784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 892678648}
   targetOrthographicSize: 0.3
@@ -18726,7 +18802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 343
   OpisSali: 
   buttonRectTransform: {fileID: 1081562401}
   targetOrthographicSize: 0.3
@@ -18744,7 +18820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 344
   OpisSali: 
   buttonRectTransform: {fileID: 1378669796}
   targetOrthographicSize: 0.3
@@ -18762,7 +18838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 345
   OpisSali: 
   buttonRectTransform: {fileID: 772619179}
   targetOrthographicSize: 0.3
@@ -18780,7 +18856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 346
   OpisSali: 
   buttonRectTransform: {fileID: 850074902}
   targetOrthographicSize: 0.3
@@ -18798,7 +18874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 312
   OpisSali: 
   buttonRectTransform: {fileID: 1217364022}
   targetOrthographicSize: 0.3
@@ -18816,7 +18892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pomieszczenie Gospodarcze 311
   OpisSali: 
   buttonRectTransform: {fileID: 2091961868}
   targetOrthographicSize: 0.3
@@ -18834,7 +18910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia
   OpisSali: 
   buttonRectTransform: {fileID: 1359911817}
   targetOrthographicSize: 0.3
@@ -18852,7 +18928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sklepik
   OpisSali: 
   buttonRectTransform: {fileID: 1706305461}
   targetOrthographicSize: 0.3
@@ -18870,7 +18946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 304
   OpisSali: 
   buttonRectTransform: {fileID: 521039264}
   targetOrthographicSize: 0.3
@@ -18888,7 +18964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 305
   OpisSali: 
   buttonRectTransform: {fileID: 536543657}
   targetOrthographicSize: 0.3
@@ -18906,7 +18982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 303
   OpisSali: 
   buttonRectTransform: {fileID: 982260485}
   targetOrthographicSize: 0.3
@@ -18924,7 +19000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Gabinet Kierownika 306
   OpisSali: 
   buttonRectTransform: {fileID: 2118193767}
   targetOrthographicSize: 0.3
@@ -18942,7 +19018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 302
   OpisSali: 
   buttonRectTransform: {fileID: 315615909}
   targetOrthographicSize: 0.3
@@ -18960,7 +19036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Elektryczna 307
   OpisSali: 
   buttonRectTransform: {fileID: 1434341141}
   targetOrthographicSize: 0.3
@@ -18978,7 +19054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Biuro 307B
   OpisSali: 
   buttonRectTransform: {fileID: 259013253}
   targetOrthographicSize: 0.3
@@ -18996,7 +19072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Biuro 307A
   OpisSali: 
   buttonRectTransform: {fileID: 2043992879}
   targetOrthographicSize: 0.3
@@ -19014,7 +19090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 346264699}
   targetOrthographicSize: 0.3
@@ -19032,7 +19108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Pracownia Maszyn 301
   OpisSali: 
   buttonRectTransform: {fileID: 864190230}
   targetOrthographicSize: 0.3
@@ -19050,7 +19126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 308
   OpisSali: 
   buttonRectTransform: {fileID: 1026082812}
   targetOrthographicSize: 0.3
@@ -19068,7 +19144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Ratownik
   OpisSali: 
   buttonRectTransform: {fileID: 1652188892}
   targetOrthographicSize: 0.3
@@ -19086,7 +19162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Basen
   OpisSali: 
   buttonRectTransform: {fileID: 1785867947}
   targetOrthographicSize: 0.3
@@ -19104,7 +19180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia 21
   OpisSali: 
   buttonRectTransform: {fileID: 1244171815}
   targetOrthographicSize: 0.3
@@ -19122,7 +19198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia 22
   OpisSali: 
   buttonRectTransform: {fileID: 826576776}
   targetOrthographicSize: 0.3
@@ -19140,7 +19216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 12155851}
   targetOrthographicSize: 0.3
@@ -19158,7 +19234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 2068124170}
   targetOrthographicSize: 0.3
@@ -19176,7 +19252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1964178170}
   targetOrthographicSize: 0.3
@@ -19194,7 +19270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Pok\xF3j Nauczycieli WF-u"
   OpisSali: 
   buttonRectTransform: {fileID: 1614773100}
   targetOrthographicSize: 0.3
@@ -19212,7 +19288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia 20
   OpisSali: 
   buttonRectTransform: {fileID: 722680718}
   targetOrthographicSize: 0.3
@@ -19230,7 +19306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Szatnia 19
   OpisSali: 
   buttonRectTransform: {fileID: 447891814}
   targetOrthographicSize: 0.3
@@ -19248,7 +19324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Gabinet Pedagoga 27
   OpisSali: 
   buttonRectTransform: {fileID: 30252412}
   targetOrthographicSize: 0.3
@@ -19266,7 +19342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Czytelnia
   OpisSali: 
   buttonRectTransform: {fileID: 867172765}
   targetOrthographicSize: 0.3
@@ -19284,7 +19360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Biblioteka 18
   OpisSali: 
   buttonRectTransform: {fileID: 1719492104}
   targetOrthographicSize: 0.3
@@ -19302,7 +19378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 17
   OpisSali: 
   buttonRectTransform: {fileID: 1854720717}
   targetOrthographicSize: 0.3
@@ -19320,7 +19396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sekretariat Uczniowski 15
   OpisSali: 
   buttonRectTransform: {fileID: 63415332}
   targetOrthographicSize: 0.3
@@ -19338,7 +19414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze Gospodarcze 14
   OpisSali: 
   buttonRectTransform: {fileID: 810088743}
   targetOrthographicSize: 0.3
@@ -19356,7 +19432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Konferencyjna 13
   OpisSali: 
   buttonRectTransform: {fileID: 1011422287}
   targetOrthographicSize: 0.3
@@ -19374,7 +19450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Kancelaria
   OpisSali: 
   buttonRectTransform: {fileID: 882602914}
   targetOrthographicSize: 0.3
@@ -19392,7 +19468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Gabinet Dyrektora
   OpisSali: 
   buttonRectTransform: {fileID: 172179374}
   targetOrthographicSize: 0.3
@@ -19410,7 +19486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Dy\u017Curka"
   OpisSali: 
   buttonRectTransform: {fileID: 2109040139}
   targetOrthographicSize: 0.3
@@ -19428,7 +19504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Magazyn 1
   OpisSali: 
   buttonRectTransform: {fileID: 162199191}
   targetOrthographicSize: 0.3
@@ -19446,7 +19522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1724091002}
   targetOrthographicSize: 0.3
@@ -19464,7 +19540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1978560348}
   targetOrthographicSize: 0.3
@@ -19482,7 +19558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 10
   OpisSali: 
   buttonRectTransform: {fileID: 591250139}
   targetOrthographicSize: 0.3
@@ -19500,7 +19576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 9
   OpisSali: 
   buttonRectTransform: {fileID: 2105380462}
   targetOrthographicSize: 0.3
@@ -19518,7 +19594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze 8
   OpisSali: 
   buttonRectTransform: {fileID: 127353850}
   targetOrthographicSize: 0.3
@@ -19536,7 +19612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Kierownik Gospodarczy 7
   OpisSali: 
   buttonRectTransform: {fileID: 25522408}
   targetOrthographicSize: 0.3
@@ -19554,7 +19630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze 6
   OpisSali: 
   buttonRectTransform: {fileID: 1289963808}
   targetOrthographicSize: 0.3
@@ -19572,7 +19648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 5
   OpisSali: 
   buttonRectTransform: {fileID: 1576839177}
   targetOrthographicSize: 0.3
@@ -19590,7 +19666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Magazyn 201
   OpisSali: 
   buttonRectTransform: {fileID: 304005428}
   targetOrthographicSize: 0.3
@@ -19608,7 +19684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 891942395}
   targetOrthographicSize: 0.3
@@ -19626,7 +19702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: WC
   OpisSali: 
   buttonRectTransform: {fileID: 1327453946}
   targetOrthographicSize: 0.3
@@ -19644,7 +19720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: "Sk\u0142adnica 204"
   OpisSali: 
   buttonRectTransform: {fileID: 1117578762}
   targetOrthographicSize: 0.3
@@ -19662,7 +19738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lecyjna 205
   OpisSali: 
   buttonRectTransform: {fileID: 644849713}
   targetOrthographicSize: 0.3
@@ -19680,7 +19756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 206
   OpisSali: 
   buttonRectTransform: {fileID: 1553143587}
   targetOrthographicSize: 0.3
@@ -19698,7 +19774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 207
   OpisSali: 
   buttonRectTransform: {fileID: 1762540248}
   targetOrthographicSize: 0.3
@@ -19716,7 +19792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 208
   OpisSali: 
   buttonRectTransform: {fileID: 1275536722}
   targetOrthographicSize: 0.3
@@ -19734,7 +19810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Zaplecze
   OpisSali: 
   buttonRectTransform: {fileID: 397566658}
   targetOrthographicSize: 0.3
@@ -19752,7 +19828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 210
   OpisSali: 
   buttonRectTransform: {fileID: 1268522301}
   targetOrthographicSize: 0.3
@@ -19770,7 +19846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: 
+  NazwaSali: Sala Lekcyjna 209
   OpisSali: 
   buttonRectTransform: {fileID: 1406950675}
   targetOrthographicSize: 0.3
@@ -21980,8 +22056,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1424.3}
-  m_SizeDelta: {x: 1957.4, y: -922.5}
+  m_AnchoredPosition: {x: 0, y: -1361.3999}
+  m_SizeDelta: {x: 1957.4, y: -596.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794704460
 MonoBehaviour:
@@ -22224,6 +22300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fa82a349b507c409971f29599d1308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obszarWspierania: {fileID: 0}
   parterGO: {fileID: 919872159}
   pietro1GO: {fileID: 1227516128}
   pietro2GO: {fileID: 929168309}
@@ -22859,7 +22936,7 @@ RectTransform:
   - {fileID: 1407651283}
   - {fileID: 1779795974}
   m_Father: {fileID: 2120161081}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -24133,7 +24210,7 @@ RectTransform:
   - {fileID: 1264040817}
   - {fileID: 1683996726}
   m_Father: {fileID: 2120161081}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -25633,6 +25710,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 620885032}
   - {fileID: 2016773321}
   - {fileID: 611507463}
   - {fileID: 1892456519}

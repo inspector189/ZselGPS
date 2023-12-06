@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class GPSMap2 : MonoBehaviour
 {
+    public GameObject obszarWspierania;
+
     public GameObject parterGO;
     public GameObject pietro1GO;
     public GameObject pietro2GO;
@@ -164,8 +166,16 @@ public class GPSMap2 : MonoBehaviour
 
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
+
+        WspieranieKorytarzy();
     }
-    private Vector2 CalcPosition()
+
+    private void WspieranieKorytarzy()
+    {
+
+    }
+
+        private Vector2 CalcPosition()
     {
 
         Vector2 act = avg.GetAveragePosition();
