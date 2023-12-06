@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Android;
@@ -8,7 +9,14 @@ using UnityEngine.UI;
 
 public class GPSMap2 : MonoBehaviour
 {
-    public GameObject obszarWspierania;
+    public RectTransform personRect2;
+    public GameObject person2;
+    public RectTransform personRect; // Persona
+    public RectTransform ObszarWsparcia; // Obszar wsparcia
+    public RectTransform ObszarWsparcia2; // Obszar wsparcia
+    public List<RectTransform> parterList; // Lista obiektów do sprawdzenia
+    public List<RectTransform> pietro1List; // Lista obiektów do sprawdzenia
+    public List<RectTransform> pietro2List; // Lista obiektów do sprawdzenia
 
     public GameObject parterGO;
     public GameObject pietro1GO;
@@ -141,7 +149,63 @@ public class GPSMap2 : MonoBehaviour
                     yield return new WaitUntil(() => Input.location.status == LocationServiceStatus.Stopped);
                     if (timeSinceLastLocationUpdate >= updateInterval)
                     {
-                        person.transform.position = CalcPosition();
+                        person2.transform.position = CalcPosition();
+                        if(PlayerPrefs.GetInt("pietro") == 2)
+                        {
+                            if (IsColliding(personRect2, ObszarWsparcia2))
+                            {
+                                Debug.Log("Obraz 1 jest zawarty w obrazie 2");
+                                    if (!parterList.Contains(personRect2))
+                                    {
+                                        Vector2 newPosition = FindClosestEdgePosition();
+                                        if (newPosition != Vector2.zero)
+                                        {
+                                            Debug.Log("Najbliższa pozycja krawędzi dla persony: " + newPosition);
+                                            personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        personRect.position = CalcPosition();
+                                    }
+                            }
+                            else
+                            {
+                                Debug.Log("Obraz 1 nie jest zawarty w obrazie 2");
+                                personRect.position = CalcPosition();
+                            }
+                        }
+                        if(PlayerPrefs.GetInt("pietro") == 0 || PlayerPrefs.GetInt("pietro") == 1)
+                        {
+                            if (IsColliding(personRect2, ObszarWsparcia))
+                            {
+                                Debug.Log("Obraz 1 jest zawarty w obrazie 2");
+
+                                    if (!parterList.Contains(personRect2))
+                                    {
+                                        Vector2 newPosition = FindClosestEdgePosition();
+                                        if (newPosition != Vector2.zero)
+                                        {
+                                            Debug.Log("Najbliższa pozycja krawędzi dla persony: " + newPosition);
+                                            personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        personRect.position = CalcPosition();
+                                    }
+
+                            }
+                            else
+                            {
+                                Debug.Log("Obraz 1 nie jest zawarty w obrazie 2");
+                                personRect.position = CalcPosition();
+                            }
+                        }
+                       
+                        
+                        
+
                         timeSinceLastLocationUpdate = 0.0f;
                     }
 
@@ -153,6 +217,85 @@ public class GPSMap2 : MonoBehaviour
         }
 
     }
+    Vector2 FindClosestEdgePosition()
+    {
+        Vector2 closestPosition = Vector2.zero;
+        float minDistance = float.MaxValue;
+        if(PlayerPrefs.GetInt("pietro") == 0)
+        {
+            foreach (var obj in parterList)
+            {
+                Vector2 closestPoint = ClosestPointOnRect(obj, personRect2.position);
+                float distance = Vector2.Distance(personRect2.position, closestPoint);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestPosition = closestPoint;
+                }
+            }
+        }
+        if (PlayerPrefs.GetInt("pietro") == 1)
+        {
+            foreach (var obj in pietro1List)
+            {
+                Vector2 closestPoint = ClosestPointOnRect(obj, personRect2.position);
+                float distance = Vector2.Distance(personRect2.position, closestPoint);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestPosition = closestPoint;
+                }
+            }
+        }
+        if (PlayerPrefs.GetInt("pietro") == 2)
+        {
+            foreach (var obj in pietro2List)
+            {
+                Vector2 closestPoint = ClosestPointOnRect(obj, personRect2.position);
+                float distance = Vector2.Distance(personRect2.position, closestPoint);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestPosition = closestPoint;
+                }
+            }
+        }
+
+
+        return closestPosition;
+    }
+
+    Vector2 ClosestPointOnRect(RectTransform rectTransform, Vector2 point)
+    {
+        Rect rect = GetWorldSpaceRect(rectTransform);
+        float x = Mathf.Clamp(point.x, rect.xMin, rect.xMax);
+        float y = Mathf.Clamp(point.y, rect.yMin, rect.yMax);
+
+        return new Vector2(x, y);
+    }
+
+    bool IsColliding(RectTransform rect1, RectTransform rect2)
+    {
+        Rect rect1Bounds = GetWorldSpaceRect(rect1);
+        Rect rect2Bounds = GetWorldSpaceRect(rect2);
+
+        return rect1Bounds.Overlaps(rect2Bounds);
+    }
+
+    Rect GetWorldSpaceRect(RectTransform rectTransform)
+    {
+        // Pobierz pozycję i rozmiar RectTransform w globalnej przestrzeni
+        Vector2 sizeDelta = rectTransform.sizeDelta;
+        Vector2 position = rectTransform.position;
+
+        float width = sizeDelta.x * rectTransform.lossyScale.x;
+        float height = sizeDelta.y * rectTransform.lossyScale.y;
+
+        return new Rect(position.x - width * rectTransform.pivot.x,
+                        position.y - height * rectTransform.pivot.y,
+                        width, height);
+    }
+
     void Update()
     {
 
@@ -166,20 +309,14 @@ public class GPSMap2 : MonoBehaviour
 
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
-
-        WspieranieKorytarzy();
     }
 
-    private void WspieranieKorytarzy()
-    {
-
-    }
 
         private Vector2 CalcPosition()
     {
 
-        Vector2 act = avg.GetAveragePosition();
-        float accuracy = PlayerPrefs.GetFloat("accuracy");
+            Vector2 act = avg.GetAveragePosition();
+            float accuracy = PlayerPrefs.GetFloat("accuracy");
         if (accuracy <= 5)
         {
             double rlong = 111200.0f;
@@ -193,33 +330,7 @@ public class GPSMap2 : MonoBehaviour
             return lastGPSPosition;
         }
         else
-        {/*
-            double rlong = 111200.0f;
-
-            double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
-
-            Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
-
-            person.transform.position = dorigin/50f;
-
-            Vector3 currentVelocity = (person.transform.position - lastPosition) / Time.deltaTime;
-
-            if (Time.deltaTime > 0)
-            {
-                currentAcceleration = (currentVelocity - lastVelocity) / Time.deltaTime;
-            }
-            else
-            {
-                currentAcceleration = Vector2.zero;
-            }
-
-            lastPosition = person.transform.position;
-            lastVelocity = currentVelocity;
-
-            // Tutaj możesz wykorzystać currentAcceleration lub currentVelocity do symulacji ruchu kropki na mapie
-            Vector2 simulatedMapPosition = new Vector2(currentVelocity.x, currentVelocity.y); // Przykładowe użycie prędkości dla pozycji kropki
-
-            return simulatedMapPosition;*/
+        {
 
             double rlong = 111200.0f;
 
