@@ -7,12 +7,12 @@ public class ScreenManipulation : MonoBehaviour
 {
     public float zoomSpeed = 0.05f;
     public float rotateSpeed = 2f;
-    public float panSpeed = 0.5f; // Szybkoœæ przesuwania kamery
+    public float panSpeed = 0.5f; // Szybkoï¿½ï¿½ przesuwania kamery
     public Camera cameraToZoom;
     public GameObject mapObject; // Obiekt mapy do obracania
-    public GameObject rawImageGameObject; // Obiekt RawImage do wykrywania dotkniêæ
+    public GameObject rawImageGameObject; // Obiekt RawImage do wykrywania dotkniï¿½ï¿½
 
-    private const float maxCameraSize = 4f; // Maksymalna wielkoœæ kamery
+    private const float maxCameraSize = 4f; // Maksymalna wielkoï¿½ï¿½ kamery
     private const float maxX = 19f; // Maksymalny zakres na osi X
     private const float minX = 8f; // Minimalny zakres na osi X
     private const float maxY = 4f; // Maksymalny zakres na osi Y
@@ -41,7 +41,7 @@ public class ScreenManipulation : MonoBehaviour
                     }
                     else if (touchCount == 2)
                     {
-                        // Zoom i obrót, jeœli s¹ dwa dotkniêcia
+                        // Zoom i obrï¿½t, jeï¿½li sï¿½ dwa dotkniï¿½cia
                         Touch touchTwo = Input.GetTouch(1);
 
                         // Zoom
@@ -54,7 +54,7 @@ public class ScreenManipulation : MonoBehaviour
                         float difference = currentMagnitude - prevMagnitude;
                         ZoomCamera(difference * zoomSpeed);
 
-                        // Obrót
+                        // Obrï¿½t
                         Vector2 prevDir = touchZeroPrevPos - touchOnePrevPos;
                         Vector2 currentDir = touch.position - touchTwo.position;
 
@@ -71,7 +71,7 @@ public class ScreenManipulation : MonoBehaviour
         Vector2 offset = cameraToZoom.ScreenToViewportPoint(lastPanPosition - newPanPosition);
         Vector3 move = new Vector3(offset.x * panSpeed, offset.y * panSpeed, 0);
 
-        // Uwzglêdnienie rotacji kamery
+        // Uwzglï¿½dnienie rotacji kamery
         move = cameraToZoom.transform.rotation * move;
 
         // Ograniczenie ruchu kamery
