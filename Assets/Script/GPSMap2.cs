@@ -30,6 +30,7 @@ public class GPSMap2 : MonoBehaviour
     public GameObject person;
     public Toggle tgl;
     public TextMeshProUGUI slidertext;
+
     public Image mapa;
     public Sprite parter;
     public Sprite pietro1;
@@ -62,6 +63,27 @@ public class GPSMap2 : MonoBehaviour
             gyro.enabled = true;
         }
         StartCoroutine(StartGPS());
+        if(PlayerPrefs.GetInt("pietro") == 0)
+        {
+             PlayerPrefs.SetInt("liczba", 0);
+             mapa.sprite = parter;
+        }
+        else
+        {
+            if(PlayerPrefs.GetInt("pietro") == 1)
+            {
+                PlayerPrefs.SetInt("liczba", 1);
+                 mapa.sprite = pietro1;
+            }
+            else{
+                if(PlayerPrefs.GetInt("pietro") == 2)
+                {
+                    PlayerPrefs.SetInt("liczba", 2);
+                     mapa.sprite = pietro2;
+                }
+            }
+        }
+      
     }
 
     private IEnumerator StartGPS()
@@ -83,7 +105,7 @@ public class GPSMap2 : MonoBehaviour
 
                     precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
                     wysokoscTekst.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
-
+               /*     PlayerPrefs.GetInt("liczba");
                     if (tgl.isOn)
                     {
                         float wysokosc = slider.value;
@@ -142,7 +164,7 @@ public class GPSMap2 : MonoBehaviour
                             mapa.sprite = pietro2;
                         }
 
-                    }
+                    } */
 
                     avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
                     avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
@@ -301,8 +323,9 @@ public class GPSMap2 : MonoBehaviour
     void Update()
     {
 
-        slidertext.text = (slider.value).ToString();
-
+       // slidertext.text = (slider.value).ToString();
+         int savedFloor = PlayerPrefs.GetInt("liczba"); // Domyślnie 0, jeśli nie ma zapisanej wartości
+        SetFloor(savedFloor);
         gyroEnabled = SystemInfo.supportsGyroscope;
         if (gyroEnabled)
         {
@@ -311,9 +334,36 @@ public class GPSMap2 : MonoBehaviour
 
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
+        
     }
 
-
+ void SetFloor(int floorIndex)
+    {
+        if (floorIndex == 0)
+        {
+            SetFloorVisuals(true, false, false);
+            PlayerPrefs.SetInt("pietro", 0);
+             mapa.sprite = parter;
+        }
+        else if (floorIndex == 1)
+        {
+            SetFloorVisuals(false, true, false);
+            PlayerPrefs.SetInt("pietro", 1);
+             mapa.sprite = pietro1;
+        }
+        else if (floorIndex == 2)
+        {
+            SetFloorVisuals(false, false, true);
+            PlayerPrefs.SetInt("pietro", 2);
+             mapa.sprite = pietro2;
+        }
+    }
+     void SetFloorVisuals(bool parterActive, bool pietro1Active, bool pietro2Active)
+    {
+        parterGO.SetActive(parterActive);
+        pietro1GO.SetActive(pietro1Active);
+        pietro2GO.SetActive(pietro2Active);
+    }
         private Vector2 CalcPosition()
     {
 
