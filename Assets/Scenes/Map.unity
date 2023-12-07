@@ -30065,6 +30065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1808030357}
   - component: {fileID: 1808030356}
+  - component: {fileID: 1808030365}
   - component: {fileID: 1808030355}
   - component: {fileID: 1808030354}
   - component: {fileID: 1808030359}
@@ -30290,6 +30291,20 @@ MonoBehaviour:
   openHeight: 3736.8
   cameraToMove: {fileID: 701352638}
   cameraResizeSpeed: 1
+--- !u!114 &1808030365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808030353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27b598b2d5c0c34d849a663fccfa05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  object1: {fileID: 1072992042}
+  object2: {fileID: 1322686577}
 --- !u!1 &1811336536
 GameObject:
   m_ObjectHideFlags: 0
