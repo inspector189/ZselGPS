@@ -22,6 +22,10 @@ public class GPSMap2 : MonoBehaviour
     public GameObject pietro1GO;
     public GameObject pietro2GO;
 
+    public GameObject texts0;
+    public GameObject texts1;
+    public GameObject texts2;
+
     const double r = 6371000.0f;
     const double origin_lati = 52.668395f;
     const double origin_longi = 19.042718f;
@@ -47,6 +51,7 @@ public class GPSMap2 : MonoBehaviour
     bool usingGPS = false;
     void Start()
     {
+
         if (Application.platform == RuntimePlatform.Android)
         {
             if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
@@ -90,6 +95,10 @@ public class GPSMap2 : MonoBehaviour
                         slider.enabled = true;
                         if (wysokosc >= 56 && wysokosc < 59)
                         {
+                            texts0.SetActive(true);
+                            texts1.SetActive(false);
+                            texts2.SetActive(false);
+
                             parterGO.SetActive(true);
                             pietro1GO.SetActive(false);
                             pietro2GO.SetActive(false);
@@ -98,6 +107,10 @@ public class GPSMap2 : MonoBehaviour
                         }
                         else if (wysokosc >= 59 && wysokosc < 62)
                         {
+                            texts0.SetActive(false);
+                            texts1.SetActive(true);
+                            texts2.SetActive(false);
+
                             parterGO.SetActive(false);
                             pietro1GO.SetActive(true);
                             pietro2GO.SetActive(false);
@@ -106,6 +119,10 @@ public class GPSMap2 : MonoBehaviour
                         }
                         else if (wysokosc >= 62 && wysokosc <= 65)
                         {
+                            texts0.SetActive(false);
+                            texts1.SetActive(false);
+                            texts2.SetActive(true);
+
                             parterGO.SetActive(false);
                             pietro1GO.SetActive(false);
                             pietro2GO.SetActive(true);
@@ -119,6 +136,10 @@ public class GPSMap2 : MonoBehaviour
                         slider.enabled = false;
                         if (wysokosc >= 56 && wysokosc < 59)
                         {
+                            texts0.SetActive(true);
+                            texts1.SetActive(false);
+                            texts2.SetActive(false);
+
                             parterGO.SetActive(true);
                             pietro1GO.SetActive(false);
                             pietro2GO.SetActive(false);
@@ -127,6 +148,10 @@ public class GPSMap2 : MonoBehaviour
                         }
                         else if (wysokosc >= 59 && wysokosc < 62)
                         {
+                            texts0.SetActive(false);
+                            texts1.SetActive(true);
+                            texts2.SetActive(false);
+
                             parterGO.SetActive(false);
                             pietro1GO.SetActive(true);
                             pietro2GO.SetActive(false);
@@ -135,6 +160,10 @@ public class GPSMap2 : MonoBehaviour
                         }
                         else if (wysokosc >= 62 && wysokosc <= 65)
                         {
+                            texts0.SetActive(false);
+                            texts1.SetActive(false);
+                            texts2.SetActive(true);
+
                             parterGO.SetActive(false);
                             pietro1GO.SetActive(false);
                             pietro2GO.SetActive(true);
