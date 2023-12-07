@@ -42,6 +42,7 @@ public class GPSMap2 : MonoBehaviour
     private Vector3 lastVelocity;
     private Vector3 currentAcceleration;
     public TextMeshProUGUI precyzjaTekst;
+    public TextMeshProUGUI wysokoscTekst;
     Vector2 lastGPSPosition = Vector2.zero;
     bool usingGPS = false;
     void Start()
@@ -81,6 +82,7 @@ public class GPSMap2 : MonoBehaviour
                     float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
 
                     precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
+                    wysokoscTekst.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
 
                     if (tgl.isOn)
                     {
