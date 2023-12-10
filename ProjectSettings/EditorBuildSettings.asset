@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: fcdd72fd16851d24cb833f5b036cbdb7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoginPanel.unity
     guid: d0635e3160509ea4cb02848197e43935
   m_configObjects: {}

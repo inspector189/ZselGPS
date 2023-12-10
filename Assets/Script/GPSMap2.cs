@@ -34,7 +34,7 @@ public class GPSMap2 : MonoBehaviour
     public GameObject person;
     public Toggle tgl;
     public TextMeshProUGUI slidertext;
-
+    float accX, accY, accZ;
     public Image mapa;
     public Sprite parter;
     public Sprite pietro1;
@@ -110,93 +110,11 @@ public class GPSMap2 : MonoBehaviour
 
                     precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
                     wysokoscTekst.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
-               /*     PlayerPrefs.GetInt("liczba");
-                    if (tgl.isOn)
-                    {
-                        float wysokosc = slider.value;
-                        slider.enabled = true;
-                        if (wysokosc >= 56 && wysokosc < 59)
-                        {
-                            texts0.SetActive(true);
-                            texts1.SetActive(false);
-                            texts2.SetActive(false);
-
-                            parterGO.SetActive(true);
-                            pietro1GO.SetActive(false);
-                            pietro2GO.SetActive(false);
-                            PlayerPrefs.SetInt("pietro", 0);
-                            mapa.sprite = parter;
-                        }
-                        else if (wysokosc >= 59 && wysokosc < 62)
-                        {
-                            texts0.SetActive(false);
-                            texts1.SetActive(true);
-                            texts2.SetActive(false);
-
-                            parterGO.SetActive(false);
-                            pietro1GO.SetActive(true);
-                            pietro2GO.SetActive(false);
-                            PlayerPrefs.SetInt("pietro", 1);
-                            mapa.sprite = pietro1;
-                        }
-                        else if (wysokosc >= 62 && wysokosc <= 65)
-                        {
-                            texts0.SetActive(false);
-                            texts1.SetActive(false);
-                            texts2.SetActive(true);
-
-                            parterGO.SetActive(false);
-                            pietro1GO.SetActive(false);
-                            pietro2GO.SetActive(true);
-                            PlayerPrefs.SetInt("pietro", 2);
-                            mapa.sprite = pietro2;
-                        }
-                    }
-                    else
-                    {
-                        float wysokosc = Input.location.lastData.altitude;
-                        slider.enabled = false;
-                        if (wysokosc >= 56 && wysokosc < 59)
-                        {
-                            texts0.SetActive(true);
-                            texts1.SetActive(false);
-                            texts2.SetActive(false);
-
-                            parterGO.SetActive(true);
-                            pietro1GO.SetActive(false);
-                            pietro2GO.SetActive(false);
-                            PlayerPrefs.SetInt("pietro", 0);
-                            mapa.sprite = parter;
-                        }
-                        else if (wysokosc >= 59 && wysokosc < 62)
-                        {
-                            texts0.SetActive(false);
-                            texts1.SetActive(true);
-                            texts2.SetActive(false);
-
-                            parterGO.SetActive(false);
-                            pietro1GO.SetActive(true);
-                            pietro2GO.SetActive(false);
-                            PlayerPrefs.SetInt("pietro", 1);
-                            mapa.sprite = pietro1;
-                        }
-                        else if (wysokosc >= 62 && wysokosc <= 65)
-                        {
-                            texts0.SetActive(false);
-                            texts1.SetActive(false);
-                            texts2.SetActive(true);
-
-                            parterGO.SetActive(false);
-                            pietro1GO.SetActive(false);
-                            pietro2GO.SetActive(true);
-                            PlayerPrefs.SetInt("pietro", 2);
-                            mapa.sprite = pietro2;
-                        }
-
-                    } */
 
                     avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
                     avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
+                    avg.AddMeasurement(accuracy);
+                    
 
                     Input.location.Stop();
                     yield return new WaitUntil(() => Input.location.status == LocationServiceStatus.Stopped);
@@ -398,12 +316,11 @@ public class GPSMap2 : MonoBehaviour
 
             Vector2 act = avg.GetAveragePosition();
             float accuracy = PlayerPrefs.GetFloat("accuracy");
-        if (accuracy <= 5)
-        {
-            double rlong = 111200.0f;
-
+             double rlong = 111200.0f;
             double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
-
+             Vector3 lastDirection = Vector3.zero;
+        if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
+        {
             Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
             lastGPSPosition = dorigin / 50f;
             usingGPS = true;
@@ -411,40 +328,53 @@ public class GPSMap2 : MonoBehaviour
             return lastGPSPosition;
         }
         else
+         {   
+        // Obliczenia na podstawie akcelerometru i kierunku kompasu
+        Vector3 currentAcceleration = Input.acceleration;
+        Vector3 acceleration = new Vector3(accX, accY, accZ);
+
+        // ... (dodaj obliczenia na podstawie akcelerometru i kierunku kompasu)
+
+        Vector3 velocityChange = acceleration * Time.deltaTime;
+        Vector3 newVelocity = lastVelocity + velocityChange;
+
+        lastVelocity = newVelocity;
+
+        Vector3 newDirection = Vector3.zero;
+        if (acceleration.sqrMagnitude >= 0.01f)
         {
-
-            double rlong = 111200.0f;
-
-            double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
-
-            Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
-
-            Vector3 currentAcceleration = Input.acceleration; // Pobierz dane przyspieszenia
-            // Stała opisująca czułość interpolacji - możesz dostosować ją do potrzeb
-            float interpolationFactor = 0.001f;
-
-            // Interpolacja liniowa na podstawie danych z akcelerometru
-            Vector2 interpolatedPosition = Vector2.zero;
-
-            // Aktualizacja interpolowanej pozycji na podstawie danych z akcelerometru
-            interpolatedPosition.x += currentAcceleration.x * interpolationFactor;
-            interpolatedPosition.y += currentAcceleration.y * interpolationFactor;
-
-            dorigin.x += interpolatedPosition.x;
-            dorigin.y += interpolatedPosition.y;
-            interpolatedPosition /= 50f;
-            if (usingGPS)
-            {
-                // Użyj ostatniej dokładnej pozycji GPS jako punktu odniesienia dla interpolacji
-                interpolatedPosition += lastGPSPosition;
-                Debug.Log(interpolatedPosition);
-            }
-
-            // Skalowanie interpolowanej pozycji (jeśli to konieczne)
-             // Możesz dostosować skalowanie do swoich potrzeb
-
-            return dorigin / 50;
+            newDirection = acceleration.normalized;
+            lastDirection = newDirection;
         }
+        else
+        {
+            newDirection = lastDirection;
+        }
+
+        Vector3 displacement = newVelocity * Time.deltaTime * newDirection.magnitude;
+
+        // Przypisz przemieszczenie do obiektu person (o ile to wymagane)
+        person.transform.Translate(displacement);
+
+        Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
+
+        Vector2 interpolatedPosition = Vector2.zero;
+        float interpolationFactor = 0.001f;
+        interpolatedPosition.x += currentAcceleration.x * interpolationFactor;
+        interpolatedPosition.y += currentAcceleration.y * interpolationFactor;
+
+        dorigin.x += interpolatedPosition.x;
+        dorigin.y += interpolatedPosition.y;
+        interpolatedPosition /= 50f;
+
+        if (usingGPS)
+        {
+            interpolatedPosition += lastGPSPosition;
+            Debug.Log(interpolatedPosition);
+        }
+
+        return dorigin / 50;
+    }
     }
 
     private AveragePosition avg = new AveragePosition();

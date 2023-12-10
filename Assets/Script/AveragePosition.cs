@@ -15,6 +15,42 @@ public class AveragePosition
     const int maxRecalculateFrameCount = 1000;
     const int maxAverageMeasurements = 10;
 
+    private Queue<float> measurements = new Queue<float>();
+
+    public void AddMeasurement(float measurement)
+    {
+        // Dodajemy nowy pomiar
+        measurements.Enqueue(measurement);
+
+        // Usuwamy najstarszy pomiar, jeśli przekroczyliśmy limit
+        if (measurements.Count > maxAver)
+        {
+            measurements.Dequeue();
+        }
+
+        // Obliczamy średnią i wykonujemy odpowiedni kod
+        float average = CalculateAverage();
+        if (average > 5)
+        {
+            PlayerPrefs.SetInt("sum10Accuracy", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("sum10Accuracy", 0);
+        }
+    }
+
+    private float CalculateAverage()
+    {
+        if (measurements.Count == 0) return 0;
+
+        float sum = 0;
+        foreach (var measurement in measurements)
+        {
+            sum += measurement;
+        }
+        return sum / measurements.Count;
+    }
 
     public void AddWeightedPosition(Vector2 pos, float weight)
     {
