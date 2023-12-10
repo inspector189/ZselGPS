@@ -5128,7 +5128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 94b24ffc9b961e14eb2fb57db3d9745e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7241,7 +7241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1301.7, y: 86.5}
+  m_AnchoredPosition: {x: 1303.2, y: 86.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314412539
@@ -11571,7 +11571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 970.2, y: -200.2}
+  m_AnchoredPosition: {x: 972.1, y: -200.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565719759
@@ -15791,7 +15791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &725992094
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16303,7 +16303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1455.2, y: 298.7}
+  m_AnchoredPosition: {x: 1458, y: 299}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772260774
@@ -22079,7 +22079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.1, y: -270.7}
+  m_AnchoredPosition: {x: -105.3, y: -270.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996831857
@@ -33559,10 +33559,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 408
-  OpisSali: 
+  NazwaSali: Pracownia 408
+  OpisSali: Pracownia Komputerowa 408
   buttonRectTransform: {fileID: 1922670150}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33578,9 +33579,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1465776681}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33596,9 +33598,12 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: Gabinet Medyczny 410
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 Gabinet Medyczny - zawsze mo\u017Cna podej\u015B\u0107
+    gdy si\u0119 \u017Ale czujesz. Pani Piel\u0119gniarka napewno zaradzi co\u015B
+    dobrego :)"
   buttonRectTransform: {fileID: 1854775879}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33613,10 +33618,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 422
-  OpisSali: 
+  NazwaSali: Pracownia 422
+  OpisSali: Pracownia Komputerowa 422
   buttonRectTransform: {fileID: 252867117}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33631,10 +33637,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 421
-  OpisSali: 
+  NazwaSali: Sala 421
+  OpisSali: Sala Lekcyjna 421
   buttonRectTransform: {fileID: 826785342}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33649,10 +33656,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 420
-  OpisSali: 
+  NazwaSali: Sala 420
+  OpisSali: Sala Lekcyjna 420
   buttonRectTransform: {fileID: 158572168}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33667,10 +33675,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: "Pracownia Wysokich Napi\u0119\u0107 419"
-  OpisSali: 
+  NazwaSali: Pracownia 419
+  OpisSali: "Pracownia Wysokich Napi\u0119\u0107 419"
   buttonRectTransform: {fileID: 175084158}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33685,10 +33694,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 418
-  OpisSali: 
+  NazwaSali: Sala 418
+  OpisSali: Sala Lekcyjna 418
   buttonRectTransform: {fileID: 384832015}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33703,10 +33713,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Zaplecze 418
-  OpisSali: 
+  NazwaSali: Zaplecze 417
+  OpisSali: Zaplecze Sali 418
   buttonRectTransform: {fileID: 449503420}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33721,10 +33732,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 416
-  OpisSali: 
+  NazwaSali: Pracownia 416
+  OpisSali: Pracownia Komputerowa 416
   buttonRectTransform: {fileID: 1558271996}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33739,10 +33751,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 415
-  OpisSali: 
+  NazwaSali: Pracownia 415
+  OpisSali: Pracownia Komputerowa 415
   buttonRectTransform: {fileID: 1170669554}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33758,9 +33771,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze 414
-  OpisSali: 
+  OpisSali: "Zaplecze dla nauczycieli przedmiot\xF3w zawodowych - informatycznych"
   buttonRectTransform: {fileID: 2109868208}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33776,9 +33790,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1788157267}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33793,10 +33808,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 423
-  OpisSali: 
+  NazwaSali: Pracownia 423
+  OpisSali: Pracownia Komputerowa 423
   buttonRectTransform: {fileID: 1008587125}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33811,10 +33827,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 411
-  OpisSali: 
+  NazwaSali: Pracownia 411
+  OpisSali: Pracownia Komputerowa 411
   buttonRectTransform: {fileID: 1322686578}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33829,10 +33846,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 411A
-  OpisSali: 
+  NazwaSali: Pracownia  411A
+  OpisSali: Pracownia Komputerowa 411A
   buttonRectTransform: {fileID: 591165045}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33848,9 +33866,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: Pracownia 412
-  OpisSali: 
+  OpisSali: Pracownia 412
   buttonRectTransform: {fileID: 1627492557}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33865,10 +33884,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 424
-  OpisSali: 
+  NazwaSali: Pracownia  424
+  OpisSali: Pracownia Komputerowa 424
   buttonRectTransform: {fileID: 860187626}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33883,10 +33903,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 425
-  OpisSali: TEST
+  NazwaSali: Pracownia  425
+  OpisSali: Pracownia Komputerowa 425
   buttonRectTransform: {fileID: 161231139}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33902,9 +33923,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 2008256036}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33920,9 +33942,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1957629142}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33938,9 +33961,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 1349254090}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33956,9 +33980,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: "Pomieszczenie Samorz\u0105du 101"
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 pomieszczenie dla os\xF3b z Samorz\u0105du."
   buttonRectTransform: {fileID: 304111475}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33973,10 +33998,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 105
-  OpisSali: 
+  NazwaSali: Sala 105
+  OpisSali: Sala Lekcyjna 105
   buttonRectTransform: {fileID: 2030635396}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33991,10 +34017,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 106
-  OpisSali: 
+  NazwaSali: Sala 106
+  OpisSali: Sala Lekcyjna 106
   buttonRectTransform: {fileID: 1967946708}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34009,10 +34036,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 107
-  OpisSali: 
+  NazwaSali: Sala 107
+  OpisSali: Sala Lekcyjna 107
   buttonRectTransform: {fileID: 103537143}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34028,9 +34056,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: "Pok\xF3j Nauczycielski 108"
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 pok\xF3j nauczycielski."
   buttonRectTransform: {fileID: 143400456}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34049,6 +34078,7 @@ MonoBehaviour:
   OpisSali: "Lepiej nie wchodzi\u0107"
   buttonRectTransform: {fileID: 1610016609}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34063,10 +34093,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 110
-  OpisSali: 
+  NazwaSali: Sala 110
+  OpisSali: Sala Lekcyjna 110
   buttonRectTransform: {fileID: 1100549423}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34082,9 +34113,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze
-  OpisSali: 
+  OpisSali: Zaplecze Sali 110
   buttonRectTransform: {fileID: 430278787}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34099,10 +34131,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 112
-  OpisSali: 
+  NazwaSali: Sala 112
+  OpisSali: Sala Lekcyjna 112
   buttonRectTransform: {fileID: 1899086232}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34117,10 +34150,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 407
-  OpisSali: 
+  NazwaSali: Pracownia 407
+  OpisSali: Pracownia Komputerowa 407
   buttonRectTransform: {fileID: 420799799}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34136,9 +34170,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: Gabinet v-ce Dyrektora
-  OpisSali: 
+  OpisSali: Gabinet Wicedyrektora 406
   buttonRectTransform: {fileID: 275610440}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34153,10 +34188,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Elektryczno-Elektroniczna 405
-  OpisSali: 
+  NazwaSali: Pracownia 405
+  OpisSali: Pracownia Elektryczno-Elektroniczna 405
   buttonRectTransform: {fileID: 624492625}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34172,9 +34208,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze
-  OpisSali: 
+  OpisSali: Zaplecze sali 403
   buttonRectTransform: {fileID: 1526419482}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34189,10 +34226,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Elektryczno-Elektroniczna 403
-  OpisSali: 
+  NazwaSali: Pracownia 403
+  OpisSali: Pracownia Elektryczno-Elektroniczna 403
   buttonRectTransform: {fileID: 1693987622}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34208,9 +34246,10 @@ MonoBehaviour:
   pietro: 1
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze 402
-  OpisSali: 
+  OpisSali: Zaplecze
   buttonRectTransform: {fileID: 523553727}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34225,10 +34264,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Komputerowa 401
-  OpisSali: 
+  NazwaSali: Pracownia 401
+  OpisSali: Pracownia Komputerowa 401
   buttonRectTransform: {fileID: 1919054729}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34243,10 +34283,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: "Sala Cwicze\u0144"
-  OpisSali: 
+  NazwaSali: "Sala \u0106wicze\u0144"
+  OpisSali: "Sala \u0106wicze\u0144"
   buttonRectTransform: {fileID: 1053070516}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34262,9 +34303,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Magazyn
-  OpisSali: 
+  OpisSali: Magazyn
   buttonRectTransform: {fileID: 979656129}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34280,9 +34322,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Hala Sportowa
-  OpisSali: 
+  OpisSali: Hala Sportowa
   buttonRectTransform: {fileID: 190948180}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34298,9 +34341,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: "Dy\u017Curka"
-  OpisSali: 
+  OpisSali: "Dy\u017Curka"
   buttonRectTransform: {fileID: 549399295}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34316,9 +34360,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: "Sala \u0106wicze\u0144"
-  OpisSali: 
+  OpisSali: "Sala \u0106wicze\u0144"
   buttonRectTransform: {fileID: 985944919}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34334,9 +34379,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: "Si\u0142ownia"
-  OpisSali: 
+  OpisSali: "Si\u0142ownia "
   buttonRectTransform: {fileID: 576099220}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34352,9 +34398,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 606848946}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34370,9 +34417,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 2107302161}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34388,9 +34436,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 1700545303}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34405,10 +34454,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Szatnia
-  OpisSali: 
+  NazwaSali: Szatnia I - 512
+  OpisSali: "Szatnia I 512 - Pomara\u0144czowa"
   buttonRectTransform: {fileID: 1937804838}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34423,10 +34473,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Szatnia
-  OpisSali: 
+  NazwaSali: Szatnia IV - 508
+  OpisSali: Szaatnia IV 508 - Zielona
   buttonRectTransform: {fileID: 158128556}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34441,10 +34492,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Szatnia
-  OpisSali: 
+  NazwaSali: Szatnia III - 509
+  OpisSali: 'Szatnia III 509 - Niebieska '
   buttonRectTransform: {fileID: 601111544}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34459,10 +34511,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Szatnia
-  OpisSali: 
+  NazwaSali: Szatnia II - 510
+  OpisSali: Szatnia II 510 - Czerwona
   buttonRectTransform: {fileID: 605526121}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34478,9 +34531,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Pracownia 317
-  OpisSali: 
+  OpisSali: Pracownia 317
   buttonRectTransform: {fileID: 1021305138}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34496,9 +34550,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Pracownia 318
-  OpisSali: 
+  OpisSali: Pracownia 318
   buttonRectTransform: {fileID: 1054244575}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34514,9 +34569,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze 316
-  OpisSali: 
+  OpisSali: Zaplecze sal 315 i 317
   buttonRectTransform: {fileID: 647652789}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34532,9 +34588,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Pracownia 315
-  OpisSali: 
+  OpisSali: Pracownia 315
   buttonRectTransform: {fileID: 2072848526}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34550,9 +34607,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta
   buttonRectTransform: {fileID: 941131941}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34568,9 +34626,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta
   buttonRectTransform: {fileID: 892678648}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34585,10 +34644,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 343
-  OpisSali: 
+  NazwaSali: Sala 343
+  OpisSali: Sala Lekcyjna 343
   buttonRectTransform: {fileID: 1081562401}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34603,10 +34663,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 344
-  OpisSali: 
+  NazwaSali: Sala 344
+  OpisSali: Sala Lekcyjna 344
   buttonRectTransform: {fileID: 1378669796}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34621,10 +34682,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 345
-  OpisSali: 
+  NazwaSali: Sala 345
+  OpisSali: Sala Lekcyjna 345
   buttonRectTransform: {fileID: 772619179}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34639,10 +34701,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 346
-  OpisSali: 
+  NazwaSali: Sala 346
+  OpisSali: Sala Lekcyjna 346
   buttonRectTransform: {fileID: 850074902}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34657,10 +34720,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 312
-  OpisSali: 
+  NazwaSali: Sala  312
+  OpisSali: Sala Lekcyjna 312
   buttonRectTransform: {fileID: 1217364022}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34676,9 +34740,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Pomieszczenie Gospodarcze 311
-  OpisSali: 
+  OpisSali: Pomieszczenie Gospodarcze
   buttonRectTransform: {fileID: 2091961868}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34694,9 +34759,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Szatnia
-  OpisSali: 
+  OpisSali: "Szatnia Og\xF3lna"
   buttonRectTransform: {fileID: 1359911817}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34712,9 +34778,11 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Sklepik
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 sklepik szkolny, mo\u017Cna kupi\u0107 tu co\u015B
+    na przek\u0105ske."
   buttonRectTransform: {fileID: 1706305461}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34729,10 +34797,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 304
-  OpisSali: 
+  NazwaSali: Sala 304
+  OpisSali: Sala Lekcyjna 304
   buttonRectTransform: {fileID: 521039264}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34747,10 +34816,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 305
-  OpisSali: 
+  NazwaSali: Sala 305
+  OpisSali: Sala Lekcyjna 305
   buttonRectTransform: {fileID: 536543657}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34765,10 +34835,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 303
-  OpisSali: 
+  NazwaSali: Sala 303
+  OpisSali: Sala Lekcyjna 303
   buttonRectTransform: {fileID: 982260485}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34784,9 +34855,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Gabinet Kierownika 306
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 Gabinet Kierownika "
   buttonRectTransform: {fileID: 2118193767}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34801,10 +34873,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 302
-  OpisSali: 
+  NazwaSali: Sala 302
+  OpisSali: Sala Lekcyjna 302
   buttonRectTransform: {fileID: 315615909}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34819,10 +34892,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Elektryczna 307
-  OpisSali: 
+  NazwaSali: Pracownia 307
+  OpisSali: Pracownia Elektryczna 307
   buttonRectTransform: {fileID: 1434341141}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34838,9 +34912,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Biuro 307B
-  OpisSali: 
+  OpisSali: Biuro
   buttonRectTransform: {fileID: 259013253}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34856,9 +34931,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Biuro 307A
-  OpisSali: 
+  OpisSali: Biuro
   buttonRectTransform: {fileID: 2043992879}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34874,9 +34950,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 346264699}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34891,10 +34968,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Pracownia Maszyn 301
-  OpisSali: 
+  NazwaSali: Pracownia 301
+  OpisSali: Pracownia Maszyn 301
   buttonRectTransform: {fileID: 864190230}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34909,10 +34987,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 308
-  OpisSali: 
+  NazwaSali: Sala 308
+  OpisSali: Sala Lekcyjna 308
   buttonRectTransform: {fileID: 1026082812}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34928,9 +35007,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Ratownik
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 ratownik"
   buttonRectTransform: {fileID: 1652188892}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34946,9 +35026,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Basen
-  OpisSali: 
+  OpisSali: "P\u0142ywalnia"
   buttonRectTransform: {fileID: 1785867947}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34964,9 +35045,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Szatnia 21
-  OpisSali: 
+  OpisSali: Szatnia basenowa
   buttonRectTransform: {fileID: 1244171815}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34982,9 +35064,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Szatnia 22
-  OpisSali: 
+  OpisSali: Szatnia basenowa
   buttonRectTransform: {fileID: 826576776}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35000,9 +35083,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta
   buttonRectTransform: {fileID: 12155851}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35018,9 +35102,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta
   buttonRectTransform: {fileID: 2068124170}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35036,9 +35121,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: 'Toaleta '
   buttonRectTransform: {fileID: 1964178170}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35054,9 +35140,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: "Pok\xF3j Nauczycieli WF-u"
-  OpisSali: 
+  OpisSali: "Pok\xF3j Nauczycieli WF-u przy basenie."
   buttonRectTransform: {fileID: 1614773100}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35072,9 +35159,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Szatnia 20
-  OpisSali: 
+  OpisSali: Szatnia Basenowa
   buttonRectTransform: {fileID: 722680718}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35090,9 +35178,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Szatnia 19
-  OpisSali: 
+  OpisSali: Szatnia Basenowa
   buttonRectTransform: {fileID: 447891814}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35108,9 +35197,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Gabinet Pedagoga 27
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 Gabinet Pedagoga."
   buttonRectTransform: {fileID: 30252412}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35126,9 +35216,11 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Czytelnia
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 Czytelnia - warto tu przyj\u015B\u0107 gdy ma si\u0119
+    okienko."
   buttonRectTransform: {fileID: 867172765}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35144,9 +35236,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Biblioteka 18
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 biblioteka."
   buttonRectTransform: {fileID: 1719492104}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35161,10 +35254,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 17
-  OpisSali: 
+  NazwaSali: Sala 17
+  OpisSali: Sala Lekcyjna 17
   buttonRectTransform: {fileID: 1854720717}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35180,9 +35274,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Sekretariat Uczniowski 15
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 sekretariat uczniowski."
   buttonRectTransform: {fileID: 63415332}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35198,9 +35293,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze Gospodarcze 14
-  OpisSali: 
+  OpisSali: Zaplecze Gospodarcze 14
   buttonRectTransform: {fileID: 810088743}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35216,9 +35312,11 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Sala Konferencyjna 13
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 sala konferencyjna - cz\u0119sto odbywaj\u0105
+    si\u0119 w niej r\xF3\u017Cne ciekawe lekcje."
   buttonRectTransform: {fileID: 1011422287}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35234,9 +35332,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Kancelaria
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 Kancelaria."
   buttonRectTransform: {fileID: 882602914}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35252,9 +35351,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Gabinet Dyrektora
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 Gabinet Dyrektora."
   buttonRectTransform: {fileID: 172179374}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35270,9 +35370,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: "Dy\u017Curka"
-  OpisSali: 
+  OpisSali: "Tu znajduje si\u0119 dy\u017Curka."
   buttonRectTransform: {fileID: 2109040139}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35288,9 +35389,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Magazyn 1
-  OpisSali: 
+  OpisSali: Magazyn
   buttonRectTransform: {fileID: 162199191}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35306,9 +35408,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta
   buttonRectTransform: {fileID: 1724091002}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35324,9 +35427,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: 'Toaleta '
   buttonRectTransform: {fileID: 1978560348}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35341,10 +35445,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 10
-  OpisSali: 
+  NazwaSali: Sala 10
+  OpisSali: Sala Lekcyjna 10
   buttonRectTransform: {fileID: 591250139}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35359,10 +35464,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 9
-  OpisSali: 
+  NazwaSali: Sala 9
+  OpisSali: Sala Lekcyjna 9
   buttonRectTransform: {fileID: 2105380462}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35378,9 +35484,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze 8
-  OpisSali: 
+  OpisSali: Zaplecze Sali 9
   buttonRectTransform: {fileID: 127353850}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35396,9 +35503,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Kierownik Gospodarczy 7
-  OpisSali: 
+  OpisSali: Kierownik Gospodarczy 7
   buttonRectTransform: {fileID: 25522408}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35414,9 +35522,10 @@ MonoBehaviour:
   pietro: 0
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze 6
-  OpisSali: 
+  OpisSali: Zaplecze Sali 5
   buttonRectTransform: {fileID: 1289963808}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35431,10 +35540,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 0
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 5
-  OpisSali: 
+  NazwaSali: Sala 5
+  OpisSali: Sala Lekcyjna 5
   buttonRectTransform: {fileID: 1576839177}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35450,9 +35560,10 @@ MonoBehaviour:
   pietro: 2
   CameraToMove: {fileID: 701352638}
   NazwaSali: Magazyn 201
-  OpisSali: 
+  OpisSali: Magazyn
   buttonRectTransform: {fileID: 304005428}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35468,9 +35579,10 @@ MonoBehaviour:
   pietro: 2
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 891942395}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35486,9 +35598,10 @@ MonoBehaviour:
   pietro: 2
   CameraToMove: {fileID: 701352638}
   NazwaSali: WC
-  OpisSali: 
+  OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1327453946}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35504,9 +35617,10 @@ MonoBehaviour:
   pietro: 2
   CameraToMove: {fileID: 701352638}
   NazwaSali: "Sk\u0142adnica 204"
-  OpisSali: 
+  OpisSali: "Sk\u0142adnica akt - 204"
   buttonRectTransform: {fileID: 1117578762}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35521,10 +35635,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lecyjna 205
-  OpisSali: 
+  NazwaSali: Sala 205
+  OpisSali: Sala Lekcyjan 205
   buttonRectTransform: {fileID: 644849713}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35539,10 +35654,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 206
-  OpisSali: 
+  NazwaSali: Sala 206
+  OpisSali: Sala Lekcyjna 206
   buttonRectTransform: {fileID: 1553143587}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35557,10 +35673,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 207
-  OpisSali: 
+  NazwaSali: Sala 207
+  OpisSali: Sala Lekcyjna 207
   buttonRectTransform: {fileID: 1762540248}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35575,10 +35692,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 208
-  OpisSali: 
+  NazwaSali: Sala 208
+  OpisSali: Sala Lekcyjna 208
   buttonRectTransform: {fileID: 1275536722}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35594,9 +35712,10 @@ MonoBehaviour:
   pietro: 2
   CameraToMove: {fileID: 701352638}
   NazwaSali: Zaplecze
-  OpisSali: 
+  OpisSali: Zaplecze Sali 209
   buttonRectTransform: {fileID: 397566658}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35611,10 +35730,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 210
-  OpisSali: 
+  NazwaSali: Sala 210
+  OpisSali: Sala Lekcyjna 210
   buttonRectTransform: {fileID: 1268522301}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!114 &1599872725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35629,10 +35749,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 2
   CameraToMove: {fileID: 701352638}
-  NazwaSali: Sala Lekcyjna 209
-  OpisSali: 
+  NazwaSali: Sala 209
+  OpisSali: Sala Lekcyjna 209
   buttonRectTransform: {fileID: 1406950675}
   targetOrthographicSize: 0.3
+  ObrazekSali: {fileID: 0}
 --- !u!1 &1607910433
 GameObject:
   m_ObjectHideFlags: 0
@@ -36444,7 +36565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 969.6, y: -354.8}
+  m_AnchoredPosition: {x: 972.7, y: -354.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634753686
@@ -41827,7 +41948,7 @@ MonoBehaviour:
   tgl: {fileID: 1919008630}
   slidertext: {fileID: 1710664427}
   mapa: {fileID: 200340862}
-  parter: {fileID: 21300000, guid: 2af64368bdf81bd43b3ad896c8768ada, type: 3}
+  parter: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
   pietro1: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
   pietro2: {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
   slider: {fileID: 1495122130}
@@ -43741,7 +43862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1904352752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43772,7 +43893,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2, y: -0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1919008628
@@ -48921,7 +49042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.0005054, y: 12.00016}
+  m_AnchoredPosition: {x: -5, y: -9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2120161080
