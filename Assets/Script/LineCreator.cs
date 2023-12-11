@@ -20,36 +20,34 @@ public class LineCreator : MonoBehaviour
         SetupLineRenderer(grayLineRenderer, Color.gray, 0.025f);
         grayLineRenderer.enabled = false;
 
-        // Zapisanie pocz¹tkowej pozycji object1
+        // Zapisanie poczï¿½tkowej pozycji object1
         initialPosition1 = object1.transform.position;
 
-        // Ustawienie pocz¹tkowej d³ugoœci
+        // Ustawienie poczï¿½tkowej dï¿½ugoï¿½ci
         previousLength = Vector3.Distance(object1.transform.position, object2.transform.position);
     }
-
+    Vector3 FindMiddlePoint(Vector3 point1, Vector3 point2)
+    {
+         // Oblicz Å›rodek pomiÄ™dzy point1 i point2
+         Vector3 middlePoint = (point1 + point2) * 0.5f;
+         return middlePoint;
+    }
     void Update()
     {
-        if (object1 != null && object2 != null)
-        {
-            Vector3 pos1 = object1.transform.position;
-            Vector3 pos2 = object2.transform.position;
+       if (object1 != null && object2 != null)
+    {
+        // ZnajdÅº Å›rodek korytarza
+        Vector3 middlePoint = FindMiddlePoint(object1.transform.position, object2.transform.position);
 
-            // Aktualizacja niebieskiej linii
-            blueLineRenderer.SetPosition(0, new Vector3(pos1.x, pos1.y, 0));
-            blueLineRenderer.SetPosition(1, new Vector3(pos2.x, pos2.y, 0));
+        // Aktualizuj niebieskÄ… liniÄ™
+        blueLineRenderer.SetPosition(0, new Vector3(object1.transform.position.x, object1.transform.position.y, 0));
+        blueLineRenderer.SetPosition(1, new Vector3(object2.transform.position.x, object2.transform.position.y, 0));
 
-            // Sprawdzanie, czy dystans siê zmniejsza
-            float currentLength = Vector3.Distance(pos1, pos2);
-            if (currentLength < previousLength)
-            {
-                // Aktywacja i aktualizacja szarej linii
-                grayLineRenderer.enabled = true;
-                grayLineRenderer.SetPosition(0, initialPosition1);
-                grayLineRenderer.SetPosition(1, new Vector3(pos1.x, pos1.y, 0));
-            }
-
-            previousLength = currentLength;
-        }
+        // Aktywuj i zaktualizuj szarÄ… liniÄ™ do Å›rodka korytarza
+        grayLineRenderer.enabled = true;
+        grayLineRenderer.SetPosition(0, initialPosition1);
+        grayLineRenderer.SetPosition(1, new Vector3(middlePoint.x, middlePoint.y, 0));
+    }
     }
 
     private void SetupLineRenderer(LineRenderer lineRenderer, Color color, float width)
