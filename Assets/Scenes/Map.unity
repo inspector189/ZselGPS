@@ -41894,7 +41894,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   object1: {fileID: 1072992042}
-  object2: {fileID: 1576839176}
+  object2: {fileID: 591165044}
+  drawableAreas:
+  - {fileID: 267896758}
+  - {fileID: 1516356894}
+  - {fileID: 704330868}
+  - {fileID: 775492735}
+  - {fileID: 1074969134}
+  - {fileID: 1799558464}
+  - {fileID: 25221300}
+  - {fileID: 702084000}
+  - {fileID: 1857595486}
+  - {fileID: 843269729}
+  - {fileID: 696808496}
+  - {fileID: 237580760}
+  - {fileID: 1715746401}
 --- !u!1 &1809456251
 GameObject:
   m_ObjectHideFlags: 0
