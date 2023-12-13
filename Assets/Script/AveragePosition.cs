@@ -30,7 +30,9 @@ public class AveragePosition
 
         // Obliczamy średnią i wykonujemy odpowiedni kod
         float average = CalculateAverage();
-        if (average > 5)
+        PlayerPrefs.SetFloat("sredniaPrecyzja", average);
+
+        if (average > 14)
         {
             PlayerPrefs.SetInt("sum10Accuracy", 1);
         }

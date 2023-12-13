@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.UI;
@@ -50,9 +51,14 @@ public class GPSMap2 : MonoBehaviour
     public TextMeshProUGUI wysokoscTekst;
     Vector2 lastGPSPosition = Vector2.zero;
     bool usingGPS = false;
+    public TextMeshProUGUI informacja;
+    public TextMeshProUGUI informacja2;
+    public GameObject RedneredMap;
+    public GameObject BrakPolaczenia;
     void Start()
     {
-
+        RedneredMap.SetActive(false);
+        BrakPolaczenia.SetActive(true);
         if (Application.platform == RuntimePlatform.Android)
         {
             if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
@@ -67,7 +73,10 @@ public class GPSMap2 : MonoBehaviour
             gyro = Input.gyro;
             gyro.enabled = true;
         }
+
         StartCoroutine(StartGPS());
+
+
         if(PlayerPrefs.GetInt("pietro") == 0)
         {
              PlayerPrefs.SetInt("liczba", 0);
@@ -90,7 +99,6 @@ public class GPSMap2 : MonoBehaviour
         }
       
     }
-
     private IEnumerator StartGPS()
     {
         while (true)
@@ -114,7 +122,11 @@ public class GPSMap2 : MonoBehaviour
                     avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
                     avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
                     avg.AddMeasurement(accuracy);
-                    
+
+                    float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
+                    int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
+                    informacja.text = "Szukanie lokalizacji...";
+                    informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
 
                     Input.location.Stop();
                     yield return new WaitUntil(() => Input.location.status == LocationServiceStatus.Stopped);
@@ -125,7 +137,6 @@ public class GPSMap2 : MonoBehaviour
                         {
                             if (IsColliding(personRect2, ObszarWsparcia2))
                             {
-                                Debug.Log("Obraz 1 jest zawarty w obrazie 2");
                                     if (!parterList.Contains(personRect2))
                                     {
                                         Vector2 newPosition = FindClosestEdgePosition();
@@ -142,7 +153,6 @@ public class GPSMap2 : MonoBehaviour
                             }
                             else
                             {
-                                Debug.Log("Obraz 1 nie jest zawarty w obrazie 2");
                                 personRect.position = CalcPosition();
                             }
                         }
@@ -150,14 +160,12 @@ public class GPSMap2 : MonoBehaviour
                         {
                             if (IsColliding(personRect2, ObszarWsparcia))
                             {
-                                Debug.Log("Obraz 1 jest zawarty w obrazie 2");
 
                                     if (!parterList.Contains(personRect2))
                                     {
                                         Vector2 newPosition = FindClosestEdgePosition();
                                         if (newPosition != Vector2.zero)
                                         {
-                                            Debug.Log("Najbliższa pozycja krawędzi dla persony: " + newPosition);
                                             personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
                                         }
                                     }
@@ -169,7 +177,6 @@ public class GPSMap2 : MonoBehaviour
                             }
                             else
                             {
-                                Debug.Log("Obraz 1 nie jest zawarty w obrazie 2");
                                 personRect.position = CalcPosition();
                             }
                         }
@@ -321,6 +328,10 @@ public class GPSMap2 : MonoBehaviour
              Vector3 lastDirection = Vector3.zero;
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
+            RedneredMap.SetActive(true);
+            BrakPolaczenia.SetActive(false);
+            informacja.text = "";
+
             Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
             lastGPSPosition = dorigin / 50f;
             usingGPS = true;

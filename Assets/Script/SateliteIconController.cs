@@ -11,11 +11,11 @@ public class SateliteIconController : MonoBehaviour
     private void Update()
     {
         float value = PlayerPrefs.GetFloat("accuracy");
-        if (value < 15)
+        if (value < 5)
         {
             SetColor(new Color(0, 1, 0, 1)); // Zielony, nieprzezroczysty
         }
-        else if (value >= 15 && value < 45)
+        else if (value >= 5 && value < 45)
         {
             SetColor(new Color(1, 0, 0, 1)); // Czerwony, nieprzezroczysty
         }
