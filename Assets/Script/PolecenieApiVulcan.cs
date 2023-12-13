@@ -133,11 +133,13 @@ var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiE
 
         // SceneManager.LoadScene(ScenaName);
         Debug.Log(firstAccount.Pupil.FirstName);
+
         LoginAutomatically(savedToken, savedPin);
 
         PlayerPrefs.SetString("imie", firstAccount.Pupil.FirstName);
         PlayerPrefs.SetString("nazwisko", firstAccount.Pupil.Surname);
         PlayerPrefs.SetString("klasa", firstAccount.ClassDisplay);
+      //  PlayerPrefs.SetString("wychowawca", firstAccount.Attendance.MainTeacher);
         
         //textMesh.text = $"Imie i nazwisko: {firstAccount.Pupil.FirstName} {firstAccount.Pupil.Surname} \nKlasa: {firstAccount.ClassDisplay}\nNazwa szkoly: {firstAccount.Unit.Name}";
     }

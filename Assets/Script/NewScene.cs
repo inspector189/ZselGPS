@@ -11,6 +11,7 @@ public class NewScene : MonoBehaviour
    
     public void LoadNewScene()
     {
+        Debug.Log("Zaraz nastapi zmiana sceny");
         SceneManager.LoadScene(SceneName);
     }
    
