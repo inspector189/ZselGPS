@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -288,7 +289,7 @@ public class GPSMap2 : MonoBehaviour
 
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
-        
+
     }
 
  void SetFloor(int floorIndex)
