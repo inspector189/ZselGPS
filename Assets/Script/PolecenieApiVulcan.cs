@@ -15,12 +15,6 @@ using Vulcanova.Uonet.Signing;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 
-public class User
-{
-    public string Token { get; set; }
-    public string Pin { get; set; }
-    // Dodaj inne dane użytkownika, np. imię, nazwisko, itp.
-}
 public class PolecenieApiVulcan : MonoBehaviour
 {
     public TextMeshProUGUI textMesh; // Przypisz pole TextMeshProUGUI z Unity Inspector
@@ -28,74 +22,90 @@ public class PolecenieApiVulcan : MonoBehaviour
     public string symbol = "wloclawek";
     public string ScenaName;
     public GameObject spinner;
-    private string savedToken = "";
-    private string savedPin = "";
     public TMP_InputField pinInputField;
-    private List<User> usersList = new List<User>();
-    private void Start()
+    private bool czyWykonacUpdate = true;
+
+    public void Start()
     {
+        if (PlayerPrefs.HasKey("token") && PlayerPrefs.HasKey("firebaseToken") && PlayerPrefs.HasKey("pk") && PlayerPrefs.HasKey("cert"))
+        {
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+            {
+                SceneManager.LoadScene("Map");
+            }
+            else
+            {
+                textMesh.text = "Brak połączenia z internetem.";
+            }
+        }
+
         spinner.SetActive(false);
-        LoadUsers();
-        TryAutoLogin();
     }
 
-    private void LoadUsers()
+    public void Update()
     {
-        string serializedUsers = PlayerPrefs.GetString("SavedUsers");
-        if (!string.IsNullOrEmpty(serializedUsers))
+        if (czyWykonacUpdate == true)
         {
-            usersList = JsonConvert.DeserializeObject<List<User>>(serializedUsers);
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+            {
+                if (PlayerPrefs.HasKey("token") && PlayerPrefs.HasKey("firebaseToken") && PlayerPrefs.HasKey("pk") && PlayerPrefs.HasKey("cert"))
+                {
+                    LoginProcess();
+                    czyWykonacUpdate = false;
+
+                }
+            }
+        }
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            czyWykonacUpdate = true;
         }
     }
-    private void SaveUsers()
+
+    public void btnClicked()
     {
-        string serializedUsers = JsonConvert.SerializeObject(usersList);
-        PlayerPrefs.SetString("SavedUsers", serializedUsers);
-        Debug.Log(PlayerPrefs.GetString("SavedUsers"));
-        PlayerPrefs.Save();
-    }
-    private void TryAutoLogin()
-    {
-        if (PlayerPrefs.HasKey("ZapisanyToken") && PlayerPrefs.HasKey("ZapisanyPin"))
+        if (Application.internetReachability != NetworkReachability.NotReachable)
         {
-            string savedToken = PlayerPrefs.GetString("ZapisanyToken");
-            string savedPin = PlayerPrefs.GetString("ZapisanyPin");
-
-            Debug.Log("Znaleziono zapisane dane:");
-            Debug.Log("Token: " + savedToken);
-            Debug.Log("Pin: " + savedPin);
-
-            // Tutaj możesz wywołać funkcję logowania automatycznego
-            LoginAutomatically(savedToken, savedPin);
+            RegisterProcess();
         }
+        else
+        {
+            textMesh.text = "Brak połączenia z internetem.";
+        }
+        
     }
     public void SetTextVisibility(bool isVisible)
     {
         textMesh.enabled = isVisible;
     }
-    public async void LoginProcess()
+    public async void RegisterProcess()
     {
-        spinner.SetActive(true);
-        string token = tokenInputField.text; // Pobierz wartość tokenu z InputFielda
-        string pin = pinInputField.text; // Pobierz wartość PINu z InputFielda
-        PlayerPrefs.SetString("ZapisanyToken", token);
-        PlayerPrefs.SetString("ZapisanyPin", pin);
-        PlayerPrefs.Save();
-
-        
-        // Setup request signer
-        var firebaseToken = await FirebaseTokenFetcher.FetchFirebaseTokenAsync();
-        var (pk, cert) = KeyPairGenerator.GenerateKeyPair();
-
-        var x509Cert2 = new X509Certificate2(cert.GetEncoded());
-
-        var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
-
-        var instanceUrlProvider = new InstanceUrlProvider();
-
-        var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
         try
         {
+            spinner.SetActive(true);
+            string token = tokenInputField.text; // Pobierz wartość tokenu z InputFielda
+
+            PlayerPrefs.SetString("token", token);
+            string pin = pinInputField.text; // Pobierz wartość PINu z InputFielda
+            if (token.Length != 7 || pin.Length != 6)
+            {
+                throw new Exception("Podano błędny token lub pin!");
+            }
+
+            // Setup request signer
+            var firebaseToken = await FirebaseTokenFetcher.FetchFirebaseTokenAsync();
+            var (pk, cert) = KeyPairGenerator.GenerateKeyPair();
+            var x509Cert2 = new X509Certificate2(cert.GetEncoded());
+
+            PlayerPrefs.SetString("cert", Convert.ToBase64String(cert.GetEncoded()));
+            PlayerPrefs.SetString("pk", pk);
+            PlayerPrefs.SetString("firebaseToken", firebaseToken);
+            var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
+
+            var instanceUrlProvider = new InstanceUrlProvider();
+
+            var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
+
             var request = new RegisterClientRequest
             {
                 OS = Constants.AppOs,
@@ -107,56 +117,87 @@ public class PolecenieApiVulcan : MonoBehaviour
                 SecurityToken = token,
                 SelfIdentifier = Guid.NewGuid().ToString()
             };
-
             await apiClient.PostAsync(RegisterClientRequest.ApiEndpoint, request);
-            User newUser = new User
+
+
+            var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
+            var firstAccount = registerHebeResponse.Envelope[0];
+            if(firstAccount.Unit.Name != "Zespół Szkół Elektrycznych")
             {
-                Token = token,
-                Pin = pin,
-                // Dodaj inne dane użytkownika pobrane z dziennika
-               
-        };
-            usersList.Add(newUser);
-            SaveUsers();
-  
+                throw new Exception("Nie należysz do Zespołu Szkół Elektrycznych!");
+            }
+            spinner.SetActive(false);
+            SceneManager.LoadScene("Map");
         }
-      catch (Exception e)
+        catch(Exception e)
         {
-            Debug.Log("Tworzenie użytkownika nie powiodło się: " + e.Message);
-            textMesh.text = "Tworzenie użytkownika nie powiodło się";
-            SetTextVisibility(true);
+            spinner.SetActive(false);
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+            {
+                DeleteAccount();
+            }
+            else
+            {
+
+                textMesh.text = "Brak połączenia z internetem.";
+            }
+
+
+            textMesh.text = $"{e.Message}";
+        }
+       
+    }
+
+    public async void LoginProcess()
+    {
+        try
+        {
+            string token = PlayerPrefs.GetString("token");
+
+            var firebaseToken = PlayerPrefs.GetString("firebaseToken");
+
+            var pk = PlayerPrefs.GetString("pk");
+
+            string certString = PlayerPrefs.GetString("cert");
+            byte[] cert = Convert.FromBase64String(certString);
+
+            var x509Cert2 = new X509Certificate2(cert);
+
+            var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
+
+            var instanceUrlProvider = new InstanceUrlProvider();
+
+            var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
+
+            var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
+
+            var firstAccount = registerHebeResponse.Envelope[0];
+
+            SceneManager.LoadScene("Map");
+
+        }
+        catch (Exception e)
+        {
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+            {
+                DeleteAccount();
+            }
+            else
+            {
+                Debug.Log("Brak połączenia z internetem.");
+                
+            }
+            Debug.Log($"Błąd w logowaniu: {e}");
+            
         }
 
-var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
-
-        var firstAccount = registerHebeResponse.Envelope[0];
-
-        // SceneManager.LoadScene(ScenaName);
-        Debug.Log(firstAccount.Pupil.FirstName);
-
-        LoginAutomatically(savedToken, savedPin);
-
-        PlayerPrefs.SetString("imie", firstAccount.Pupil.FirstName);
-        PlayerPrefs.SetString("nazwisko", firstAccount.Pupil.Surname);
-        PlayerPrefs.SetString("klasa", firstAccount.ClassDisplay);
-      //  PlayerPrefs.SetString("wychowawca", firstAccount.Attendance.MainTeacher);
-        
-        //textMesh.text = $"Imie i nazwisko: {firstAccount.Pupil.FirstName} {firstAccount.Pupil.Surname} \nKlasa: {firstAccount.ClassDisplay}\nNazwa szkoly: {firstAccount.Unit.Name}";
     }
-    private void LoginAutomatically(string token, string pin)
+
+    public void DeleteAccount()
     {
-        
-        SceneManager.LoadScene(ScenaName);
-        
-    }
-    public void ClearUserList()
-    {
-        usersList.Clear();
-        Debug.Log("Wyczyszczono listę użytkowników.");
-    }
-   
-    private void OnDestroy()
-    {
-        SaveUsers();
+        PlayerPrefs.DeleteKey("token");
+        PlayerPrefs.DeleteKey("firebaseToken");
+        PlayerPrefs.DeleteKey("pk");
+        PlayerPrefs.DeleteKey("cert");
     }
 }
