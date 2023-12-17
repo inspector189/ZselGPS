@@ -15,21 +15,32 @@ using Vulcanova.Uonet.Signing;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 using Vulcanova.Uonet.Api.Lessons;
+using Vulcanova.Uonet.Api.Schedule;
 using System.Linq;
 using System.Threading.Tasks;
-using Unity.VisualScripting; // Dodane dla obs³ugi async/await
+using Unity.VisualScripting; // Dodane dla obsï¿½ugi async/await
 
 public class GetValuesFromVulcan2 : MonoBehaviour
 {
     public string symbol = "wloclawek";
-
+    private int i = 0;
+    public GameObject inputFieldPrefabNumerLekcji; // Prefab dla Input.Textboxa
+    public Transform PanelNrLekcje;
+    public GameObject inputGodzinki;
+    public Transform PanelGodziny;
+    public GameObject inputPlan;
+    public Transform PanelPlan;
+    public GameObject inputNauczyciele;
+    public Transform PanelNauczyciele;
+    
+    
     void Start()
     {
         if (PlayerPrefs.HasKey("token") && PlayerPrefs.HasKey("firebaseToken") && PlayerPrefs.HasKey("pk") && PlayerPrefs.HasKey("cert"))
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
-                LoginProcess();
+                LoginProcess(i);
             }
             else
             {
@@ -50,7 +61,7 @@ public class GetValuesFromVulcan2 : MonoBehaviour
         }
     }
 
-    public async void LoginProcess()
+    public async void LoginProcess(int i)
     {
         try
         {
@@ -69,25 +80,78 @@ public class GetValuesFromVulcan2 : MonoBehaviour
             var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
             var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
 
-            DateTime selectedDate = new DateTime(2023, 11, 23); // Pobieranie lekcji na dzisiejszy dzieñ
+            DateTime selectedDate = new DateTime(2023, 11, 09); // Pobieranie lekcji na dzisiejszy dzieï¿½
 
             var lessonsResponse = await unitApiClient.GetAllAsync(GetLessonsByPupilQuery.ApiEndpoint, new GetLessonsByPupilQuery(
                             firstAccount.Pupil.Id,
-                            selectedDate, // Data pocz¹tkowa
-                            selectedDate, // Data koñcowa
-                            DateTime.MinValue, // Dodatkowe parametry (jeœli s¹ wymagane)
+                            selectedDate, // Data poczï¿½tkowa
+                            selectedDate, // Data koï¿½cowa
+                            DateTime.MinValue, // Dodatkowe parametry (jeï¿½li sï¿½ wymagane)
                             500))
                         .ToListAsync();
             var uniqueLessons = lessonsResponse
-                            .GroupBy(lesson => lesson.TimeSlot.Position)
+                            .GroupBy(lesson => new { lesson.TimeSlot.Position, lesson.Subject.Name, lesson.TeacherMod.DisplayName })
                             .Select(group => group.First())
                             .OrderBy(lesson => lesson.TimeSlot.Position);
-
-            foreach (var lesson in uniqueLessons)
+                            
+           
+                           
+            var orderedLessons = uniqueLessons.OrderBy(lesson => lesson.TimeSlot.Position);
+            
+            foreach (var lesson in orderedLessons)
             {
-                // Wypisz szczegó³y lekcji, nazwy w³aœciwoœci mog¹ siê ró¿niæ
+               
+                // Wypisz szczegï¿½y lekcji, nazwy wï¿½aï¿½ciwoï¿½ci mogï¿½ siï¿½ rï¿½niï¿½
                 Debug.Log($"nr: {lesson.TimeSlot.Position}, przedmiot: {lesson.Subject.Name}, nauczyciel: {lesson.TeacherMod.DisplayName}, godziny: {lesson.TimeSlot.Display}");
+              //  inputFieldPrefab.text = "nr " + lesson.TimeSlot.Position;
+              
+               
+                    //wypisywanie numerow lekcji
+                    GameObject nowyInputField = Instantiate(inputFieldPrefabNumerLekcji, PanelNrLekcje);
+                     
+                         InputField inputField = nowyInputField.GetComponent<InputField>();
+
+                      // ZnajdÅº komponent TextMeshPro, ktÃ³ry jest dzieckiem InputField
+                        TextMeshProUGUI placeholderText = nowyInputField.GetComponentInChildren<TextMeshProUGUI>();
+                    placeholderText.text = $"{lesson.TimeSlot.Position}";
+
+                    //wypisywanie godzin lekcji
+                        GameObject nowyInputField2 = Instantiate(inputGodzinki, PanelGodziny);
+                     
+                         InputField inputField2 = nowyInputField2.GetComponent<InputField>();
+
+                      // ZnajdÅº komponent TextMeshPro, ktÃ³ry jest dzieckiem InputField
+                        TextMeshProUGUI placeholdergodziny = nowyInputField2.GetComponentInChildren<TextMeshProUGUI>();
+                    placeholdergodziny.text = $"{lesson.TimeSlot.Display}";
+                    //wypisywanie lekcji
+                     GameObject nowyInputField3 = Instantiate(inputPlan, PanelPlan);
+                     
+                         InputField inputField3 = nowyInputField3.GetComponent<InputField>();
+
+                      // ZnajdÅº komponent TextMeshPro, ktÃ³ry jest dzieckiem InputField
+                        TextMeshProUGUI placeholderPlan = nowyInputField3.GetComponentInChildren<TextMeshProUGUI>();
+                    placeholderPlan.text = $"{lesson.Subject.Name}";
+                    //wypisywanie nauczycieli
+                     GameObject nowyInputField4 = Instantiate(inputNauczyciele, PanelNauczyciele);
+                     
+                         InputField inputField4 = nowyInputField4.GetComponent<InputField>();
+
+                      // ZnajdÅº komponent TextMeshPro, ktÃ³ry jest dzieckiem InputField
+                        TextMeshProUGUI placeholderNauczyciel = nowyInputField4.GetComponentInChildren<TextMeshProUGUI>();
+                    placeholderNauczyciel.text = $"{lesson.TeacherMod.DisplayName}";
+                  
+                
+                
+               
             }
+            
+            
+            PlayerPrefs.SetInt("IloscLekcji", i);
+            inputFieldPrefabNumerLekcji.SetActive(false);
+            inputGodzinki.SetActive(false);
+            inputPlan.SetActive(false);
+            inputNauczyciele.SetActive(false);
+           
         }
         catch (Exception e)
         {
@@ -98,10 +162,10 @@ public class GetValuesFromVulcan2 : MonoBehaviour
             }
             else
             {
-                Debug.Log("Brak po³¹czenia z internetem.");
+                Debug.Log("Brak poï¿½ï¿½czenia z internetem.");
                 SceneManager.LoadScene("LoginPanel");
             }
-            Debug.Log($"B³¹d w logowaniu: {e}");
+            Debug.Log($"Bï¿½ï¿½d w logowaniu: {e}");
             SceneManager.LoadScene("LoginPanel");
         }
     }
