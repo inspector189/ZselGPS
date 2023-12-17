@@ -58,6 +58,7 @@ public class GPSMap2 : MonoBehaviour
     public GameObject BrakPolaczenia;
     void Start()
     {
+        
         RedneredMap.SetActive(false);
         BrakPolaczenia.SetActive(true);
         if (Application.platform == RuntimePlatform.Android)
@@ -74,7 +75,7 @@ public class GPSMap2 : MonoBehaviour
             gyro = Input.gyro;
             gyro.enabled = true;
         }
-
+        Input.location.Start(1f, 0.1f);
         StartCoroutine(StartGPS());
 
 
@@ -108,11 +109,15 @@ public class GPSMap2 : MonoBehaviour
             {
                 if (Input.location.isEnabledByUser)
                 {
-                    Input.location.Start();
-                    yield return new WaitUntil(() => Input.location.status == LocationServiceStatus.Running);
+                    if(Input.location.status != LocationServiceStatus.Running)
+                    {
+                        Input.location.Start(1f, 0.1f);
+                    }
                     float latitude = Input.location.lastData.latitude;
                     float longitude = Input.location.lastData.longitude;
                     float accuracy = Input.location.lastData.horizontalAccuracy;
+                    double lastUpdateTime = Input.location.lastData.timestamp;
+                    double timeSinceLastUpdate = Time.time - lastUpdateTime;
 
                     PlayerPrefs.SetFloat("accuracy", accuracy);
                     float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
@@ -129,8 +134,6 @@ public class GPSMap2 : MonoBehaviour
                     informacja.text = "Szukanie lokalizacji...";
                     informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
 
-                    Input.location.Stop();
-                    yield return new WaitUntil(() => Input.location.status == LocationServiceStatus.Stopped);
                     if (timeSinceLastLocationUpdate >= updateInterval)
                     {
                         person2.transform.position = CalcPosition();
@@ -196,6 +199,7 @@ public class GPSMap2 : MonoBehaviour
         }
 
     }
+
     Vector2 FindClosestEdgePosition()
     {
         Vector2 closestPosition = Vector2.zero;

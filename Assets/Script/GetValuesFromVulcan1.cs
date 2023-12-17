@@ -15,7 +15,7 @@ using Vulcanova.Uonet.Signing;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 
-public class GetValuesFromVulcan : MonoBehaviour
+public class GetValuesFromVulcan1 : MonoBehaviour
 {
     public string symbol = "wloclawek";
 
