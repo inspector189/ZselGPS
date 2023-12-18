@@ -79,7 +79,7 @@ public class GetValuesFromVulcan1 : MonoBehaviour
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
-                DeleteAccount();
+                
                 SceneManager.LoadScene("LoginPanel");
             }
             else

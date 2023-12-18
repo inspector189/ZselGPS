@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158141423d2bb494c9712c74f3b4bd2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Map
+  SceneName: MapaTSwobodny
 --- !u!114 &1612691586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c707f61f7df694da9da6c2d3cb0193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wszystko: {fileID: 0}
 --- !u!1 &1112294393726318
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,7 +3112,7 @@ MonoBehaviour:
   renderOnTop: 1
   centered: 0
   isPreset: 1
-  latestTabIndex: 2
+  latestTabIndex: 0
 --- !u!114 &2621691174103403845
 MonoBehaviour:
   m_ObjectHideFlags: 0

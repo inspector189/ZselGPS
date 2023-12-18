@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Timetable.unity
     guid: c43ed79b659794e438e3cab3b382c45b
+  - enabled: 1
+    path: Assets/Scenes/MapaTSwobodny.unity
+    guid: 2a0515a48e51ab241bd1f0b450076b1a
+  - enabled: 1
+    path: Assets/Scenes/Lokalizowanie.unity
+    guid: 81ecb920ae163274db5d3547d209e6ae
   m_configObjects: {}
