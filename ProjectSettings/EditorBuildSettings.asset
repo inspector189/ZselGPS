@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lokalizowanie.unity
     guid: 81ecb920ae163274db5d3547d209e6ae
+  - enabled: 1
+    path: Assets/Scenes/ImportantPlaces.unity
+    guid: 34fd95a8dd9fe394b8bae7aa87020f61
   m_configObjects: {}
