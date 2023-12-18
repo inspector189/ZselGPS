@@ -40,18 +40,12 @@ public class GPSMap2 : MonoBehaviour
     public Image mapa;
     public Sprite parter;
     public Sprite pietro1;
-    public float moveSpeed = 2f;
-    private Vector3 initialAcceleration; 
-     private Vector3 lastPosition;
-     private Vector3 previousAcceleration;
-     private Vector3 initialPosition;
-    private Vector3 previousPosition;
     public Sprite pietro2;
     public Slider slider;
     private float updateInterval = 0.1f;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
-   
+    private Vector3 lastPosition;
     private Vector3 lastVelocity;
     private Vector3 currentAcceleration;
     public TextMeshProUGUI precyzjaTekst;
@@ -82,8 +76,6 @@ public class GPSMap2 : MonoBehaviour
             gyro.enabled = true;
         }
         Input.location.Start(1f, 0.1f);
-        initialPosition = Input.acceleration;
-        lastPosition = initialPosition;
         StartCoroutine(StartGPS());
 
 
@@ -301,48 +293,9 @@ public class GPSMap2 : MonoBehaviour
 
             person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
-        float currentAccuracy = Input.location.lastData.horizontalAccuracy;
-        if (currentAccuracy < 15) // Zdefiniuj swój próg precyzji
-        {
-            // Użyj GPS
-            Vector2 gpsPosition = CalcPosition();
-            personRect2.position = gpsPosition; // Ustaw pozycję z GPS
 
-            // ... reszta logiki związanej z GPS ...
-
-            // Ustawienia pozycji w zależności od piętra (tu możesz użyć swojej logiki warunkowej)
-            // np. if (PlayerPrefs.GetInt("pietro") == 2) { ... }
-        }
-        else
-        {
-            // Użyj akcelerometru
-           Vector3 currentPosition = new Vector3(Input.acceleration.x, Input.acceleration.y, 0);
-
-        // Oblicz różnicę pozycji między aktualną a początkową
-        Vector3 movementDirection = currentPosition - initialPosition;
-
-        // Sprawdź, czy został wykonany znaczący ruch przez użytkownika
-        if (movementDirection.sqrMagnitude >= 0.02f) // Możesz dostosować wartość progu
-        {
-            MovePerson(movementDirection);
-            lastPosition = currentPosition; // Zaktualizuj poprzednią pozycję
-        }
-            // ... reszta logiki związana z akcelerometrem ...
-        }
     }
-    void MovePerson(Vector3 direction)
-    {
-        // Odczytaj kierunek kompasu
-      Debug.Log("Movement Direction: " + direction);
 
-        // Odczytaj kierunek kompasu
-       Vector3 newPosition = person.transform.position + new Vector3(direction.x, direction.y, 0) * moveSpeed * Time.deltaTime;
-
-        person.transform.position = newPosition;
-        // Oblicz kierunek ruchu na podstawie kierunku kompasu
-        
-        Debug.Log(newPosition);
-    }
  void SetFloor(int floorIndex)
     {
         if (floorIndex == 0)
@@ -378,7 +331,8 @@ public class GPSMap2 : MonoBehaviour
              double rlong = 111200.0f;
             double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
              Vector3 lastDirection = Vector3.zero;
-       
+        if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
+        {
             RedneredMap.SetActive(true);
             BrakPolaczenia.SetActive(false);
             informacja.text = "";
@@ -388,9 +342,55 @@ public class GPSMap2 : MonoBehaviour
             usingGPS = true;
 
             return lastGPSPosition;
-       
-        
-  
+        }
+        else
+         {   
+        // Obliczenia na podstawie akcelerometru i kierunku kompasu
+        Vector3 currentAcceleration = Input.acceleration;
+        Vector3 acceleration = new Vector3(accX, accY, accZ);
+
+        // ... (dodaj obliczenia na podstawie akcelerometru i kierunku kompasu)
+
+        Vector3 velocityChange = acceleration * Time.deltaTime;
+        Vector3 newVelocity = lastVelocity + velocityChange;
+
+        lastVelocity = newVelocity;
+
+        Vector3 newDirection = Vector3.zero;
+        if (acceleration.sqrMagnitude >= 0.01f)
+        {
+            newDirection = acceleration.normalized;
+            lastDirection = newDirection;
+        }
+        else
+        {
+            newDirection = lastDirection;
+        }
+
+        Vector3 displacement = newVelocity * Time.deltaTime * newDirection.magnitude;
+
+        // Przypisz przemieszczenie do obiektu person (o ile to wymagane)
+        person.transform.Translate(displacement);
+
+        Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
+
+        Vector2 interpolatedPosition = Vector2.zero;
+        float interpolationFactor = 0.001f;
+        interpolatedPosition.x += currentAcceleration.x * interpolationFactor;
+        interpolatedPosition.y += currentAcceleration.y * interpolationFactor;
+
+        dorigin.x += interpolatedPosition.x;
+        dorigin.y += interpolatedPosition.y;
+        interpolatedPosition /= 50f;
+
+        if (usingGPS)
+        {
+            interpolatedPosition += lastGPSPosition;
+            Debug.Log(interpolatedPosition);
+        }
+
+        return dorigin / 50;
+    }
     }
 
     private AveragePosition avg = new AveragePosition();

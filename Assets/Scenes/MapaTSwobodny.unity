@@ -22449,7 +22449,6 @@ MonoBehaviour:
   mapa: {fileID: 737528711}
   parter: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
   pietro1: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
-  moveSpeed: 2
   pietro2: {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
   slider: {fileID: 0}
   precyzjaTekst: {fileID: 1733678411}
