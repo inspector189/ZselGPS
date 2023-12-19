@@ -20815,7 +20815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -79}
+  m_AnchoredPosition: {x: 2, y: -85.2}
   m_SizeDelta: {x: 151.1, y: 3.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644661136
@@ -44812,7 +44812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1000}
+  m_AnchoredPosition: {x: 0, y: 962}
   m_SizeDelta: {x: 0, y: -1991.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555420186
@@ -49265,6 +49265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraToMove: {fileID: 0}
   objectToCenter: {fileID: 0}
+  object2: {fileID: 0}
 --- !u!114 &1694786818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53962,6 +53963,7 @@ MonoBehaviour:
   informacja2: {fileID: 672890522}
   RedneredMap: {fileID: 458812601}
   BrakPolaczenia: {fileID: 2036426607}
+  Spinner: {fileID: 511714632}
 --- !u!114 &1890525238
 MonoBehaviour:
   m_ObjectHideFlags: 0

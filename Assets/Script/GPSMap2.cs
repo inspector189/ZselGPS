@@ -56,6 +56,7 @@ public class GPSMap2 : MonoBehaviour
     public TextMeshProUGUI informacja2;
     public GameObject RedneredMap;
     public GameObject BrakPolaczenia;
+    public GameObject Spinner;
 
     void Start()
     {
@@ -130,10 +131,16 @@ public class GPSMap2 : MonoBehaviour
                     avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
                     avg.AddMeasurement(accuracy);
 
-                    float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
-                    int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
-                    informacja.text = "Szukanie lokalizacji...";
-                    informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
+                    if(BrakPolaczenia.activeSelf)
+                    {
+                        float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
+                        Spinner.SetActive(true);
+                        int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
+                        informacja.text = "Szukanie lokalizacji...";
+                        informacja2.color = Color.white;
+                        informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
+                    }
+                    
 
                     if (timeSinceLastLocationUpdate >= updateInterval)
                     {
@@ -192,6 +199,13 @@ public class GPSMap2 : MonoBehaviour
                         timeSinceLastLocationUpdate = 0.0f;
                     }
 
+                }
+                else
+                {
+                    Spinner.SetActive(false);
+                    informacja.text = "";
+                    informacja2.color = Color.red;
+                    informacja2.text = "Brak dostępu do lokalizacji!";
                 }
             }
             timeSinceLastLocationUpdate += Time.deltaTime;
