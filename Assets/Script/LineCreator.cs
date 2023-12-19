@@ -1,75 +1,87 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class LineCreator : MonoBehaviour
 {
-    public GameObject object1;
-    public GameObject object2;
-    public List<RectTransform> waypoints;
-    private LineRenderer lineRenderer;
+    public Transform person; // Obiekt reprezentujący Person
+    public Transform destination; // Cel podróży, np. drzwi
+
+    public List<Transform> waypoints; // Lista waypointów
+
+    private LineRenderer lineRenderer; // Komponent do rysowania linii
 
     void Start()
     {
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.widthMultiplier = 0.02f;
-        lineRenderer.startColor = Color.blue;
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        if (lineRenderer == null)
+        {
+            lineRenderer = gameObject.AddComponent<LineRenderer>();
+            lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        }
+
+        lineRenderer.startWidth = 0.02f; // Szerokość linii
+        lineRenderer.endWidth = 0.02f;
+        lineRenderer.startColor = Color.blue; // Ustawienie koloru na niebieski
         lineRenderer.endColor = Color.blue;
 
-        lineRenderer.sortingLayerName = "Foreground";
-        lineRenderer.sortingOrder = 1;
-
-        DrawOptimalPath();
+        DrawShortestPath();
     }
 
-    void DrawOptimalPath()
+    void DrawShortestPath()
     {
-        List<Vector3> pathPoints = FindShortestPathThroughWaypoints();
-        lineRenderer.positionCount = pathPoints.Count;
-        lineRenderer.SetPositions(pathPoints.ToArray());
+        if (person == null || destination == null || waypoints.Count == 0)
+            return;
+
+        List<Transform> shortestPath = FindShortestPath(person, destination);
+        DrawPath(shortestPath);
     }
 
-    List<Vector3> FindShortestPathThroughWaypoints()
+    List<Transform> FindShortestPath(Transform start, Transform end)
     {
-        var shortestPath = new List<Vector3>();
-        var bestDistance = float.MaxValue;
+        List<Transform> path = new List<Transform>();
 
-        // Sprawdzanie wszystkich permutacji waypoints
-        foreach (var permutation in GetPermutations(waypoints, waypoints.Count))
+        Transform current = start;
+        path.Add(current);
+
+        while (current != end)
         {
-            var path = new List<Vector3> { object1.transform.position };
-            var currentDistance = 0f;
-            var lastPos = object1.transform.position;
+            current = GetClosestWaypoint(current, end);
+            path.Add(current);
+        }
 
-            foreach (var waypoint in permutation)
+        return path;
+    }
+
+    Transform GetClosestWaypoint(Transform current, Transform target)
+    {
+        Transform closest = null;
+        float minDistance = Mathf.Infinity;
+
+        foreach (Transform waypoint in waypoints)
+        {
+            if (waypoint != current)
             {
-                var distance = Vector3.Distance(lastPos, waypoint.position);
-                currentDistance += distance;
-                path.Add(waypoint.position);
-                lastPos = waypoint.position;
-            }
-
-            currentDistance += Vector3.Distance(lastPos, object2.transform.position);
-            path.Add(object2.transform.position);
-
-            if (currentDistance < bestDistance)
-            {
-                bestDistance = currentDistance;
-                shortestPath = path;
+                float distance = Vector3.Distance(waypoint.position, current.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closest = waypoint;
+                }
             }
         }
 
-        return shortestPath;
+        return closest;
     }
 
-    // Generator permutacji listy
-    IEnumerable<IEnumerable<T>> GetPermutations<T>(IEnumerable<T> list, int length)
+    void DrawPath(List<Transform> path)
     {
-        if (length == 1) return list.Select(t => new T[] { t });
+        if (path.Count < 2)
+            return;
 
-        return GetPermutations(list, length - 1)
-            .SelectMany(t => list.Where(e => !t.Contains(e)),
-                        (t1, t2) => t1.Concat(new T[] { t2 }));
+        lineRenderer.positionCount = path.Count;
+        for (int i = 0; i < path.Count; i++)
+        {
+            lineRenderer.SetPosition(i, path[i].position);
+        }
     }
 }
