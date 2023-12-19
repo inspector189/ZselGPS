@@ -51,27 +51,29 @@ public class GetValuesFromVulcan1 : MonoBehaviour
     {
         try
         {
+
             string token = PlayerPrefs.GetString("token");
-
+            Debug.Log("1");
             var firebaseToken = PlayerPrefs.GetString("firebaseToken");
-
+            Debug.Log("2");
             var pk = PlayerPrefs.GetString("pk");
-
+            Debug.Log("3");
             string certString = PlayerPrefs.GetString("cert");
+            Debug.Log("4");
             byte[] cert = Convert.FromBase64String(certString);
-
+            Debug.Log("5");
             var x509Cert2 = new X509Certificate2(cert);
-
+            Debug.Log("6");
             var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
-
+            Debug.Log("7");
             var instanceUrlProvider = new InstanceUrlProvider();
-
+            Debug.Log("8");
             var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
-
+            Debug.Log("9");
             var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
-
+            Debug.Log("10");
             var firstAccount = registerHebeResponse.Envelope[0];
-
+            Debug.Log("11");
             Debug.Log($"Imiê: {firstAccount.Pupil.FirstName}\n Szko³a: {firstAccount.Unit.Name}");
 
         }

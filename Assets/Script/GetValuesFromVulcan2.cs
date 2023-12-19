@@ -167,7 +167,17 @@ public class GetValuesFromVulcan2 : MonoBehaviour
 
                         // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
                         TextMeshProUGUI placeholderPlan = nowyInputField3.GetComponentInChildren<TextMeshProUGUI>();
-                        placeholderPlan.text = $"{lesson.Subject.Name}\n{lesson.Room.Code} {lesson.TeacherPrimary.DisplayName}";
+                        if(lesson.Subject.Name.Length > 35)
+                        {
+                            string nazwaLekcji = lesson.Subject.Kod;
+                            placeholderPlan.text = $"{nazwaLekcji}\n{lesson.Room.Code} {lesson.TeacherPrimary.DisplayName}";
+                        }
+                        else
+                        {
+                            string nazwaLekcji = lesson.Subject.Name;
+                            placeholderPlan.text = $"{nazwaLekcji}\n{lesson.Room.Code} {lesson.TeacherPrimary.DisplayName}";
+                        }
+                        
                         //wypisywanie nauczycieli
                         GameObject nowyInputField4 = Instantiate(inputNauczyciele, PanelNauczyciele);
 
@@ -202,10 +212,10 @@ public class GetValuesFromVulcan2 : MonoBehaviour
             }
             else
             {
-                Debug.Log("Brak po��czenia z internetem.");
+                Debug.Log("Brak połączenia z internetem.");
                 SceneManager.LoadScene("LoginPanel");
             }
-            Debug.Log($"B��d w logowaniu: {e}");
+            Debug.Log($"Błąd w logowaniu: {e}");
             SceneManager.LoadScene("LoginPanel");
         }
     }
