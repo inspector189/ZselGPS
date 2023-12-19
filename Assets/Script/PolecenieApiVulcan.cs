@@ -14,6 +14,8 @@ using Vulcanova.Uonet.Firebase;
 using Vulcanova.Uonet.Signing;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class PolecenieApiVulcan : MonoBehaviour
 {
@@ -82,6 +84,7 @@ public class PolecenieApiVulcan : MonoBehaviour
     {
         try
         {
+            czyWykonacUpdate = false;
             spinner.SetActive(true);
             string token = tokenInputField.text; // Pobierz wartość tokenu z InputFielda
 
@@ -142,7 +145,7 @@ public class PolecenieApiVulcan : MonoBehaviour
                 textMesh.text = "Brak połączenia z internetem.";
             }
 
-
+            czyWykonacUpdate = true;
             textMesh.text = $"{e.Message}";
         }
        

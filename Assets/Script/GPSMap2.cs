@@ -56,6 +56,7 @@ public class GPSMap2 : MonoBehaviour
     public TextMeshProUGUI informacja2;
     public GameObject RedneredMap;
     public GameObject BrakPolaczenia;
+
     void Start()
     {
         
