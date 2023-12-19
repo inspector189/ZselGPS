@@ -647,6 +647,8 @@ struct LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D;
 struct LoadingScene_tB23063F019538B415FDABC2BCE7883258BC00B3F;
 // UnityEngine.LocationService
 struct LocationService_tF2F2720FE2C07562EBFD128889F9A99F4B41B1B2;
+// LogOutOnly
+struct LogOutOnly_tF68B4A571763031ADFBA423A3CF0681C6347BAA1;
 // Vulcanova.Uonet.Api.Auth.Login
 struct Login_t54948E5C206DA5DF675B9F46B097F92C112060DB;
 // Vulcanova.Uonet.Api.MaintenanceBreakException
@@ -5835,6 +5837,11 @@ struct LoadingScene_tB23063F019538B415FDABC2BCE7883258BC00B3F  : public MonoBeha
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___PercentLoading_5;
 };
 
+// LogOutOnly
+struct LogOutOnly_tF68B4A571763031ADFBA423A3CF0681C6347BAA1  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+};
+
 // NewBehaviourScript
 struct NewBehaviourScript_t89363A736D121ACCCE70DC36A66775D2F1D42CF7  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -8713,6 +8720,10 @@ struct DisableFullScreen_t9F5E834625896DD501D6C6584FB97C88DC8EB3D8_StaticFields
 // LoadingScene
 
 // LoadingScene
+
+// LogOutOnly
+
+// LogOutOnly
 
 // NewBehaviourScript
 
@@ -18552,6 +18563,52 @@ IL_0022:
 }
 // System.Void LoadingScene::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScene__ctor_m847ACA57C40A36DB46084A9D5B865D85A2B3E9DA (LoadingScene_tB23063F019538B415FDABC2BCE7883258BC00B3F* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void LogOutOnly::DeleteAccount()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LogOutOnly_DeleteAccount_mE15E650F6E4D3097FBADCD12A38CFB19E2DFEA66 (LogOutOnly_tF68B4A571763031ADFBA423A3CF0681C6347BAA1* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3988471A2015D5CC894E22E1A900B66E97CD4306);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral89903CF4CCDC9366D6DFF0425CDD30B566EB4689);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB63C27A619AD7A36C4B3F3ECF3FA384C6EE13052);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB7D46D73BAA693C07079DE75AE2F991407BF0A6E);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF7212B27751FE393B73657C5740876ABCB2AEF24);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// PlayerPrefs.DeleteKey("token");
+		PlayerPrefs_DeleteKey_mF3A7857B52DCEF4139843CD28716788624C2AD30(_stringLiteral3988471A2015D5CC894E22E1A900B66E97CD4306, NULL);
+		// PlayerPrefs.DeleteKey("firebaseToken");
+		PlayerPrefs_DeleteKey_mF3A7857B52DCEF4139843CD28716788624C2AD30(_stringLiteral89903CF4CCDC9366D6DFF0425CDD30B566EB4689, NULL);
+		// PlayerPrefs.DeleteKey("pk");
+		PlayerPrefs_DeleteKey_mF3A7857B52DCEF4139843CD28716788624C2AD30(_stringLiteralF7212B27751FE393B73657C5740876ABCB2AEF24, NULL);
+		// PlayerPrefs.DeleteKey("cert");
+		PlayerPrefs_DeleteKey_mF3A7857B52DCEF4139843CD28716788624C2AD30(_stringLiteralB63C27A619AD7A36C4B3F3ECF3FA384C6EE13052, NULL);
+		// SceneManager.LoadScene("LoginPanel");
+		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
+		SceneManager_LoadScene_mBB3DBC1601A21F8F4E8A5D68FED30EA9412F218E(_stringLiteralB7D46D73BAA693C07079DE75AE2F991407BF0A6E, NULL);
+		// }
+		return;
+	}
+}
+// System.Void LogOutOnly::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LogOutOnly__ctor_mACFA2CDEF2AEA0E2C546A4345847768A75FA680C (LogOutOnly_tF68B4A571763031ADFBA423A3CF0681C6347BAA1* __this, const RuntimeMethod* method) 
 {
 	{
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);

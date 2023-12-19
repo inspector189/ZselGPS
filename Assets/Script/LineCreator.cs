@@ -1,93 +1,75 @@
-using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class LineCreator : MonoBehaviour
 {
     public GameObject object1;
     public GameObject object2;
-    public List<GameObject> drawableAreas; // Lista obszarów, na których można rysować linię
-
-    private LineRenderer blueLineRenderer;
-    private LineRenderer grayLineRenderer;
-    private Vector3 initialPosition1;
+    public List<RectTransform> waypoints;
+    private LineRenderer lineRenderer;
 
     void Start()
     {
-        // Inicjalizacja niebieskiego LineRenderer
-        blueLineRenderer = gameObject.AddComponent<LineRenderer>();
-        SetupLineRenderer(blueLineRenderer, Color.blue, 0.025f);
-
-        // Inicjalizacja szarego LineRenderer
-        grayLineRenderer = new GameObject("GrayLine").AddComponent<LineRenderer>();
-        SetupLineRenderer(grayLineRenderer, Color.gray, 0.025f);
-        grayLineRenderer.enabled = false;
-
-        // Zapisanie początkowej pozycji object1
-        initialPosition1 = object1.transform.position;
-    }
-
-    void Update()
-    {
-        if (object1 != null && object2 != null)
-        {
-            Vector3 object1Pos = object1.transform.position;
-            Vector3 object2Pos = object2.transform.position;
-
-            if (IsLineInDrawableArea(object1Pos, object2Pos))
-            {
-                // Aktualizacja niebieskiej linii
-                blueLineRenderer.SetPosition(0, new Vector3(object1Pos.x, object1Pos.y, 0));
-                blueLineRenderer.SetPosition(1, new Vector3(object2Pos.x, object2Pos.y, 0));
-
-                // Oblicz środek między object1 i object2
-                Vector3 middlePoint = (object1Pos + object2Pos) / 2;
-
-                // Aktualizacja szarej linii
-                grayLineRenderer.enabled = true;
-                grayLineRenderer.SetPosition(0, new Vector3(initialPosition1.x, initialPosition1.y, 0));
-                grayLineRenderer.SetPosition(1, new Vector3(middlePoint.x, middlePoint.y, 0));
-            }
-        }
-    }
-
-    private bool IsLineInDrawableArea(Vector3 start, Vector3 end, int checks = 10)
-    {
-        for (int i = 0; i <= checks; i++)
-        {
-            Vector3 point = Vector3.Lerp(start, end, i / (float)checks);
-            if (!IsInDrawableArea(point))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private bool IsInDrawableArea(Vector3 position)
-    {
-        foreach (var area in drawableAreas)
-        {
-            RectTransform rectTransform = area.GetComponent<RectTransform>();
-            if (rectTransform != null)
-            {
-                Vector3 localPos = rectTransform.InverseTransformPoint(position);
-                if (rectTransform.rect.Contains(localPos))
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private void SetupLineRenderer(LineRenderer lineRenderer, Color color, float width)
-    {
-        lineRenderer.startWidth = width;
-        lineRenderer.endWidth = width;
-        lineRenderer.positionCount = 2;
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = color;
-        lineRenderer.endColor = color;
-        lineRenderer.useWorldSpace = true;
+        lineRenderer.widthMultiplier = 0.02f;
+        lineRenderer.startColor = Color.blue;
+        lineRenderer.endColor = Color.blue;
+
+        lineRenderer.sortingLayerName = "Foreground";
+        lineRenderer.sortingOrder = 1;
+
+        DrawOptimalPath();
+    }
+
+    void DrawOptimalPath()
+    {
+        List<Vector3> pathPoints = FindShortestPathThroughWaypoints();
+        lineRenderer.positionCount = pathPoints.Count;
+        lineRenderer.SetPositions(pathPoints.ToArray());
+    }
+
+    List<Vector3> FindShortestPathThroughWaypoints()
+    {
+        var shortestPath = new List<Vector3>();
+        var bestDistance = float.MaxValue;
+
+        // Sprawdzanie wszystkich permutacji waypoints
+        foreach (var permutation in GetPermutations(waypoints, waypoints.Count))
+        {
+            var path = new List<Vector3> { object1.transform.position };
+            var currentDistance = 0f;
+            var lastPos = object1.transform.position;
+
+            foreach (var waypoint in permutation)
+            {
+                var distance = Vector3.Distance(lastPos, waypoint.position);
+                currentDistance += distance;
+                path.Add(waypoint.position);
+                lastPos = waypoint.position;
+            }
+
+            currentDistance += Vector3.Distance(lastPos, object2.transform.position);
+            path.Add(object2.transform.position);
+
+            if (currentDistance < bestDistance)
+            {
+                bestDistance = currentDistance;
+                shortestPath = path;
+            }
+        }
+
+        return shortestPath;
+    }
+
+    // Generator permutacji listy
+    IEnumerable<IEnumerable<T>> GetPermutations<T>(IEnumerable<T> list, int length)
+    {
+        if (length == 1) return list.Select(t => new T[] { t });
+
+        return GetPermutations(list, length - 1)
+            .SelectMany(t => list.Where(e => !t.Contains(e)),
+                        (t1, t2) => t1.Concat(new T[] { t2 }));
     }
 }
