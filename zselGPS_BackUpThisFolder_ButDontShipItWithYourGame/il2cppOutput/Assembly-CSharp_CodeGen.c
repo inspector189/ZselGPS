@@ -180,18 +180,18 @@ extern void GPSMap2_SetFloorVisuals_m7761E3BA6315372A8D56193BDD82E31CEB1604B6 (v
 extern void GPSMap2_CalcPosition_mC0295D7D3E1EA2DA534A3FB4A4DA58A324FCDEE7 (void);
 // 0x00000054 System.Void GPSMap2::.ctor()
 extern void GPSMap2__ctor_mE36DA7A1370F1C1364DF22E5614BEDD110D2E7B0 (void);
-// 0x00000055 System.Void GPSMap2/<StartGPS>d__45::.ctor(System.Int32)
-extern void U3CStartGPSU3Ed__45__ctor_mE0BFE6D383F96D5318FAED5D7934D322FCBF249F (void);
-// 0x00000056 System.Void GPSMap2/<StartGPS>d__45::System.IDisposable.Dispose()
-extern void U3CStartGPSU3Ed__45_System_IDisposable_Dispose_m13EA2CBB3D1D0BE0EFA24F5A32F6D0945830E714 (void);
-// 0x00000057 System.Boolean GPSMap2/<StartGPS>d__45::MoveNext()
-extern void U3CStartGPSU3Ed__45_MoveNext_m2ED27BE1259D10D2487D1A6425EDB4F3905B2AB9 (void);
-// 0x00000058 System.Object GPSMap2/<StartGPS>d__45::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CStartGPSU3Ed__45_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF27D851A37474779F0A630675713A906747BA998 (void);
-// 0x00000059 System.Void GPSMap2/<StartGPS>d__45::System.Collections.IEnumerator.Reset()
-extern void U3CStartGPSU3Ed__45_System_Collections_IEnumerator_Reset_m1D9C4F02AEB88E4F4CBFA1066F9563132EA49B02 (void);
-// 0x0000005A System.Object GPSMap2/<StartGPS>d__45::System.Collections.IEnumerator.get_Current()
-extern void U3CStartGPSU3Ed__45_System_Collections_IEnumerator_get_Current_m18F1AB326FCF78671F61911FAD6D72122FD7A6E8 (void);
+// 0x00000055 System.Void GPSMap2/<StartGPS>d__46::.ctor(System.Int32)
+extern void U3CStartGPSU3Ed__46__ctor_m2F22BEB2738EADA895C013E1F3286F0FEF79F4F6 (void);
+// 0x00000056 System.Void GPSMap2/<StartGPS>d__46::System.IDisposable.Dispose()
+extern void U3CStartGPSU3Ed__46_System_IDisposable_Dispose_mF77679E7381B984D255119A750B9386E78A92B68 (void);
+// 0x00000057 System.Boolean GPSMap2/<StartGPS>d__46::MoveNext()
+extern void U3CStartGPSU3Ed__46_MoveNext_mB5B18DC039C4E27C591676E83A4909640286DBDD (void);
+// 0x00000058 System.Object GPSMap2/<StartGPS>d__46::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CStartGPSU3Ed__46_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m03CFAC285F5AF718C28F12937872F87DCCD7F532 (void);
+// 0x00000059 System.Void GPSMap2/<StartGPS>d__46::System.Collections.IEnumerator.Reset()
+extern void U3CStartGPSU3Ed__46_System_Collections_IEnumerator_Reset_m63527D6E6EE94F08C2AE735D969C5E43F872FB25 (void);
+// 0x0000005A System.Object GPSMap2/<StartGPS>d__46::System.Collections.IEnumerator.get_Current()
+extern void U3CStartGPSU3Ed__46_System_Collections_IEnumerator_get_Current_mA7D83EDFBCDDD85D7605B970E36D5B0A5F389DE9 (void);
 // 0x0000005B System.Void Kompasik::Start()
 extern void Kompasik_Start_mB57E256FA4C63848EDE7021574928EE32D64B484 (void);
 // 0x0000005C System.Void Kompasik::Update()
@@ -4931,12 +4931,12 @@ static Il2CppMethodPointer s_methodPointers[2450] =
 	GPSMap2_SetFloorVisuals_m7761E3BA6315372A8D56193BDD82E31CEB1604B6,
 	GPSMap2_CalcPosition_mC0295D7D3E1EA2DA534A3FB4A4DA58A324FCDEE7,
 	GPSMap2__ctor_mE36DA7A1370F1C1364DF22E5614BEDD110D2E7B0,
-	U3CStartGPSU3Ed__45__ctor_mE0BFE6D383F96D5318FAED5D7934D322FCBF249F,
-	U3CStartGPSU3Ed__45_System_IDisposable_Dispose_m13EA2CBB3D1D0BE0EFA24F5A32F6D0945830E714,
-	U3CStartGPSU3Ed__45_MoveNext_m2ED27BE1259D10D2487D1A6425EDB4F3905B2AB9,
-	U3CStartGPSU3Ed__45_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF27D851A37474779F0A630675713A906747BA998,
-	U3CStartGPSU3Ed__45_System_Collections_IEnumerator_Reset_m1D9C4F02AEB88E4F4CBFA1066F9563132EA49B02,
-	U3CStartGPSU3Ed__45_System_Collections_IEnumerator_get_Current_m18F1AB326FCF78671F61911FAD6D72122FD7A6E8,
+	U3CStartGPSU3Ed__46__ctor_m2F22BEB2738EADA895C013E1F3286F0FEF79F4F6,
+	U3CStartGPSU3Ed__46_System_IDisposable_Dispose_mF77679E7381B984D255119A750B9386E78A92B68,
+	U3CStartGPSU3Ed__46_MoveNext_mB5B18DC039C4E27C591676E83A4909640286DBDD,
+	U3CStartGPSU3Ed__46_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m03CFAC285F5AF718C28F12937872F87DCCD7F532,
+	U3CStartGPSU3Ed__46_System_Collections_IEnumerator_Reset_m63527D6E6EE94F08C2AE735D969C5E43F872FB25,
+	U3CStartGPSU3Ed__46_System_Collections_IEnumerator_get_Current_mA7D83EDFBCDDD85D7605B970E36D5B0A5F389DE9,
 	Kompasik_Start_mB57E256FA4C63848EDE7021574928EE32D64B484,
 	Kompasik_Update_m44AF687BA3FB411CFC812E5AB7E15A1CE3D5BB31,
 	Kompasik__ctor_mF4596F4185F477FB7A6CC32129EBD34BD444FC8D,

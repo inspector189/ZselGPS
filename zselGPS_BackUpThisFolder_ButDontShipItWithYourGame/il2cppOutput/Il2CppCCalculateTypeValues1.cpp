@@ -9022,14 +9022,14 @@ struct U3CStartGPSU3Ed__10_tFC26DE2E52BAA135566C07B00685960B0F291BD3  : public R
 	GPSLocate_t128E0BBF34524EB66396FE157BD2240D57A031E4* ___U3CU3E4__this_2;
 };
 
-// GPSMap2/<StartGPS>d__45
-struct U3CStartGPSU3Ed__45_t83E59278DD43EAF8C4E561DCE5427980E54B8290  : public RuntimeObject
+// GPSMap2/<StartGPS>d__46
+struct U3CStartGPSU3Ed__46_tB951429426D441439CFEE5F1E4B8F2C0E3D41865  : public RuntimeObject
 {
-	// System.Int32 GPSMap2/<StartGPS>d__45::<>1__state
+	// System.Int32 GPSMap2/<StartGPS>d__46::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object GPSMap2/<StartGPS>d__45::<>2__current
+	// System.Object GPSMap2/<StartGPS>d__46::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// GPSMap2 GPSMap2/<StartGPS>d__45::<>4__this
+	// GPSMap2 GPSMap2/<StartGPS>d__46::<>4__this
 	GPSMap2_t7AACC0286AFEAFF85ACAD7A260C23D2350A673B9* ___U3CU3E4__this_2;
 };
 
@@ -37281,8 +37281,10 @@ struct GPSMap2_t7AACC0286AFEAFF85ACAD7A260C23D2350A673B9  : public MonoBehaviour
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___RedneredMap_46;
 	// UnityEngine.GameObject GPSMap2::BrakPolaczenia
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___BrakPolaczenia_47;
+	// UnityEngine.GameObject GPSMap2::Spinner
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___Spinner_48;
 	// AveragePosition GPSMap2::avg
-	AveragePosition_tAB6D8F4646CB0EE1275C6A1F499223133FCFD994* ___avg_48;
+	AveragePosition_tAB6D8F4646CB0EE1275C6A1F499223133FCFD994* ___avg_49;
 };
 
 // GetValuesFromVulcan1
@@ -45125,9 +45127,9 @@ struct U3CU3Ec_tE7B50C42F5C9F952DA15AE883C97C6E306C5C3AD_StaticFields
 
 // GPSLocate/<StartGPS>d__10
 
-// GPSMap2/<StartGPS>d__45
+// GPSMap2/<StartGPS>d__46
 
-// GPSMap2/<StartGPS>d__45
+// GPSMap2/<StartGPS>d__46
 
 // UnityEngine.GUILayoutUtility/LayoutCache
 
@@ -61317,7 +61319,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize7326 = { sizeof(U3CStartGPSU
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7327;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7327 = { sizeof(GPSLocate_t128E0BBF34524EB66396FE157BD2240D57A031E4), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7328;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7328 = { sizeof(U3CStartGPSU3Ed__45_t83E59278DD43EAF8C4E561DCE5427980E54B8290), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7328 = { sizeof(U3CStartGPSU3Ed__46_tB951429426D441439CFEE5F1E4B8F2C0E3D41865), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7329;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7329 = { sizeof(GPSMap2_t7AACC0286AFEAFF85ACAD7A260C23D2350A673B9), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7330;

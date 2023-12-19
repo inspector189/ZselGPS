@@ -52404,6 +52404,7 @@ MonoBehaviour:
   informacja2: {fileID: 222309722}
   RedneredMap: {fileID: 1599872606}
   BrakPolaczenia: {fileID: 1973198625}
+  Spinner: {fileID: 106824309}
 --- !u!114 &1808030362
 MonoBehaviour:
   m_ObjectHideFlags: 0
