@@ -25480,18 +25480,14 @@ struct LayoutGroupFix_t4D77F85253418E124DC79343AEDD502357DD90AC  : public MonoBe
 // LineCreator
 struct LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// UnityEngine.GameObject LineCreator::object1
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___object1_4;
-	// UnityEngine.GameObject LineCreator::object2
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___object2_5;
-	// System.Collections.Generic.List`1<UnityEngine.GameObject> LineCreator::drawableAreas
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___drawableAreas_6;
-	// UnityEngine.LineRenderer LineCreator::blueLineRenderer
-	LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* ___blueLineRenderer_7;
-	// UnityEngine.LineRenderer LineCreator::grayLineRenderer
-	LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* ___grayLineRenderer_8;
-	// UnityEngine.Vector3 LineCreator::initialPosition1
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___initialPosition1_9;
+	// UnityEngine.Transform LineCreator::person
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___person_4;
+	// UnityEngine.Transform LineCreator::destination
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___destination_5;
+	// System.Collections.Generic.List`1<UnityEngine.Transform> LineCreator::waypoints
+	List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D* ___waypoints_6;
+	// UnityEngine.LineRenderer LineCreator::lineRenderer
+	LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* ___lineRenderer_7;
 };
 
 // Michsky.MUIP.ListView
@@ -41371,9 +41367,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7329[46] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7330[3] = 
 {
 	static_cast<int32_t>(offsetof(Kompasik_t20E5BDB6B7A152DBA526C148CED4722958A9CA28, ___Ikonka_4)),static_cast<int32_t>(offsetof(Kompasik_t20E5BDB6B7A152DBA526C148CED4722958A9CA28, ___gyroEnabled_5)),static_cast<int32_t>(offsetof(Kompasik_t20E5BDB6B7A152DBA526C148CED4722958A9CA28, ___gyro_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7331[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7331[4] = 
 {
-	static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___object1_4)),static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___object2_5)),static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___drawableAreas_6)),static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___blueLineRenderer_7)),static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___grayLineRenderer_8)),static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___initialPosition1_9)),};
+	static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___person_4)),static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___destination_5)),static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___waypoints_6)),static_cast<int32_t>(offsetof(LineCreator_t20100EB30B0E2643E226A1010D71937E71EE8E1D, ___lineRenderer_7)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7332[2] = 
 {
 	static_cast<int32_t>(offsetof(LoadingScene_tB23063F019538B415FDABC2BCE7883258BC00B3F, ___SceneName_4)),static_cast<int32_t>(offsetof(LoadingScene_tB23063F019538B415FDABC2BCE7883258BC00B3F, ___PercentLoading_5)),};

@@ -154,7 +154,7 @@ public class GPSMap2 : MonoBehaviour
                                         Vector2 newPosition = FindClosestEdgePosition();
                                         if (newPosition != Vector2.zero)
                                         {
-                                            Debug.Log("Najbliższa pozycja krawędzi dla persony: " + newPosition);
+                                            
                                             personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
                                         }
                                     }
@@ -178,7 +178,7 @@ public class GPSMap2 : MonoBehaviour
                                         Vector2 newPosition = FindClosestEdgePosition();
                                         if (newPosition != Vector2.zero)
                                         {
-                                            personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
+                                        personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
                                         }
                                     }
                                     else
@@ -338,14 +338,14 @@ public class GPSMap2 : MonoBehaviour
         pietro1GO.SetActive(pietro1Active);
         pietro2GO.SetActive(pietro2Active);
     }
-        private Vector2 CalcPosition()
+    private Vector2 CalcPosition()
     {
 
-            Vector2 act = avg.GetAveragePosition();
-            float accuracy = PlayerPrefs.GetFloat("accuracy");
-             double rlong = 111200.0f;
-            double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
-             Vector3 lastDirection = Vector3.zero;
+        Vector2 act = avg.GetAveragePosition();
+        float accuracy = PlayerPrefs.GetFloat("accuracy");
+        double rlong = 111200.0f;
+        double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
+        Vector3 lastDirection = Vector3.zero;
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
             RedneredMap.SetActive(true);
@@ -359,7 +359,24 @@ public class GPSMap2 : MonoBehaviour
             return lastGPSPosition;
         }
         else
-         {   
+        {
+            // Tu wykonuje się interpolacja liniowa
+            Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
+
+            // Aktualna pozycja obiektu person
+            Vector2 currentPosition = new Vector2(person.transform.position.x, person.transform.position.y);
+
+            // Cel interpolacji
+            Vector2 targetPosition = dorigin / 50f;
+
+            // Przykładowa wartość dla t
+            float interpolationFactor = 0.5f;
+
+            // Obliczenie nowej pozycji
+            Vector2 newPosition = InterpolatePosition(currentPosition, targetPosition, interpolationFactor);
+
+            return newPosition;
+            /*
         // Obliczenia na podstawie akcelerometru i kierunku kompasu
         Vector3 currentAcceleration = Input.acceleration;
         Vector3 acceleration = new Vector3(accX, accY, accZ);
@@ -405,8 +422,15 @@ public class GPSMap2 : MonoBehaviour
         }
 
         return dorigin / 50;
+            
     }
+            */
+        }
     }
-
+    Vector2 InterpolatePosition(Vector2 startPosition, Vector2 endPosition, float t)
+    {
+        t = Mathf.Clamp01(t);
+        return Vector2.Lerp(startPosition, endPosition, t);
+    }
     private AveragePosition avg = new AveragePosition();
 }
