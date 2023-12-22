@@ -51,7 +51,8 @@ public class GetValuesFromVulcan2 : MonoBehaviour
         UpdateDateText();
         btnPlus.onClick.AddListener(PlusDate);
         btnMinus.onClick.AddListener(MinusDate);
-        if (PlayerPrefs.HasKey("token") && PlayerPrefs.HasKey("firebaseToken") && PlayerPrefs.HasKey("pk") && PlayerPrefs.HasKey("cert"))
+        Debug.Log(PlayerPrefs.GetString("token"));
+        if (PlayerPrefs.HasKey("token") && PlayerPrefs.HasKey("firebaseToken") && PlayerPrefs.HasKey("pk") && PlayerPrefs.HasKey("cert") || PlayerPrefs.GetString("token") == "testowe")
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
@@ -59,11 +60,13 @@ public class GetValuesFromVulcan2 : MonoBehaviour
             }
             else
             {
+                Debug.Log("tutej");
                 SceneManager.LoadScene("LoginPanel");
             }
         }
         else
         {
+            Debug.Log("tutej");
             SceneManager.LoadScene("LoginPanel");
         }
         
@@ -96,6 +99,18 @@ public class GetValuesFromVulcan2 : MonoBehaviour
             DestroyImmediate(child);
         }
     }
+
+    public class LessonData
+    {
+        public int Position;
+        public string SubjectName;
+        public string TeacherName;
+        public string StartTime;
+        public string EndTime;
+        public string RoomCode;
+        public string SubjectCode;
+    }
+
     public async void LoginProcess(DateTime selectedDate)
     {
         iput1.SetActive(true);
@@ -104,104 +119,162 @@ public class GetValuesFromVulcan2 : MonoBehaviour
         iput4.SetActive(true);
         try
         {
+            Debug.Log("działa");
             string token = PlayerPrefs.GetString("token");
-            var firebaseToken = PlayerPrefs.GetString("firebaseToken");
-            var pk = PlayerPrefs.GetString("pk");
-            string certString = PlayerPrefs.GetString("cert");
-            byte[] cert = Convert.FromBase64String(certString);
-            var x509Cert2 = new X509Certificate2(cert);
-
-            var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
-            var instanceUrlProvider = new InstanceUrlProvider();
-            var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
-            var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
-            var firstAccount = registerHebeResponse.Envelope[0];
-            var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
-            var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
-
-
-            var lessonsResponse = await unitApiClient.GetAsync(GetScheduleEntriesByPupilQuery.ApiEndpoint, new GetScheduleEntriesByPupilQuery(
-                            firstAccount.Pupil.Id,
-                            selectedDate,
-                            selectedDate,
-                            DateTime.MinValue,
-                            500,
-                            int.MinValue));
-
-            var sortedLessons = lessonsResponse.Envelope.OrderBy(lesson => lesson.TimeSlot.Position);
-
-            
-            foreach (var lesson in sortedLessons)
+            Debug.Log(token);
+            if (token == "testowe")
             {
-                
-                try
+                LessonData[] lessonsData = new LessonData[]
                 {
-                    if (lesson.Visible)
+                    new LessonData { Position = 1, SubjectName = "Matematyka", TeacherName = "Pan Kowalski", StartTime = "08:00", EndTime = "08:45", RoomCode = "101", SubjectCode = "MAT" },
+                    new LessonData { Position = 2, SubjectName = "Historia", TeacherName = "Pani Nowak", StartTime = "08:50", EndTime = "09:35", RoomCode = "102", SubjectCode = "HIS" },
+                    new LessonData { Position = 3, SubjectName = "Biologia", TeacherName = "Pan Wiśniewski", StartTime = "09:50", EndTime = "10:35", RoomCode = "103", SubjectCode = "BIO" },
+                    new LessonData { Position = 4, SubjectName = "Chemia", TeacherName = "Pani Kowalczyk", StartTime = "10:50", EndTime = "11:35", RoomCode = "104", SubjectCode = "CHE" },
+                    new LessonData { Position = 5, SubjectName = "Język angielski", TeacherName = "Pan Wojciechowski", StartTime = "11:50", EndTime = "12:35", RoomCode = "105", SubjectCode = "ENG" },
+                    new LessonData { Position = 6, SubjectName = "Wychowanie fizyczne", TeacherName = "Pani Lewandowska", StartTime = "12:50", EndTime = "13:35", RoomCode = "Gym", SubjectCode = "PE" },
+                    new LessonData { Position = 7, SubjectName = "Informatyka", TeacherName = "Pan Dąbrowski", StartTime = "13:50", EndTime = "14:35", RoomCode = "106", SubjectCode = "INF" },
+                    new LessonData { Position = 8, SubjectName = "Plastyka", TeacherName = "Pani Mazur", StartTime = "14:40", EndTime = "15:25", RoomCode = "107", SubjectCode = "ART" }
+    };
+
+                foreach (var lessonData in lessonsData)
+                {
+                    try
                     {
-                        // Wypisz szczeg�y lekcji, nazwy w�a�ciwo�ci mog� si� r�ni�
-                        Debug.Log($"nr: {lesson.TimeSlot.Position}, przedmiot: {lesson.Subject.Name}, nauczyciel: {lesson.TeacherPrimary.DisplayName}, godziny: {lesson.TimeSlot.Display}");
-                        //  inputFieldPrefab.text = "nr " + lesson.TimeSlot.Position;
+                        // Wypisz szczegóły lekcji
+                        Debug.Log($"nr: {lessonData.Position}, przedmiot: {lessonData.SubjectName}, nauczyciel: {lessonData.TeacherName}, godziny: {lessonData.StartTime} - {lessonData.EndTime}");
 
-
-                        //wypisywanie numerow lekcji
+                        // Wypisywanie numerów lekcji
                         GameObject nowyInputField = Instantiate(inputFieldPrefabNumerLekcji, PanelNrLekcje);
-
-                        InputField inputField = nowyInputField.GetComponent<InputField>();
-
-                        // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
                         TextMeshProUGUI placeholderText = nowyInputField.GetComponentInChildren<TextMeshProUGUI>();
-                        placeholderText.text = $"{lesson.TimeSlot.Position}";
+                        placeholderText.text = $"{lessonData.Position}";
 
-                        //wypisywanie godzin lekcji
+                        // Wypisywanie godzin lekcji
                         GameObject nowyInputField2 = Instantiate(inputGodzinki, PanelGodziny);
-
-                        InputField inputField2 = nowyInputField2.GetComponent<InputField>();
-
-                        // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
                         TextMeshProUGUI placeholdergodziny = nowyInputField2.GetComponentInChildren<TextMeshProUGUI>();
-                        placeholdergodziny.text = $"{lesson.TimeSlot.Start}\n{lesson.TimeSlot.End}";
-                        //wypisywanie lekcji
+                        placeholdergodziny.text = $"{lessonData.StartTime}\n{lessonData.EndTime}";
+
+                        // Wypisywanie lekcji
                         GameObject nowyInputField3 = Instantiate(inputPlan, PanelPlan);
-
-                        InputField inputField3 = nowyInputField3.GetComponent<InputField>();
-
-                        // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
                         TextMeshProUGUI placeholderPlan = nowyInputField3.GetComponentInChildren<TextMeshProUGUI>();
-                        if(lesson.Subject.Name.Length > 35)
-                        {
-                            string nazwaLekcji = lesson.Subject.Kod;
-                            placeholderPlan.text = $"{nazwaLekcji}\n{lesson.Room.Code} {lesson.TeacherPrimary.DisplayName}";
-                        }
-                        else
-                        {
-                            string nazwaLekcji = lesson.Subject.Name;
-                            placeholderPlan.text = $"{nazwaLekcji}\n{lesson.Room.Code} {lesson.TeacherPrimary.DisplayName}";
-                        }
-                        
-                        //wypisywanie nauczycieli
+                        string nazwaLekcji = lessonData.SubjectName.Length > 35 ? lessonData.SubjectCode : lessonData.SubjectName;
+                        placeholderPlan.text = $"{nazwaLekcji}\n{lessonData.RoomCode} {lessonData.TeacherName}";
+
+                        // Wypisywanie nauczycieli
                         GameObject nowyInputField4 = Instantiate(inputNauczyciele, PanelNauczyciele);
-
-                        InputField inputField4 = nowyInputField4.GetComponent<InputField>();
-
-                        // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
                         TextMeshProUGUI placeholderNauczyciel = nowyInputField4.GetComponentInChildren<TextMeshProUGUI>();
-                        placeholderNauczyciel.text = $"";
+                        placeholderNauczyciel.text = lessonData.TeacherName;
                     }
-                }catch(System.Exception) { }
-                Timetable.SetActive(true);
+                    catch (System.Exception)
+                    {
+                        // Obsługa wyjątków
+                    }
+                    Timetable.SetActive(true);
+                }
+                
+                inputFieldPrefabNumerLekcji.SetActive(false);
+                inputGodzinki.SetActive(false);
+                inputPlan.SetActive(false);
+                inputNauczyciele.SetActive(false);
+            }
+            else
+            {
+                var firebaseToken = PlayerPrefs.GetString("firebaseToken");
+                var pk = PlayerPrefs.GetString("pk");
+                string certString = PlayerPrefs.GetString("cert");
+                byte[] cert = Convert.FromBase64String(certString);
+                var x509Cert2 = new X509Certificate2(cert);
+
+                var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
+                var instanceUrlProvider = new InstanceUrlProvider();
+                var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
+                var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
+                var firstAccount = registerHebeResponse.Envelope[0];
+                var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
+                var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
+
+
+                var lessonsResponse = await unitApiClient.GetAsync(GetScheduleEntriesByPupilQuery.ApiEndpoint, new GetScheduleEntriesByPupilQuery(
+                                firstAccount.Pupil.Id,
+                                selectedDate,
+                                selectedDate,
+                                DateTime.MinValue,
+                                500,
+                                int.MinValue));
+
+                var sortedLessons = lessonsResponse.Envelope.OrderBy(lesson => lesson.TimeSlot.Position);
+
+
+                foreach (var lesson in sortedLessons)
+                {
+
+                    try
+                    {
+                        if (lesson.Visible)
+                        {
+                            // Wypisz szczeg�y lekcji, nazwy w�a�ciwo�ci mog� si� r�ni�
+                            Debug.Log($"nr: {lesson.TimeSlot.Position}, przedmiot: {lesson.Subject.Name}, nauczyciel: {lesson.TeacherPrimary.DisplayName}, godziny: {lesson.TimeSlot.Display}");
+                            //  inputFieldPrefab.text = "nr " + lesson.TimeSlot.Position;
+
+
+                            //wypisywanie numerow lekcji
+                            GameObject nowyInputField = Instantiate(inputFieldPrefabNumerLekcji, PanelNrLekcje);
+
+                            InputField inputField = nowyInputField.GetComponent<InputField>();
+
+                            // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
+                            TextMeshProUGUI placeholderText = nowyInputField.GetComponentInChildren<TextMeshProUGUI>();
+                            placeholderText.text = $"{lesson.TimeSlot.Position}";
+
+                            //wypisywanie godzin lekcji
+                            GameObject nowyInputField2 = Instantiate(inputGodzinki, PanelGodziny);
+
+                            InputField inputField2 = nowyInputField2.GetComponent<InputField>();
+
+                            // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
+                            TextMeshProUGUI placeholdergodziny = nowyInputField2.GetComponentInChildren<TextMeshProUGUI>();
+                            placeholdergodziny.text = $"{lesson.TimeSlot.Start}\n{lesson.TimeSlot.End}";
+                            //wypisywanie lekcji
+                            GameObject nowyInputField3 = Instantiate(inputPlan, PanelPlan);
+
+                            InputField inputField3 = nowyInputField3.GetComponent<InputField>();
+
+                            // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
+                            TextMeshProUGUI placeholderPlan = nowyInputField3.GetComponentInChildren<TextMeshProUGUI>();
+                            if (lesson.Subject.Name.Length > 35)
+                            {
+                                string nazwaLekcji = lesson.Subject.Kod;
+                                placeholderPlan.text = $"{nazwaLekcji}\n{lesson.Room.Code} {lesson.TeacherPrimary.DisplayName}";
+                            }
+                            else
+                            {
+                                string nazwaLekcji = lesson.Subject.Name;
+                                placeholderPlan.text = $"{nazwaLekcji}\n{lesson.Room.Code} {lesson.TeacherPrimary.DisplayName}";
+                            }
+
+                            //wypisywanie nauczycieli
+                            GameObject nowyInputField4 = Instantiate(inputNauczyciele, PanelNauczyciele);
+
+                            InputField inputField4 = nowyInputField4.GetComponent<InputField>();
+
+                            // Znajdź komponent TextMeshPro, który jest dzieckiem InputField
+                            TextMeshProUGUI placeholderNauczyciel = nowyInputField4.GetComponentInChildren<TextMeshProUGUI>();
+                            placeholderNauczyciel.text = $"";
+                        }
+                    }
+                    catch (System.Exception) { }
+                    Timetable.SetActive(true);
 
 
 
 
 
+                }
+                inputFieldPrefabNumerLekcji.SetActive(false);
+                inputGodzinki.SetActive(false);
+                inputPlan.SetActive(false);
+                inputNauczyciele.SetActive(false);
             }
             
-            
-            PlayerPrefs.SetInt("IloscLekcji", i);
-            inputFieldPrefabNumerLekcji.SetActive(false);
-            inputGodzinki.SetActive(false);
-            inputPlan.SetActive(false);
-            inputNauczyciele.SetActive(false);
            
         }
         catch (Exception e)

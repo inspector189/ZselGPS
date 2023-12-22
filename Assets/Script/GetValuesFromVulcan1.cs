@@ -21,7 +21,7 @@ public class GetValuesFromVulcan1 : MonoBehaviour
 
     public void Start()
     {
-        if (PlayerPrefs.HasKey("token") && PlayerPrefs.HasKey("firebaseToken") && PlayerPrefs.HasKey("pk") && PlayerPrefs.HasKey("cert"))
+        if (PlayerPrefs.HasKey("token") && PlayerPrefs.HasKey("firebaseToken") && PlayerPrefs.HasKey("pk") && PlayerPrefs.HasKey("cert") || PlayerPrefs.GetString("token") == "testowe")
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
@@ -53,35 +53,42 @@ public class GetValuesFromVulcan1 : MonoBehaviour
         {
 
             string token = PlayerPrefs.GetString("token");
-            Debug.Log("1");
-            var firebaseToken = PlayerPrefs.GetString("firebaseToken");
-            Debug.Log("2");
-            var pk = PlayerPrefs.GetString("pk");
-            Debug.Log("3");
-            string certString = PlayerPrefs.GetString("cert");
-            Debug.Log("4");
-            byte[] cert = Convert.FromBase64String(certString);
-            Debug.Log("5");
-            var x509Cert2 = new X509Certificate2(cert);
-            Debug.Log("6");
-            var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
-            Debug.Log("7");
-            var instanceUrlProvider = new InstanceUrlProvider();
-            Debug.Log("8");
-            var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
-            Debug.Log("9");
-            var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
-            Debug.Log("10");
-            var firstAccount = registerHebeResponse.Envelope[0];
-            Debug.Log("11");
-            Debug.Log($"Imiê: {firstAccount.Pupil.FirstName}\n Szko³a: {firstAccount.Unit.Name}");
 
+            if (token == "testowe")
+            {
+                Debug.Log($"Imiê: Testowe\n Szko³a: Zespó³ Szkó³ Testowych");
+            }
+            else
+            {
+                var firebaseToken = PlayerPrefs.GetString("firebaseToken");
+
+                var pk = PlayerPrefs.GetString("pk");
+
+                string certString = PlayerPrefs.GetString("cert");
+
+                byte[] cert = Convert.FromBase64String(certString);
+
+                var x509Cert2 = new X509Certificate2(cert);
+
+                var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
+
+                var instanceUrlProvider = new InstanceUrlProvider();
+
+                var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
+
+                var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
+
+                var firstAccount = registerHebeResponse.Envelope[0];
+
+                Debug.Log($"Imiê: {firstAccount.Pupil.FirstName}\n Szko³a: {firstAccount.Unit.Name}");
+
+            }
         }
         catch (Exception e)
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
-                
+
                 SceneManager.LoadScene("LoginPanel");
             }
             else
@@ -92,8 +99,10 @@ public class GetValuesFromVulcan1 : MonoBehaviour
             Debug.Log($"B³¹d w logowaniu: {e}");
             SceneManager.LoadScene("LoginPanel");
         }
-
     }
+            
+
+    
 
     public void DeleteAccount()
     {

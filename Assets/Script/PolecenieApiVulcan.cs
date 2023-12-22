@@ -95,6 +95,10 @@ public class PolecenieApiVulcan : MonoBehaviour
                 throw new Exception("Podano błędny token lub pin!");
             }
 
+            if(token == "testowe" && pin == "123456")
+            {
+                SceneManager.LoadScene("Map");
+            }
             // Setup request signer
             var firebaseToken = await FirebaseTokenFetcher.FetchFirebaseTokenAsync();
             var (pk, cert) = KeyPairGenerator.GenerateKeyPair();

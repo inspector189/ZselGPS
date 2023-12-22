@@ -34,24 +34,35 @@ public async void LoginProcess()
         {
             
             string token = PlayerPrefs.GetString("token");
-            var firebaseToken = PlayerPrefs.GetString("firebaseToken");
-            var pk = PlayerPrefs.GetString("pk");
-            string certString = PlayerPrefs.GetString("cert");
-            byte[] cert = Convert.FromBase64String(certString);
-            var x509Cert2 = new X509Certificate2(cert);
+            if (token == "testowe")
+            {
+                Name.text = "Testowe";
+                Surname.text = "Konto";
+                Class.text = "1A";
+                Email.text = "test@test.com";
+            }
+            else
+            {
+                var firebaseToken = PlayerPrefs.GetString("firebaseToken");
+                var pk = PlayerPrefs.GetString("pk");
+                string certString = PlayerPrefs.GetString("cert");
+                byte[] cert = Convert.FromBase64String(certString);
+                var x509Cert2 = new X509Certificate2(cert);
 
-            var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
-            var instanceUrlProvider = new InstanceUrlProvider();
-            var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
-            var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
-            var firstAccount = registerHebeResponse.Envelope[0];
-            var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
-            var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
+                var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
+                var instanceUrlProvider = new InstanceUrlProvider();
+                var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
+                var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
+                var firstAccount = registerHebeResponse.Envelope[0];
+                var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
+                var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
 
-            Name.text = firstAccount.Pupil.FirstName;
-            Surname.text = firstAccount.Pupil.Surname;
-            Class.text = firstAccount.ClassDisplay;
-            Email.text = firstAccount.Login.Value;
+                Name.text = firstAccount.Pupil.FirstName;
+                Surname.text = firstAccount.Pupil.Surname;
+                Class.text = firstAccount.ClassDisplay;
+                Email.text = firstAccount.Login.Value;
+            }
+            
 
         }
         catch (Exception e)
