@@ -1,87 +1,72 @@
 using UnityEngine;
 using System.Collections.Generic;
+using SVS.AI;
 
 public class LineCreator : MonoBehaviour
 {
-    public Transform person; // Obiekt reprezentujący Person
-    public Transform destination; // Cel podróży, np. drzwi
+    public Transform person;
+    public Transform destination;
+    public List<RectTransform> KorytarzePietro;
+    private LineRenderer lineRenderer;
+    public WaypointCreator waypointCreator;
+    private Vector3 personPosition;
+    private Vector3 destinationPosition;
 
-    public List<Transform> waypoints; // Lista waypointów
-
-    private LineRenderer lineRenderer; // Komponent do rysowania linii
-
-    void Start()
+    private void Start()
     {
-        lineRenderer = gameObject.GetComponent<LineRenderer>();
-        if (lineRenderer == null)
-        {
-            lineRenderer = gameObject.AddComponent<LineRenderer>();
-            lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        }
-
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.positionCount = 0; // Wyczyszczenie istniejących punktów
         lineRenderer.startWidth = 0.02f; // Szerokość linii
         lineRenderer.endWidth = 0.02f;
         lineRenderer.startColor = Color.blue; // Ustawienie koloru na niebieski
         lineRenderer.endColor = Color.blue;
 
-        DrawShortestPath();
+        // Pobranie pozycji początkowej
+        personPosition = person.position;
+        destinationPosition = destination.position;
     }
 
-    void DrawShortestPath()
+    private void Update()
     {
-        if (person == null || destination == null || waypoints.Count == 0)
-            return;
+        // Aktualizacja pozycji obiektów Person i Destination
+        personPosition = person.position;
+        destinationPosition = destination.position;
 
-        List<Transform> shortestPath = FindShortestPath(person, destination);
-        DrawPath(shortestPath);
-    }
-
-    List<Transform> FindShortestPath(Transform start, Transform end)
-    {
-        List<Transform> path = new List<Transform>();
-
-        Transform current = start;
-        path.Add(current);
-
-        while (current != end)
+        if (KorytarzePietro != null && KorytarzePietro.Count > 0 && waypointCreator != null)
         {
-            current = GetClosestWaypoint(current, end);
-            path.Add(current);
-        }
+            List<RectTransform> corridors = waypointCreator.GetCurrentFloorCorridors();
+            waypointCreator.CreateWaypointsForCorridors(corridors); // Wywołanie metody generującej waypointy
 
-        return path;
-    }
+            List<GameObject> waypoints = waypointCreator.createdWaypoints; // Pobranie listy waypointów
 
-    Transform GetClosestWaypoint(Transform current, Transform target)
-    {
-        Transform closest = null;
-        float minDistance = Mathf.Infinity;
-
-        foreach (Transform waypoint in waypoints)
-        {
-            if (waypoint != current)
+            List<Vector3> path = new List<Vector3>();
+            foreach (GameObject waypoint in waypoints)
             {
-                float distance = Vector3.Distance(waypoint.position, current.position);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    closest = waypoint;
-                }
+                path.Add(waypoint.transform.position); // Dodanie pozycji waypointu do ścieżki
+            }
+
+            Debug.Log("Path count: " + (path != null ? path.Count : 0));
+            if (path != null && path.Count > 0)
+            {
+                DrawPath(path);
+            }
+            else
+            {
+                lineRenderer.positionCount = 0; // Wyczyszczenie linii, gdy nie ma ścieżki
             }
         }
-
-        return closest;
+        else
+        {
+            Debug.LogError("KorytarzePietro list or waypointCreator is not assigned or empty. Please assign and ensure waypoints are generated.");
+        }
     }
 
-    void DrawPath(List<Transform> path)
+    private void DrawPath(List<Vector3> path)
     {
-        if (path.Count < 2)
-            return;
-
         lineRenderer.positionCount = path.Count;
         for (int i = 0; i < path.Count; i++)
         {
-            lineRenderer.SetPosition(i, path[i].position);
+            lineRenderer.SetPosition(i, path[i]);
         }
     }
 }
