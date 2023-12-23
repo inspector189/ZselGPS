@@ -53460,7 +53460,7 @@ MonoBehaviour:
   closedPositionY: -1548.1
   openPositionY: -525.1
   closedPositionY2: 0
-  openPositionY2: 273
+  openPositionY2: 310
   closedHeight: -1563.9
   openHeight: 3736.8
   cameraToMove: {fileID: 701352638}
