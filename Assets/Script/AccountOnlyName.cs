@@ -24,6 +24,12 @@ public class AccountOnlyName : MonoBehaviour
     public ButtonManager wylogujBtn;
     void Start()
     {
+        Name.text = PlayerPrefs.GetString("imie_podr");
+        Surname.text = PlayerPrefs.GetString("nazwisko_podr");
+        Class.text = PlayerPrefs.GetString("klasa_podr");
+        Email.text = PlayerPrefs.GetString("email_podr");
+        Debug.Log(PlayerPrefs.GetString("imie_podr"));
+
         LoginProcess();
         wylogujBtn.onClick.AddListener(DeleteAccount);
     }
@@ -57,10 +63,30 @@ public async void LoginProcess()
                 var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
                 var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
 
-                Name.text = firstAccount.Pupil.FirstName;
-                Surname.text = firstAccount.Pupil.Surname;
-                Class.text = firstAccount.ClassDisplay;
-                Email.text = firstAccount.Login.Value;
+
+                if(firstAccount.Pupil.FirstName != PlayerPrefs.GetString("imie_podr"))
+                {
+
+                    Name.text = firstAccount.Pupil.FirstName;
+                    PlayerPrefs.SetString("imie_podr", firstAccount.Pupil.FirstName);
+                }
+                if (firstAccount.Pupil.Surname != PlayerPrefs.GetString("nazwisko_podr"))
+                {
+                    Surname.text = firstAccount.Pupil.Surname;
+                    PlayerPrefs.SetString("nazwisko_podr", firstAccount.Pupil.Surname);
+                }
+                if (firstAccount.ClassDisplay != PlayerPrefs.GetString("klasa_podr"))
+                {
+                    Class.text = firstAccount.ClassDisplay;
+                    PlayerPrefs.SetString("klasa_podr", firstAccount.ClassDisplay);
+                }
+                if (firstAccount.Login.Value != PlayerPrefs.GetString("email_podr"))
+                {
+                    Email.text = firstAccount.Login.Value;
+                    PlayerPrefs.SetString("email_podr", firstAccount.Login.Value);
+                }
+
+                
             }
             
 
@@ -82,11 +108,15 @@ public async void LoginProcess()
     }
     public void DeleteAccount()
     {
+        PlayerPrefs.DeleteKey("imie_podr");
+        PlayerPrefs.DeleteKey("nazwisko_podr");
+        PlayerPrefs.DeleteKey("klasa_podr");
+        PlayerPrefs.DeleteKey("email_podr");
+
         PlayerPrefs.DeleteKey("token");
         PlayerPrefs.DeleteKey("firebaseToken");
         PlayerPrefs.DeleteKey("pk");
         PlayerPrefs.DeleteKey("cert");
-        SceneManager.LoadScene("LoginPanel");
     }
 }
 

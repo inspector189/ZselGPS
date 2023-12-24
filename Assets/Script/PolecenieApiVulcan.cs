@@ -180,6 +180,8 @@ public class PolecenieApiVulcan : MonoBehaviour
 
             var firstAccount = registerHebeResponse.Envelope[0];
 
+            PamiecPodreczna(firstAccount.Pupil.FirstName, firstAccount.Pupil.Surname, firstAccount.ClassDisplay, firstAccount.Login.Value);
+
             SceneManager.LoadScene("Map");
 
         }
@@ -200,8 +202,21 @@ public class PolecenieApiVulcan : MonoBehaviour
 
     }
 
+    public void PamiecPodreczna(string imie, string nazwisko, string klasa, string email)
+    {
+        PlayerPrefs.SetString("imie_podr", imie);
+        PlayerPrefs.SetString("nazwisko_podr", nazwisko);
+        PlayerPrefs.SetString("klasa_podr", klasa);
+        PlayerPrefs.SetString("email_podr", email);
+    }
+
     public void DeleteAccount()
     {
+        PlayerPrefs.DeleteKey("imie_podr");
+        PlayerPrefs.DeleteKey("nazwisko_podr");
+        PlayerPrefs.DeleteKey("klasa_podr");
+        PlayerPrefs.DeleteKey("email_podr");
+
         PlayerPrefs.DeleteKey("token");
         PlayerPrefs.DeleteKey("firebaseToken");
         PlayerPrefs.DeleteKey("pk");
