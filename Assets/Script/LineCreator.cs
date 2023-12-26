@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LineCreator : MonoBehaviour
 {
     public Transform person; // Pozycja obiektu reprezentującego użytkownika
-    public Transform target; // Pozycja wybranego celu
+    public RectTransform target; // Pozycja wybranego celu
     public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
 
     private LineRenderer lineRenderer; // Komponent LineRenderer do rysowania linii
@@ -22,6 +23,18 @@ public class LineCreator : MonoBehaviour
         lineRenderer.endWidth = lineWidth;
         lineRenderer.useWorldSpace = true;
         lineRenderer.sortingOrder = 1; // Zapewnia, że linia jest rysowana nad innymi elementami
+    }
+    public void buttonClicked()
+    {
+        float x = PlayerPrefs.GetFloat("DrzwiSaliX");
+        Vector2 position = target.anchoredPosition;
+        position.x = x;
+        target.anchoredPosition = position;
+
+        float y = PlayerPrefs.GetFloat("DrzwiSaliY");
+        Vector2 position2 = target.anchoredPosition;
+        position2.y = y;
+        target.anchoredPosition = position2;
     }
 
     private void Update()
