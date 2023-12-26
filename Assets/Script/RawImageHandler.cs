@@ -11,7 +11,8 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     public string OpisSali;
     public RectTransform buttonRectTransform; // RectTransform przycisku w scenie kamery
     public float targetOrthographicSize = 0.45f;
-
+    public RectTransform DrzwiSali;
+    private GameObject DrzwiCel;
     private float timeOfLastClick = 0f;
     private const float maxClickDuration = 0.15f; // Maksymalny czas trwania pojedynczego kliknięcia
 
@@ -43,6 +44,7 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
                     if (Time.time - timeOfLastClick <= maxClickDuration)
                     {
                         TytulSaliText.text = NazwaSali;
+                       
                         OpisSaliText.text = OpisSali;
                         Vector3 targetPosition = new Vector3(buttonRectTransform.position.x, buttonRectTransform.position.y, CameraToMove.transform.position.z);
                         StartCoroutine(MoveCamera(targetPosition, targetOrthographicSize, 1f)); // 1 sekunda trwania animacji

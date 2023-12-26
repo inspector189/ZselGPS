@@ -1249,7 +1249,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &25221301
 RectTransform:
@@ -1854,7 +1854,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &31193785
 RectTransform:
@@ -1865,7 +1865,7 @@ RectTransform:
   m_GameObject: {fileID: 31193784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2580671, y: 0.12983784, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -1873,8 +1873,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 845.91, y: -213.15}
-  m_SizeDelta: {x: 51.79, y: 484.93}
+  m_AnchoredPosition: {x: 850.84, y: -222.9}
+  m_SizeDelta: {x: 59.63, y: 61.315}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &31193786
 MonoBehaviour:
@@ -2313,7 +2313,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &55928442
 RectTransform:
@@ -2324,7 +2324,7 @@ RectTransform:
   m_GameObject: {fileID: 55928441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.14960007, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -2332,8 +2332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -205.11, y: -105.657}
-  m_SizeDelta: {x: 37.185, y: 611.941}
+  m_AnchoredPosition: {x: -205.1, y: -108.04}
+  m_SizeDelta: {x: 37.2, y: 86.785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55928443
 MonoBehaviour:
@@ -6402,6 +6402,7 @@ RectTransform:
   - {fileID: 919872160}
   - {fileID: 1227516129}
   - {fileID: 929168310}
+  - {fileID: 406468204}
   - {fileID: 2120161081}
   - {fileID: 554745281}
   - {fileID: 1013448616}
@@ -6434,7 +6435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6755,7 +6756,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &220632286
 RectTransform:
@@ -6766,7 +6767,7 @@ RectTransform:
   m_GameObject: {fileID: 220632285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.1290455, y: 0.085685134, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -6774,8 +6775,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.577, y: 453.59}
-  m_SizeDelta: {x: 59.46, y: 292.264}
+  m_AnchoredPosition: {x: -94.72, y: 456.04}
+  m_SizeDelta: {x: 239.43, y: 43.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220632287
 MonoBehaviour:
@@ -7180,7 +7181,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &237580761
 RectTransform:
@@ -7391,7 +7392,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &239838182
 RectTransform:
@@ -7725,7 +7726,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &253810205
 RectTransform:
@@ -7736,7 +7737,7 @@ RectTransform:
   m_GameObject: {fileID: 253810204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2555636, y: 0.58789, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -7744,8 +7745,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -864.52, y: -170.48}
-  m_SizeDelta: {x: 285.09, y: 38.09}
+  m_AnchoredPosition: {x: -864.52, y: -166.55}
+  m_SizeDelta: {x: 357.95, y: 30.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253810206
 MonoBehaviour:
@@ -7922,7 +7923,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &262755471
 RectTransform:
@@ -7933,7 +7934,7 @@ RectTransform:
   m_GameObject: {fileID: 262755470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.70842177, y: 0.038586035, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -7941,8 +7942,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377.01, y: -74.625}
-  m_SizeDelta: {x: 57.28, y: 768.643}
+  m_AnchoredPosition: {x: -381.18, y: -77.8}
+  m_SizeDelta: {x: 48.95, y: 26.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262755472
 MonoBehaviour:
@@ -8142,7 +8143,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &267896759
 RectTransform:
@@ -8749,6 +8750,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280140099}
   m_CullTransparentMesh: 1
+--- !u!1 &284649443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284649444}
+  m_Layer: 5
+  m_Name: Drzwi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &284649444
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284649443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 941373706}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &301095643
 GameObject:
   m_ObjectHideFlags: 0
@@ -10980,7 +11017,6 @@ GameObject:
   - component: {fileID: 391263039}
   - component: {fileID: 391263038}
   - component: {fileID: 391263037}
-  - component: {fileID: 391263036}
   m_Layer: 5
   m_Name: Kieruj
   m_TagString: Untagged
@@ -11012,19 +11048,6 @@ RectTransform:
   m_AnchoredPosition: {x: 19.299988, y: -2096.8}
   m_SizeDelta: {x: 0, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &391263036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391263034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 158141423d2bb494c9712c74f3b4bd2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: MainMenu
 --- !u!114 &391263037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11131,19 +11154,7 @@ MonoBehaviour:
   animationSolution: 1
   onClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 391263036}
-        m_TargetAssemblyTypeName: NewScene, Assembly-CSharp
-        m_MethodName: LoadNewScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDoubleClick:
     m_PersistentCalls:
       m_Calls: []
@@ -11636,6 +11647,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401100895}
   m_CullTransparentMesh: 1
+--- !u!1 &406468203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406468204}
+  - component: {fileID: 406468207}
+  - component: {fileID: 406468206}
+  m_Layer: 5
+  m_Name: LineRendered
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &406468204
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406468203}
+  m_LocalRotation: {x: -0, y: -0, z: 0.27647603, w: 0.9610208}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.3333333, y: 3.3333333, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 200340861}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8611.9, y: -5221.5}
+  m_SizeDelta: {x: 100, y: 102.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &406468206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406468203}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &406468207
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406468203}
+  m_CullTransparentMesh: 1
 --- !u!1 &411620731
 GameObject:
   m_ObjectHideFlags: 0
@@ -11872,7 +11959,7 @@ RectTransform:
   - {fileID: 1546729325}
   - {fileID: 680083953}
   m_Father: {fileID: 200340861}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11895,7 +11982,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &425444255
 RectTransform:
@@ -11906,7 +11993,7 @@ RectTransform:
   m_GameObject: {fileID: 425444254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.59715, y: 0.14909618, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -11914,8 +12001,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -252.23, y: -47.79}
-  m_SizeDelta: {x: 44.06, y: 163.43}
+  m_AnchoredPosition: {x: -252.47, y: -50.8}
+  m_SizeDelta: {x: 818.77, y: 27.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425444256
 MonoBehaviour:
@@ -14075,6 +14162,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503765449}
   m_CullTransparentMesh: 0
+--- !u!1 &506807899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506807900}
+  - component: {fileID: 506807902}
+  - component: {fileID: 506807901}
+  m_Layer: 5
+  m_Name: Korytarz23 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!224 &506807900
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506807899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2016773321}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 75.33, y: 169.77}
+  m_SizeDelta: {x: 100.65, y: 42.283}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &506807901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506807899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &506807902
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506807899}
+  m_CullTransparentMesh: 1
 --- !u!1 &521039263
 GameObject:
   m_ObjectHideFlags: 0
@@ -14943,7 +15106,7 @@ RectTransform:
   - {fileID: 1609811130}
   - {fileID: 949682666}
   m_Father: {fileID: 200340861}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14966,7 +15129,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &564201256
 RectTransform:
@@ -16646,7 +16809,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &602677447
 RectTransform:
@@ -17040,8 +17203,8 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
 --- !u!224 &611507463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19180,7 +19343,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &669915703
 RectTransform:
@@ -19191,7 +19354,7 @@ RectTransform:
   m_GameObject: {fileID: 669915702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.47538874, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -19199,8 +19362,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -673.71765, y: -108.63607}
-  m_SizeDelta: {x: 23.656, y: 307.286}
+  m_AnchoredPosition: {x: -673.7, y: -109.31}
+  m_SizeDelta: {x: 23.7, y: 144.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669915704
 MonoBehaviour:
@@ -19256,7 +19419,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &675952024
 RectTransform:
@@ -19275,8 +19438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 76.852, y: 121.5}
-  m_SizeDelta: {x: 101, y: 39.34}
+  m_AnchoredPosition: {x: 76.85, y: 126.87}
+  m_SizeDelta: {x: 101, y: 50.088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675952025
 MonoBehaviour:
@@ -19832,7 +19995,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &696808497
 RectTransform:
@@ -20196,7 +20359,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &702084001
 RectTransform:
@@ -20272,7 +20435,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &704330869
 RectTransform:
@@ -20776,7 +20939,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &731877135
 RectTransform:
@@ -21880,7 +22043,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &775492736
 RectTransform:
@@ -23619,7 +23782,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &843269730
 RectTransform:
@@ -24469,7 +24632,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &864340248
 RectTransform:
@@ -25653,7 +25816,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &906376404
 RectTransform:
@@ -25664,7 +25827,7 @@ RectTransform:
   m_GameObject: {fileID: 906376403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.7898083, y: 0.09960788, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -25672,8 +25835,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 988.91, y: -127.48}
-  m_SizeDelta: {x: 64.69, y: 572.41}
+  m_AnchoredPosition: {x: 987.2, y: -127.54}
+  m_SizeDelta: {x: 459.3, y: 56.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &906376405
 MonoBehaviour:
@@ -25729,7 +25892,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &907063022
 RectTransform:
@@ -25740,7 +25903,7 @@ RectTransform:
   m_GameObject: {fileID: 907063021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.67405, y: 0.5182803, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -25748,8 +25911,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144.65, y: 77.31}
-  m_SizeDelta: {x: 37.97, y: 436.03}
+  m_AnchoredPosition: {x: 141.3, y: 77.01}
+  m_SizeDelta: {x: 31.3, y: 227.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &907063023
 MonoBehaviour:
@@ -26586,6 +26749,7 @@ RectTransform:
   - {fileID: 469823314}
   - {fileID: 1026538963}
   - {fileID: 582393370}
+  - {fileID: 284649444}
   m_Father: {fileID: 1599872607}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26972,7 +27136,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &965965569
 RectTransform:
@@ -26983,7 +27147,7 @@ RectTransform:
   m_GameObject: {fileID: 965965568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.47538874, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -26991,8 +27155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -626.06, y: -120.82}
-  m_SizeDelta: {x: 43.59, y: 256.06}
+  m_AnchoredPosition: {x: -626.06, y: -109.31}
+  m_SizeDelta: {x: 43.59, y: 144.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965965570
 MonoBehaviour:
@@ -27187,7 +27351,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &967844135
 RectTransform:
@@ -27855,7 +28019,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &983394638
 RectTransform:
@@ -28989,7 +29153,7 @@ RectTransform:
   - {fileID: 1100986525}
   - {fileID: 470279148}
   m_Father: {fileID: 200340861}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29012,7 +29176,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1014213593
 RectTransform:
@@ -29023,7 +29187,7 @@ RectTransform:
   m_GameObject: {fileID: 1014213592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.109993, y: 0.085685134, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -29031,8 +29195,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81.33, y: 174.68}
-  m_SizeDelta: {x: 47.93, y: 372.43}
+  m_AnchoredPosition: {x: 75.33, y: 124.7}
+  m_SizeDelta: {x: 100.65, y: 47.855}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014213594
 MonoBehaviour:
@@ -30802,7 +30966,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1074969135
 RectTransform:
@@ -32879,7 +33043,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1176326074
 RectTransform:
@@ -32890,7 +33054,7 @@ RectTransform:
   m_GameObject: {fileID: 1176326073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.14960007, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -32898,8 +33062,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -290.21, y: -130.66495}
-  m_SizeDelta: {x: 133.02, y: 945.863}
+  m_AnchoredPosition: {x: -290.2, y: -132.8}
+  m_SizeDelta: {x: 133, y: 136.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176326075
 MonoBehaviour:
@@ -35510,7 +35674,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1264040817
 RectTransform:
@@ -35521,7 +35685,7 @@ RectTransform:
   m_GameObject: {fileID: 1264040816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90893394, y: 0.5600303, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -35529,8 +35693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 834.3, y: 199.82}
-  m_SizeDelta: {x: 39.2, y: 152.99}
+  m_AnchoredPosition: {x: 833.05, y: 195.92}
+  m_SizeDelta: {x: 36.71, y: 94.585}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1264040818
 MonoBehaviour:
@@ -39875,7 +40039,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1408672252
 RectTransform:
@@ -39886,7 +40050,7 @@ RectTransform:
   m_GameObject: {fileID: 1408672251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.109993, y: 0.085685134, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -39894,8 +40058,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81.64102, y: 124.64001}
-  m_SizeDelta: {x: 47.612, y: 462.99}
+  m_AnchoredPosition: {x: 86.013, y: 123.42}
+  m_SizeDelta: {x: 79.274, y: 50.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1408672253
 MonoBehaviour:
@@ -40497,7 +40661,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1423030267
 RectTransform:
@@ -40508,7 +40672,7 @@ RectTransform:
   m_GameObject: {fileID: 1423030266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.67405, y: 0.57736427, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -40516,8 +40680,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.901974, y: 328.54672}
-  m_SizeDelta: {x: 37.761, y: 477.057}
+  m_AnchoredPosition: {x: 43.9, y: 334.3}
+  m_SizeDelta: {x: 37.8, y: 286.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1423030268
 MonoBehaviour:
@@ -42142,7 +42306,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1516356895
 RectTransform:
@@ -43654,7 +43818,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1598883061
 RectTransform:
@@ -43665,7 +43829,7 @@ RectTransform:
   m_GameObject: {fileID: 1598883060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2757684, y: 1.5743239, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -43673,8 +43837,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 865.51, y: 71.9}
-  m_SizeDelta: {x: 21.17, y: 217.71}
+  m_AnchoredPosition: {x: 865.17, y: 71.973}
+  m_SizeDelta: {x: 27.52, y: 342.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598883062
 MonoBehaviour:
@@ -44059,6 +44223,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 408
   buttonRectTransform: {fileID: 1922670150}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44077,6 +44242,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1465776681}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44097,6 +44263,7 @@ MonoBehaviour:
     dobrego :)"
   buttonRectTransform: {fileID: 1854775879}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44115,6 +44282,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 422
   buttonRectTransform: {fileID: 252867117}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44133,6 +44301,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 421
   buttonRectTransform: {fileID: 826785342}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44151,6 +44320,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 420
   buttonRectTransform: {fileID: 158572168}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44169,6 +44339,7 @@ MonoBehaviour:
   OpisSali: "Pracownia Wysokich Napi\u0119\u0107 419"
   buttonRectTransform: {fileID: 175084158}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44187,6 +44358,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 418
   buttonRectTransform: {fileID: 384832015}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44205,6 +44377,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 418
   buttonRectTransform: {fileID: 449503420}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 1330690530}
 --- !u!114 &1599872619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44223,6 +44396,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 416
   buttonRectTransform: {fileID: 1558271996}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44241,6 +44415,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 415
   buttonRectTransform: {fileID: 1170669554}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 474488447}
 --- !u!114 &1599872621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44259,6 +44434,7 @@ MonoBehaviour:
   OpisSali: "Zaplecze dla nauczycieli przedmiot\xF3w zawodowych - informatycznych"
   buttonRectTransform: {fileID: 2109868208}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44277,6 +44453,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1788157267}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44295,6 +44472,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 423
   buttonRectTransform: {fileID: 1008587125}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44313,6 +44491,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 411
   buttonRectTransform: {fileID: 1322686578}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44331,6 +44510,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 411A
   buttonRectTransform: {fileID: 591165045}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44349,6 +44529,7 @@ MonoBehaviour:
   OpisSali: Pracownia 412
   buttonRectTransform: {fileID: 1627492557}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44367,6 +44548,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 424
   buttonRectTransform: {fileID: 860187626}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 284649443}
 --- !u!114 &1599872628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44385,6 +44567,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 425
   buttonRectTransform: {fileID: 161231139}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 392665056}
 --- !u!114 &1599872629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44403,6 +44586,7 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 2008256036}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44421,6 +44605,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1957629142}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44439,6 +44624,7 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 1349254090}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44457,6 +44643,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 pomieszczenie dla os\xF3b z Samorz\u0105du."
   buttonRectTransform: {fileID: 304111475}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44475,6 +44662,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 105
   buttonRectTransform: {fileID: 2030635396}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44493,6 +44681,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 106
   buttonRectTransform: {fileID: 1967946708}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44511,6 +44700,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 107
   buttonRectTransform: {fileID: 103537143}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44529,6 +44719,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 pok\xF3j nauczycielski."
   buttonRectTransform: {fileID: 143400456}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44547,6 +44738,7 @@ MonoBehaviour:
   OpisSali: "Lepiej nie wchodzi\u0107"
   buttonRectTransform: {fileID: 1610016609}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44565,6 +44757,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 110
   buttonRectTransform: {fileID: 1100549423}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44583,6 +44776,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 110
   buttonRectTransform: {fileID: 430278787}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44601,6 +44795,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 112
   buttonRectTransform: {fileID: 1899086232}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44619,6 +44814,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 407
   buttonRectTransform: {fileID: 420799799}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44637,6 +44833,7 @@ MonoBehaviour:
   OpisSali: Gabinet Wicedyrektora 406
   buttonRectTransform: {fileID: 275610440}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44655,6 +44852,7 @@ MonoBehaviour:
   OpisSali: Pracownia Elektryczno-Elektroniczna 405
   buttonRectTransform: {fileID: 624492625}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 1373246343}
 --- !u!114 &1599872644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44673,6 +44871,7 @@ MonoBehaviour:
   OpisSali: Zaplecze sali 403
   buttonRectTransform: {fileID: 1526419482}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44691,6 +44890,7 @@ MonoBehaviour:
   OpisSali: Pracownia Elektryczno-Elektroniczna 403
   buttonRectTransform: {fileID: 1693987622}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 1767922868}
 --- !u!114 &1599872646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44709,6 +44909,7 @@ MonoBehaviour:
   OpisSali: Zaplecze
   buttonRectTransform: {fileID: 523553727}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44727,6 +44928,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 401
   buttonRectTransform: {fileID: 1919054729}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44745,6 +44947,7 @@ MonoBehaviour:
   OpisSali: "Sala \u0106wicze\u0144"
   buttonRectTransform: {fileID: 1053070516}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44763,6 +44966,7 @@ MonoBehaviour:
   OpisSali: Magazyn
   buttonRectTransform: {fileID: 979656129}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44781,6 +44985,7 @@ MonoBehaviour:
   OpisSali: Hala Sportowa
   buttonRectTransform: {fileID: 190948180}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44799,6 +45004,7 @@ MonoBehaviour:
   OpisSali: "Dy\u017Curka"
   buttonRectTransform: {fileID: 549399295}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44817,6 +45023,7 @@ MonoBehaviour:
   OpisSali: "Sala \u0106wicze\u0144"
   buttonRectTransform: {fileID: 985944919}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44835,6 +45042,7 @@ MonoBehaviour:
   OpisSali: "Si\u0142ownia "
   buttonRectTransform: {fileID: 576099220}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44853,6 +45061,7 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 606848946}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44871,6 +45080,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 2107302161}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44889,6 +45099,7 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 1700545303}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44907,6 +45118,7 @@ MonoBehaviour:
   OpisSali: "Szatnia I 512 - Pomara\u0144czowa"
   buttonRectTransform: {fileID: 1937804838}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44925,6 +45137,7 @@ MonoBehaviour:
   OpisSali: Szaatnia IV 508 - Zielona
   buttonRectTransform: {fileID: 158128556}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44943,6 +45156,7 @@ MonoBehaviour:
   OpisSali: 'Szatnia III 509 - Niebieska '
   buttonRectTransform: {fileID: 601111544}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44961,6 +45175,7 @@ MonoBehaviour:
   OpisSali: Szatnia II 510 - Czerwona
   buttonRectTransform: {fileID: 605526121}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44979,6 +45194,7 @@ MonoBehaviour:
   OpisSali: Pracownia 317
   buttonRectTransform: {fileID: 1021305138}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44997,6 +45213,7 @@ MonoBehaviour:
   OpisSali: Pracownia 318
   buttonRectTransform: {fileID: 1054244575}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45015,6 +45232,7 @@ MonoBehaviour:
   OpisSali: Zaplecze sal 315 i 317
   buttonRectTransform: {fileID: 647652789}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45033,6 +45251,7 @@ MonoBehaviour:
   OpisSali: Pracownia 315
   buttonRectTransform: {fileID: 2072848526}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45051,6 +45270,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 941131941}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45069,6 +45289,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 892678648}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45087,6 +45308,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 343
   buttonRectTransform: {fileID: 1081562401}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45105,6 +45327,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 344
   buttonRectTransform: {fileID: 1378669796}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45123,6 +45346,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 345
   buttonRectTransform: {fileID: 772619179}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45141,6 +45365,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 346
   buttonRectTransform: {fileID: 850074902}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45159,6 +45384,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 312
   buttonRectTransform: {fileID: 1217364022}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45177,6 +45403,7 @@ MonoBehaviour:
   OpisSali: Pomieszczenie Gospodarcze
   buttonRectTransform: {fileID: 2091961868}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45195,6 +45422,7 @@ MonoBehaviour:
   OpisSali: "Szatnia Og\xF3lna"
   buttonRectTransform: {fileID: 1359911817}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45214,6 +45442,7 @@ MonoBehaviour:
     na przek\u0105ske."
   buttonRectTransform: {fileID: 1706305461}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45232,6 +45461,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 304
   buttonRectTransform: {fileID: 521039264}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45250,6 +45480,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 305
   buttonRectTransform: {fileID: 536543657}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45268,6 +45499,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 303
   buttonRectTransform: {fileID: 982260485}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45286,6 +45518,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Kierownika "
   buttonRectTransform: {fileID: 2118193767}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45304,6 +45537,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 302
   buttonRectTransform: {fileID: 315615909}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45322,6 +45556,7 @@ MonoBehaviour:
   OpisSali: Pracownia Elektryczna 307
   buttonRectTransform: {fileID: 1434341141}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45340,6 +45575,7 @@ MonoBehaviour:
   OpisSali: Biuro
   buttonRectTransform: {fileID: 259013253}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45358,6 +45594,7 @@ MonoBehaviour:
   OpisSali: Biuro
   buttonRectTransform: {fileID: 2043992879}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45376,6 +45613,7 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 346264699}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45394,6 +45632,7 @@ MonoBehaviour:
   OpisSali: Pracownia Maszyn 301
   buttonRectTransform: {fileID: 864190230}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45412,6 +45651,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 308
   buttonRectTransform: {fileID: 1026082812}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45430,6 +45670,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 ratownik"
   buttonRectTransform: {fileID: 1652188892}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45448,6 +45689,7 @@ MonoBehaviour:
   OpisSali: "P\u0142ywalnia"
   buttonRectTransform: {fileID: 1785867947}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45466,6 +45708,7 @@ MonoBehaviour:
   OpisSali: Szatnia basenowa
   buttonRectTransform: {fileID: 1244171815}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45484,6 +45727,7 @@ MonoBehaviour:
   OpisSali: Szatnia basenowa
   buttonRectTransform: {fileID: 826576776}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45502,6 +45746,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 12155851}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45520,6 +45765,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 2068124170}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45538,6 +45784,7 @@ MonoBehaviour:
   OpisSali: 'Toaleta '
   buttonRectTransform: {fileID: 1964178170}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45556,6 +45803,7 @@ MonoBehaviour:
   OpisSali: "Pok\xF3j Nauczycieli WF-u przy basenie."
   buttonRectTransform: {fileID: 1614773100}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45574,6 +45822,7 @@ MonoBehaviour:
   OpisSali: Szatnia Basenowa
   buttonRectTransform: {fileID: 722680718}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45592,6 +45841,7 @@ MonoBehaviour:
   OpisSali: Szatnia Basenowa
   buttonRectTransform: {fileID: 447891814}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45610,6 +45860,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Pedagoga."
   buttonRectTransform: {fileID: 30252412}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45629,6 +45880,7 @@ MonoBehaviour:
     okienko."
   buttonRectTransform: {fileID: 867172765}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45647,6 +45899,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 biblioteka."
   buttonRectTransform: {fileID: 1719492104}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45665,6 +45918,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 17
   buttonRectTransform: {fileID: 1854720717}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45683,6 +45937,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 sekretariat uczniowski."
   buttonRectTransform: {fileID: 63415332}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45701,6 +45956,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Gospodarcze 14
   buttonRectTransform: {fileID: 810088743}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45720,6 +45976,7 @@ MonoBehaviour:
     si\u0119 w niej r\xF3\u017Cne ciekawe lekcje."
   buttonRectTransform: {fileID: 1011422287}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45738,6 +45995,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Kancelaria."
   buttonRectTransform: {fileID: 882602914}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45756,6 +46014,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Dyrektora."
   buttonRectTransform: {fileID: 172179374}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45774,6 +46033,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 dy\u017Curka."
   buttonRectTransform: {fileID: 2109040139}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45792,6 +46052,7 @@ MonoBehaviour:
   OpisSali: Magazyn
   buttonRectTransform: {fileID: 162199191}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45810,6 +46071,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 1724091002}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45828,6 +46090,7 @@ MonoBehaviour:
   OpisSali: 'Toaleta '
   buttonRectTransform: {fileID: 1978560348}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45846,6 +46109,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 10
   buttonRectTransform: {fileID: 591250139}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45864,6 +46128,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 9
   buttonRectTransform: {fileID: 2105380462}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45882,6 +46147,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 9
   buttonRectTransform: {fileID: 127353850}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45900,6 +46166,7 @@ MonoBehaviour:
   OpisSali: Kierownik Gospodarczy 7
   buttonRectTransform: {fileID: 25522408}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45918,6 +46185,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 5
   buttonRectTransform: {fileID: 1289963808}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45936,6 +46204,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 5
   buttonRectTransform: {fileID: 1576839177}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45954,6 +46223,7 @@ MonoBehaviour:
   OpisSali: Magazyn
   buttonRectTransform: {fileID: 304005428}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45972,6 +46242,7 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 891942395}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45990,6 +46261,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1327453946}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46008,6 +46280,7 @@ MonoBehaviour:
   OpisSali: "Sk\u0142adnica akt - 204"
   buttonRectTransform: {fileID: 1117578762}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46026,6 +46299,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjan 205
   buttonRectTransform: {fileID: 644849713}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46044,6 +46318,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 206
   buttonRectTransform: {fileID: 1553143587}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46062,6 +46337,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 207
   buttonRectTransform: {fileID: 1762540248}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46080,6 +46356,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 208
   buttonRectTransform: {fileID: 1275536722}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46098,6 +46375,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 209
   buttonRectTransform: {fileID: 397566658}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46116,6 +46394,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 210
   buttonRectTransform: {fileID: 1268522301}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!114 &1599872725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46134,6 +46413,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 209
   buttonRectTransform: {fileID: 1406950675}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
 --- !u!1 &1607910433
 GameObject:
   m_ObjectHideFlags: 0
@@ -47318,7 +47598,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639198707}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -48317,7 +48597,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1683996726
 RectTransform:
@@ -48328,7 +48608,7 @@ RectTransform:
   m_GameObject: {fileID: 1683996725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.920603, y: 0.2252987, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -48336,8 +48616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1059.67, y: 229.1}
-  m_SizeDelta: {x: 40.47, y: 123.27}
+  m_AnchoredPosition: {x: 1067.87, y: 226.87}
+  m_SizeDelta: {x: 377.88, y: 32.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683996727
 MonoBehaviour:
@@ -48469,7 +48749,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1693208599
 RectTransform:
@@ -49899,7 +50179,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1715746402
 RectTransform:
@@ -51375,7 +51655,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1765201402
 RectTransform:
@@ -51386,7 +51666,7 @@ RectTransform:
   m_GameObject: {fileID: 1765201401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5914962, y: 0.08819165, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -51394,8 +51674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -245.22, y: -227.37}
-  m_SizeDelta: {x: 49.46, y: 589.92}
+  m_AnchoredPosition: {x: -242.9, y: -224.93}
+  m_SizeDelta: {x: 32.38, y: 47.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765201403
 MonoBehaviour:
@@ -53157,7 +53437,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1799558465
 RectTransform:
@@ -53228,7 +53508,6 @@ GameObject:
   - component: {fileID: 1808030357}
   - component: {fileID: 1808030356}
   - component: {fileID: 1808030370}
-  - component: {fileID: 1808030365}
   - component: {fileID: 1808030355}
   - component: {fileID: 1808030354}
   - component: {fileID: 1808030359}
@@ -53238,6 +53517,7 @@ GameObject:
   - component: {fileID: 1808030367}
   - component: {fileID: 1808030368}
   - component: {fileID: 1808030369}
+  - component: {fileID: 1808030371}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -53465,40 +53745,6 @@ MonoBehaviour:
   openHeight: 3736.8
   cameraToMove: {fileID: 701352638}
   cameraResizeSpeed: 1
---- !u!114 &1808030365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808030353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27b598b2d5c0c34d849a663fccfa05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  person: {fileID: 1072992043}
-  destination: {fileID: 156310877}
-  KorytarzePietro:
-  - {fileID: 267896759}
-  - {fileID: 1516356895}
-  - {fileID: 704330869}
-  - {fileID: 775492736}
-  - {fileID: 1074969135}
-  - {fileID: 1799558465}
-  - {fileID: 25221301}
-  - {fileID: 702084001}
-  - {fileID: 1857595487}
-  - {fileID: 696808497}
-  - {fileID: 843269730}
-  - {fileID: 237580761}
-  - {fileID: 1715746402}
-  - {fileID: 675952024}
-  - {fileID: 564201256}
-  - {fileID: 731877135}
-  - {fileID: 967844135}
-  - {fileID: 239838182}
-  waypointCreator: {fileID: 0}
 --- !u!114 &1808030366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53610,7 +53856,25 @@ MonoBehaviour:
   - {fileID: 1779795974}
   waypointParent: {fileID: 126777184}
   waypointPrefab: {fileID: 1639198707}
+  waypointManager: {fileID: 1808030371}
   createdWaypoints: []
+--- !u!114 &1808030371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808030353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27b598b2d5c0c34d849a663fccfa05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  person: {fileID: 1072992043}
+  target: {fileID: 1904493121}
+  allWaypoints: []
+  lineColor: {r: 0, g: 0, b: 1, a: 1}
+  lineWidth: 0.01
 --- !u!1 &1809456251
 GameObject:
   m_ObjectHideFlags: 0
@@ -54782,7 +55046,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1857595487
 RectTransform:
@@ -55226,7 +55490,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1885493310
 RectTransform:
@@ -55237,7 +55501,7 @@ RectTransform:
   m_GameObject: {fileID: 1885493309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.255894, y: 0.092839845, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016773321}
@@ -55245,8 +55509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1064.0806, y: -168.77}
-  m_SizeDelta: {x: 77.03, y: 277.96}
+  m_AnchoredPosition: {x: 1068.03, y: -174.03}
+  m_SizeDelta: {x: 798.12, y: 36.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885493311
 MonoBehaviour:
@@ -55303,7 +55567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1892456519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58620,7 +58884,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &2016773321
 RectTransform:
@@ -58657,6 +58921,7 @@ RectTransform:
   - {fileID: 1683996726}
   - {fileID: 965965569}
   - {fileID: 1014213593}
+  - {fileID: 506807900}
   m_Father: {fileID: 2120161081}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62362,7 +62627,7 @@ RectTransform:
   - {fileID: 611507463}
   - {fileID: 1892456519}
   m_Father: {fileID: 200340861}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

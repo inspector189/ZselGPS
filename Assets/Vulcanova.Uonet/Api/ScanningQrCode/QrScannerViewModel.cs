@@ -1,4 +1,4 @@
-using System.Reactive;
+/*using System.Reactive;
 using System.Threading.Tasks;
 using Prism.Navigation;
 using ReactiveUI;
@@ -37,4 +37,4 @@ public class QrScannerViewModel : ViewModelBase
             
         return Unit.Default;
     }
-}
+}*/

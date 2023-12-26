@@ -1,4 +1,4 @@
-using System.Linq;
+/*using System.Linq;
 using System.Reactive;
 using System.Threading.Tasks;
 using Prism.Navigation;
@@ -60,4 +60,4 @@ public class EnterPinCodeViewModel : ViewModelBase, INavigatedAware, IValidatabl
     }
 
     public ValidationContext ValidationContext { get; } = new();
-}
+}*/

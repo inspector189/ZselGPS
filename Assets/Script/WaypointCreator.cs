@@ -9,6 +9,7 @@ public class WaypointCreator : MonoBehaviour
     public GameObject waypointParent;
     public GameObject waypointPrefab;
     private int currentFloor;
+    public LineCreator waypointManager;
    public List<GameObject> createdWaypoints = new List<GameObject>();
 
     private void Update()
@@ -23,9 +24,19 @@ public class WaypointCreator : MonoBehaviour
 
     private void SwitchFloor()
     {
-        DisableAllWaypoints();
+         DisableAllWaypoints();
         List<RectTransform> currentFloorCorridors = GetCurrentFloorCorridors();
         CreateWaypointsForCorridors(currentFloorCorridors);
+        
+        // Stwórz listę Transform z Twoich stworzonych waypoints
+        List<Transform> transformWaypoints = new List<Transform>();
+        foreach (GameObject waypointObject in createdWaypoints)
+        {
+            transformWaypoints.Add(waypointObject.transform);
+        }
+
+        // Przekaż listę Transform do LineCreator
+        waypointManager.SetWaypoints(transformWaypoints);
     }
 
     private void DisableAllWaypoints()
@@ -116,8 +127,8 @@ public class WaypointCreator : MonoBehaviour
             }
         }
     }
+      
 }
-
 
 }
   

@@ -1,3 +1,4 @@
+/*
 using System;
 
 namespace Vulcanova.Features.Auth.ScanningQrCode
@@ -17,3 +18,4 @@ namespace Vulcanova.Features.Auth.ScanningQrCode
         }
     }
 }
+*/

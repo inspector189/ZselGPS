@@ -1,72 +1,154 @@
-using UnityEngine;
 using System.Collections.Generic;
-using SVS.AI;
+using UnityEngine;
 
 public class LineCreator : MonoBehaviour
 {
-    public Transform person;
-    public Transform destination;
-    public List<RectTransform> KorytarzePietro;
-    private LineRenderer lineRenderer;
-    public WaypointCreator waypointCreator;
-    private Vector3 personPosition;
-    private Vector3 destinationPosition;
+    public Transform person; // Pozycja obiektu reprezentującego użytkownika
+    public Transform target; // Pozycja wybranego celu
+    public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
+
+    private LineRenderer lineRenderer; // Komponent LineRenderer do rysowania linii
+    public Color lineColor = Color.blue; // Kolor linii
+    public float lineWidth = 0.01f; // Szerokość linii
 
     private void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = 0; // Wyczyszczenie istniejących punktów
-        lineRenderer.startWidth = 0.02f; // Szerokość linii
-        lineRenderer.endWidth = 0.02f;
-        lineRenderer.startColor = Color.blue; // Ustawienie koloru na niebieski
-        lineRenderer.endColor = Color.blue;
-
-        // Pobranie pozycji początkowej
-        personPosition = person.position;
-        destinationPosition = destination.position;
+        // Inicjalizacja LineRenderer
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.startColor = lineColor;
+        lineRenderer.endColor = lineColor;
+        lineRenderer.startWidth = lineWidth;
+        lineRenderer.endWidth = lineWidth;
+        lineRenderer.useWorldSpace = true;
+        lineRenderer.sortingOrder = 1; // Zapewnia, że linia jest rysowana nad innymi elementami
     }
 
     private void Update()
     {
-        // Aktualizacja pozycji obiektów Person i Destination
-        personPosition = person.position;
-        destinationPosition = destination.position;
-
-        if (KorytarzePietro != null && KorytarzePietro.Count > 0 && waypointCreator != null)
+        FindAndDrawPath();
+    }
+     public void SetWaypoints(List<Transform> waypoints)
+    {
+        allWaypoints.Clear();
+    allWaypoints.AddRange(waypoints);
+    FindAndDrawPath(); // Po dodaniu nowego waypointa ponownie rysujemy ścieżkę
+    }
+    private void FindAndDrawPath()
+    {
+        if (person == null || target == null || allWaypoints.Count == 0)
         {
-            List<RectTransform> corridors = waypointCreator.GetCurrentFloorCorridors();
-            waypointCreator.CreateWaypointsForCorridors(corridors); // Wywołanie metody generującej waypointy
-
-            List<GameObject> waypoints = waypointCreator.createdWaypoints; // Pobranie listy waypointów
-
-            List<Vector3> path = new List<Vector3>();
-            foreach (GameObject waypoint in waypoints)
-            {
-                path.Add(waypoint.transform.position); // Dodanie pozycji waypointu do ścieżki
-            }
-
-            Debug.Log("Path count: " + (path != null ? path.Count : 0));
-            if (path != null && path.Count > 0)
-            {
-                DrawPath(path);
-            }
-            else
-            {
-                lineRenderer.positionCount = 0; // Wyczyszczenie linii, gdy nie ma ścieżki
-            }
+            return;
         }
-        else
+
+        Transform closestToPerson = FindClosestWaypoint(person.position);
+        Transform closestToTarget = FindClosestWaypoint(target.position);
+
+        if (closestToPerson != null && closestToTarget != null)
         {
-            Debug.LogError("KorytarzePietro list or waypointCreator is not assigned or empty. Please assign and ensure waypoints are generated.");
+            List<Transform> path = FindShortestPathDijkstra(closestToPerson, closestToTarget);
+            if (path.Count > 0)
+            {
+                DrawPathWithLineRenderer(path);
+            }
         }
     }
 
-    private void DrawPath(List<Vector3> path)
+    private Transform FindClosestWaypoint(Vector3 position)
+    {
+        Transform closest = null;
+        float minDistance = float.MaxValue;
+
+        foreach (Transform waypoint in allWaypoints)
+        {
+            float distance = Vector3.Distance(waypoint.position, position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closest = waypoint;
+            }
+        }
+
+        return closest;
+    }
+
+    private List<Transform> FindShortestPathDijkstra(Transform start, Transform goal)
+    {
+        Dictionary<Transform, float> distances = new Dictionary<Transform, float>();
+        Dictionary<Transform, Transform> predecessors = new Dictionary<Transform, Transform>();
+        List<Transform> nodes = new List<Transform>(allWaypoints);
+
+        foreach (Transform waypoint in allWaypoints)
+        {
+            distances[waypoint] = float.MaxValue;
+            predecessors[waypoint] = null;
+        }
+
+        distances[start] = 0;
+
+        while (nodes.Count > 0)
+        {
+            nodes.Sort((x, y) => distances[x].CompareTo(distances[y]));
+            Transform smallest = nodes[0];
+            nodes.Remove(smallest);
+
+            if (smallest == goal)
+            {
+                return ConstructPath(predecessors, goal);
+            }
+
+            foreach (Transform neighbor in GetNeighbors(smallest))
+            {
+                float alt = distances[smallest] + Vector3.Distance(smallest.position, neighbor.position);
+                if (alt < distances[neighbor])
+                {
+                    distances[neighbor] = alt;
+                    predecessors[neighbor] = smallest;
+                }
+            }
+        }
+
+        return new List<Transform>();
+    }
+
+   private const float NEIGHBOR_DISTANCE_THRESHOLD = 0.05f; // Ustaw zasięg, w jakim waypointy są uznawane za sąsiadujące
+
+private List<Transform> GetNeighbors(Transform current)
+{
+    List<Transform> neighbors = new List<Transform>();
+
+    foreach (Transform waypoint in allWaypoints)
+    {
+        if (waypoint != current && Vector3.Distance(waypoint.position, current.position) <= NEIGHBOR_DISTANCE_THRESHOLD)
+        {
+            neighbors.Add(waypoint);
+        }
+    }
+
+    return neighbors;
+}
+    private List<Transform> ConstructPath(Dictionary<Transform, Transform> predecessors, Transform goal)
+    {
+        List<Transform> path = new List<Transform>();
+        Transform current = goal;
+
+        while (current != null)
+        {
+            path.Add(current);
+            current = predecessors[current];
+        }
+
+        path.Reverse();
+        return path;
+    }
+
+    private void DrawPathWithLineRenderer(List<Transform> path)
     {
         lineRenderer.positionCount = path.Count;
         for (int i = 0; i < path.Count; i++)
         {
-            lineRenderer.SetPosition(i, path[i]);
+            Vector3 pathPosition = path[i].position;
+            lineRenderer.SetPosition(i, new Vector3(pathPosition.x, pathPosition.y, 0)); // Ustawienie na płaszczyźnie 2D
         }
     }
 }

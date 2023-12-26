@@ -1,3 +1,5 @@
+/*
+
 using System;
 using System.Globalization;
 using System.IO;
@@ -17,11 +19,11 @@ public class QrCodeReader : MonoBehaviour
 
             if (path != null)
             {
-                // Za³aduj wybrane zdjêcie jako Texture2D
+                // Zaï¿½aduj wybrane zdjï¿½cie jako Texture2D
                 Texture2D texture = NativeGallery.LoadImageAtPath(path, 1024, false);
                 if (texture == null)
                 {
-                    Debug.Log("Nie uda³o siê za³adowaæ obrazu");
+                    Debug.Log("Nie udaï¿½o siï¿½ zaï¿½adowaï¿½ obrazu");
                     return;
                 }
 
@@ -46,29 +48,30 @@ public class QrCodeReader : MonoBehaviour
             else
             {
                 Debug.Log("Nie znaleziono kodu QR");
-            }
+            } 
         }
         catch (Exception ex)
         {
-            Debug.LogError("B³¹d podczas skanowania kodu QR: " + ex.Message);
+            Debug.LogError("Bï¿½ï¿½d podczas skanowania kodu QR: " + ex.Message);
         }
     }
     private void AuthenticateWithVulcan(string decodedData)
     {
-        // Rozdziel zdekodowane dane na odpowiednie czêœci
+        // Rozdziel zdekodowane dane na odpowiednie czï¿½ci
         var qrCodeData = AuthQrCode.FromQrString(decodedData);
 
         // Logowanie do dziennika Vulkanowego
-        // Mo¿esz potrzebowaæ dodatkowej logiki w zale¿noœci od wymagañ API
+        // Moï¿½esz potrzebowaï¿½ dodatkowej logiki w zaleï¿½noï¿½ci od wymagaï¿½ API
         try
         {
-            // Przyk³adowo, jeœli potrzebujesz PINu, musisz go tutaj przekazaæ
-            Debug.Log(qrCodeData.Token + "Twój PIN" + qrCodeData.ApiAddress);
+            // Przykï¿½adowo, jeï¿½li potrzebujesz PINu, musisz go tutaj przekazaï¿½
+            Debug.Log(qrCodeData.Token + "Twï¿½j PIN" + qrCodeData.ApiAddress);
         }
         catch (Exception ex)
         {
-            Debug.LogError("B³¹d logowania: " + ex.Message);
+            Debug.LogError("Bï¿½ï¿½d logowania: " + ex.Message);
         }
     }
 
 }
+*/
