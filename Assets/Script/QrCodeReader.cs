@@ -4,6 +4,8 @@ using System.IO;
 using UnityEngine;
 using NativeGalleryNamespace;
 using ZXing;
+using Vulcanova;
+using Vulcanova.Features.Auth.ScanningQrCode;
 
 public class QrCodeReader : MonoBehaviour
 {
@@ -39,6 +41,7 @@ public class QrCodeReader : MonoBehaviour
             if (result != null)
             {
                 Debug.Log("Zdekodowany tekst z QR: " + result.Text);
+                AuthenticateWithVulcan(result.Text);
             }
             else
             {
@@ -48,6 +51,23 @@ public class QrCodeReader : MonoBehaviour
         catch (Exception ex)
         {
             Debug.LogError("B³¹d podczas skanowania kodu QR: " + ex.Message);
+        }
+    }
+    private void AuthenticateWithVulcan(string decodedData)
+    {
+        // Rozdziel zdekodowane dane na odpowiednie czêœci
+        var qrCodeData = AuthQrCode.FromQrString(decodedData);
+
+        // Logowanie do dziennika Vulkanowego
+        // Mo¿esz potrzebowaæ dodatkowej logiki w zale¿noœci od wymagañ API
+        try
+        {
+            // Przyk³adowo, jeœli potrzebujesz PINu, musisz go tutaj przekazaæ
+            Debug.Log(qrCodeData.Token + "Twój PIN" + qrCodeData.ApiAddress);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("B³¹d logowania: " + ex.Message);
         }
     }
 
