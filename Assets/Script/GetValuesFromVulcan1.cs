@@ -56,7 +56,7 @@ public class GetValuesFromVulcan1 : MonoBehaviour
 
             if (token == "testowe")
             {
-                Debug.Log($"Imiê: Testowe\n Szko³a: Zespó³ Szkó³ Testowych");
+                
             }
             else
             {

@@ -51,7 +51,6 @@ public class GPSMap2 : MonoBehaviour
     public TextMeshProUGUI precyzjaTekst;
     public TextMeshProUGUI wysokoscTekst;
     Vector2 lastGPSPosition = Vector2.zero;
-    bool usingGPS = false;
     public TextMeshProUGUI informacja;
     public TextMeshProUGUI informacja2;
     public GameObject RedneredMap;
@@ -115,46 +114,48 @@ public class GPSMap2 : MonoBehaviour
                     {
                         Input.location.Start(1f, 0.1f);
                     }
-                    float latitude = Input.location.lastData.latitude;
-                    float longitude = Input.location.lastData.longitude;
-                    float accuracy = Input.location.lastData.horizontalAccuracy;
-                    double lastUpdateTime = Input.location.lastData.timestamp;
-                    double timeSinceLastUpdate = Time.time - lastUpdateTime;
-
-                    PlayerPrefs.SetFloat("accuracy", accuracy);
-                    float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
-
-                    precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
-                    wysokoscTekst.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
-
-                    avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
-                    avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
-                    avg.AddMeasurement(accuracy);
-
-                    if(BrakPolaczenia.activeSelf)
+                    if (Input.location.status == LocationServiceStatus.Running)
                     {
-                        float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
-                        Spinner.SetActive(true);
-                        int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
-                        informacja.text = "Szukanie lokalizacji...";
-                        informacja2.color = Color.white;
-                        informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
-                    }
-                    
+                        float latitude = Input.location.lastData.latitude;
+                        float longitude = Input.location.lastData.longitude;
+                        float accuracy = Input.location.lastData.horizontalAccuracy;
+                        double lastUpdateTime = Input.location.lastData.timestamp;
+                        double timeSinceLastUpdate = Time.time - lastUpdateTime;
 
-                    if (timeSinceLastLocationUpdate >= updateInterval)
-                    {
-                        person2.transform.position = CalcPosition();
-                        if(PlayerPrefs.GetInt("pietro") == 2)
+                        PlayerPrefs.SetFloat("accuracy", accuracy);
+                        float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
+
+                        precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
+                        wysokoscTekst.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
+
+                        avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
+                        avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
+                        avg.AddMeasurement(accuracy);
+
+                        if (BrakPolaczenia.activeSelf)
                         {
-                            if (IsColliding(personRect2, ObszarWsparcia2))
+                            float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
+                            Spinner.SetActive(true);
+                            int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
+                            informacja.text = "Szukanie lokalizacji...";
+                            informacja2.color = Color.white;
+                            informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
+                        }
+
+
+                        if (timeSinceLastLocationUpdate >= updateInterval)
+                        {
+                            person2.transform.position = CalcPosition();
+                            if (PlayerPrefs.GetInt("pietro") == 2)
                             {
+                                if (IsColliding(personRect2, ObszarWsparcia2))
+                                {
                                     if (!parterList.Contains(personRect2))
                                     {
                                         Vector2 newPosition = FindClosestEdgePosition();
                                         if (newPosition != Vector2.zero)
                                         {
-                                            
+
                                             personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
                                         }
                                     }
@@ -162,23 +163,23 @@ public class GPSMap2 : MonoBehaviour
                                     {
                                         personRect.position = CalcPosition();
                                     }
+                                }
+                                else
+                                {
+                                    personRect.position = CalcPosition();
+                                }
                             }
-                            else
+                            if (PlayerPrefs.GetInt("pietro") == 0 || PlayerPrefs.GetInt("pietro") == 1)
                             {
-                                personRect.position = CalcPosition();
-                            }
-                        }
-                        if(PlayerPrefs.GetInt("pietro") == 0 || PlayerPrefs.GetInt("pietro") == 1)
-                        {
-                            if (IsColliding(personRect2, ObszarWsparcia))
-                            {
+                                if (IsColliding(personRect2, ObszarWsparcia))
+                                {
 
                                     if (!parterList.Contains(personRect2))
                                     {
                                         Vector2 newPosition = FindClosestEdgePosition();
                                         if (newPosition != Vector2.zero)
                                         {
-                                        personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
+                                            personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
                                         }
                                     }
                                     else
@@ -186,19 +187,19 @@ public class GPSMap2 : MonoBehaviour
                                         personRect.position = CalcPosition();
                                     }
 
+                                }
+                                else
+                                {
+                                    personRect.position = CalcPosition();
+                                }
                             }
-                            else
-                            {
-                                personRect.position = CalcPosition();
-                            }
+
+
+
+
+                            timeSinceLastLocationUpdate = 0.0f;
                         }
-                       
-                        
-                        
-
-                        timeSinceLastLocationUpdate = 0.0f;
                     }
-
                 }
                 else
                 {
@@ -354,7 +355,6 @@ public class GPSMap2 : MonoBehaviour
 
             Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
             lastGPSPosition = dorigin / 50f;
-            usingGPS = true;
 
             return lastGPSPosition;
         }

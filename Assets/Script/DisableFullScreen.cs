@@ -8,9 +8,12 @@ public class DisableFullScreen : MonoBehaviour
     public static int result; //get value 0 if I call from another script
     void Start()
     {
-        disableFullScreen();
-        result = getStatusHeight();
-        SDK_INT = getSDKInt();
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            disableFullScreen();
+            result = getStatusHeight();
+            SDK_INT = getSDKInt();
+        }
     }
 
     static void disableFullScreen()

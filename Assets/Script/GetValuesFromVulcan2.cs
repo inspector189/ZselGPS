@@ -25,7 +25,6 @@ using System.Globalization;
 public class GetValuesFromVulcan2 : MonoBehaviour
 {
     public string symbol = "wloclawek";
-    private int i = 0;
     public GameObject inputFieldPrefabNumerLekcji; // Prefab dla Input.Textboxa
     public Transform PanelNrLekcje;
     public GameObject inputGodzinki;

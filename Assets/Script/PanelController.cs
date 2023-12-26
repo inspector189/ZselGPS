@@ -7,7 +7,6 @@ public class PanelController : MonoBehaviour
 {
     public void ClosePanel()
     {
-        Debug.Log("Test");
         PlayerPrefs.SetInt("panelStatus", 1);
         PlayerPrefs.SetInt("panelCzynnosc", 0);
     }
