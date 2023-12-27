@@ -12,13 +12,8 @@ public class PanelOdZdjec : MonoBehaviour
     }
     public void TogglePanelVisibility()
     {
-        if (panel != null)
-        {
-            // Zmienia stan widoczności panelu na przeciwny do aktualnego stanu
-            panel.SetActive(!panel.activeSelf);
-            Debug.Log("Klik");
-        }
-        
+        panel.SetActive(true);
+
     }
     public void WylaczeniePanelu()
     {

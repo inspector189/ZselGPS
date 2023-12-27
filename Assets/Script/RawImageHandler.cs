@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDownHandler
 {
@@ -15,6 +17,7 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     private GameObject DrzwiCel;
     private float timeOfLastClick = 0f;
     private const float maxClickDuration = 0.15f; // Maksymalny czas trwania pojedynczego kliknięcia
+    public List<Sprite> images;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -25,6 +28,13 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     {
         TextMeshProUGUI TytulSaliText = GameObject.Find("TytulSali").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI OpisSaliText = GameObject.Find("OpisSali").GetComponent<TextMeshProUGUI>();
+        Image obszarZdjecia = GameObject.Find("ZdjecieSali1").GetComponent<Image>();
+
+        if (images != null && images.Count > 0)
+        {
+            obszarZdjecia.sprite = images[0];
+        }
+
         RectTransform rawImageRect = GetComponent<RectTransform>();
         // Przekształć pozycję kliknięcia na lokalną pozycję w RawImage
         Vector2 localClickPosition;

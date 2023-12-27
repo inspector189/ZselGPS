@@ -660,7 +660,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -9212,153 +9212,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304111474}
   m_CullTransparentMesh: 1
---- !u!1 &306923357
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 306923358}
-  - component: {fileID: 306923362}
-  - component: {fileID: 306923361}
-  - component: {fileID: 306923360}
-  - component: {fileID: 306923359}
-  m_Layer: 5
-  m_Name: ButtonZdjecie
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &306923358
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306923357}
-  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4999995, y: 3.5000002, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1794704459}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -439.89, y: 801.4}
-  m_SizeDelta: {x: 251.36, y: 253.6}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &306923359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306923357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ce01754dff4fc34da62ccc6cd6bb45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 361022416}
---- !u!114 &306923360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306923357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 306923361}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 306923359}
-        m_TargetAssemblyTypeName: PanelOdZdjec, Assembly-CSharp
-        m_MethodName: TogglePanelVisibility
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &306923361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306923357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &306923362
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306923357}
-  m_CullTransparentMesh: 1
 --- !u!1 &314412537
 GameObject:
   m_ObjectHideFlags: 0
@@ -11416,7 +11269,7 @@ RectTransform:
   - {fileID: 353945767}
   - {fileID: 1199228222}
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -12961,7 +12814,7 @@ RectTransform:
   m_Children:
   - {fileID: 217330691}
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -13118,7 +12971,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -34817,7 +34670,7 @@ RectTransform:
   m_Children:
   - {fileID: 1291016363}
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -37575,9 +37428,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1303932037}
   - component: {fileID: 1303932039}
-  - component: {fileID: 1303932038}
+  - component: {fileID: 1303932040}
   m_Layer: 5
-  m_Name: Zdjecie1
+  m_Name: ZdjecieSali1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37603,7 +37456,15 @@ RectTransform:
   m_AnchoredPosition: {x: -444.0002, y: -1066.9993}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1303932038
+--- !u!222 &1303932039
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303932036}
+  m_CullTransparentMesh: 1
+--- !u!114 &1303932040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37612,7 +37473,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1303932036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -37623,21 +37484,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 98789f40bbe47ed42891d27471f441bd, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1303932039
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303932036}
-  m_CullTransparentMesh: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1306705971
 GameObject:
   m_ObjectHideFlags: 0
@@ -44711,6 +44567,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1922670150}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1285927972}
+  images: []
 --- !u!114 &1599872611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44730,6 +44587,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1465776681}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1428447812}
+  images: []
 --- !u!114 &1599872612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44751,6 +44609,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1854775879}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1264143044}
+  images: []
 --- !u!114 &1599872613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44770,6 +44629,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 252867117}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 280140100}
+  images: []
 --- !u!114 &1599872614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44789,6 +44649,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 826785342}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1066763425}
+  images: []
 --- !u!114 &1599872615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44808,6 +44669,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 158572168}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1525132575}
+  images: []
 --- !u!114 &1599872616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44827,6 +44689,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 175084158}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1906204137}
+  images: []
 --- !u!114 &1599872617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44846,6 +44709,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 384832015}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 771300808}
+  images: []
 --- !u!114 &1599872618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44865,6 +44729,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 449503420}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1330690531}
+  images: []
 --- !u!114 &1599872619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44884,6 +44749,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1558271996}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1253408544}
+  images: []
 --- !u!114 &1599872620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44903,6 +44769,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1170669554}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 474488447}
+  images: []
 --- !u!114 &1599872621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44922,6 +44789,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2109868208}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1167597333}
+  images: []
 --- !u!114 &1599872622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44941,6 +44809,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1788157267}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1143099698}
+  images: []
 --- !u!114 &1599872623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44960,6 +44829,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1008587125}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 926592554}
+  images: []
 --- !u!114 &1599872624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44979,6 +44849,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1322686578}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1100986525}
+  images: []
 --- !u!114 &1599872625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44998,6 +44869,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 591165045}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1904493121}
+  images:
+  - {fileID: 21300000, guid: 43fc6961267b9c6459ef8c308c1ab08b, type: 3}
 --- !u!114 &1599872626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45017,6 +44890,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1627492557}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 156310877}
+  images:
+  - {fileID: 21300000, guid: fb33ff93093a35f4a91970230b6d9e4e, type: 3}
 --- !u!114 &1599872627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45036,6 +44911,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 860187626}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 470279148}
+  images: []
 --- !u!114 &1599872628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45055,6 +44931,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 161231139}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 392665056}
+  images: []
 --- !u!114 &1599872629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45074,6 +44951,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2008256036}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 680657076}
+  images: []
 --- !u!114 &1599872630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45093,6 +44971,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1957629142}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 678740687}
+  images: []
 --- !u!114 &1599872631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45112,6 +44991,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1349254090}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1580500274}
+  images: []
 --- !u!114 &1599872632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45131,6 +45011,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 304111475}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1649642176}
+  images: []
 --- !u!114 &1599872633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45150,6 +45031,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2030635396}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1449812333}
+  images: []
 --- !u!114 &1599872634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45169,6 +45051,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1967946708}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 747469726}
+  images: []
 --- !u!114 &1599872635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45188,6 +45071,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 103537143}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 576831089}
+  images: []
 --- !u!114 &1599872636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45207,6 +45091,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 143400456}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 449754392}
+  images: []
 --- !u!114 &1599872637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45226,6 +45111,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1610016609}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 531289636}
+  images: []
 --- !u!114 &1599872638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45245,6 +45131,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1100549423}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1480333273}
+  images: []
 --- !u!114 &1599872639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45264,6 +45151,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 430278787}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 411620732}
+  images: []
 --- !u!114 &1599872640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45283,6 +45171,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1899086232}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2004983954}
+  images: []
 --- !u!114 &1599872641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45302,6 +45191,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 420799799}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1306705972}
+  images: []
 --- !u!114 &1599872642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45321,6 +45211,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 275610440}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 320859175}
+  images: []
 --- !u!114 &1599872643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45340,6 +45231,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 624492625}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1373246344}
+  images: []
 --- !u!114 &1599872644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45359,6 +45251,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1526419482}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1105736147}
+  images: []
 --- !u!114 &1599872645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45378,6 +45271,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1693987622}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1767922868}
+  images: []
 --- !u!114 &1599872646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45397,6 +45291,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 523553727}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 274852036}
+  images: []
 --- !u!114 &1599872647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45416,6 +45311,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1919054729}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 667675841}
+  images: []
 --- !u!114 &1599872650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45435,6 +45331,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 190948180}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 949682666}
+  images: []
 --- !u!114 &1599872651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45454,6 +45351,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 549399295}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2145595937}
+  images: []
 --- !u!114 &1599872652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45473,6 +45371,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 985944919}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 949682666}
+  images: []
 --- !u!114 &1599872653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45492,6 +45391,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 576099220}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2072290610}
+  images: []
 --- !u!114 &1599872654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45511,6 +45411,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 606848946}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 819228835}
+  images: []
 --- !u!114 &1599872655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45530,6 +45431,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2107302161}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1713031440}
+  images: []
 --- !u!114 &1599872656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45549,6 +45451,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1700545303}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 700568638}
+  images: []
 --- !u!114 &1599872657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45568,6 +45471,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1937804838}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1194472772}
+  images: []
 --- !u!114 &1599872658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45587,6 +45491,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 158128556}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 649428821}
+  images: []
 --- !u!114 &1599872659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45606,6 +45511,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 601111544}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 373982305}
+  images: []
 --- !u!114 &1599872660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45625,6 +45531,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 605526121}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 607193264}
+  images: []
 --- !u!114 &1599872661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45644,6 +45551,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1021305138}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 204984258}
+  images: []
 --- !u!114 &1599872662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45663,6 +45571,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1054244575}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2052235185}
+  images: []
 --- !u!114 &1599872663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45682,6 +45591,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 647652789}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1573761091}
+  images: []
 --- !u!114 &1599872664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45701,6 +45611,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2072848526}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 471336059}
+  images: []
 --- !u!114 &1599872665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45720,6 +45631,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 941131941}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 185521459}
+  images: []
 --- !u!114 &1599872666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45739,6 +45651,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 892678648}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 571237145}
+  images: []
 --- !u!114 &1599872667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45758,6 +45671,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1081562401}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1631779366}
+  images: []
 --- !u!114 &1599872668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45777,6 +45691,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1378669796}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1922328566}
+  images: []
 --- !u!114 &1599872669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45796,6 +45711,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 772619179}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 150169285}
+  images: []
 --- !u!114 &1599872670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45815,6 +45731,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 850074902}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 185301109}
+  images: []
 --- !u!114 &1599872671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45834,6 +45751,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1217364022}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1150137544}
+  images: []
 --- !u!114 &1599872672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45853,6 +45771,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2091961868}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1545338037}
+  images: []
 --- !u!114 &1599872673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45872,6 +45791,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1359911817}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1964952758}
+  images: []
 --- !u!114 &1599872674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45892,6 +45812,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1706305461}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1281389872}
+  images: []
 --- !u!114 &1599872675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45911,6 +45832,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 521039264}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1834931512}
+  images: []
 --- !u!114 &1599872676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45930,6 +45852,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 536543657}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 798292136}
+  images: []
 --- !u!114 &1599872677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45949,6 +45872,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 982260485}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1494282828}
+  images: []
 --- !u!114 &1599872678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45968,6 +45892,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2118193767}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 217647764}
+  images: []
 --- !u!114 &1599872679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45987,6 +45912,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 315615909}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1526511823}
+  images: []
 --- !u!114 &1599872680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46006,6 +45932,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1434341141}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1378169838}
+  images: []
 --- !u!114 &1599872681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46025,6 +45952,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 259013253}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1091578316}
+  images: []
 --- !u!114 &1599872682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46044,6 +45972,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2043992879}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 100212457}
+  images: []
 --- !u!114 &1599872683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46063,6 +45992,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 346264699}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 27473326}
+  images: []
 --- !u!114 &1599872684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46082,6 +46012,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 864190230}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1094521393}
+  images: []
 --- !u!114 &1599872685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46101,6 +46032,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1026082812}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2126053346}
+  images: []
 --- !u!114 &1599872686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46120,6 +46052,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1652188892}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1848288387}
+  images: []
 --- !u!114 &1599872687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46139,6 +46072,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1785867947}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 627757512}
+  images: []
 --- !u!114 &1599872688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46158,6 +46092,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1244171815}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1986466600}
+  images: []
 --- !u!114 &1599872689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46177,6 +46112,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 826576776}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1474658196}
+  images: []
 --- !u!114 &1599872690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46196,6 +46132,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 12155851}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1626766435}
+  images: []
 --- !u!114 &1599872691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46215,6 +46152,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2068124170}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 735591355}
+  images: []
 --- !u!114 &1599872692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46234,6 +46172,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1964178170}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1481588126}
+  images: []
 --- !u!114 &1599872693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46253,6 +46192,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1614773100}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1609811130}
+  images: []
 --- !u!114 &1599872694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46272,6 +46212,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 722680718}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 668829445}
+  images: []
 --- !u!114 &1599872695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46291,6 +46232,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 447891814}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1677368277}
+  images: []
 --- !u!114 &1599872696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46310,6 +46252,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 30252412}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1280375652}
+  images: []
 --- !u!114 &1599872697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46330,6 +46273,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 867172765}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &1599872698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46349,6 +46293,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1719492104}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 792558545}
+  images: []
 --- !u!114 &1599872699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46368,6 +46313,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1854720717}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1338617738}
+  images: []
 --- !u!114 &1599872700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46387,6 +46333,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 63415332}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1717214901}
+  images: []
 --- !u!114 &1599872701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46406,6 +46353,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 810088743}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1998213533}
+  images: []
 --- !u!114 &1599872702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46426,6 +46374,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1011422287}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 162397718}
+  images: []
 --- !u!114 &1599872703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46445,6 +46394,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 882602914}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1971180709}
+  images: []
 --- !u!114 &1599872704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46464,6 +46414,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 172179374}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1001421034}
+  images: []
 --- !u!114 &1599872705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46483,6 +46434,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2109040139}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 63551812}
+  images: []
 --- !u!114 &1599872706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46502,6 +46454,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 162199191}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1871650113}
+  images: []
 --- !u!114 &1599872707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46521,6 +46474,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1724091002}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1185890284}
+  images: []
 --- !u!114 &1599872708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46540,6 +46494,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1978560348}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1235462579}
+  images: []
 --- !u!114 &1599872709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46559,6 +46514,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 591250139}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 542393910}
+  images: []
 --- !u!114 &1599872710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46578,6 +46534,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2105380462}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 25303666}
+  images: []
 --- !u!114 &1599872711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46597,6 +46554,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 127353850}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 616053200}
+  images: []
 --- !u!114 &1599872712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46616,6 +46574,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 25522408}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 458693930}
+  images: []
 --- !u!114 &1599872713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46635,6 +46594,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1289963808}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1340986208}
+  images: []
 --- !u!114 &1599872714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46654,6 +46614,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1576839177}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1486860306}
+  images: []
 --- !u!114 &1599872715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46673,6 +46634,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 304005428}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1546729325}
+  images: []
 --- !u!114 &1599872716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46692,6 +46654,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 891942395}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2022893257}
+  images: []
 --- !u!114 &1599872717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46711,6 +46674,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1327453946}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 368486038}
+  images: []
 --- !u!114 &1599872718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46730,6 +46694,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1117578762}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 680083953}
+  images: []
 --- !u!114 &1599872719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46749,6 +46714,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 644849713}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 452378348}
+  images: []
 --- !u!114 &1599872720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46768,6 +46734,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1553143587}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1336500367}
+  images: []
 --- !u!114 &1599872721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46787,6 +46754,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1762540248}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1867232737}
+  images: []
 --- !u!114 &1599872722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46806,6 +46774,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1275536722}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 8432232}
+  images: []
 --- !u!114 &1599872724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46825,6 +46794,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1268522301}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 721937666}
+  images: []
 --- !u!114 &1599872725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46844,6 +46814,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1406950675}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 791567739}
+  images: []
 --- !u!1 &1607910433
 GameObject:
   m_ObjectHideFlags: 0
@@ -53876,12 +53847,12 @@ RectTransform:
   m_Children:
   - {fileID: 427119473}
   - {fileID: 1303932037}
-  - {fileID: 306923358}
   - {fileID: 446662144}
   - {fileID: 8314794}
   - {fileID: 391263035}
   - {fileID: 1224800341}
   - {fileID: 440213807}
+  - {fileID: 1926390653}
   m_Father: {fileID: 1808030357}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
@@ -57192,6 +57163,153 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923624745}
+  m_CullTransparentMesh: 1
+--- !u!1 &1926390652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926390653}
+  - component: {fileID: 1926390657}
+  - component: {fileID: 1926390656}
+  - component: {fileID: 1926390655}
+  - component: {fileID: 1926390654}
+  m_Layer: 5
+  m_Name: Button (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1926390653
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926390652}
+  m_LocalRotation: {x: 1, y: -0, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.9596282, y: -2.590714, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1794704459}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -452.8, y: 803.6}
+  m_SizeDelta: {x: 444.3, y: 355}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1926390654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926390652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce01754dff4fc34da62ccc6cd6bb45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 361022416}
+--- !u!114 &1926390655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926390652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1926390656}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1926390654}
+        m_TargetAssemblyTypeName: PanelOdZdjec, Assembly-CSharp
+        m_MethodName: TogglePanelVisibility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1926390656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926390652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1926390657
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926390652}
   m_CullTransparentMesh: 1
 --- !u!1 &1929888387
 GameObject:
