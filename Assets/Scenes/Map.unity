@@ -660,7 +660,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -876,7 +876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1422.2, y: 79.8}
+  m_AnchoredPosition: {x: 1415.3, y: 86}
   m_SizeDelta: {x: 38.47, y: 49.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12155852
@@ -1421,7 +1421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1562.5006, y: -346.50027}
+  m_AnchoredPosition: {x: 1556.7, y: -346.5}
   m_SizeDelta: {x: 38.73, y: 112.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25522409
@@ -1753,7 +1753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1212.3, y: 79.45}
+  m_AnchoredPosition: {x: 1201.2, y: 87}
   m_SizeDelta: {x: 88.06, y: 48.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &30252413
@@ -2521,7 +2521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1000.4, y: -198.82}
+  m_AnchoredPosition: {x: 987, y: -198.8}
   m_SizeDelta: {x: 37.9, y: 50.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &63415333
@@ -3561,7 +3561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1515.1, y: -346.1}
+  m_AnchoredPosition: {x: 1511.1, y: -346.1}
   m_SizeDelta: {x: 38.73, y: 112.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127353851
@@ -4670,7 +4670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -831.01, y: -39.9}
+  m_AnchoredPosition: {x: -870.5, y: -36.5}
   m_SizeDelta: {x: 81.009, y: 36.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &158128557
@@ -5195,7 +5195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1515.2, y: -198.8}
+  m_AnchoredPosition: {x: 1510.6, y: -198.8}
   m_SizeDelta: {x: 41.76, y: 50.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162199192
@@ -5392,7 +5392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1026.22, y: -346.56}
+  m_AnchoredPosition: {x: 1010.6, y: -346.6}
   m_SizeDelta: {x: 87.52, y: 112.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172179375
@@ -6284,7 +6284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -890.2, y: 288.7}
+  m_AnchoredPosition: {x: -929, y: 301}
   m_SizeDelta: {x: 650.5, y: 406.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190948181
@@ -6412,7 +6412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -32.1}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3021, y: -47}
+  m_AnchoredPosition: {x: 3032, y: -64}
   m_SizeDelta: {x: 3395, y: 2806.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &200340862
@@ -7822,7 +7822,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 479.99, y: 84.9}
+  m_AnchoredPosition: {x: 458.6, y: 92.6}
   m_SizeDelta: {x: 50.73, y: 48.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259013254
@@ -7906,6 +7906,153 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259013252}
+  m_CullTransparentMesh: 1
+--- !u!1 &259991445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 259991446}
+  - component: {fileID: 259991450}
+  - component: {fileID: 259991449}
+  - component: {fileID: 259991448}
+  - component: {fileID: 259991447}
+  m_Layer: 5
+  m_Name: Button (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &259991446
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259991445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 361022417}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 395, y: 676.9}
+  m_SizeDelta: {x: 125.9, y: 124.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &259991447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259991445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce01754dff4fc34da62ccc6cd6bb45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 361022416}
+--- !u!114 &259991448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259991445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 259991449}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 259991447}
+        m_TargetAssemblyTypeName: PanelOdZdjec, Assembly-CSharp
+        m_MethodName: WylaczeniePanelu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &259991449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259991445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 30c0a54678f36b14c9e39c6a7ba08d07, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &259991450
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259991445}
   m_CullTransparentMesh: 1
 --- !u!1 &262755470
 GameObject:
@@ -9065,6 +9212,153 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304111474}
   m_CullTransparentMesh: 1
+--- !u!1 &306923357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306923358}
+  - component: {fileID: 306923362}
+  - component: {fileID: 306923361}
+  - component: {fileID: 306923360}
+  - component: {fileID: 306923359}
+  m_Layer: 5
+  m_Name: ButtonZdjecie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &306923358
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306923357}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.4999995, y: 3.5000002, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1794704459}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -439.89, y: 801.4}
+  m_SizeDelta: {x: 251.36, y: 253.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &306923359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306923357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce01754dff4fc34da62ccc6cd6bb45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 361022416}
+--- !u!114 &306923360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306923357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 306923361}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 306923359}
+        m_TargetAssemblyTypeName: PanelOdZdjec, Assembly-CSharp
+        m_MethodName: TogglePanelVisibility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &306923361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306923357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &306923362
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306923357}
+  m_CullTransparentMesh: 1
 --- !u!1 &314412537
 GameObject:
   m_ObjectHideFlags: 0
@@ -9236,7 +9530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 251.3, y: 193.7}
+  m_AnchoredPosition: {x: 227.6, y: 202.6}
   m_SizeDelta: {x: 85.59, y: 155.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315615910
@@ -10035,7 +10329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 137.64, y: -227.25}
+  m_AnchoredPosition: {x: 108.6, y: -227.2}
   m_SizeDelta: {x: 38.76, y: 108.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &346264700
@@ -10527,6 +10821,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1743488129}
+  - {fileID: 259991446}
   m_Father: {fileID: 1808030357}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11121,7 +11416,7 @@ RectTransform:
   - {fileID: 353945767}
   - {fileID: 1199228222}
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -12268,7 +12563,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -12666,7 +12961,7 @@ RectTransform:
   m_Children:
   - {fileID: 217330691}
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -12817,17 +13112,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446662143}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 2, z: 1}
+  m_LocalScale: {x: 1.0999999, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1004.3, y: -387}
+  m_AnchoredPosition: {x: 1004.30005, y: -386.9995}
   m_SizeDelta: {x: 1435.9, y: 252.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446662145
@@ -12964,7 +13259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1236.06, y: 219.75}
+  m_AnchoredPosition: {x: 1227, y: 230.9}
   m_SizeDelta: {x: 40.55, y: 108.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &447891815
@@ -14469,7 +14764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.18, y: 356.65}
+  m_AnchoredPosition: {x: -15.1, y: 372.1}
   m_SizeDelta: {x: 88.68, y: 258.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &521039265
@@ -14787,7 +15082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 179.7, y: 438.49}
+  m_AnchoredPosition: {x: 154.9, y: 451.4}
   m_SizeDelta: {x: 137.72, y: 95.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536543658
@@ -15119,7 +15414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1018.49, y: 11.35}
+  m_AnchoredPosition: {x: -1061, y: 16.7}
   m_SizeDelta: {x: 32.61, y: 48.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549399296
@@ -15774,7 +16069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -994.42, y: -68.39}
+  m_AnchoredPosition: {x: -1037.3, y: -63.1}
   m_SizeDelta: {x: 228.71, y: 93.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576099221
@@ -16377,7 +16672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1258.9397, y: -346.31003}
+  m_AnchoredPosition: {x: 1246.9, y: -346.3}
   m_SizeDelta: {x: 181.3, y: 112.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &591250140
@@ -16903,7 +17198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -831.01, y: -199.2}
+  m_AnchoredPosition: {x: -867.7, y: -199.2}
   m_SizeDelta: {x: 81.02, y: 50.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &601111545
@@ -17100,7 +17395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -691.4596, y: -199.16}
+  m_AnchoredPosition: {x: -727.4, y: -199.2}
   m_SizeDelta: {x: 81.02, y: 50.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605526122
@@ -17221,7 +17516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -861.3, y: 6.3}
+  m_AnchoredPosition: {x: -898.2, y: 12.5}
   m_SizeDelta: {x: 22.52, y: 38.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606848947
@@ -18480,7 +18775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -629.92, y: -342.1}
+  m_AnchoredPosition: {x: -668.5, y: -342.1}
   m_SizeDelta: {x: 60.74, y: 107.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647652790
@@ -20950,7 +21245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1306.6, y: 190.11}
+  m_AnchoredPosition: {x: 1297.9, y: 199.7}
   m_SizeDelta: {x: 86.065, y: 49.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722680719
@@ -22137,7 +22432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -302.63, y: -52.1}
+  m_AnchoredPosition: {x: -334.9, y: -45.5}
   m_SizeDelta: {x: 111.22, y: 103.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772619180
@@ -23049,7 +23344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 953.59, y: -198.82}
+  m_AnchoredPosition: {x: 938.7, y: -198.8}
   m_SizeDelta: {x: 37.9, y: 50.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &810088744
@@ -23381,7 +23676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1468.7, y: 79.8}
+  m_AnchoredPosition: {x: 1463.7, y: 86.9}
   m_SizeDelta: {x: 38.47, y: 49.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826576777
@@ -24073,7 +24368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.02, y: -52.05}
+  m_AnchoredPosition: {x: -214, y: -47.8}
   m_SizeDelta: {x: 114.48, y: 103.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850074903
@@ -24726,7 +25021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 233.63, y: -51.64}
+  m_AnchoredPosition: {x: 205.4, y: -45.3}
   m_SizeDelta: {x: 230.68, y: 104.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &864190231
@@ -25197,7 +25492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1166.6, y: 218.8}
+  m_AnchoredPosition: {x: 1153.9, y: 230.9}
   m_SizeDelta: {x: 88.06, y: 110.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &867172766
@@ -25394,7 +25689,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 955.44, y: -346.6}
+  m_AnchoredPosition: {x: 941.4, y: -346.6}
   m_SizeDelta: {x: 41.6, y: 112.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882602915
@@ -25773,7 +26068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -431.26, y: -342.09}
+  m_AnchoredPosition: {x: -462.6, y: -342.1}
   m_SizeDelta: {x: 39.62, y: 107.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892678649
@@ -26826,7 +27121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -385, y: -342.1}
+  m_AnchoredPosition: {x: -418.4, y: -342.1}
   m_SizeDelta: {x: 39.62, y: 107.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &941131942
@@ -27718,7 +28013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -533.64, y: 402.54}
+  m_AnchoredPosition: {x: -569.2, y: 414.8}
   m_SizeDelta: {x: 42.58, y: 178.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979656130
@@ -27976,7 +28271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 133.27, y: 276.89}
+  m_AnchoredPosition: {x: 108.8, y: 285.4}
   m_SizeDelta: {x: 137.72, y: 99.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982260486
@@ -28310,7 +28605,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1137.34, y: -68.4}
+  m_AnchoredPosition: {x: -1179, y: -61.6}
   m_SizeDelta: {x: 41.84, y: 93.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &985944920
@@ -29195,7 +29490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 882.75, y: -288.17}
+  m_AnchoredPosition: {x: 868.3, y: -288.2}
   m_SizeDelta: {x: 90.09, y: 229.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011422288
@@ -29603,7 +29898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -691.1802, y: -372.35022}
+  m_AnchoredPosition: {x: -730.4, y: -372.4}
   m_SizeDelta: {x: 48.59, y: 168.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021305139
@@ -29859,7 +30154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 278.16, y: -227.67}
+  m_AnchoredPosition: {x: 254.9, y: -227.7}
   m_SizeDelta: {x: 134.41, y: 108.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1026082813
@@ -30625,7 +30920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -533.6, y: 229.41}
+  m_AnchoredPosition: {x: -570, y: 240.2}
   m_SizeDelta: {x: 42.58, y: 160.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053070517
@@ -30746,7 +31041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -752.8, y: -372.35}
+  m_AnchoredPosition: {x: -791.5, y: -372.4}
   m_SizeDelta: {x: 60.74, y: 168.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054244576
@@ -30843,7 +31138,7 @@ GameObject:
   - component: {fileID: 1066763427}
   - component: {fileID: 1066763426}
   m_Layer: 5
-  m_Name: Drzwi412
+  m_Name: Drzwi421
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31392,7 +31687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -548, y: -168}
+  m_AnchoredPosition: {x: -584.6, y: -168}
   m_SizeDelta: {x: 86.97, y: 112.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1081562402
@@ -34232,7 +34527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -267.67, y: -227.4}
+  m_AnchoredPosition: {x: -300.1, y: -227.4}
   m_SizeDelta: {x: 86.12, y: 107.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217364023
@@ -34522,7 +34817,7 @@ RectTransform:
   m_Children:
   - {fileID: 1291016363}
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -35075,7 +35370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1516.4, y: 79.8}
+  m_AnchoredPosition: {x: 1510.6, y: 88.2}
   m_SizeDelta: {x: 38.47, y: 49.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1244171816
@@ -36787,7 +37082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1609.09, y: -346.5}
+  m_AnchoredPosition: {x: 1605.4, y: -346.5}
   m_SizeDelta: {x: 38.73, y: 112.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1289963809
@@ -37295,17 +37590,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303932036}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalScale: {x: 3.4999993, y: 3.5000005, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794704459}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -444, y: -1067}
+  m_AnchoredPosition: {x: -444.0002, y: -1066.9993}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1303932038
@@ -38785,7 +39080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -97.89, y: -267.35}
+  m_AnchoredPosition: {x: -126.3, y: -267.3}
   m_SizeDelta: {x: 49.15, y: 150.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1359911818
@@ -39465,7 +39760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -454.93, y: -168.02}
+  m_AnchoredPosition: {x: -489.9, y: -168}
   m_SizeDelta: {x: 86.97, y: 112.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378669797
@@ -41028,7 +41323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400.43, y: 193.73}
+  m_AnchoredPosition: {x: 378.9, y: 204.3}
   m_SizeDelta: {x: 94.39, y: 155.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434341142
@@ -44259,7 +44554,6 @@ GameObject:
   - component: {fileID: 1599872629}
   - component: {fileID: 1599872725}
   - component: {fileID: 1599872724}
-  - component: {fileID: 1599872723}
   - component: {fileID: 1599872722}
   - component: {fileID: 1599872721}
   - component: {fileID: 1599872720}
@@ -44333,8 +44627,6 @@ GameObject:
   - component: {fileID: 1599872652}
   - component: {fileID: 1599872651}
   - component: {fileID: 1599872650}
-  - component: {fileID: 1599872649}
-  - component: {fileID: 1599872648}
   m_Layer: 5
   m_Name: RenderedMap
   m_TagString: Untagged
@@ -44418,7 +44710,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 408
   buttonRectTransform: {fileID: 1922670150}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1285927972}
 --- !u!114 &1599872611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44437,7 +44729,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1465776681}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1428447812}
 --- !u!114 &1599872612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44458,7 +44750,7 @@ MonoBehaviour:
     dobrego :)"
   buttonRectTransform: {fileID: 1854775879}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1264143044}
 --- !u!114 &1599872613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44477,7 +44769,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 422
   buttonRectTransform: {fileID: 252867117}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 280140100}
 --- !u!114 &1599872614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44496,7 +44788,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 421
   buttonRectTransform: {fileID: 826785342}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1066763425}
 --- !u!114 &1599872615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44515,7 +44807,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 420
   buttonRectTransform: {fileID: 158572168}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1525132575}
 --- !u!114 &1599872616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44534,7 +44826,7 @@ MonoBehaviour:
   OpisSali: "Pracownia Wysokich Napi\u0119\u0107 419"
   buttonRectTransform: {fileID: 175084158}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1906204137}
 --- !u!114 &1599872617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44553,7 +44845,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 418
   buttonRectTransform: {fileID: 384832015}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 771300808}
 --- !u!114 &1599872618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44572,7 +44864,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 418
   buttonRectTransform: {fileID: 449503420}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1330690530}
+  DrzwiSali: {fileID: 1330690531}
 --- !u!114 &1599872619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44591,7 +44883,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 416
   buttonRectTransform: {fileID: 1558271996}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1253408544}
 --- !u!114 &1599872620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44629,7 +44921,7 @@ MonoBehaviour:
   OpisSali: "Zaplecze dla nauczycieli przedmiot\xF3w zawodowych - informatycznych"
   buttonRectTransform: {fileID: 2109868208}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1167597333}
 --- !u!114 &1599872622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44648,7 +44940,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1788157267}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1143099698}
 --- !u!114 &1599872623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44667,7 +44959,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 423
   buttonRectTransform: {fileID: 1008587125}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 926592554}
 --- !u!114 &1599872624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44686,7 +44978,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 411
   buttonRectTransform: {fileID: 1322686578}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1100986525}
 --- !u!114 &1599872625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44705,7 +44997,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 411A
   buttonRectTransform: {fileID: 591165045}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1904493121}
 --- !u!114 &1599872626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44724,7 +45016,7 @@ MonoBehaviour:
   OpisSali: Pracownia 412
   buttonRectTransform: {fileID: 1627492557}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 156310877}
 --- !u!114 &1599872627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44743,7 +45035,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 424
   buttonRectTransform: {fileID: 860187626}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 284649443}
+  DrzwiSali: {fileID: 470279148}
 --- !u!114 &1599872628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44781,7 +45073,7 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 2008256036}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 680657076}
 --- !u!114 &1599872630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44800,7 +45092,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1957629142}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 678740687}
 --- !u!114 &1599872631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44819,7 +45111,7 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 1349254090}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1580500274}
 --- !u!114 &1599872632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44838,7 +45130,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 pomieszczenie dla os\xF3b z Samorz\u0105du."
   buttonRectTransform: {fileID: 304111475}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1649642176}
 --- !u!114 &1599872633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44857,7 +45149,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 105
   buttonRectTransform: {fileID: 2030635396}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1449812333}
 --- !u!114 &1599872634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44876,7 +45168,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 106
   buttonRectTransform: {fileID: 1967946708}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 747469726}
 --- !u!114 &1599872635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44895,7 +45187,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 107
   buttonRectTransform: {fileID: 103537143}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 576831089}
 --- !u!114 &1599872636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44914,7 +45206,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 pok\xF3j nauczycielski."
   buttonRectTransform: {fileID: 143400456}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 449754392}
 --- !u!114 &1599872637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44933,7 +45225,7 @@ MonoBehaviour:
   OpisSali: "Lepiej nie wchodzi\u0107"
   buttonRectTransform: {fileID: 1610016609}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 531289636}
 --- !u!114 &1599872638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44952,7 +45244,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 110
   buttonRectTransform: {fileID: 1100549423}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1480333273}
 --- !u!114 &1599872639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44971,7 +45263,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 110
   buttonRectTransform: {fileID: 430278787}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 411620732}
 --- !u!114 &1599872640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44990,7 +45282,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 112
   buttonRectTransform: {fileID: 1899086232}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 2004983954}
 --- !u!114 &1599872641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45009,7 +45301,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 407
   buttonRectTransform: {fileID: 420799799}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1306705972}
 --- !u!114 &1599872642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45028,7 +45320,7 @@ MonoBehaviour:
   OpisSali: Gabinet Wicedyrektora 406
   buttonRectTransform: {fileID: 275610440}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 320859175}
 --- !u!114 &1599872643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45047,7 +45339,7 @@ MonoBehaviour:
   OpisSali: Pracownia Elektryczno-Elektroniczna 405
   buttonRectTransform: {fileID: 624492625}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1373246343}
+  DrzwiSali: {fileID: 1373246344}
 --- !u!114 &1599872644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45066,7 +45358,7 @@ MonoBehaviour:
   OpisSali: Zaplecze sali 403
   buttonRectTransform: {fileID: 1526419482}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1105736147}
 --- !u!114 &1599872645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45104,7 +45396,7 @@ MonoBehaviour:
   OpisSali: Zaplecze
   buttonRectTransform: {fileID: 523553727}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 274852036}
 --- !u!114 &1599872647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45123,45 +45415,7 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 401
   buttonRectTransform: {fileID: 1919054729}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
---- !u!114 &1599872648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599872606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 701352638}
-  NazwaSali: "Sala \u0106wicze\u0144"
-  OpisSali: "Sala \u0106wicze\u0144"
-  buttonRectTransform: {fileID: 1053070516}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
---- !u!114 &1599872649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599872606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 701352638}
-  NazwaSali: Magazyn
-  OpisSali: Magazyn
-  buttonRectTransform: {fileID: 979656129}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 667675841}
 --- !u!114 &1599872650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45180,7 +45434,7 @@ MonoBehaviour:
   OpisSali: Hala Sportowa
   buttonRectTransform: {fileID: 190948180}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 949682666}
 --- !u!114 &1599872651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45199,7 +45453,7 @@ MonoBehaviour:
   OpisSali: "Dy\u017Curka"
   buttonRectTransform: {fileID: 549399295}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 2145595937}
 --- !u!114 &1599872652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45218,7 +45472,7 @@ MonoBehaviour:
   OpisSali: "Sala \u0106wicze\u0144"
   buttonRectTransform: {fileID: 985944919}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 949682666}
 --- !u!114 &1599872653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45237,7 +45491,7 @@ MonoBehaviour:
   OpisSali: "Si\u0142ownia "
   buttonRectTransform: {fileID: 576099220}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 2072290610}
 --- !u!114 &1599872654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45256,7 +45510,7 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 606848946}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 819228835}
 --- !u!114 &1599872655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45275,7 +45529,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 2107302161}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1713031440}
 --- !u!114 &1599872656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45294,7 +45548,7 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 1700545303}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 700568638}
 --- !u!114 &1599872657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45313,7 +45567,7 @@ MonoBehaviour:
   OpisSali: "Szatnia I 512 - Pomara\u0144czowa"
   buttonRectTransform: {fileID: 1937804838}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1194472772}
 --- !u!114 &1599872658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45332,7 +45586,7 @@ MonoBehaviour:
   OpisSali: Szaatnia IV 508 - Zielona
   buttonRectTransform: {fileID: 158128556}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 649428821}
 --- !u!114 &1599872659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45351,7 +45605,7 @@ MonoBehaviour:
   OpisSali: 'Szatnia III 509 - Niebieska '
   buttonRectTransform: {fileID: 601111544}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 373982305}
 --- !u!114 &1599872660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45370,7 +45624,7 @@ MonoBehaviour:
   OpisSali: Szatnia II 510 - Czerwona
   buttonRectTransform: {fileID: 605526121}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 607193264}
 --- !u!114 &1599872661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45389,7 +45643,7 @@ MonoBehaviour:
   OpisSali: Pracownia 317
   buttonRectTransform: {fileID: 1021305138}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 204984258}
 --- !u!114 &1599872662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45408,7 +45662,7 @@ MonoBehaviour:
   OpisSali: Pracownia 318
   buttonRectTransform: {fileID: 1054244575}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 2052235185}
 --- !u!114 &1599872663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45427,7 +45681,7 @@ MonoBehaviour:
   OpisSali: Zaplecze sal 315 i 317
   buttonRectTransform: {fileID: 647652789}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1573761091}
 --- !u!114 &1599872664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45446,7 +45700,7 @@ MonoBehaviour:
   OpisSali: Pracownia 315
   buttonRectTransform: {fileID: 2072848526}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 471336059}
 --- !u!114 &1599872665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45465,7 +45719,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 941131941}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 185521459}
 --- !u!114 &1599872666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45484,7 +45738,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 892678648}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 571237145}
 --- !u!114 &1599872667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45503,7 +45757,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 343
   buttonRectTransform: {fileID: 1081562401}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1631779366}
 --- !u!114 &1599872668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45522,7 +45776,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 344
   buttonRectTransform: {fileID: 1378669796}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1922328566}
 --- !u!114 &1599872669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45541,7 +45795,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 345
   buttonRectTransform: {fileID: 772619179}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 150169285}
 --- !u!114 &1599872670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45560,7 +45814,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 346
   buttonRectTransform: {fileID: 850074902}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 185301109}
 --- !u!114 &1599872671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45579,7 +45833,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 312
   buttonRectTransform: {fileID: 1217364022}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1150137544}
 --- !u!114 &1599872672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45598,7 +45852,7 @@ MonoBehaviour:
   OpisSali: Pomieszczenie Gospodarcze
   buttonRectTransform: {fileID: 2091961868}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1545338037}
 --- !u!114 &1599872673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45617,7 +45871,7 @@ MonoBehaviour:
   OpisSali: "Szatnia Og\xF3lna"
   buttonRectTransform: {fileID: 1359911817}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1964952758}
 --- !u!114 &1599872674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45637,7 +45891,7 @@ MonoBehaviour:
     na przek\u0105ske."
   buttonRectTransform: {fileID: 1706305461}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1281389872}
 --- !u!114 &1599872675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45656,7 +45910,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 304
   buttonRectTransform: {fileID: 521039264}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1834931512}
 --- !u!114 &1599872676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45675,7 +45929,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 305
   buttonRectTransform: {fileID: 536543657}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 798292136}
 --- !u!114 &1599872677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45694,7 +45948,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 303
   buttonRectTransform: {fileID: 982260485}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1494282828}
 --- !u!114 &1599872678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45713,7 +45967,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Kierownika "
   buttonRectTransform: {fileID: 2118193767}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 217647764}
 --- !u!114 &1599872679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45732,7 +45986,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 302
   buttonRectTransform: {fileID: 315615909}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1526511823}
 --- !u!114 &1599872680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45751,7 +46005,7 @@ MonoBehaviour:
   OpisSali: Pracownia Elektryczna 307
   buttonRectTransform: {fileID: 1434341141}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1378169838}
 --- !u!114 &1599872681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45770,7 +46024,7 @@ MonoBehaviour:
   OpisSali: Biuro
   buttonRectTransform: {fileID: 259013253}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1091578316}
 --- !u!114 &1599872682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45789,7 +46043,7 @@ MonoBehaviour:
   OpisSali: Biuro
   buttonRectTransform: {fileID: 2043992879}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 100212457}
 --- !u!114 &1599872683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45808,7 +46062,7 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 346264699}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 27473326}
 --- !u!114 &1599872684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45827,7 +46081,7 @@ MonoBehaviour:
   OpisSali: Pracownia Maszyn 301
   buttonRectTransform: {fileID: 864190230}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1094521393}
 --- !u!114 &1599872685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45846,7 +46100,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 308
   buttonRectTransform: {fileID: 1026082812}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 2126053346}
 --- !u!114 &1599872686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45865,7 +46119,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 ratownik"
   buttonRectTransform: {fileID: 1652188892}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1848288387}
 --- !u!114 &1599872687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45884,7 +46138,7 @@ MonoBehaviour:
   OpisSali: "P\u0142ywalnia"
   buttonRectTransform: {fileID: 1785867947}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 627757512}
 --- !u!114 &1599872688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45903,7 +46157,7 @@ MonoBehaviour:
   OpisSali: Szatnia basenowa
   buttonRectTransform: {fileID: 1244171815}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1986466600}
 --- !u!114 &1599872689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45922,7 +46176,7 @@ MonoBehaviour:
   OpisSali: Szatnia basenowa
   buttonRectTransform: {fileID: 826576776}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1474658196}
 --- !u!114 &1599872690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45941,7 +46195,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 12155851}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1626766435}
 --- !u!114 &1599872691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45960,7 +46214,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 2068124170}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 735591355}
 --- !u!114 &1599872692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45979,7 +46233,7 @@ MonoBehaviour:
   OpisSali: 'Toaleta '
   buttonRectTransform: {fileID: 1964178170}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1481588126}
 --- !u!114 &1599872693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45998,7 +46252,7 @@ MonoBehaviour:
   OpisSali: "Pok\xF3j Nauczycieli WF-u przy basenie."
   buttonRectTransform: {fileID: 1614773100}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1609811130}
 --- !u!114 &1599872694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46017,7 +46271,7 @@ MonoBehaviour:
   OpisSali: Szatnia Basenowa
   buttonRectTransform: {fileID: 722680718}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 668829445}
 --- !u!114 &1599872695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46036,7 +46290,7 @@ MonoBehaviour:
   OpisSali: Szatnia Basenowa
   buttonRectTransform: {fileID: 447891814}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1677368277}
 --- !u!114 &1599872696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46055,7 +46309,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Pedagoga."
   buttonRectTransform: {fileID: 30252412}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1280375652}
 --- !u!114 &1599872697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46094,7 +46348,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 biblioteka."
   buttonRectTransform: {fileID: 1719492104}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 792558545}
 --- !u!114 &1599872699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46113,7 +46367,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 17
   buttonRectTransform: {fileID: 1854720717}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1338617738}
 --- !u!114 &1599872700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46132,7 +46386,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 sekretariat uczniowski."
   buttonRectTransform: {fileID: 63415332}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1717214901}
 --- !u!114 &1599872701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46151,7 +46405,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Gospodarcze 14
   buttonRectTransform: {fileID: 810088743}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1998213533}
 --- !u!114 &1599872702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46171,7 +46425,7 @@ MonoBehaviour:
     si\u0119 w niej r\xF3\u017Cne ciekawe lekcje."
   buttonRectTransform: {fileID: 1011422287}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 162397718}
 --- !u!114 &1599872703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46190,7 +46444,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Kancelaria."
   buttonRectTransform: {fileID: 882602914}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1971180709}
 --- !u!114 &1599872704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46209,7 +46463,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Dyrektora."
   buttonRectTransform: {fileID: 172179374}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1001421034}
 --- !u!114 &1599872705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46228,7 +46482,7 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 dy\u017Curka."
   buttonRectTransform: {fileID: 2109040139}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 63551812}
 --- !u!114 &1599872706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46247,7 +46501,7 @@ MonoBehaviour:
   OpisSali: Magazyn
   buttonRectTransform: {fileID: 162199191}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1871650113}
 --- !u!114 &1599872707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46266,7 +46520,7 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 1724091002}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1185890284}
 --- !u!114 &1599872708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46285,7 +46539,7 @@ MonoBehaviour:
   OpisSali: 'Toaleta '
   buttonRectTransform: {fileID: 1978560348}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1235462579}
 --- !u!114 &1599872709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46304,7 +46558,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 10
   buttonRectTransform: {fileID: 591250139}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 542393910}
 --- !u!114 &1599872710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46323,7 +46577,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 9
   buttonRectTransform: {fileID: 2105380462}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 25303666}
 --- !u!114 &1599872711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46342,7 +46596,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 9
   buttonRectTransform: {fileID: 127353850}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 616053200}
 --- !u!114 &1599872712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46361,7 +46615,7 @@ MonoBehaviour:
   OpisSali: Kierownik Gospodarczy 7
   buttonRectTransform: {fileID: 25522408}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 458693930}
 --- !u!114 &1599872713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46380,7 +46634,7 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 5
   buttonRectTransform: {fileID: 1289963808}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1340986208}
 --- !u!114 &1599872714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46399,7 +46653,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 5
   buttonRectTransform: {fileID: 1576839177}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1486860306}
 --- !u!114 &1599872715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46418,7 +46672,7 @@ MonoBehaviour:
   OpisSali: Magazyn
   buttonRectTransform: {fileID: 304005428}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1546729325}
 --- !u!114 &1599872716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46437,7 +46691,7 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 891942395}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 2022893257}
 --- !u!114 &1599872717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46456,7 +46710,7 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1327453946}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 368486038}
 --- !u!114 &1599872718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46475,7 +46729,7 @@ MonoBehaviour:
   OpisSali: "Sk\u0142adnica akt - 204"
   buttonRectTransform: {fileID: 1117578762}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 680083953}
 --- !u!114 &1599872719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46494,7 +46748,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjan 205
   buttonRectTransform: {fileID: 644849713}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 452378348}
 --- !u!114 &1599872720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46513,7 +46767,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 206
   buttonRectTransform: {fileID: 1553143587}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1336500367}
 --- !u!114 &1599872721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46532,7 +46786,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 207
   buttonRectTransform: {fileID: 1762540248}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 1867232737}
 --- !u!114 &1599872722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46551,26 +46805,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 208
   buttonRectTransform: {fileID: 1275536722}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
---- !u!114 &1599872723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599872606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 2
-  CameraToMove: {fileID: 701352638}
-  NazwaSali: Zaplecze
-  OpisSali: Zaplecze Sali 209
-  buttonRectTransform: {fileID: 397566658}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 8432232}
 --- !u!114 &1599872724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46589,7 +46824,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 210
   buttonRectTransform: {fileID: 1268522301}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 721937666}
 --- !u!114 &1599872725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46608,7 +46843,7 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 209
   buttonRectTransform: {fileID: 1406950675}
   targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 0}
+  DrzwiSali: {fileID: 791567739}
 --- !u!1 &1607910433
 GameObject:
   m_ObjectHideFlags: 0
@@ -46979,7 +47214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1282.8, y: 79.8}
+  m_AnchoredPosition: {x: 1272.3, y: 87.1}
   m_SizeDelta: {x: 38.47, y: 49.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614773101
@@ -48208,7 +48443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1467.93, y: 562.59}
+  m_AnchoredPosition: {x: 1460.5, y: 578.5}
   m_SizeDelta: {x: 36.49, y: 36.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652188893
@@ -49296,7 +49531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -803.06, y: 6.33}
+  m_AnchoredPosition: {x: -841.4, y: 12.3}
   m_SizeDelta: {x: 25.11, y: 38.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700545304
@@ -49786,7 +50021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 89.77, y: -298.62}
+  m_AnchoredPosition: {x: 61.2, y: -298.6}
   m_SizeDelta: {x: 42.14, y: 87.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706305462
@@ -50546,7 +50781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1071.86, y: 218.85}
+  m_AnchoredPosition: {x: 1060, y: 229.5}
   m_SizeDelta: {x: 88.06, y: 110.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719492105
@@ -50667,7 +50902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1562.6, y: -198.8}
+  m_AnchoredPosition: {x: 1558.7, y: -198.8}
   m_SizeDelta: {x: 41.76, y: 50.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724091003
@@ -51300,8 +51535,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4624, y: 2608}
+  m_AnchoredPosition: {x: 0, y: -88.1}
+  m_SizeDelta: {x: 4624, y: 3085.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1743488130
 MonoBehaviour:
@@ -53403,7 +53638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1562.77, y: 351.22}
+  m_AnchoredPosition: {x: 1555.2, y: 359.5}
   m_SizeDelta: {x: 226.2, y: 369.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785867948
@@ -53639,9 +53874,10 @@ RectTransform:
   m_LocalScale: {x: 0.5103008, y: -0.385994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 446662144}
   - {fileID: 427119473}
   - {fileID: 1303932037}
+  - {fileID: 306923358}
+  - {fileID: 446662144}
   - {fileID: 8314794}
   - {fileID: 391263035}
   - {fileID: 1224800341}
@@ -55015,7 +55251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1002.6, y: 106.49}
+  m_AnchoredPosition: {x: 989.5, y: 112.5}
   m_SizeDelta: {x: 134.83, y: 103.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854720718
@@ -57265,7 +57501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -691.46, y: 20.085}
+  m_AnchoredPosition: {x: -729.5, y: 23.5}
   m_SizeDelta: {x: 81.02, y: 43.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937804839
@@ -57918,7 +58154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1328.1, y: 79.8}
+  m_AnchoredPosition: {x: 1320.7, y: 88.2}
   m_SizeDelta: {x: 38.47, y: 49.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964178171
@@ -58351,7 +58587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1609.3, y: -198.8}
+  m_AnchoredPosition: {x: 1606.4, y: -198.8}
   m_SizeDelta: {x: 41.76, y: 50.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1978560349
@@ -59818,7 +60054,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 503.2, y: -25.915}
+  m_AnchoredPosition: {x: 480.2, y: -21}
   m_SizeDelta: {x: 97.15, y: 48.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043992880
@@ -60568,7 +60804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 27, y: -0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2064932792
@@ -60883,7 +61119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1375.9, y: 79.8}
+  m_AnchoredPosition: {x: 1367.8, y: 85}
   m_SizeDelta: {x: 38.47, y: 49.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2068124171
@@ -61080,7 +61316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -524.93, y: -342.1}
+  m_AnchoredPosition: {x: -559.8, y: -342.1}
   m_SizeDelta: {x: 133.97, y: 107.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072848527
@@ -61547,7 +61783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -173.33, y: -227.36}
+  m_AnchoredPosition: {x: -204, y: -227.4}
   m_SizeDelta: {x: 91.1, y: 107.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091961869
@@ -61805,7 +62041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1422.1398, y: -346.31998}
+  m_AnchoredPosition: {x: 1412.4, y: -346.3}
   m_SizeDelta: {x: 132.61, y: 112.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105380463
@@ -61926,7 +62162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -832.21, y: 6.3}
+  m_AnchoredPosition: {x: -872.4, y: 9.7}
   m_SizeDelta: {x: 22.52, y: 38.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2107302162
@@ -62047,7 +62283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1087.88, y: -374.97}
+  m_AnchoredPosition: {x: 1075.7, y: -375}
   m_SizeDelta: {x: 28.28, y: 55.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109040140
@@ -62559,7 +62795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400.91, y: 358.43}
+  m_AnchoredPosition: {x: 376.2, y: 369.9}
   m_SizeDelta: {x: 93.419, y: 50.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118193768
