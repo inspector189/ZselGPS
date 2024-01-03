@@ -44629,7 +44629,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 252867117}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 280140100}
-  images: []
+  images:
+  - {fileID: 21300000, guid: d1e1241bd06b49740b0288a6ae6013cb, type: 3}
 --- !u!114 &1599872614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44829,7 +44830,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1008587125}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 926592554}
-  images: []
+  images:
+  - {fileID: 21300000, guid: b3f273bf6a9ac1e418669f2fe3baa1fe, type: 3}
 --- !u!114 &1599872624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44849,7 +44851,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1322686578}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1100986525}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 43fc6961267b9c6459ef8c308c1ab08b, type: 3}
 --- !u!114 &1599872625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44869,8 +44872,7 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 591165045}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1904493121}
-  images:
-  - {fileID: 21300000, guid: 43fc6961267b9c6459ef8c308c1ab08b, type: 3}
+  images: []
 --- !u!114 &1599872626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44931,7 +44933,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 161231139}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 392665056}
-  images: []
+  images:
+  - {fileID: 0}
 --- !u!114 &1599872629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45031,7 +45034,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2030635396}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1449812333}
-  images: []
+  images:
+  - {fileID: 21300000, guid: f3d92a6a672db864bbdcfbb7c91f1ae7, type: 3}
 --- !u!114 &1599872634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45051,7 +45055,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1967946708}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 747469726}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 88bb4c2c74bb01f45aeff3bfd327c853, type: 3}
 --- !u!114 &1599872635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45071,7 +45076,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 103537143}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 576831089}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 56ef2a4661b1cc244b6b5962d3f0f435, type: 3}
 --- !u!114 &1599872636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45131,7 +45137,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1100549423}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1480333273}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 244003ca8e6a7aa4da6c0d89465d6338, type: 3}
 --- !u!114 &1599872639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45231,7 +45238,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 624492625}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1373246344}
-  images: []
+  images:
+  - {fileID: 21300000, guid: e70edd45b4d61f74d97d6981b1025b62, type: 3}
 --- !u!114 &1599872644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45271,7 +45279,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1693987622}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1767922868}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 8dfe04cc3fee03c4b881aef02c351507, type: 3}
 --- !u!114 &1599872646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45571,7 +45580,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1054244575}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2052235185}
-  images: []
+  images:
+  - {fileID: 21300000, guid: ba86aafd98bee0242ab87e99813aa494, type: 3}
 --- !u!114 &1599872663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45611,7 +45621,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2072848526}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 471336059}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 2c2ff01fc0e219e4f9498e5c927868e8, type: 3}
 --- !u!114 &1599872665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45671,7 +45682,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1081562401}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1631779366}
-  images: []
+  images:
+  - {fileID: 21300000, guid: f581dabde8c480d43af424b3899cfcba, type: 3}
 --- !u!114 &1599872668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45691,7 +45703,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1378669796}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1922328566}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 9e70b9854e330bd4986380810a076144, type: 3}
 --- !u!114 &1599872669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45711,7 +45724,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 772619179}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 150169285}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 3625ba185d534c44e98aa922d69686dc, type: 3}
 --- !u!114 &1599872670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45731,7 +45745,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 850074902}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 185301109}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 4a8bafb303c6e2742af047a23dbdf5d6, type: 3}
 --- !u!114 &1599872671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45832,7 +45847,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 521039264}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1834931512}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 554c87673193adb478cead4bccbaf53f, type: 3}
 --- !u!114 &1599872676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45852,7 +45868,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 536543657}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 798292136}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 8ea6191e01192c241953a4b89557cd19, type: 3}
 --- !u!114 &1599872677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45872,7 +45889,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 982260485}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1494282828}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 53aae080f72f8a44884ea6f65f255396, type: 3}
 --- !u!114 &1599872678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45912,7 +45930,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 315615909}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1526511823}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 9d33a86845229004bab99a98f0b43c59, type: 3}
 --- !u!114 &1599872680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46012,7 +46031,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 864190230}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1094521393}
-  images: []
+  images:
+  - {fileID: 21300000, guid: cb96481bf7a17e343ace12b94325a2fa, type: 3}
 --- !u!114 &1599872685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46032,7 +46052,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1026082812}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2126053346}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 9c571ab1b8b0bb147ab2eb60b8cf0ee9, type: 3}
 --- !u!114 &1599872686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46313,7 +46334,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1854720717}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1338617738}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 584178910bef1bc4792ab18ec630247d, type: 3}
 --- !u!114 &1599872700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46514,7 +46536,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 591250139}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 542393910}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 7e5efa28cfc686c43b3691a25616e911, type: 3}
 --- !u!114 &1599872710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46534,7 +46557,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2105380462}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 25303666}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 40a5cb0eb3b9d264dac94d98826be20d, type: 3}
 --- !u!114 &1599872711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46614,7 +46638,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1576839177}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1486860306}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 915f260778e32c148a80431567bdc903, type: 3}
 --- !u!114 &1599872715
 MonoBehaviour:
   m_ObjectHideFlags: 0
