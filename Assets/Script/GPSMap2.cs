@@ -110,10 +110,12 @@ public class GPSMap2 : MonoBehaviour
             {
                 if (Input.location.isEnabledByUser)
                 {
+                    /*
                     if(Input.location.status != LocationServiceStatus.Running)
                     {
                         Input.location.Start(1f, 0.1f);
                     }
+                    */
                     if (Input.location.status == LocationServiceStatus.Running)
                     {
                         float latitude = Input.location.lastData.latitude;

@@ -30,11 +30,6 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
         TextMeshProUGUI OpisSaliText = GameObject.Find("OpisSali").GetComponent<TextMeshProUGUI>();
         Image obszarZdjecia = GameObject.Find("ZdjecieSali1").GetComponent<Image>();
 
-        if (images != null && images.Count > 0)
-        {
-            obszarZdjecia.sprite = images[0];
-        }
-
         RectTransform rawImageRect = GetComponent<RectTransform>();
         // Przekształć pozycję kliknięcia na lokalną pozycję w RawImage
         Vector2 localClickPosition;
@@ -54,7 +49,10 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
                     if (Time.time - timeOfLastClick <= maxClickDuration)
                     {
                         TytulSaliText.text = NazwaSali;
-                       
+                        if (images != null && images.Count > 0)
+                        {
+                            obszarZdjecia.sprite = images[0];
+                        }
                         OpisSaliText.text = OpisSali;
                         Vector3 targetPosition = new Vector3(buttonRectTransform.position.x, buttonRectTransform.position.y, CameraToMove.transform.position.z);
                         StartCoroutine(MoveCamera(targetPosition, targetOrthographicSize, 1f)); // 1 sekunda trwania animacji
