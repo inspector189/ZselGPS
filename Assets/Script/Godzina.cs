@@ -18,27 +18,46 @@ using Vulcanova.Uonet.Api.Lessons;
 using Vulcanova.Uonet.Api.Schedule;
 using System.Linq;
 using System.Threading.Tasks;
-using Unity.VisualScripting; // Dodane dla obs�ugi async/await
+using Unity.VisualScripting; // Dodane dla obs ugi async/await
 using System.Globalization;
 using static GetValuesFromVulcan2;
 using System.Xml;
 using UnityEngine.Windows;
 
+
 public class Godzina : MonoBehaviour
 {
     private string symbol = "wloclawek";
+
+    public Transform person; // Pozycja obiektu reprezentującego użytkownika
+    public RectTransform target; // Pozycja wybranego celu
+    public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
+
+    private LineRenderer lineRenderer; // Komponent LineRenderer do rysowania linii
+    public Color lineColor = Color.blue; // Kolor linii
+    public float lineWidth = 0.01f; // Szerokość linii
+
+    public void Start()
+    {
+         System.DateTime selectedDate = new System.DateTime(2024, 1, 11, 10, 0, 0);
+         LoginProcess(selectedDate);
+          lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.startColor = lineColor;
+        lineRenderer.endColor = lineColor;
+        lineRenderer.startWidth = lineWidth;
+        lineRenderer.endWidth = lineWidth;
+        lineRenderer.useWorldSpace = true;
+        lineRenderer.sortingOrder = 1; 
+    }
     void Update()
     {
-        System.DateTime currentTime = System.DateTime.Now;
-
+        
+        FindAndDrawPath();
         // Wyświetl godzinę na interfejsie użytkownika
-       Debug.Log("Aktualna godzina: " + currentTime.ToString("HH:mm:ss"));
-    }
 
-    void Start()
-    {
-        LoginProcess(DateTime.Today);
     }
+    
 
     public async void LoginProcess(DateTime selectedDate)
     {
@@ -63,12 +82,26 @@ public class Godzina : MonoBehaviour
 
                 foreach (var lessonData in lessonsData)
                 {
+                
+                        try
+                    {
+                        
+                            // Wypisz szczeg y lekcji, nazwy w a ciwo ci mog  si  r ni 
+                            Debug.Log($"nr: {lessonData.Position}, przedmiot: {lessonData.SubjectName}, nauczyciel: {lessonData.TeacherName}, godziny: {lessonData.StartTime} - {lessonData.EndTime}");
+                     
 
+
+                           
+                        
+                    }
+                    catch (System.Exception) { }
                 }
 
             }
             else
             {
+           
+              
                 var firebaseToken = PlayerPrefs.GetString("firebaseToken");
                 var pk = PlayerPrefs.GetString("pk");
                 string certString = PlayerPrefs.GetString("cert");
@@ -93,8 +126,6 @@ public class Godzina : MonoBehaviour
                                 int.MinValue));
 
                 var sortedLessons = lessonsResponse.Envelope.OrderBy(lesson => lesson.TimeSlot.Position);
-
-
                 foreach (var lesson in sortedLessons)
                 {
 
@@ -102,20 +133,40 @@ public class Godzina : MonoBehaviour
                     {
                         if (lesson.Visible)
                         {
-                            // Wypisz szczeg�y lekcji, nazwy w�a�ciwo�ci mog� si� r�ni�
-                            Debug.Log($"nr: {lesson.TimeSlot.Position}, przedmiot: {lesson.Subject.Name}, nauczyciel: {lesson.TeacherPrimary.DisplayName}, godziny: {lesson.TimeSlot.Display}");
+                            // Wypisz szczeg y lekcji, nazwy w a ciwo ci mog  si  r ni 
+                            Debug.Log($"nr: {lesson.TimeSlot.Position}, przedmiot: {lesson.Subject.Name}, nauczyciel: {lesson.TeacherPrimary.DisplayName}, godziny: {lesson.TimeSlot.Display}, sala:{lesson.Room.Code}");
                             //  inputFieldPrefab.text = "nr " + lesson.TimeSlot.Position;
-
-
                            
-                        }
-                    }
+                                  //  Debug.Log("crntime: " + currentTime + "endtime: " + endTimes[i] + "starttime: " + startTimes[i]);
+                                
+                              
+                                // Debug.Log($"Czas {currentTimeOfDay} znajduje się w przedziale dla lekcji: {lesson.TimeSlot.Display} ID={i}");
+                                    SetTargetForLesson(lesson.Room.Code);
+                               
+                          
+                           /* 
+                                for (int i = 0; i < startTimes.Length; i++)
+                                {
+                                  //  Debug.Log("crntime: " + currentTime + "endtime: " + endTimes[i] + "starttime: " + startTimes[i]);
+                                    
+                                    TimeSpan currentTimeOfDay = selectedDate.TimeOfDay;
+                                    if (currentTimeOfDay >= startTimes[i].TimeOfDay && currentTimeOfDay <= endTimes[i].TimeOfDay)
+                                    {
+                                    // Debug.Log($"Czas {currentTimeOfDay} znajduje się w przedziale dla lekcji: {lesson.TimeSlot.Display} ID={i}");
+                                            
+                                            SetTargetForLesson(lesson.Room.Code);
+                                        
+                                    }
+                                    else
+                                    {
+
+                                    //  Debug.Log($"Czas {currentTimeOfDay} nie znajduje się w przedziale dla lekcji: {lesson.TimeSlot.Display} ID={i}");
+                                    
+                                    }
+                                */
+                                }
+                        }             
                     catch (System.Exception) { }
-
-
-
-
-
                 }
             }
 
@@ -134,6 +185,189 @@ public class Godzina : MonoBehaviour
             }
             Debug.Log($"Błąd w logowaniu: {e}");
             SceneManager.LoadScene("LoginPanel");
+        }
+    }
+    private void SetTargetForLesson(string roomCode)
+{               
+                System.DateTime selectedDate = new System.DateTime(2024, 1, 11, 10, 0, 0);
+                System.DateTime currentTime = new System.DateTime(2024, 1, 11, 10, 0, 0); // Data dla której chcesz sprawdzić lekcje
+                System.DateTime[] startTimes = new System.DateTime[]
+                {
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 6, 30, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 7, 55, 1),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 8, 45, 1),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 9, 35, 1),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 10, 30, 1),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 11, 30, 1),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 12, 25, 1),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 13, 15, 1),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 14, 10, 1),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 15, 00, 1),
+                     
+                };
+
+                System.DateTime[] endTimes = new System.DateTime[]
+                {
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 7, 55, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 8, 45, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 9, 35, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 10, 30, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 11, 30, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 12, 25, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 13, 15, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 14, 10, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 15, 00, 0),
+                    new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 15, 50, 0)
+                };
+                for (int i = 0; i < startTimes.Length; i++)
+                {
+                    //  Debug.Log("crntime: " + currentTime + "endtime: " + endTimes[i] + "starttime: " + startTimes[i]);
+                    TimeSpan currentTimeOfDay = selectedDate.TimeOfDay;
+                    Debug.Log(currentTimeOfDay + " " + selectedDate.TimeOfDay);
+                    if (currentTimeOfDay >= startTimes[i].TimeOfDay && currentTimeOfDay <= endTimes[i].TimeOfDay)
+                    {
+                    // Debug.Log($"Czas {currentTimeOfDay} znajduje się w przedziale dla lekcji: {lesson.TimeSlot.Display} ID={i}");
+                        string doorName = "Drzwi" + roomCode;
+                        GameObject door = GameObject.Find(doorName);
+                        if (door != null)
+                        {
+                            RectTransform doorTransform = door.GetComponent<RectTransform>();
+                            target = doorTransform;
+                            GetComponent<LineCreator>().target = doorTransform;
+                            Debug.Log($"Zaktualizowano pozycję docelową na drzwi sali {roomCode}");
+                            GetComponent<LineCreator>().SetWaypoints(allWaypoints);
+                             // Przekazanie informacji o zmianie celu do LineCreator
+                        
+                        }
+                        else
+                        {
+                            Debug.LogError($"Nie można znaleźć drzwi o nazwie {doorName}");
+                        }
+                    }
+                }
+    }
+    public void SetWaypoints(List<Transform> waypoints)
+    {
+        allWaypoints.Clear();
+        allWaypoints.AddRange(waypoints);
+        FindAndDrawPath(); // Po dodaniu nowego waypointa ponownie rysujemy ścieżkę
+    }
+    private void FindAndDrawPath()
+    {
+        if (person == null || target == null || allWaypoints.Count == 0)
+        {
+            return;
+        }
+
+        Transform closestToPerson = FindClosestWaypoint(person.position);
+        Transform closestToTarget = FindClosestWaypoint(target.position);
+
+        if (closestToPerson != null && closestToTarget != null)
+        {
+            List<Transform> path = FindShortestPathDijkstra(closestToPerson, closestToTarget);
+            if (path.Count > 0)
+            {
+                DrawPathWithLineRenderer(path);
+            }
+        }
+    }
+    
+    private Transform FindClosestWaypoint(Vector3 position)
+    {
+        Transform closest = null;
+        float minDistance = float.MaxValue;
+
+        foreach (Transform waypoint in allWaypoints)
+        {
+            float distance = Vector3.Distance(waypoint.position, position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closest = waypoint;
+            }
+        }
+
+        return closest;
+    }
+
+    private List<Transform> FindShortestPathDijkstra(Transform start, Transform goal)
+    {
+        Dictionary<Transform, float> distances = new Dictionary<Transform, float>();
+        Dictionary<Transform, Transform> predecessors = new Dictionary<Transform, Transform>();
+        List<Transform> nodes = new List<Transform>(allWaypoints);
+
+        foreach (Transform waypoint in allWaypoints)
+        {
+            distances[waypoint] = float.MaxValue;
+            predecessors[waypoint] = null;
+        }
+
+        distances[start] = 0;
+
+        while (nodes.Count > 0)
+        {
+            nodes.Sort((x, y) => distances[x].CompareTo(distances[y]));
+            Transform smallest = nodes[0];
+            nodes.Remove(smallest);
+
+            if (smallest == goal)
+            {
+                return ConstructPath(predecessors, goal);
+            }
+
+            foreach (Transform neighbor in GetNeighbors(smallest))
+            {
+                float alt = distances[smallest] + Vector3.Distance(smallest.position, neighbor.position);
+                if (alt < distances[neighbor])
+                {
+                    distances[neighbor] = alt;
+                    predecessors[neighbor] = smallest;
+                }
+            }
+        }
+
+        return new List<Transform>();
+    }
+
+   private const float NEIGHBOR_DISTANCE_THRESHOLD = 0.05f; // Ustaw zasięg, w jakim waypointy są uznawane za sąsiadujące
+
+private List<Transform> GetNeighbors(Transform current)
+{
+    List<Transform> neighbors = new List<Transform>();
+
+    foreach (Transform waypoint in allWaypoints)
+    {
+        if (waypoint != current && Vector3.Distance(waypoint.position, current.position) <= NEIGHBOR_DISTANCE_THRESHOLD)
+        {
+            neighbors.Add(waypoint);
+        }
+    }
+
+    return neighbors;
+}
+    private List<Transform> ConstructPath(Dictionary<Transform, Transform> predecessors, Transform goal)
+    {
+        List<Transform> path = new List<Transform>();
+        Transform current = goal;
+
+        while (current != null)
+        {
+            path.Add(current);
+            current = predecessors[current];
+        }
+
+        path.Reverse();
+        return path;
+    }
+
+    private void DrawPathWithLineRenderer(List<Transform> path)
+    {
+      
+        lineRenderer.positionCount = path.Count;
+        for (int i = 0; i < path.Count; i++)
+        {
+            Vector3 pathPosition = path[i].position;
+            lineRenderer.SetPosition(i, new Vector3(pathPosition.x, pathPosition.y, 0)); // Ustawienie na płaszczyźnie 2D
         }
     }
 }

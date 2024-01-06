@@ -66,7 +66,7 @@ public class LineCreator : MonoBehaviour
             }
         }
     }
-
+    
     private Transform FindClosestWaypoint(Vector3 position)
     {
         Transform closest = null;
@@ -156,7 +156,7 @@ private List<Transform> GetNeighbors(Transform current)
     }
 
     private void DrawPathWithLineRenderer(List<Transform> path)
-    {
+    {   
         lineRenderer.positionCount = path.Count;
         for (int i = 0; i < path.Count; i++)
         {

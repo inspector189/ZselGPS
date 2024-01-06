@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class WaypointCreator : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class WaypointCreator : MonoBehaviour
     public GameObject waypointPrefab;
     private int currentFloor;
     public LineCreator waypointManager;
+    public Godzina waypointManager2;
    public List<GameObject> createdWaypoints = new List<GameObject>();
 
     private void Update()
@@ -37,6 +39,7 @@ public class WaypointCreator : MonoBehaviour
 
         // Przekaż listę Transform do LineCreator
         waypointManager.SetWaypoints(transformWaypoints);
+        waypointManager2.SetWaypoints(transformWaypoints);
     }
 
     private void DisableAllWaypoints()
@@ -131,5 +134,3 @@ public class WaypointCreator : MonoBehaviour
 }
 
 }
-  
-

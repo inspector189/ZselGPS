@@ -9893,10 +9893,10 @@ RectTransform:
   m_Father: {fileID: 2042983463}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 85.66, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337564528
 MonoBehaviour:
@@ -11274,7 +11274,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 19.299988, y: -2347}
-  m_SizeDelta: {x: 135.66, y: 55}
+  m_SizeDelta: {x: 0, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391263037
 MonoBehaviour:
@@ -11439,7 +11439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   person: {fileID: 1072992043}
-  target: {fileID: 1904493121}
+  target: {fileID: 0}
   allWaypoints: []
   lineColor: {r: 0, g: 0, b: 1, a: 1}
   lineWidth: 0.01
@@ -11504,6 +11504,7 @@ MonoBehaviour:
   waypointParent: {fileID: 126777184}
   waypointPrefab: {fileID: 1639198707}
   waypointManager: {fileID: 391263040}
+  waypointManager2: {fileID: 0}
   createdWaypoints: []
 --- !u!114 &391263042
 MonoBehaviour:
@@ -17991,10 +17992,10 @@ RectTransform:
   m_Father: {fileID: 828296255}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 85.66, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618182784
 MonoBehaviour:
@@ -33891,10 +33892,10 @@ RectTransform:
   m_Father: {fileID: 353945767}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 85.66, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186540581
 MonoBehaviour:
@@ -45435,7 +45436,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1899086232}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2004983954}
-  images: []
+  images:
+  - {fileID: 21300000, guid: cea9d710fa3a6a949822d9302c2bf437, type: 3}
 --- !u!114 &1599872641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46996,7 +46998,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 644849713}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 452378348}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 8510373aac459be4882497854ba643cb, type: 3}
 --- !u!114 &1599872720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47016,7 +47019,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1553143587}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1336500367}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 98ab7f84e79061c4ab74e7dea4099d99, type: 3}
 --- !u!114 &1599872721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47036,7 +47040,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1762540248}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1867232737}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 292c90bf3c950d54d8acb05befccc9c2, type: 3}
 --- !u!114 &1599872722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47056,7 +47061,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1275536722}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 8432232}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 79f2ffbbaab90fa4d8e052c271780f93, type: 3}
 --- !u!114 &1599872724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47076,7 +47082,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1268522301}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 721937666}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 2389325f3010cdf4c842be6fd594db03, type: 3}
 --- !u!114 &1599872725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47096,7 +47103,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1406950675}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 791567739}
-  images: []
+  images:
+  - {fileID: 21300000, guid: 520d5dfe3f73538459b7fff3728babe5, type: 3}
 --- !u!1 &1607910433
 GameObject:
   m_ObjectHideFlags: 0
@@ -54114,7 +54122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1794704459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54136,7 +54144,7 @@ RectTransform:
   - {fileID: 440213807}
   - {fileID: 1926390653}
   m_Father: {fileID: 1808030357}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54276,7 +54284,6 @@ GameObject:
   - component: {fileID: 1808030367}
   - component: {fileID: 1808030368}
   - component: {fileID: 1808030369}
-  - component: {fileID: 1808030370}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -54365,8 +54372,8 @@ RectTransform:
   - {fileID: 1413045524}
   - {fileID: 1599872607}
   - {fileID: 1082449222}
-  - {fileID: 1794704459}
   - {fileID: 7738733805239443680}
+  - {fileID: 1794704459}
   - {fileID: 1868179956}
   - {fileID: 2050661052}
   - {fileID: 1973198626}
@@ -54557,18 +54564,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: wloclawek
---- !u!114 &1808030370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808030353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e315c113df265734289a273344b8e0fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1809456251
 GameObject:
   m_ObjectHideFlags: 0
@@ -60375,10 +60370,10 @@ RectTransform:
   m_Father: {fileID: 391263035}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 135.66, y: 55}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2042983464
 MonoBehaviour:
@@ -65593,10 +65588,10 @@ RectTransform:
   m_Father: {fileID: 224177948172180455}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78.165, y: -27.5}
-  m_SizeDelta: {x: 0, y: 55}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 78.165, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4374153846321912825
 RectTransform:
@@ -66713,7 +66708,7 @@ MonoBehaviour:
   renderOnTop: 1
   centered: 1
   isPreset: 1
-  latestTabIndex: 1
+  latestTabIndex: 0
 --- !u!1 &7529500220396695252
 GameObject:
   m_ObjectHideFlags: 0
@@ -66745,6 +66740,9 @@ GameObject:
   - component: {fileID: 7464377699263736267}
   - component: {fileID: 7213455970084457140}
   - component: {fileID: 6756007554152033867}
+  - component: {fileID: 7738733805239443682}
+  - component: {fileID: 7738733805239443681}
+  - component: {fileID: 7738733805239443683}
   m_Layer: 5
   m_Name: Night
   m_TagString: Untagged
@@ -66967,13 +66965,110 @@ RectTransform:
   - {fileID: 8068177338842632231}
   - {fileID: 3913314593739988645}
   m_Father: {fileID: 1808030357}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -713}
   m_SizeDelta: {x: 0, y: 80.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7738733805239443681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529982749165549692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27b598b2d5c0c34d849a663fccfa05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  person: {fileID: 1072992043}
+  target: {fileID: 0}
+  allWaypoints: []
+  lineColor: {r: 0, g: 0, b: 1, a: 1}
+  lineWidth: 0.01
+--- !u!114 &7738733805239443682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529982749165549692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f09607848b1c6479608873e4512d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KorytarzeParter:
+  - {fileID: 983394638}
+  - {fileID: 864340248}
+  - {fileID: 1693208599}
+  - {fileID: 602677447}
+  - {fileID: 253810205}
+  - {fileID: 669915703}
+  - {fileID: 425444255}
+  - {fileID: 1176326074}
+  - {fileID: 55928442}
+  - {fileID: 1765201402}
+  - {fileID: 262755471}
+  - {fileID: 907063022}
+  - {fileID: 1423030267}
+  - {fileID: 1408672252}
+  - {fileID: 220632286}
+  - {fileID: 1885493310}
+  - {fileID: 906376404}
+  - {fileID: 31193785}
+  - {fileID: 1598883061}
+  - {fileID: 1264040817}
+  - {fileID: 1683996726}
+  - {fileID: 965965569}
+  - {fileID: 1014213593}
+  KorytarzePietro:
+  - {fileID: 267896759}
+  - {fileID: 1516356895}
+  - {fileID: 704330869}
+  - {fileID: 775492736}
+  - {fileID: 1074969135}
+  - {fileID: 1799558465}
+  - {fileID: 25221301}
+  - {fileID: 702084001}
+  - {fileID: 1857595487}
+  - {fileID: 696808497}
+  - {fileID: 843269730}
+  - {fileID: 237580761}
+  - {fileID: 1715746402}
+  - {fileID: 675952024}
+  - {fileID: 564201256}
+  - {fileID: 731877135}
+  - {fileID: 967844135}
+  - {fileID: 239838182}
+  KorytarzePietro2:
+  - {fileID: 1407651283}
+  - {fileID: 1779795974}
+  waypointParent: {fileID: 126777184}
+  waypointPrefab: {fileID: 1639198707}
+  waypointManager: {fileID: 7738733805239443681}
+  waypointManager2: {fileID: 7738733805239443683}
+  createdWaypoints: []
+--- !u!114 &7738733805239443683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529982749165549692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e315c113df265734289a273344b8e0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  person: {fileID: 1072992043}
+  target: {fileID: 0}
+  allWaypoints: []
+  lineColor: {r: 0, g: 0, b: 1, a: 1}
+  lineWidth: 0.01
 --- !u!222 &7741014930394786602
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -67311,10 +67406,10 @@ RectTransform:
   m_Father: {fileID: 7738733805239443680}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 171.16, y: -40.35}
-  m_SizeDelta: {x: 0, y: 80.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 171.16, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &8697573019882885432
 RectTransform:
