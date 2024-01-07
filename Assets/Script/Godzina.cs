@@ -39,9 +39,9 @@ public class Godzina : MonoBehaviour
 
     public void Start()
     {
-         System.DateTime selectedDate = new System.DateTime(2024, 1, 11, 10, 0, 0);
-         LoginProcess(selectedDate);
-          lineRenderer = gameObject.AddComponent<LineRenderer>();
+        System.DateTime selectedDate = new System.DateTime(2024, 1, 11, 10, 0, 0);
+        LoginProcess(selectedDate);
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.startColor = lineColor;
         lineRenderer.endColor = lineColor;

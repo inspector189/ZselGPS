@@ -1,9 +1,20 @@
+using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
 using UnityEngine;
+using static GetValuesFromVulcan2;
+using UnityEngine.SceneManagement;
+using Vulcanova.Uonet.Api.Auth;
+using Vulcanova.Uonet.Api.Common;
+using Vulcanova.Uonet.Api.Schedule;
+using Vulcanova.Uonet.Api;
+using Vulcanova.Uonet.Signing;
+using System.Linq;
 
 public class LineCreator : MonoBehaviour
 {
+    private string symbol = "wloclawek";
     public Transform person; // Pozycja obiektu reprezentującego użytkownika
     public RectTransform target; // Pozycja wybranego celu
     public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
@@ -23,6 +34,8 @@ public class LineCreator : MonoBehaviour
         lineRenderer.endWidth = lineWidth;
         lineRenderer.useWorldSpace = true;
         lineRenderer.sortingOrder = 1; // Zapewnia, że linia jest rysowana nad innymi elementami
+        System.DateTime selectedDate = System.DateTime.Now;
+        LoginProcess(selectedDate);
     }
     public void buttonClicked()
     {
@@ -164,4 +177,167 @@ private List<Transform> GetNeighbors(Transform current)
             lineRenderer.SetPosition(i, new Vector3(pathPosition.x, pathPosition.y, 0)); // Ustawienie na płaszczyźnie 2D
         }
     }
+
+    public async void LoginProcess(DateTime selectedDate)
+    {
+        
+        try
+        {
+            Debug.Log("działa");
+            string token = PlayerPrefs.GetString("token");
+            Debug.Log(token);
+            if (token == "testowe")
+            {
+                LessonData[] lessonsData = new LessonData[]
+                {
+                    new LessonData { Position = 1, SubjectName = "Matematyka", TeacherName = "Pan Kowalski", StartTime = "08:00", EndTime = "08:45", RoomCode = "101", SubjectCode = "MAT" },
+                    new LessonData { Position = 2, SubjectName = "Historia", TeacherName = "Pani Nowak", StartTime = "08:50", EndTime = "09:35", RoomCode = "102", SubjectCode = "HIS" },
+                    new LessonData { Position = 3, SubjectName = "Biologia", TeacherName = "Pan Wiśniewski", StartTime = "09:50", EndTime = "10:35", RoomCode = "103", SubjectCode = "BIO" },
+                    new LessonData { Position = 4, SubjectName = "Chemia", TeacherName = "Pani Kowalczyk", StartTime = "10:50", EndTime = "11:35", RoomCode = "104", SubjectCode = "CHE" },
+                    new LessonData { Position = 5, SubjectName = "Język angielski", TeacherName = "Pan Wojciechowski", StartTime = "11:50", EndTime = "12:35", RoomCode = "105", SubjectCode = "ENG" },
+                    new LessonData { Position = 6, SubjectName = "Wychowanie fizyczne", TeacherName = "Pani Lewandowska", StartTime = "12:50", EndTime = "13:35", RoomCode = "Gym", SubjectCode = "PE" },
+                    new LessonData { Position = 7, SubjectName = "Informatyka", TeacherName = "Pan Dąbrowski", StartTime = "13:50", EndTime = "14:35", RoomCode = "106", SubjectCode = "INF" },
+                    new LessonData { Position = 8, SubjectName = "Plastyka", TeacherName = "Pani Mazur", StartTime = "14:40", EndTime = "15:25", RoomCode = "107", SubjectCode = "ART" }
+                };
+
+                foreach (var lessonData in lessonsData)
+                {
+
+                    try
+                    {
+
+                        // Wypisz szczeg y lekcji, nazwy w a ciwo ci mog  si  r ni 
+                        Debug.Log($"nr: {lessonData.Position}, przedmiot: {lessonData.SubjectName}, nauczyciel: {lessonData.TeacherName}, godziny: {lessonData.StartTime} - {lessonData.EndTime}");
+
+
+
+
+
+                    }
+                    catch (System.Exception) { }
+                }
+
+            }
+            else
+            {
+                var firebaseToken = PlayerPrefs.GetString("firebaseToken");
+                var pk = PlayerPrefs.GetString("pk");
+                string certString = PlayerPrefs.GetString("cert");
+                byte[] cert = Convert.FromBase64String(certString);
+                var x509Cert2 = new X509Certificate2(cert);
+
+                var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
+                var instanceUrlProvider = new InstanceUrlProvider();
+                var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
+                var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
+                var firstAccount = registerHebeResponse.Envelope[0];
+                var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
+                var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
+
+
+                var lessonsResponse = await unitApiClient.GetAsync(GetScheduleEntriesByPupilQuery.ApiEndpoint, new GetScheduleEntriesByPupilQuery(
+                                firstAccount.Pupil.Id,
+                                selectedDate,
+                                selectedDate,
+                                DateTime.MinValue,
+                                500,
+                                int.MinValue));
+
+                var sortedLessons = lessonsResponse.Envelope.OrderBy(lesson => lesson.TimeSlot.Position);
+                var currentDate = DateTime.Now;
+                var currentTime = DateTime.Now.TimeOfDay;
+
+                string nearestLessonCode = "";
+                string nearestLessonSubject = "";
+                DateTime nearestLessonStart = DateTime.MaxValue;
+                bool isLessonCurrentlyHappening = false;
+                Debug.Log($"Aktualna data i godzina: {currentDate}");
+
+                foreach (var lesson in sortedLessons)
+                {
+                    try
+                    {
+                        if (lesson.Visible)
+                        {
+                            var startTime = TimeSpan.Parse(lesson.TimeSlot.Start);
+                            var endTime = TimeSpan.Parse(lesson.TimeSlot.End);
+
+                            var lessonStartDateTime = currentDate.Add(startTime);
+                            var lessonEndDateTime = currentDate.Add(endTime);
+
+                            Debug.Log($"Sprawdzam lekcję: {lesson.Subject.Name} od {lessonStartDateTime} do {lessonEndDateTime}");
+
+                            if (currentDate.Add(currentTime) >= lessonStartDateTime && currentDate.Add(currentTime) < lessonEndDateTime)
+                            {
+                                nearestLessonCode = lesson.Room.Code;
+                                nearestLessonSubject = lesson.Subject.Name;
+                                isLessonCurrentlyHappening = true;
+                                Debug.Log($"Lekcja w trakcie: {nearestLessonSubject} w sali {nearestLessonCode}");
+                                string doorName = "Drzwi" + nearestLessonCode;
+                                GameObject door = GameObject.Find(doorName);
+                                RectTransform doorTransform = door.GetComponent<RectTransform>();
+                                GetComponent<LineCreator>().target = doorTransform;
+                                GetComponent<LineCreator>().SetWaypoints(allWaypoints);
+                                break; 
+                            }
+
+                            else if (currentDate.Add(currentTime) < lessonStartDateTime && lessonStartDateTime < nearestLessonStart)
+                            {
+                                nearestLessonStart = lessonStartDateTime;
+                                nearestLessonCode = lesson.Room.Code;
+                                nearestLessonSubject = lesson.Subject.Name;
+                            }
+                        }
+                    }
+                    catch (System.Exception ex)
+                    {
+                        Debug.LogError($"Wystąpił wyjątek: {ex.Message}");
+                    }
+                }
+
+                if (!isLessonCurrentlyHappening && !string.IsNullOrEmpty(nearestLessonCode) && nearestLessonStart > currentDate.Add(currentTime))
+                {
+                    string doorName = "Drzwi" + nearestLessonCode;
+                    GameObject door = GameObject.Find(doorName);
+                    if (door != null)
+                    {
+                        RectTransform doorTransform = door.GetComponent<RectTransform>();
+                        GetComponent<LineCreator>().target = doorTransform;
+                        Debug.Log($"Pozycja docelowa zaktualizowana na drzwi sali {nearestLessonCode}");
+                        GetComponent<LineCreator>().SetWaypoints(allWaypoints);
+                    }
+                    else
+                    {
+                        Debug.LogError($"Drzwi o nazwie {doorName} nie zostały znalezione.");
+                    }
+                }
+                else if (string.IsNullOrEmpty(nearestLessonCode))
+                {
+                    Debug.Log("Nie znaleziono lekcji spełniającej kryteria.");
+                }
+
+
+
+
+            }
+        }
+        catch (Exception e)
+        {
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+            {
+                SceneManager.LoadScene("LoginPanel");
+            }
+            else
+            {
+                Debug.Log("Brak połączenia z internetem.");
+                SceneManager.LoadScene("LoginPanel");
+            }
+            Debug.Log($"Błąd w logowaniu: {e}");
+            SceneManager.LoadScene("LoginPanel");
+        }
+    }
+
+
+
+
 }
