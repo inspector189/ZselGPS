@@ -18,6 +18,12 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     private float timeOfLastClick = 0f;
     private const float maxClickDuration = 0.15f; // Maksymalny czas trwania pojedynczego kliknięcia
     public List<Sprite> images;
+    private GalleryPanel GalPanel;
+
+    void Start() 
+    {
+        GalPanel = FindObjectOfType<GalleryPanel>(); // Przypisanie referencji do obiektu GalleryPanel
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -52,6 +58,7 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
                         if (images != null && images.Count > 0)
                         {
                             obszarZdjecia.sprite = images[0];
+                            GalPanel.CreateImages(images);
                         }
                         OpisSaliText.text = OpisSali;
                         Vector3 targetPosition = new Vector3(buttonRectTransform.position.x, buttonRectTransform.position.y, CameraToMove.transform.position.z);
