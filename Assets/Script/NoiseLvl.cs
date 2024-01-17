@@ -1,64 +1,139 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System;
+using UnityEngine.Android;
+using System.Collections;
 using TMPro;
 
 public class NoiseLvl : MonoBehaviour
 {
-    public TextMeshProUGUI noiseLevelText;
-    public float sensitivity = 1000f;
-    public float referenceLevel = 0.1f;  // Poziom odniesienia (zmień według potrzeb)
-
+    private AudioClip recordedClip;
     private AudioSource audioSource;
-    private string microphoneName;
-    private const int sampleSize = 256; // Rozmiar próbki do analizy
+    private bool isRecording = false;
+    public TextMeshProUGUI text1;
+    private float lastDbValue = 0f;
+    private float smoothDbValue = 0f;
+    private float smoothFactor = 0.1f;
 
-    void Start()
+    IEnumerator Start()
     {
-        // Sprawdzamy, czy mikrofon jest dostępny
+        // Check if a microphone is available
         if (Microphone.devices.Length == 0)
         {
-            Debug.LogError("Mikrofon nie jest dostępny w tym urządzeniu.");
-            return;
+            Debug.LogError("No microphone detected.");
+            yield break;
         }
 
-        // Pobieramy nazwę mikrofonu
-        microphoneName = Microphone.devices[0];
+        // Request and check microphone permissions
+        RequestMicrophonePermission();
+        yield return StartCoroutine(WaitForMicrophonePermission());
 
-        // Inicjalizujemy mikrofon
-        AudioClip microphoneAudio = Microphone.Start(microphoneName, true, 1, 44100);
+        Debug.Log("Microphone access granted.");
 
-        // Czekamy, aż mikrofon będzie gotowy
-        while (!(Microphone.GetPosition(microphoneName) > 0)) { }
+        // Add an AudioSource component to this GameObject
+        audioSource = gameObject.AddComponent<AudioSource>();
 
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = microphoneAudio;
-        audioSource.loop = true;
-        // Nie chcemy odtwarzać dźwięku głośno w głośnikach
-        audioSource.mute = true;
-        audioSource.Play();
+        // Wait for a short delay before proceeding
+        yield return new WaitForSeconds(1);
+
+        // Start recording
+        StartRecording();
     }
 
     void Update()
     {
-        // Pobieramy dane z mikrofonu
-        float[] samples = new float[sampleSize];
-        // Używamy GetSpectrumData zamiast GetOutputData dla lepszej analizy
-        audioSource.GetSpectrumData(samples, 0, FFTWindow.BlackmanHarris);
+        GetDecibelLevel();
+    }
 
-        // Obliczamy średnią amplitudę dźwięku
-        float sum = 0;
-        for (int i = 0; i < samples.Length; i++)
+    void RequestMicrophonePermission()
+    {
+        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
-            sum += samples[i] * samples[i]; // Kwadrat wartości próbki
+            Permission.RequestUserPermission(Permission.Microphone);
         }
-        float rmsValue = Mathf.Sqrt(sum / samples.Length); // RMS
+    }
 
-        // Obliczamy poziom hałasu w decybelach
-        float noiseLevel = rmsValue > 0 ? 20 * Mathf.Log10(rmsValue / referenceLevel) : 0;
-        noiseLevel = Mathf.Max(noiseLevel, 0); // Zapewniamy, że wartość dB nie jest ujemna
+    IEnumerator WaitForMicrophonePermission()
+    {
+        // Wait until the user grants or denies permission
+        while (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            yield return null;
+        }
+    }
 
-        // Wyświetlamy poziom hałasu jako tekst
-        noiseLevelText.text = "Poziom hałasu: " + noiseLevel.ToString("F2") + " dB";
+    // Start recording audio (changed to public)
+    public void StartRecording()
+    {
+        if (Microphone.IsRecording(null))
+        {
+            Debug.LogWarning("Already recording.");
+            return;
+        }
+
+        int frequency = 44100; // Sample rate
+        int seconds = 1; // Maximum recording duration
+
+        recordedClip = Microphone.Start(null, true, seconds, frequency);
+        isRecording = true;
+    }
+
+    // Stop recording audio
+    public void StopRecording()
+    {
+        if (Microphone.IsRecording(null))
+        {
+            Microphone.End(null);
+            isRecording = false;
+        }
+        else
+        {
+            Debug.LogWarning("Not currently recording.");
+        }
+    }
+
+    // Get the current decibel level and play the recorded audio
+    public float GetDecibelLevel()
+    {
+        if (isRecording && recordedClip != null)
+        {
+            float[] samples = new float[recordedClip.samples * recordedClip.channels];
+            recordedClip.GetData(samples, 0);
+
+            float sum = 0f;
+
+            foreach (float sample in samples)
+            {
+                sum += sample * sample;
+            }
+
+            // Oblicz średnią amplitudę
+            float averageAmplitude = sum / samples.Length;
+
+            // Konwertuj średnią amplitudę na decybele
+            float dbValue = 20 * Mathf.Log10(averageAmplitude / 32767.0f + Mathf.Epsilon);
+
+            smoothDbValue = Mathf.Lerp(smoothDbValue, dbValue, smoothFactor);
+            smoothDbValue = Mathf.Round(smoothDbValue * 100) / 100;
+            // Aktualizuj tekst tylko wtedy, gdy wartość się zmieni
+            if (Mathf.Abs(smoothDbValue - lastDbValue) > 1f)
+            {
+                // Play the recorded audio if it's not already playing
+                float referenceValue = 260f; // Dostosuj tę wartość do swoich potrzeb
+                Debug.Log(smoothDbValue + referenceValue);
+                text1.text = (Mathf.Round((smoothDbValue + referenceValue) * 100) / 100).ToString();
+                lastDbValue = smoothDbValue; // Zaktualizuj ostatnią wartość
+            }
+        }
+        else
+        {
+            // Jeśli nie nagrywasz, ale wartość dbValue zmieniła się, zaktualizuj tekst
+            if (lastDbValue != 0f)
+            {
+                lastDbValue = 0f;
+                float referenceValue = 260f; // Dostosuj tę wartość do swoich potrzeb
+                text1.text = (Mathf.Round((lastDbValue + referenceValue) * 100) / 100).ToString();
+            }
+        }
+
+        return 0f; // Return 0 if not recording or
     }
 }
