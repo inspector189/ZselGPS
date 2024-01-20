@@ -118,7 +118,6 @@ public class NoiseLvl : MonoBehaviour
             {
                 // Play the recorded audio if it's not already playing
                 float referenceValue = 260f; // Dostosuj tę wartość do swoich potrzeb
-                Debug.Log(smoothDbValue + referenceValue);
                 text1.text = (Mathf.Round((smoothDbValue + referenceValue) * 100) / 100).ToString();
                 lastDbValue = smoothDbValue; // Zaktualizuj ostatnią wartość
             }

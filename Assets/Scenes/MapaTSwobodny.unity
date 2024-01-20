@@ -24215,7 +24215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cf25319f9051c4b8031ec61d978900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextLght: {fileID: 666486076}
+  lightLevelText: {fileID: 666486076}
 --- !u!1 &908430711
 GameObject:
   m_ObjectHideFlags: 0

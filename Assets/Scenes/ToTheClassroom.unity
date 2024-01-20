@@ -18709,6 +18709,8 @@ MonoBehaviour:
   OpisSali: "Sala \u0106wicze\u0144"
   buttonRectTransform: {fileID: 771018232}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18727,6 +18729,8 @@ MonoBehaviour:
   OpisSali: Magazyn
   buttonRectTransform: {fileID: 1191769901}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18745,6 +18749,8 @@ MonoBehaviour:
   OpisSali: Hala Sportowa
   buttonRectTransform: {fileID: 1882460902}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18763,6 +18769,8 @@ MonoBehaviour:
   OpisSali: "Dy\u017Curka"
   buttonRectTransform: {fileID: 1532885462}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18781,6 +18789,8 @@ MonoBehaviour:
   OpisSali: "Sala \u0106wicze\u0144"
   buttonRectTransform: {fileID: 1780368873}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18799,6 +18809,8 @@ MonoBehaviour:
   OpisSali: "Si\u0142ownia "
   buttonRectTransform: {fileID: 1789885969}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18817,6 +18829,8 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 987560603}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18835,6 +18849,8 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 242958150}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18853,6 +18869,8 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 374475368}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18871,6 +18889,8 @@ MonoBehaviour:
   OpisSali: "Szatnia I 512 - Pomara\u0144czowa"
   buttonRectTransform: {fileID: 127707460}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18889,6 +18909,8 @@ MonoBehaviour:
   OpisSali: Szaatnia IV 508 - Zielona
   buttonRectTransform: {fileID: 1514773249}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18907,6 +18929,8 @@ MonoBehaviour:
   OpisSali: 'Szatnia III 509 - Niebieska '
   buttonRectTransform: {fileID: 220136988}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18925,6 +18949,8 @@ MonoBehaviour:
   OpisSali: Szatnia II 510 - Czerwona
   buttonRectTransform: {fileID: 194520302}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18943,6 +18969,8 @@ MonoBehaviour:
   OpisSali: Pracownia 317
   buttonRectTransform: {fileID: 2141930963}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18961,6 +18989,8 @@ MonoBehaviour:
   OpisSali: Pracownia 318
   buttonRectTransform: {fileID: 183614435}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18979,6 +19009,8 @@ MonoBehaviour:
   OpisSali: Zaplecze sal 315 i 317
   buttonRectTransform: {fileID: 1082411294}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18997,6 +19029,8 @@ MonoBehaviour:
   OpisSali: Pracownia 315
   buttonRectTransform: {fileID: 1269845060}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19015,6 +19049,8 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 1846543667}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19033,6 +19069,8 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 1773772218}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19051,6 +19089,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 343
   buttonRectTransform: {fileID: 194510131}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19069,6 +19109,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 344
   buttonRectTransform: {fileID: 1108109912}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19087,6 +19129,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 345
   buttonRectTransform: {fileID: 744218290}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19105,6 +19149,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 346
   buttonRectTransform: {fileID: 162187991}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19123,6 +19169,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 312
   buttonRectTransform: {fileID: 1038145725}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19141,6 +19189,8 @@ MonoBehaviour:
   OpisSali: Pomieszczenie Gospodarcze
   buttonRectTransform: {fileID: 471815046}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19159,6 +19209,8 @@ MonoBehaviour:
   OpisSali: "Szatnia Og\xF3lna"
   buttonRectTransform: {fileID: 828384150}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19178,6 +19230,8 @@ MonoBehaviour:
     na przek\u0105ske."
   buttonRectTransform: {fileID: 176039998}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19196,6 +19250,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 304
   buttonRectTransform: {fileID: 1822146957}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19214,6 +19270,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 305
   buttonRectTransform: {fileID: 527198287}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19232,6 +19290,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 303
   buttonRectTransform: {fileID: 799055038}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19250,6 +19310,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Kierownika "
   buttonRectTransform: {fileID: 1424258741}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19268,6 +19330,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 302
   buttonRectTransform: {fileID: 1715558918}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19286,6 +19350,8 @@ MonoBehaviour:
   OpisSali: Pracownia Elektryczna 307
   buttonRectTransform: {fileID: 437481628}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19304,6 +19370,8 @@ MonoBehaviour:
   OpisSali: Biuro
   buttonRectTransform: {fileID: 838685201}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19322,6 +19390,8 @@ MonoBehaviour:
   OpisSali: Biuro
   buttonRectTransform: {fileID: 1180422990}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19340,6 +19410,8 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 707143922}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19358,6 +19430,8 @@ MonoBehaviour:
   OpisSali: Pracownia Maszyn 301
   buttonRectTransform: {fileID: 732959367}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19376,6 +19450,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 308
   buttonRectTransform: {fileID: 1879484467}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19394,6 +19470,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 ratownik"
   buttonRectTransform: {fileID: 1759497413}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19412,6 +19490,8 @@ MonoBehaviour:
   OpisSali: "P\u0142ywalnia"
   buttonRectTransform: {fileID: 1940197519}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19430,6 +19510,8 @@ MonoBehaviour:
   OpisSali: Szatnia basenowa
   buttonRectTransform: {fileID: 1479149663}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19448,6 +19530,8 @@ MonoBehaviour:
   OpisSali: Szatnia basenowa
   buttonRectTransform: {fileID: 497581138}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19466,6 +19550,8 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 185023181}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19484,6 +19570,8 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 1358785091}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19502,6 +19590,8 @@ MonoBehaviour:
   OpisSali: 'Toaleta '
   buttonRectTransform: {fileID: 1486745852}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19520,6 +19610,8 @@ MonoBehaviour:
   OpisSali: "Pok\xF3j Nauczycieli WF-u przy basenie."
   buttonRectTransform: {fileID: 101270862}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19538,6 +19630,8 @@ MonoBehaviour:
   OpisSali: Szatnia Basenowa
   buttonRectTransform: {fileID: 879418907}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19556,6 +19650,8 @@ MonoBehaviour:
   OpisSali: Szatnia Basenowa
   buttonRectTransform: {fileID: 953364116}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19574,6 +19670,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Pedagoga."
   buttonRectTransform: {fileID: 1950099434}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19593,6 +19691,8 @@ MonoBehaviour:
     okienko."
   buttonRectTransform: {fileID: 381988219}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19611,6 +19711,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 biblioteka."
   buttonRectTransform: {fileID: 1772673401}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19629,6 +19731,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 17
   buttonRectTransform: {fileID: 1219417449}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19647,6 +19751,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 sekretariat uczniowski."
   buttonRectTransform: {fileID: 1572385020}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19665,6 +19771,8 @@ MonoBehaviour:
   OpisSali: Zaplecze Gospodarcze 14
   buttonRectTransform: {fileID: 1856268620}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19684,6 +19792,8 @@ MonoBehaviour:
     si\u0119 w niej r\xF3\u017Cne ciekawe lekcje."
   buttonRectTransform: {fileID: 1097338623}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19702,6 +19812,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Kancelaria."
   buttonRectTransform: {fileID: 2136184367}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19720,6 +19832,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 Gabinet Dyrektora."
   buttonRectTransform: {fileID: 1744096856}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19738,6 +19852,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 dy\u017Curka."
   buttonRectTransform: {fileID: 718736852}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19756,6 +19872,8 @@ MonoBehaviour:
   OpisSali: Magazyn
   buttonRectTransform: {fileID: 734652810}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19774,6 +19892,8 @@ MonoBehaviour:
   OpisSali: Toaleta
   buttonRectTransform: {fileID: 1221126201}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19792,6 +19912,8 @@ MonoBehaviour:
   OpisSali: 'Toaleta '
   buttonRectTransform: {fileID: 151978241}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19810,6 +19932,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 10
   buttonRectTransform: {fileID: 455359592}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19828,6 +19952,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 9
   buttonRectTransform: {fileID: 2143623980}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19846,6 +19972,8 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 9
   buttonRectTransform: {fileID: 1891874244}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19864,6 +19992,8 @@ MonoBehaviour:
   OpisSali: Kierownik Gospodarczy 7
   buttonRectTransform: {fileID: 20295131}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19882,6 +20012,8 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 5
   buttonRectTransform: {fileID: 1002991264}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19900,6 +20032,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 5
   buttonRectTransform: {fileID: 1820538511}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19918,6 +20052,8 @@ MonoBehaviour:
   OpisSali: Magazyn
   buttonRectTransform: {fileID: 346234454}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19936,6 +20072,8 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 846717986}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19954,6 +20092,8 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 1830629840}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19972,6 +20112,8 @@ MonoBehaviour:
   OpisSali: "Sk\u0142adnica akt - 204"
   buttonRectTransform: {fileID: 1477362816}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19990,6 +20132,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjan 205
   buttonRectTransform: {fileID: 1423128734}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20008,6 +20152,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 206
   buttonRectTransform: {fileID: 1493731531}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20026,6 +20172,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 207
   buttonRectTransform: {fileID: 1562331502}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20044,6 +20192,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 208
   buttonRectTransform: {fileID: 1939624846}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20062,6 +20212,8 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 209
   buttonRectTransform: {fileID: 1044810420}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20080,6 +20232,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 210
   buttonRectTransform: {fileID: 73824856}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20098,6 +20252,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 209
   buttonRectTransform: {fileID: 596974442}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20116,6 +20272,8 @@ MonoBehaviour:
   OpisSali: Toaleta (Damska)
   buttonRectTransform: {fileID: 1091255656}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20134,6 +20292,8 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 181120591}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20152,6 +20312,8 @@ MonoBehaviour:
   OpisSali: Toaleta Dla Nauczycieli
   buttonRectTransform: {fileID: 710778301}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20170,6 +20332,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 pomieszczenie dla os\xF3b z Samorz\u0105du."
   buttonRectTransform: {fileID: 1734339687}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20188,6 +20352,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 105
   buttonRectTransform: {fileID: 2141652464}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20206,6 +20372,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 106
   buttonRectTransform: {fileID: 684289420}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20224,6 +20392,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 107
   buttonRectTransform: {fileID: 1858057556}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20242,6 +20412,8 @@ MonoBehaviour:
   OpisSali: "Tu znajduje si\u0119 pok\xF3j nauczycielski."
   buttonRectTransform: {fileID: 1981503551}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20260,6 +20432,8 @@ MonoBehaviour:
   OpisSali: "Lepiej nie wchodzi\u0107"
   buttonRectTransform: {fileID: 836023152}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20278,6 +20452,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 110
   buttonRectTransform: {fileID: 1385313772}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20296,6 +20472,8 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 110
   buttonRectTransform: {fileID: 1091831752}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20314,6 +20492,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 112
   buttonRectTransform: {fileID: 1843555700}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20332,6 +20512,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 407
   buttonRectTransform: {fileID: 2042229868}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20350,6 +20532,8 @@ MonoBehaviour:
   OpisSali: Gabinet Wicedyrektora 406
   buttonRectTransform: {fileID: 977779675}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20368,6 +20552,8 @@ MonoBehaviour:
   OpisSali: Pracownia Elektryczno-Elektroniczna 405
   buttonRectTransform: {fileID: 1527556459}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20386,6 +20572,8 @@ MonoBehaviour:
   OpisSali: Zaplecze sali 403
   buttonRectTransform: {fileID: 628874894}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20404,6 +20592,8 @@ MonoBehaviour:
   OpisSali: Pracownia Elektryczno-Elektroniczna 403
   buttonRectTransform: {fileID: 324500710}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20422,6 +20612,8 @@ MonoBehaviour:
   OpisSali: Zaplecze
   buttonRectTransform: {fileID: 348757055}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20440,6 +20632,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 401
   buttonRectTransform: {fileID: 716189749}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20458,6 +20652,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 408
   buttonRectTransform: {fileID: 1363418202}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20476,6 +20672,8 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 2044519105}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20496,6 +20694,8 @@ MonoBehaviour:
     dobrego :)"
   buttonRectTransform: {fileID: 556579242}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20514,6 +20714,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 422
   buttonRectTransform: {fileID: 171318313}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20532,6 +20734,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 421
   buttonRectTransform: {fileID: 2069983204}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20550,6 +20754,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 420
   buttonRectTransform: {fileID: 1706383534}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20568,6 +20774,8 @@ MonoBehaviour:
   OpisSali: "Pracownia Wysokich Napi\u0119\u0107 419"
   buttonRectTransform: {fileID: 554718276}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20586,6 +20794,8 @@ MonoBehaviour:
   OpisSali: Sala Lekcyjna 418
   buttonRectTransform: {fileID: 461228822}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20604,6 +20814,8 @@ MonoBehaviour:
   OpisSali: Zaplecze Sali 418
   buttonRectTransform: {fileID: 1804837359}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20622,6 +20834,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 416
   buttonRectTransform: {fileID: 615316482}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20640,6 +20854,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 415
   buttonRectTransform: {fileID: 121443996}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20658,6 +20874,8 @@ MonoBehaviour:
   OpisSali: "Zaplecze dla nauczycieli przedmiot\xF3w zawodowych - informatycznych"
   buttonRectTransform: {fileID: 1928151051}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20676,6 +20894,8 @@ MonoBehaviour:
   OpisSali: "Toaleta (M\u0119ska)"
   buttonRectTransform: {fileID: 67568489}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20694,6 +20914,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 423
   buttonRectTransform: {fileID: 1200143134}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20712,6 +20934,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 411
   buttonRectTransform: {fileID: 678356154}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20730,6 +20954,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 411A
   buttonRectTransform: {fileID: 815467695}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20748,6 +20974,8 @@ MonoBehaviour:
   OpisSali: Pracownia 412
   buttonRectTransform: {fileID: 213599639}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20766,6 +20994,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 424
   buttonRectTransform: {fileID: 241784656}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20784,6 +21014,8 @@ MonoBehaviour:
   OpisSali: Pracownia Komputerowa 425
   buttonRectTransform: {fileID: 1375547672}
   targetOrthographicSize: 0.3
+  DrzwiSali: {fileID: 0}
+  images: []
 --- !u!114 &622009531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56739,9 +56971,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   person: {fileID: 0}
-  destination: {fileID: 0}
-  KorytarzePietro: []
-  waypointCreator: {fileID: 0}
+  target: {fileID: 0}
+  allWaypoints: []
+  lineColor: {r: 0, g: 0, b: 1, a: 1}
+  lineWidth: 0.01
 --- !u!223 &1902154084
 Canvas:
   m_ObjectHideFlags: 0

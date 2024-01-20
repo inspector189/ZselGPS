@@ -779,7 +779,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 660233c0-c296-45f9-a65a-7c884712217b
   framebufferDepthMemorylessMode: 0
