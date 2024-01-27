@@ -18,23 +18,10 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     private float timeOfLastClick = 0f;
     private const float maxClickDuration = 0.15f; // Maksymalny czas trwania pojedynczego kliknięcia
     public List<Sprite> images;
-    private GalleryPanel GalPanel;
 
-    void Start() 
+    public void Start() 
     {
-        GameObject photosObject = GameObject.FindWithTag("Photos");
-        if (photosObject != null)
-        {
-            GalPanel = photosObject.GetComponent<GalleryPanel>();
-            if (GalPanel == null)
-            {
-                Debug.LogError("GalleryPanel component not found on Photos object");
-            }
-        }
-        else
-        {
-            Debug.LogError("Photos object not found");
-        }
+        
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -66,11 +53,12 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
                 {
                     if (Time.time - timeOfLastClick <= maxClickDuration)
                     {
+                        string salaNameOrg = buttonRectTransform.gameObject.name;
+                        PlayerPrefs.SetString("NumerSali", salaNameOrg);
                         TytulSaliText.text = NazwaSali;
                         if (images != null && images.Count > 0)
                         {
                             obszarZdjecia.sprite = images[0];
-                            GalPanel.CreateImages(images);
                         }
                         OpisSaliText.text = OpisSali;
                         Vector3 targetPosition = new Vector3(buttonRectTransform.position.x, buttonRectTransform.position.y, CameraToMove.transform.position.z);
