@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Camera
   - CameraMap
+  - Photos
   layers:
   - Default
   - TransparentFX

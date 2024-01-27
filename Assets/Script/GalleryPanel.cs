@@ -10,17 +10,29 @@ public class GalleryPanel : MonoBehaviour
 
     public void CreateImages(List<Sprite> imagesList)
     {
-        imagesList.Clear();
+        // Usuwamy istniejące obrazy przed dodaniem nowych
+        foreach (Transform child in imagesParent)
+        {
+            Destroy(child.gameObject);
+        }
+
         foreach (Sprite imageSprite in imagesList)
         {
             GameObject newImageObject = Instantiate(imagePrefab, imagesParent); // Tworzenie nowego obiektu Image
 
             // Ustawienie Sprite'a dla nowego obiektu Image
             Image newImageComponent = newImageObject.GetComponent<Image>();
-            newImageComponent.sprite = imageSprite;
+            if (newImageComponent != null)
+            {
+                newImageComponent.sprite = imageSprite;
 
-            // Zmiana nazwy obiektu Image na nazwę Sprite'a
-            newImageObject.name = imageSprite.name; // Przypisanie nazwy Sprite'a do obiektu Image
+                // Zmiana nazwy obiektu Image na nazwę Sprite'a
+                newImageObject.name = imageSprite.name; // Przypisanie nazwy Sprite'a do obiektu Image
+            }
+            else
+            {
+                Debug.LogError("Image component not found on the new image object");
+            }
         }
     }
 

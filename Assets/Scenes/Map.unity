@@ -10734,7 +10734,7 @@ GameObject:
   - component: {fileID: 361022420}
   m_Layer: 5
   m_Name: Photos
-  m_TagString: Untagged
+  m_TagString: Photos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11628,7 +11628,6 @@ MonoBehaviour:
   waypointParent: {fileID: 126777184}
   waypointPrefab: {fileID: 1639198707}
   waypointManager: {fileID: 391263040}
-  waypointManager2: {fileID: 0}
   createdWaypoints: []
 --- !u!114 &391263042
 MonoBehaviour:
@@ -34016,10 +34015,10 @@ RectTransform:
   m_Father: {fileID: 353945767}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 0, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186540581
 MonoBehaviour:
@@ -60500,10 +60499,10 @@ RectTransform:
   m_Father: {fileID: 391263035}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 0, y: 55}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2042983464
 MonoBehaviour:
@@ -67180,7 +67179,6 @@ MonoBehaviour:
   waypointParent: {fileID: 126777184}
   waypointPrefab: {fileID: 1639198707}
   waypointManager: {fileID: 7738733805239443681}
-  waypointManager2: {fileID: 7738733805239443683}
   createdWaypoints: []
 --- !u!114 &7738733805239443683
 MonoBehaviour:

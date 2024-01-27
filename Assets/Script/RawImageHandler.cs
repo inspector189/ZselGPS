@@ -22,7 +22,19 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
 
     void Start() 
     {
-        GalPanel = FindObjectOfType<GalleryPanel>(); // Przypisanie referencji do obiektu GalleryPanel
+        GameObject photosObject = GameObject.FindWithTag("Photos");
+        if (photosObject != null)
+        {
+            GalPanel = photosObject.GetComponent<GalleryPanel>();
+            if (GalPanel == null)
+            {
+                Debug.LogError("GalleryPanel component not found on Photos object");
+            }
+        }
+        else
+        {
+            Debug.LogError("Photos object not found");
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -67,9 +79,7 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
                         PlayerPrefs.SetFloat("DrzwiSaliY", DrzwiSali.transform.localPosition.y);
                         PlayerPrefs.SetInt("panelStatus", 1);
                         PlayerPrefs.SetInt("panelCzynnosc", 1);
-                        
                     }
-                    
                 }
             }
         }
