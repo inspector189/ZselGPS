@@ -8,110 +8,67 @@ using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.UI;
 
-
 public class GPSMap2 : MonoBehaviour
 {
-    public RectTransform personRect2;
-    public GameObject person2;
-    public RectTransform personRect; // Persona
-    public RectTransform ObszarWsparcia; // Obszar wsparcia
-    public RectTransform ObszarWsparcia2; // Obszar wsparcia
+    public RectTransform personRect2; // Persona - która jest ukryta i ma na celu pokazać prawidłową pozycję użytkownika
+    public RectTransform personRect; // Persona - która jest odkryta i jej pozycja jest już przekształcona - interpolacja
+    public List<RectTransform> supportArea;
+    // Tablica - index numeracja
     public List<RectTransform> parterList; // Lista obiektów do sprawdzenia
     public List<RectTransform> pietro1List; // Lista obiektów do sprawdzenia
     public List<RectTransform> pietro2List; // Lista obiektów do sprawdzenia
-
-    public GameObject parterGO;
-    public GameObject pietro1GO;
-    public GameObject pietro2GO;
-
-    public GameObject texts0;
-    public GameObject texts1;
-    public GameObject texts2;
-
-    const double r = 6371000.0f;
-    const double origin_lati = 52.668395f;
-    const double origin_longi = 19.042718f;
-    private bool gyroEnabled;
-    private Gyroscope gyro;
-    public GameObject person;
-    public Toggle tgl;
-    public TextMeshProUGUI slidertext;
-    float accX, accY, accZ;
-    public Image mapa;
-    public Sprite parter;
-    public Sprite pietro1;
-    public Sprite pietro2;
-    public Slider slider;
-    private float updateInterval = 0.1f;
-    private float timeBetweenLocationUpdates = 0.2f;
-    private float timeSinceLastLocationUpdate = 0.0f;
-    private Vector3 lastPosition;
-    private Vector3 lastVelocity;
-    private Vector3 currentAcceleration;
-    public TextMeshProUGUI precyzjaTekst;
-    public TextMeshProUGUI wysokoscTekst;
-    Vector2 lastGPSPosition = Vector2.zero;
-    public TextMeshProUGUI informacja;
-    public TextMeshProUGUI informacja2;
+    public List<GameObject> texts;
+    public List<GameObject> floorGOs;
     public GameObject RedneredMap;
     public GameObject BrakPolaczenia;
     public GameObject Spinner;
-
+    private float updateInterval = 0.1f;
+    private float timeBetweenLocationUpdates = 0.2f;
+    private float timeSinceLastLocationUpdate = 0.0f;
+    const double r = 6371000.0f; //średni promień równika - 6371 km / tu w metrach
+    const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
+    const double origin_longi = 19.042718f;  // -||-
+    private Gyroscope gyro;
+    public Image mapa;
+    public List<Sprite> floorSprites;
+    public TextMeshProUGUI precyzjaTekst;
+    public TextMeshProUGUI wysokoscTekst;
+    public TextMeshProUGUI informacja;
+    public TextMeshProUGUI informacja2;
+    Vector2 lastGPSPosition = Vector2.zero;
+    private Floor floor;
+    private AveragePosition avg = new AveragePosition();
     void Start()
     {
-        
-        RedneredMap.SetActive(false);
-        BrakPolaczenia.SetActive(true);
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
-            {
-                Permission.RequestUserPermission(Permission.FineLocation);
-            }
-        }
-        Input.compass.enabled = true;
+        InitializeUI(false);
 
-        if (SystemInfo.supportsGyroscope)
-        {
-            gyro = Input.gyro;
-            gyro.enabled = true;
-        }
+        Permissions();
+
         Input.location.Start(1f, 0.1f);
-        StartCoroutine(StartGPS());
 
+        floor = new Floor(floorGOs, floorSprites, supportArea, mapa, parterList, pietro1List, pietro2List, CalcPosition);
 
-        if(PlayerPrefs.GetInt("pietro") == 0)
-        {
-             PlayerPrefs.SetInt("liczba", 0);
-             mapa.sprite = parter;
-        }
-        else
-        {
-            if(PlayerPrefs.GetInt("pietro") == 1)
-            {
-                PlayerPrefs.SetInt("liczba", 1);
-                 mapa.sprite = pietro1;
-            }
-            else{
-                if(PlayerPrefs.GetInt("pietro") == 2)
-                {
-                    PlayerPrefs.SetInt("liczba", 2);
-                     mapa.sprite = pietro2;
-                }
-            }
-        }
-      
+        StartCoroutine(StartGPS()); //do update()
     }
-    private IEnumerator StartGPS()
+    void Update()
     {
-        while (true)
+        int savedFloor = PlayerPrefs.GetInt("liczba");
+        floor.SetFloor(savedFloor);
+        floor.UpdatePosition(personRect2, personRect);
+
+        GyroData();
+    }
+  
+    public IEnumerator StartGPS() // Update, ewentualnie Courtine - yield wait for
+    {
+        while (true) // - odpada
         {
-            if (timeSinceLastLocationUpdate >= timeBetweenLocationUpdates)
+            if (timeSinceLastLocationUpdate >= timeBetweenLocationUpdates) // -odpada
             {
                 if (Input.location.isEnabledByUser)
                 {
                     
-                    if(Input.location.status != LocationServiceStatus.Running)
+                    if(Input.location.status != LocationServiceStatus.Running) //-odpada
                     {
                         if(Input.location.status != LocationServiceStatus.Initializing){
                             Input.location.Start(1f, 0.1f);
@@ -120,46 +77,22 @@ public class GPSMap2 : MonoBehaviour
                     
                     if (Input.location.status == LocationServiceStatus.Running)
                     {
-                        float latitude = Input.location.lastData.latitude;
-                        float longitude = Input.location.lastData.longitude;
-                        float accuracy = Input.location.lastData.horizontalAccuracy;
-                        double lastUpdateTime = Input.location.lastData.timestamp;
-                        double timeSinceLastUpdate = Time.time - lastUpdateTime;
+                        GPSData();
 
-                        PlayerPrefs.SetFloat("accuracy", accuracy);
-                        float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
-
-                        precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
-                        wysokoscTekst.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
-
-                        avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
-                        avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
-                        avg.AddMeasurement(accuracy);
-
-                        if (BrakPolaczenia.activeSelf)
-                        {
-                            float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
-                            Spinner.SetActive(true);
-                            int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
-                            informacja.text = "Szukanie lokalizacji...";
-                            informacja2.color = Color.white;
-                            informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
-                        }
-
-
+                        UpdateUI(true);
+                   
                         if (timeSinceLastLocationUpdate >= updateInterval)
                         {
-                            person2.transform.position = CalcPosition();
+                            personRect2.transform.position = CalcPosition();
                             if (PlayerPrefs.GetInt("pietro") == 2)
                             {
-                                if (IsColliding(personRect2, ObszarWsparcia2))
+                                if (floor.IsColliding(personRect2, supportArea[1])) 
                                 {
                                     if (!parterList.Contains(personRect2))
                                     {
-                                        Vector2 newPosition = FindClosestEdgePosition();
-                                        if (newPosition != Vector2.zero)
+                                        Vector2 newPosition = floor.FindClosestEdgePosition(personRect2);
+                                        if(newPosition != Vector2.zero)
                                         {
-
                                             personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
                                         }
                                     }
@@ -175,12 +108,12 @@ public class GPSMap2 : MonoBehaviour
                             }
                             if (PlayerPrefs.GetInt("pietro") == 0 || PlayerPrefs.GetInt("pietro") == 1)
                             {
-                                if (IsColliding(personRect2, ObszarWsparcia))
+                                if (floor.IsColliding(personRect2, supportArea[0]))
                                 {
 
                                     if (!parterList.Contains(personRect2))
                                     {
-                                        Vector2 newPosition = FindClosestEdgePosition();
+                                        Vector2 newPosition = floor.FindClosestEdgePosition(personRect2);
                                         if (newPosition != Vector2.zero)
                                         {
                                             personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
@@ -190,251 +123,136 @@ public class GPSMap2 : MonoBehaviour
                                     {
                                         personRect.position = CalcPosition();
                                     }
-
                                 }
                                 else
                                 {
                                     personRect.position = CalcPosition();
                                 }
                             }
-
-
-
-
                             timeSinceLastLocationUpdate = 0.0f;
                         }
                     }
                 }
                 else
                 {
-                    Spinner.SetActive(false);
-                    informacja.text = "";
-                    informacja2.color = Color.red;
-                    informacja2.text = "Brak dostępu do lokalizacji!";
+                    UpdateUI(false);
                 }
+               
             }
             timeSinceLastLocationUpdate += Time.deltaTime;
 
             yield return null;
         }
-
     }
-
-    Vector2 FindClosestEdgePosition()
+    public Vector2 CalcPosition()
     {
-        Vector2 closestPosition = Vector2.zero;
-        float minDistance = float.MaxValue;
-        if(PlayerPrefs.GetInt("pietro") == 0)
-        {
-            foreach (var obj in parterList)
-            {
-                Vector2 closestPoint = ClosestPointOnRect(obj, personRect2.position);
-                float distance = Vector2.Distance(personRect2.position, closestPoint);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    closestPosition = closestPoint;
-                }
-            }
-        }
-        if (PlayerPrefs.GetInt("pietro") == 1)
-        {
-            foreach (var obj in pietro1List)
-            {
-                Vector2 closestPoint = ClosestPointOnRect(obj, personRect2.position);
-                float distance = Vector2.Distance(personRect2.position, closestPoint);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    closestPosition = closestPoint;
-                }
-            }
-        }
-        if (PlayerPrefs.GetInt("pietro") == 2)
-        {
-            foreach (var obj in pietro2List)
-            {
-                Vector2 closestPoint = ClosestPointOnRect(obj, personRect2.position);
-                float distance = Vector2.Distance(personRect2.position, closestPoint);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    closestPosition = closestPoint;
-                }
-            }
-        }
-
-
-        return closestPosition;
-    }
-
-    Vector2 ClosestPointOnRect(RectTransform rectTransform, Vector2 point)
-    {
-        Rect rect = GetWorldSpaceRect(rectTransform);
-        float x = Mathf.Clamp(point.x, rect.xMin, rect.xMax);
-        float y = Mathf.Clamp(point.y, rect.yMin, rect.yMax);
-
-        return new Vector2(x, y);
-    }
-
-    bool IsColliding(RectTransform rect1, RectTransform rect2)
-    {
-        Rect rect1Bounds = GetWorldSpaceRect(rect1);
-        Rect rect2Bounds = GetWorldSpaceRect(rect2);
-
-        return rect1Bounds.Overlaps(rect2Bounds);
-    }
-
-    Rect GetWorldSpaceRect(RectTransform rectTransform)
-    {
-        // Pobierz pozycję i rozmiar RectTransform w globalnej przestrzeni
-        Vector2 sizeDelta = rectTransform.sizeDelta;
-        Vector2 position = rectTransform.position;
-
-        float width = sizeDelta.x * rectTransform.lossyScale.x;
-        float height = sizeDelta.y * rectTransform.lossyScale.y;
-
-        return new Rect(position.x - width * rectTransform.pivot.x,
-                        position.y - height * rectTransform.pivot.y,
-                        width, height);
-    }
-
-    void Update()
-    {
-
-       // slidertext.text = (slider.value).ToString();
-         int savedFloor = PlayerPrefs.GetInt("liczba"); // Domyślnie 0, jeśli nie ma zapisanej wartości
-        SetFloor(savedFloor);
-        gyroEnabled = SystemInfo.supportsGyroscope;
-        if (gyroEnabled)
-        {
-            Quaternion gyroAttitude = gyro.attitude;
-            float gyroYaw = gyroAttitude.eulerAngles.z;
-
-            person.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
-        }
-
-    }
-
- void SetFloor(int floorIndex)
-    {
-        if (floorIndex == 0)
-        {
-            SetFloorVisuals(true, false, false);
-            PlayerPrefs.SetInt("pietro", 0);
-             mapa.sprite = parter;
-        }
-        else if (floorIndex == 1)
-        {
-            SetFloorVisuals(false, true, false);
-            PlayerPrefs.SetInt("pietro", 1);
-             mapa.sprite = pietro1;
-        }
-        else if (floorIndex == 2)
-        {
-            SetFloorVisuals(false, false, true);
-            PlayerPrefs.SetInt("pietro", 2);
-             mapa.sprite = pietro2;
-        }
-    }
-     void SetFloorVisuals(bool parterActive, bool pietro1Active, bool pietro2Active)
-    {
-        parterGO.SetActive(parterActive);
-        pietro1GO.SetActive(pietro1Active);
-        pietro2GO.SetActive(pietro2Active);
-    }
-    private Vector2 CalcPosition()
-    {
-
         Vector2 act = avg.GetAveragePosition();
         float accuracy = PlayerPrefs.GetFloat("accuracy");
-        double rlong = 111200.0f;
-        double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f;
+        double rlong = 111200.0f; // - do opisania skąd 
+        double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f; // funkcja radiany
         Vector3 lastDirection = Vector3.zero;
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
-            RedneredMap.SetActive(true);
-            BrakPolaczenia.SetActive(false);
-            informacja.text = "";
-
-            Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
-            lastGPSPosition = dorigin / 50f;
+            InitializeUI(true);
+            Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
+            lastGPSPosition = geoOffset / 50f; //geoOffset - przesunięcie geograficzne w skrócie
 
             return lastGPSPosition;
         }
         else
         {
-            // Tu wykonuje się interpolacja liniowa
-            Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
+            Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
+            Vector2 currentPosition = new Vector2(personRect.transform.position.x, personRect.transform.position.y);
+            Vector2 targetPosition = geoOffset / 50f;
 
-            // Aktualna pozycja obiektu person
-            Vector2 currentPosition = new Vector2(person.transform.position.x, person.transform.position.y);
-
-            // Cel interpolacji
-            Vector2 targetPosition = dorigin / 50f;
-
-            // Przykładowa wartość dla t
-            float interpolationFactor = 0.5f;
-
-            // Obliczenie nowej pozycji
-            Vector2 newPosition = InterpolatePosition(currentPosition, targetPosition, interpolationFactor);
+            float interpolationFactor = 1f;
+            Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor); // interpolacja bezpośrednio w tej metodzie
 
             return newPosition;
-            /*
-        // Obliczenia na podstawie akcelerometru i kierunku kompasu
-        Vector3 currentAcceleration = Input.acceleration;
-        Vector3 acceleration = new Vector3(accX, accY, accZ);
-
-        // ... (dodaj obliczenia na podstawie akcelerometru i kierunku kompasu)
-
-        Vector3 velocityChange = acceleration * Time.deltaTime;
-        Vector3 newVelocity = lastVelocity + velocityChange;
-
-        lastVelocity = newVelocity;
-
-        Vector3 newDirection = Vector3.zero;
-        if (acceleration.sqrMagnitude >= 0.01f)
+        }
+    }
+    
+    #region DaneIPermisje
+    private void Permissions()
+    {
+        if (Application.platform == RuntimePlatform.Android)
         {
-            newDirection = acceleration.normalized;
-            lastDirection = newDirection;
+            if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+            {
+                Permission.RequestUserPermission(Permission.FineLocation);
+            }
+        }
+
+        Input.compass.enabled = true;
+        if (SystemInfo.supportsGyroscope)
+        {
+            gyro = Input.gyro;
+            gyro.enabled = true;
+        }
+    }
+    private void GyroData()
+    {
+        if (SystemInfo.supportsGyroscope)
+        {
+            Quaternion gyroAttitude = gyro.attitude;
+            float gyroYaw = gyroAttitude.eulerAngles.z;
+            personRect.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
+        }
+    }
+    private void GPSData()
+    {
+        float latitude = Input.location.lastData.latitude; // szerokosc geograficzna
+        float longitude = Input.location.lastData.longitude; //dlugosc geograficzna
+        float accuracy = Input.location.lastData.horizontalAccuracy; //precyzja
+        double lastUpdateTime = Input.location.lastData.timestamp; //czas ostatniej up.
+        double timeSinceLastUpdate = Time.time - lastUpdateTime; // czas od ostatniego up.
+        PlayerPrefs.SetFloat("accuracy", accuracy);
+        float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
+        avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
+        avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
+        avg.AddMeasurement(accuracy);
+    }
+    #endregion
+
+    #region UI
+    private void InitializeUI(bool isConnected2)
+    {
+        if(!isConnected2)
+        {
+            RedneredMap.SetActive(false);
+            BrakPolaczenia.SetActive(true);
+        }
+        else 
+        {
+            RedneredMap.SetActive(true); 
+            BrakPolaczenia.SetActive(false); 
+            informacja.text = "";
+        }
+       
+    }
+    private void UpdateUI(bool isConnected)
+    {
+        if (isConnected)
+        {
+            precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
+            wysokoscTekst.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
+            if (BrakPolaczenia.activeSelf)
+            {
+                float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
+                Spinner.SetActive(true);
+                int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
+                informacja.text = "Szukanie lokalizacji...";
+                informacja2.color = Color.white;
+                informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
+            }
         }
         else
         {
-            newDirection = lastDirection;
-        }
-
-        Vector3 displacement = newVelocity * Time.deltaTime * newDirection.magnitude;
-
-        // Przypisz przemieszczenie do obiektu person (o ile to wymagane)
-        person.transform.Translate(displacement);
-
-        Vector2 dorigin = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong)));
-
-        Vector2 interpolatedPosition = Vector2.zero;
-        float interpolationFactor = 0.001f;
-        interpolatedPosition.x += currentAcceleration.x * interpolationFactor;
-        interpolatedPosition.y += currentAcceleration.y * interpolationFactor;
-
-        dorigin.x += interpolatedPosition.x;
-        dorigin.y += interpolatedPosition.y;
-        interpolatedPosition /= 50f;
-
-        if (usingGPS)
-        {
-            interpolatedPosition += lastGPSPosition;
-            Debug.Log(interpolatedPosition);
-        }
-
-        return dorigin / 50;
-            
-    }
-            */
+            Spinner.SetActive(false);
+            informacja.text = "";
+            informacja2.color = Color.red;
+            informacja2.text = "Brak dostępu do lokalizacji!";
         }
     }
-    Vector2 InterpolatePosition(Vector2 startPosition, Vector2 endPosition, float t)
-    {
-        t = Mathf.Clamp01(t);
-        return Vector2.Lerp(startPosition, endPosition, t);
-    }
-    private AveragePosition avg = new AveragePosition();
+    #endregion
 }

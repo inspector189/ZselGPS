@@ -370,7 +370,6 @@ UnityEngine.GameObject::GetComponentInChildren
 UnityEngine.GameObject::GetComponentInParent
 UnityEngine.GameObject::Internal_AddComponentWithType
 UnityEngine.GameObject::Find
-UnityEngine.GameObject::FindGameObjectWithTag
 UnityEngine.GameObject::get_transform
 UnityEngine.Gizmos::DrawLine_Injected
 UnityEngine.Gizmos::set_color_Injected
@@ -657,6 +656,8 @@ UnityEngine.PlayerPrefs::GetFloat
 UnityEngine.PlayerPrefs::GetString
 UnityEngine.PlayerPrefs::DeleteKey
 UnityEngine.PlayerPrefs::Save
+UnityEngine.Profiling.Profiler::BeginSampleImpl
+UnityEngine.Profiling.Profiler::EndSample
 UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
 UnityEngine.QualitySettings::get_vSyncCount
 UnityEngine.QualitySettings::get_activeColorSpace
