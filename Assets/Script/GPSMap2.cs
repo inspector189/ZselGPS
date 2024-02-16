@@ -22,7 +22,6 @@ public class GPSMap2 : MonoBehaviour
     public GameObject RedneredMap;
     public GameObject BrakPolaczenia;
     public GameObject Spinner;
-    private float updateInterval = 0.1f;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
     const double r = 6371000.0f; //średni promień równika - 6371 km / tu w metrach
@@ -47,10 +46,8 @@ public class GPSMap2 : MonoBehaviour
         Input.location.Start(1f, 0.1f);
 
         floor = new Floor(floorGOs, floorSprites, supportArea, mapa, parterList, pietro1List, pietro2List, CalcPosition);
-
-        StartCoroutine(StartGPS()); //do update()
     }
-    void Update()
+    void Update() // Wykonuje się z każdą klatką na sekundę
     {
         int savedFloor = PlayerPrefs.GetInt("liczba");
         floor.SetFloor(savedFloor);
@@ -58,98 +55,63 @@ public class GPSMap2 : MonoBehaviour
 
         GyroData();
     }
-  
-    public IEnumerator StartGPS() // Update, ewentualnie Courtine - yield wait for
+    void FixedUpdate() // Wykonuje się co 0.2s
     {
-        while (true) // - odpada
+        if (Input.location.isEnabledByUser)
         {
-            if (timeSinceLastLocationUpdate >= timeBetweenLocationUpdates) // -odpada
+
+            if (Input.location.status != LocationServiceStatus.Running) //-odpada
             {
-                if (Input.location.isEnabledByUser)
+                if (Input.location.status != LocationServiceStatus.Initializing)
                 {
-                    
-                    if(Input.location.status != LocationServiceStatus.Running) //-odpada
-                    {
-                        if(Input.location.status != LocationServiceStatus.Initializing){
-                            Input.location.Start(1f, 0.1f);
-                        }
-                    }
-                    
-                    if (Input.location.status == LocationServiceStatus.Running)
-                    {
-                        GPSData();
-
-                        UpdateUI(true);
-                   
-                        if (timeSinceLastLocationUpdate >= updateInterval)
-                        {
-                            personRect2.transform.position = CalcPosition();
-                            if (PlayerPrefs.GetInt("pietro") == 2)
-                            {
-                                if (floor.IsColliding(personRect2, supportArea[1])) 
-                                {
-                                    if (!parterList.Contains(personRect2))
-                                    {
-                                        Vector2 newPosition = floor.FindClosestEdgePosition(personRect2);
-                                        if(newPosition != Vector2.zero)
-                                        {
-                                            personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        personRect.position = CalcPosition();
-                                    }
-                                }
-                                else
-                                {
-                                    personRect.position = CalcPosition();
-                                }
-                            }
-                            if (PlayerPrefs.GetInt("pietro") == 0 || PlayerPrefs.GetInt("pietro") == 1)
-                            {
-                                if (floor.IsColliding(personRect2, supportArea[0]))
-                                {
-
-                                    if (!parterList.Contains(personRect2))
-                                    {
-                                        Vector2 newPosition = floor.FindClosestEdgePosition(personRect2);
-                                        if (newPosition != Vector2.zero)
-                                        {
-                                            personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        personRect.position = CalcPosition();
-                                    }
-                                }
-                                else
-                                {
-                                    personRect.position = CalcPosition();
-                                }
-                            }
-                            timeSinceLastLocationUpdate = 0.0f;
-                        }
-                    }
+                    Input.location.Start(1f, 0.1f);
                 }
-                else
-                {
-                    UpdateUI(false);
-                }
-               
             }
-            timeSinceLastLocationUpdate += Time.deltaTime;
 
-            yield return null;
+            if (Input.location.status == LocationServiceStatus.Running)
+            {
+                GPSData();
+
+                UpdateUI(true);
+
+                int floorLevel = PlayerPrefs.GetInt("pietro");
+                bool isGroundFloor = floorLevel == 0 || floorLevel == 1;
+                if (floorLevel >= 0 && floorLevel <= 2)
+                {
+                    if (floor.IsColliding(personRect2, supportArea[isGroundFloor ? 0 : 1]))
+                    {
+                        if (!parterList.Contains(personRect2))
+                        {
+                            Vector2 newPosition = floor.FindClosestEdgePosition(personRect2);
+                            if (newPosition != Vector2.zero)
+                            {
+                                personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
+                            }
+                        }
+                        else
+                        {
+                            personRect.position = CalcPosition();
+                        }
+                    }
+                    else
+                    {
+                        personRect.position = CalcPosition();
+                    }
+                }
+                
+            }
+        }
+        else
+        {
+            UpdateUI(false);
         }
     }
     public Vector2 CalcPosition()
     {
         Vector2 act = avg.GetAveragePosition();
         float accuracy = PlayerPrefs.GetFloat("accuracy");
-        double rlong = 111200.0f; // - do opisania skąd 
-        double ralt = Math.Cos(Math.PI * act.y / 180.0f) * Math.PI * r / 180.0f; // funkcja radiany
+        double rlong = 111200.0f; // Jeden stopień łuku południka ma długość ok. 111,2 km lub 111200 metrów.
+        double ralt = Math.Cos(ToRadians(act.y)) * ToRadians(r); // funkcja radiany
         Vector3 lastDirection = Vector3.zero;
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
@@ -199,6 +161,10 @@ public class GPSMap2 : MonoBehaviour
             personRect.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
         }
     }
+    static double ToRadians(double angleDegrees)
+    {
+        return Math.PI * angleDegrees / 180.0;
+    }
     private void GPSData()
     {
         float latitude = Input.location.lastData.latitude; // szerokosc geograficzna
@@ -212,6 +178,7 @@ public class GPSMap2 : MonoBehaviour
         avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
         avg.AddMeasurement(accuracy);
     }
+    
     #endregion
 
     #region UI
@@ -228,7 +195,6 @@ public class GPSMap2 : MonoBehaviour
             BrakPolaczenia.SetActive(false); 
             informacja.text = "";
         }
-       
     }
     private void UpdateUI(bool isConnected)
     {
