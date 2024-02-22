@@ -14,7 +14,7 @@ public class GPSMap2 : MonoBehaviour
     [SerializeField] private List<GameObject> texts;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
-    public Gyroscope gyro;
+    private Gyroscope gyro;
     [SerializeField] private Image map;
     [SerializeField] private TextMeshProUGUI precisionTexts;
     [SerializeField] private TextMeshProUGUI heightTexts;

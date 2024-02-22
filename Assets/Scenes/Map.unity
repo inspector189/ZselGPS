@@ -10014,10 +10014,10 @@ RectTransform:
   m_Father: {fileID: 2042983463}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 85.66, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337564528
 MonoBehaviour:
@@ -10800,7 +10800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &361022417
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11797,7 +11797,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 19.299988, y: -2347}
-  m_SizeDelta: {x: 135.66, y: 55}
+  m_SizeDelta: {x: 0, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391263037
 MonoBehaviour:
@@ -18514,10 +18514,10 @@ RectTransform:
   m_Father: {fileID: 828296255}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 85.66, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618182784
 MonoBehaviour:
@@ -27308,6 +27308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorGOs: {fileID: 919872159}
+  roomButton: {fileID: 2064627459}
   floorSprites: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
   supportArea: {fileID: 620885032}
   map: {fileID: 200340862}
@@ -27616,6 +27617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorGOs: {fileID: 929168309}
+  roomButton: {fileID: 92450433}
   floorSprites: {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
   supportArea: {fileID: 969928849}
   map: {fileID: 200340862}
@@ -31789,7 +31791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -34572,10 +34574,10 @@ RectTransform:
   m_Father: {fileID: 353945767}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 85.66, y: 45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186540581
 MonoBehaviour:
@@ -35789,6 +35791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorGOs: {fileID: 1227516128}
+  roomButton: {fileID: 1246351231}
   floorSprites: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
   supportArea: {fileID: 620885032}
   map: {fileID: 200340862}
@@ -42911,7 +42914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -54826,7 +54829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1794704459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55104,13 +55107,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personReal: {fileID: 1072992043}
   personInterpolated: {fileID: 1453418945}
+  redneredMap: {fileID: 1599872606}
+  noneConnection: {fileID: 1973198625}
+  spinner: {fileID: 106824309}
   texts:
   - {fileID: 2119943039}
   - {fileID: 725992093}
   - {fileID: 1904352751}
-  redneredMap: {fileID: 1599872606}
-  noneConnection: {fileID: 1973198625}
-  spinner: {fileID: 106824309}
   map: {fileID: 200340862}
   precisionTexts: {fileID: 1413045522}
   heightTexts: {fileID: 1082449220}
@@ -59586,7 +59589,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1973198626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61020,10 +61023,10 @@ RectTransform:
   m_Father: {fileID: 391263035}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.83, y: -27.5}
-  m_SizeDelta: {x: 135.66, y: 55}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.83, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2042983464
 MonoBehaviour:
