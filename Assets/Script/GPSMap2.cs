@@ -133,9 +133,9 @@ public class GPSMap2 : MonoBehaviour
                 }
             } 
         }
-        private void UpdateUI(bool isConnected2)
+        private void UpdateUI(bool isConnected)
         {
-            if (isConnected2)
+            if (isConnected)
             {
                 precisionTexts.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
                 heightTexts.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
