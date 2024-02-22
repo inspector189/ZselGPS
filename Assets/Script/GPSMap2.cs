@@ -1,66 +1,42 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.UI;
 
 public class GPSMap2 : MonoBehaviour
 {
-    public RectTransform personRect2; // Persona - która jest ukryta i ma na celu pokazać prawidłową pozycję użytkownika
-    public RectTransform personRect; // Persona - która jest odkryta i jej pozycja jest już przekształcona - interpolacja
-    public List<RectTransform> supportArea;
-    // Tablica - index numeracja
-    public List<RectTransform> parterList; // Lista obiektów do sprawdzenia
-    public List<RectTransform> pietro1List; // Lista obiektów do sprawdzenia
-    public List<RectTransform> pietro2List; // Lista obiektów do sprawdzenia
-    public List<GameObject> texts;
-    public List<GameObject> floorGOs;
-    public GameObject RedneredMap;
-    public GameObject BrakPolaczenia;
-    public GameObject Spinner;
+    [SerializeField] private RectTransform personReal; 
+    [SerializeField] private RectTransform personInterpolated;
+    [SerializeField] private GameObject redneredMap;
+    [SerializeField] private GameObject noneConnection;
+    [SerializeField] private GameObject spinner;
+    [SerializeField] private List<GameObject> texts;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
-    const double r = 6371000.0f; //średni promień równika - 6371 km / tu w metrach
-    const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
-    const double origin_longi = 19.042718f;  // -||-
-    private Gyroscope gyro;
-    public Image mapa;
-    public List<Sprite> floorSprites;
-    public TextMeshProUGUI precyzjaTekst;
-    public TextMeshProUGUI wysokoscTekst;
-    public TextMeshProUGUI informacja;
-    public TextMeshProUGUI informacja2;
-    Vector2 lastGPSPosition = Vector2.zero;
-    private Floor floor;
+    public Gyroscope gyro;
+    [SerializeField] private Image map;
+    [SerializeField] private TextMeshProUGUI precisionTexts;
+    [SerializeField] private TextMeshProUGUI heightTexts;
+    [SerializeField] private TextMeshProUGUI searchLocalization;
+    [SerializeField] private TextMeshProUGUI precision;
+    [SerializeField] private List<Floor> floors;
     private AveragePosition avg = new AveragePosition();
     void Start()
     {
         InitializeUI(false);
-
         Permissions();
-
         Input.location.Start(1f, 0.1f);
-
-        floor = new Floor(floorGOs, floorSprites, supportArea, mapa, parterList, pietro1List, pietro2List, CalcPosition);
     }
     void Update() // Wykonuje się z każdą klatką na sekundę
     {
-        int savedFloor = PlayerPrefs.GetInt("liczba");
-        floor.SetFloor(savedFloor);
-        floor.UpdatePosition(personRect2, personRect);
-
         GyroData();
     }
     void FixedUpdate() // Wykonuje się co 0.2s
     {
         if (Input.location.isEnabledByUser)
         {
-
-            if (Input.location.status != LocationServiceStatus.Running) //-odpada
+            if (Input.location.status != LocationServiceStatus.Running) 
             {
                 if (Input.location.status != LocationServiceStatus.Initializing)
                 {
@@ -71,34 +47,12 @@ public class GPSMap2 : MonoBehaviour
             if (Input.location.status == LocationServiceStatus.Running)
             {
                 GPSData();
-
                 UpdateUI(true);
-
-                int floorLevel = PlayerPrefs.GetInt("pietro");
-                bool isGroundFloor = floorLevel == 0 || floorLevel == 1;
-                if (floorLevel >= 0 && floorLevel <= 2)
-                {
-                    if (floor.IsColliding(personRect2, supportArea[isGroundFloor ? 0 : 1]))
-                    {
-                        if (!parterList.Contains(personRect2))
-                        {
-                            Vector2 newPosition = floor.FindClosestEdgePosition(personRect2);
-                            if (newPosition != Vector2.zero)
-                            {
-                                personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
-                            }
-                        }
-                        else
-                        {
-                            personRect.position = CalcPosition();
-                        }
-                    }
-                    else
-                    {
-                        personRect.position = CalcPosition();
-                    }
-                }
-                
+                InitializeUI(true);
+                int savedFloor = PlayerPrefs.GetInt("liczba");  // - zrobić funkcje pod którą to bedzie ukryte i pozbyć się tego getInt("piętro"), i tylko 1 wywołanie na cały program
+                floors[savedFloor].SetFloor(savedFloor); 
+                floors[savedFloor].UpdatePosition(personReal, personInterpolated, avg);
+                TextsVisible(savedFloor);
             }
         }
         else
@@ -106,119 +60,102 @@ public class GPSMap2 : MonoBehaviour
             UpdateUI(false);
         }
     }
-    public Vector2 CalcPosition()
-    {
-        Vector2 act = avg.GetAveragePosition();
-        float accuracy = PlayerPrefs.GetFloat("accuracy");
-        double rlong = 111200.0f; // Jeden stopień łuku południka ma długość ok. 111,2 km lub 111200 metrów.
-        double ralt = Math.Cos(ToRadians(act.y)) * ToRadians(r); // funkcja radiany
-        Vector3 lastDirection = Vector3.zero;
-        if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
-        {
-            InitializeUI(true);
-            Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
-            lastGPSPosition = geoOffset / 50f; //geoOffset - przesunięcie geograficzne w skrócie
 
-            return lastGPSPosition;
-        }
-        else
+    #region Dane
+        private void GyroData()
         {
-            Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
-            Vector2 currentPosition = new Vector2(personRect.transform.position.x, personRect.transform.position.y);
-            Vector2 targetPosition = geoOffset / 50f;
-
-            float interpolationFactor = 1f;
-            Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor); // interpolacja bezpośrednio w tej metodzie
-
-            return newPosition;
-        }
-    }
-    
-    #region DaneIPermisje
-    private void Permissions()
-    {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+            if (SystemInfo.supportsGyroscope)
             {
-                Permission.RequestUserPermission(Permission.FineLocation);
+                Quaternion gyroAttitude = gyro.attitude;
+                float gyroYaw = gyroAttitude.eulerAngles.z;
+                personInterpolated.eulerAngles = new Vector3(0, 0, gyroYaw);
+                Debug.Log(personInterpolated.eulerAngles);
+            
             }
         }
 
-        Input.compass.enabled = true;
-        if (SystemInfo.supportsGyroscope)
+        private void GPSData()
         {
-            gyro = Input.gyro;
-            gyro.enabled = true;
+            float latitude = Input.location.lastData.latitude; // szerokosc geograficzna
+            float longitude = Input.location.lastData.longitude; //dlugosc geograficzna
+            float accuracy = Input.location.lastData.horizontalAccuracy; //precyzja
+            double lastUpdateTime = Input.location.lastData.timestamp; //czas ostatniej up.
+            double timeSinceLastUpdate = Time.time - lastUpdateTime; // czas od ostatniego up.
+            PlayerPrefs.SetFloat("accuracy", accuracy);
+            float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
+            avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
+            avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
+            avg.AddMeasurement(accuracy);
         }
-    }
-    private void GyroData()
-    {
-        if (SystemInfo.supportsGyroscope)
-        {
-            Quaternion gyroAttitude = gyro.attitude;
-            float gyroYaw = gyroAttitude.eulerAngles.z;
-            personRect.transform.rotation = Quaternion.Euler(0, 0, gyroYaw);
-        }
-    }
-    static double ToRadians(double angleDegrees)
-    {
-        return Math.PI * angleDegrees / 180.0;
-    }
-    private void GPSData()
-    {
-        float latitude = Input.location.lastData.latitude; // szerokosc geograficzna
-        float longitude = Input.location.lastData.longitude; //dlugosc geograficzna
-        float accuracy = Input.location.lastData.horizontalAccuracy; //precyzja
-        double lastUpdateTime = Input.location.lastData.timestamp; //czas ostatniej up.
-        double timeSinceLastUpdate = Time.time - lastUpdateTime; // czas od ostatniego up.
-        PlayerPrefs.SetFloat("accuracy", accuracy);
-        float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
-        avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
-        avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
-        avg.AddMeasurement(accuracy);
-    }
-    
     #endregion
-
-    #region UI
-    private void InitializeUI(bool isConnected2)
-    {
-        if(!isConnected2)
+    #region Permisje 
+        private void Permissions()
         {
-            RedneredMap.SetActive(false);
-            BrakPolaczenia.SetActive(true);
-        }
-        else 
-        {
-            RedneredMap.SetActive(true); 
-            BrakPolaczenia.SetActive(false); 
-            informacja.text = "";
-        }
-    }
-    private void UpdateUI(bool isConnected)
-    {
-        if (isConnected)
-        {
-            precyzjaTekst.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
-            wysokoscTekst.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
-            if (BrakPolaczenia.activeSelf)
+            if (Application.platform == RuntimePlatform.Android)
             {
-                float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
-                Spinner.SetActive(true);
-                int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
-                informacja.text = "Szukanie lokalizacji...";
-                informacja2.color = Color.white;
-                informacja2.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
+                if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+                {
+                    Permission.RequestUserPermission(Permission.FineLocation);
+                }
+            }
+
+            Input.compass.enabled = true;
+            if (SystemInfo.supportsGyroscope)
+            {
+                gyro = Input.gyro;
+                gyro.enabled = true;
             }
         }
-        else
+    #endregion
+    #region UI
+        private void InitializeUI(bool isConnected)
         {
-            Spinner.SetActive(false);
-            informacja.text = "";
-            informacja2.color = Color.red;
-            informacja2.text = "Brak dostępu do lokalizacji!";
+            if(!isConnected)
+            {
+                redneredMap.SetActive(false);
+                noneConnection.SetActive(true);
+            }
+            else 
+            {
+                redneredMap.SetActive(true); 
+                noneConnection.SetActive(false); 
+                searchLocalization.text = "";
+            }
         }
-    }
+        private void TextsVisible(int floorIndex)
+        {
+            foreach (var textObject in texts)
+            {
+                textObject.SetActive(false);
+                if (floorIndex >= 0 && floorIndex < texts.Count)
+                {
+                    texts[floorIndex].SetActive(true);
+                }
+            } 
+        }
+        private void UpdateUI(bool isConnected2)
+        {
+            if (isConnected2)
+            {
+                precisionTexts.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
+                heightTexts.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
+                if (noneConnection.activeSelf)
+                {
+                    float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
+                    spinner.SetActive(true);
+                    int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
+                    searchLocalization.text = "Szukanie lokalizacji...";
+                    precision.color = Color.white;
+                    precision.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
+                }
+            }
+            else
+            {
+                spinner.SetActive(false);
+                searchLocalization.text = "";
+                precision.color = Color.red;
+                precision.text = "Brak dostępu do lokalizacji!";
+            }
+        }
     #endregion
 }

@@ -31,9 +31,9 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        TextMeshProUGUI TytulSaliText = GameObject.Find("TytulSali").GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI OpisSaliText = GameObject.Find("OpisSali").GetComponent<TextMeshProUGUI>();
-        Image obszarZdjecia = GameObject.Find("ZdjecieSali1").GetComponent<Image>();
+        TextMeshProUGUI TytulSaliText = GameObject.Find("TitleRoom").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI OpisSaliText = GameObject.Find("DescRoom").GetComponent<TextMeshProUGUI>();
+        Image obszarZdjecia = GameObject.Find("ImageRoom1").GetComponent<Image>();
         
         RectTransform rawImageRect = GetComponent<RectTransform>();
         // Przekształć pozycję kliknięcia na lokalną pozycję w RawImage

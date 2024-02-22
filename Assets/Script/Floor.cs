@@ -1,94 +1,92 @@
-using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.VisualScripting;
-using UnityEngine.Android;
 using UnityEngine.UI;
 
 public class Floor : MonoBehaviour
 {
-    public List<GameObject> floorGOs;
-    public List<Sprite> floorSprites;
-    public List<RectTransform> supportArea = new List<RectTransform>();
-    public Image mapa;
-    public List<RectTransform> parterList = new List<RectTransform>();
-    public List<RectTransform> pietro1List = new List<RectTransform>(); // Lista obiektów do sprawdzenia
-    public List<RectTransform> pietro2List = new List<RectTransform>(); // Lista obiektów do sprawdzenia
-    public Func<Vector2> calcPositionFunc;
+    [SerializeField] private GameObject floorGOs;
+    [SerializeField] private GameObject roomButton;
+    [SerializeField] private Sprite floorSprites;
+    [SerializeField] private RectTransform supportArea;
+    [SerializeField] private Image map;
+    [SerializeField] private List<RectTransform> ClassRoomButtons = new List<RectTransform>();
+    const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
+    const double origin_longi = 19.042718f;  // -||-
+    const double r = 6371000.0f; //średni promień równika - 6371 km / tu w metrach
 
-    public Floor(List<GameObject> floorGOs, List<Sprite> floorSprites, List<RectTransform> supportArea, Image mapa, List<RectTransform> parterList, List<RectTransform> pietro1List, List<RectTransform> pietro2List, Func<Vector2> calcPosition)
+    void Start()
     {
-        this.floorGOs = floorGOs;
-        this.floorSprites = floorSprites;
-        this.mapa = mapa;
-        this.parterList = parterList;
-        this.pietro1List = pietro1List;
-        this.pietro2List = pietro2List;
-        this.supportArea = supportArea;
-        calcPositionFunc = calcPosition;
+        AddToTheButtonsList();
     }
-
     public void SetFloor(int floorIndex)
     {
-        for (int i = 0; i < floorGOs.Count; i++)
-        {
-            floorGOs[i].SetActive(i == floorIndex);
-        }
+        floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
-        mapa.sprite = floorSprites[floorIndex];
+        map.sprite = floorSprites;
     }
-    public bool IsColliding(RectTransform rect1, RectTransform rect2)
+    public bool IsColliding(RectTransform rect1)
     {
         Rect rect1Bounds = GetWorldSpaceRect(rect1);
-        Rect rect2Bounds = GetWorldSpaceRect(rect2);
+        Rect rect2Bounds = GetWorldSpaceRect(supportArea);
 
         return rect1Bounds.Overlaps(rect2Bounds);
     }
-    public void UpdatePosition(RectTransform personRect2, RectTransform personRect)
+    public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg)
     {
-        bool isInSupportArea = (PlayerPrefs.GetInt("pietro") == 2 && IsColliding(personRect2, supportArea[1])) ||
-                               (PlayerPrefs.GetInt("pietro") <= 1 && IsColliding(personRect2, supportArea[0]));
-        bool isOnParter = parterList.Contains(personRect2);
-
-        if (isInSupportArea && !isOnParter)
+        if (IsColliding(personInterpolated))
         {
-            Vector2 newPosition = FindClosestEdgePosition(personRect2);
+            Vector2 newPosition = FindClosestEdgePosition(personInterpolated);
             if (newPosition != Vector2.zero)
             {
-                personRect.position = new Vector3(newPosition.x, newPosition.y, personRect.position.z);
+                personReal.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
             }
         }
         else
         {
-            Vector2 calcPosition = calcPositionFunc();
-            personRect.position = new Vector3(calcPosition.x, calcPosition.y, personRect.position.z);
+            Vector2 calcPosition = CalcPosition(personInterpolated, avg);
+            personReal.position = new Vector3(calcPosition.x, calcPosition.y, personReal.position.z);
         }
     }
-    public Vector2 FindClosestEdgePosition(RectTransform personRect2)
+
+    public Vector2 CalcPosition(RectTransform personInterpolated, AveragePosition avg)
+    {
+        Vector2 act = avg.GetAveragePosition();
+        double rlong = 111200.0f; // Jeden stopień łuku południka ma długość ok. 111,2 km lub 111200 metrów.
+        double ralt = Math.Cos(ToRadians(act.y)) * ToRadians(r); // funkcja radiany Math2Rad
+        if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
+        {     
+            Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
+            return geoOffset / 50f; //geoOffset - przesunięcie geograficzne w skrócie
+        }
+        else
+        {
+            Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
+            Vector2 currentPosition = new Vector2(personInterpolated.transform.position.x, personInterpolated.transform.position.y);
+            Vector2 targetPosition = geoOffset / 50f;
+
+            float interpolationFactor = 1f;
+            Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor); 
+
+            return newPosition;
+        }
+    }
+    static double ToRadians(double angleDegrees)
+    {
+        return Math.PI * angleDegrees / 180.0;
+    }
+    public Vector2 FindClosestEdgePosition(RectTransform personInterpolated)
     {
         Vector2 closestPosition = Vector2.zero;
         float minDistance = float.MaxValue;
-
-        List<RectTransform> currentList = null;
-        if (PlayerPrefs.GetInt("pietro") == 0)
-            currentList = parterList;
-        else if (PlayerPrefs.GetInt("pietro") == 1)
-            currentList = pietro1List;
-        else if (PlayerPrefs.GetInt("pietro") == 2)
-            currentList = pietro2List;
-
-        if (currentList != null)
+        foreach (var obj in ClassRoomButtons)
         {
-            foreach (var obj in currentList)
+            Vector2 closestPoint = ClosestPointOnRect(obj, personInterpolated.position);
+            float distance = Vector2.Distance(personInterpolated.position, closestPoint);
+            if (distance < minDistance) // min z predykatem - następny mentoring!
             {
-                Vector2 closestPoint = ClosestPointOnRect(obj, personRect2.position);
-                float distance = Vector2.Distance(personRect2.position, closestPoint);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    closestPosition = closestPoint;
-                }
+               minDistance = distance;
+               closestPosition = closestPoint;
             }
         }
         return closestPosition;
@@ -114,5 +112,31 @@ public class Floor : MonoBehaviour
                         position.y - height * rectTransform.pivot.y,
                         width, height);
     }
-    
+    private void AddToTheButtonsList()
+    {
+        if (roomButton != null)
+        {
+            RectTransform[] buttonRects = roomButton.GetComponentsInChildren<RectTransform>();
+            bool buttons0Added = false;
+            foreach (var buttonRect in buttonRects)
+            {
+                if (buttonRect.gameObject.name != roomButton.name)
+                {
+                    if (!buttons0Added)
+                    {
+                        ClassRoomButtons.Add(buttonRect);
+                        buttons0Added = true;
+                    }
+                    else
+                    {
+                        ClassRoomButtons.Add(buttonRect);
+                    }
+                }
+            }
+            for (int i = 1; i < ClassRoomButtons.Count; i++)
+            {
+                ClassRoomButtons[i - 1] = ClassRoomButtons[i];
+            }
+        }  
+    }
 }

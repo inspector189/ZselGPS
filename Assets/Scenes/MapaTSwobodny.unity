@@ -23997,72 +23997,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fa82a349b507c409971f29599d1308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personRect2: {fileID: 1187906259}
-  person2: {fileID: 1187906255}
-  personRect: {fileID: 1181898797}
-  ObszarWsparcia: {fileID: 247410800}
-  ObszarWsparcia2: {fileID: 825098870}
-  parterList:
-  - {fileID: 287318932}
-  - {fileID: 1648079526}
-  - {fileID: 1703804263}
-  - {fileID: 494331847}
-  - {fileID: 1975567637}
-  - {fileID: 749036177}
-  - {fileID: 1708374549}
-  - {fileID: 424550921}
-  - {fileID: 986476047}
-  - {fileID: 1126253526}
-  - {fileID: 1157042912}
-  - {fileID: 87347878}
-  - {fileID: 991445391}
-  - {fileID: 210855965}
-  - {fileID: 1410507279}
-  - {fileID: 1025537615}
-  - {fileID: 1183725063}
-  - {fileID: 1178845964}
-  - {fileID: 236779773}
-  - {fileID: 314387733}
-  - {fileID: 1351223526}
-  - {fileID: 331048346}
-  pietro1List:
-  - {fileID: 1654917691}
-  - {fileID: 370846999}
-  - {fileID: 1783854792}
-  - {fileID: 661975013}
-  - {fileID: 1127677841}
-  - {fileID: 699048953}
-  - {fileID: 1951872939}
-  - {fileID: 1515703869}
-  - {fileID: 663334883}
-  - {fileID: 1081322083}
-  - {fileID: 2026556561}
-  - {fileID: 2102398570}
-  - {fileID: 211640351}
-  pietro2List:
-  - {fileID: 1540086402}
-  - {fileID: 2061597608}
-  parterGO: {fileID: 576532690}
-  pietro1GO: {fileID: 1555672255}
-  pietro2GO: {fileID: 2026936422}
-  texts0: {fileID: 1964049130}
-  texts1: {fileID: 1336254795}
-  texts2: {fileID: 342773434}
-  person: {fileID: 1181898793}
-  tgl: {fileID: 0}
-  slidertext: {fileID: 0}
-  mapa: {fileID: 737528711}
-  parter: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
-  pietro1: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
-  pietro2: {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
-  slider: {fileID: 0}
-  precyzjaTekst: {fileID: 1733678411}
-  wysokoscTekst: {fileID: 1361140934}
-  informacja: {fileID: 444727757}
-  informacja2: {fileID: 1286252340}
-  RedneredMap: {fileID: 1149894957}
-  BrakPolaczenia: {fileID: 951264989}
-  Spinner: {fileID: 1447747270}
+  personReal: {fileID: 0}
+  personInterpolated: {fileID: 0}
+  redneredMap: {fileID: 0}
+  noneConnection: {fileID: 0}
+  spinner: {fileID: 0}
+  texts: []
+  map: {fileID: 0}
+  precisionTexts: {fileID: 0}
+  heightTexts: {fileID: 0}
+  searchLocalization: {fileID: 0}
+  precision: {fileID: 0}
+  floors: []
 --- !u!114 &906806231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61246,7 +61192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 116.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &5727194881443969860
@@ -61440,7 +61386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 116.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5929614718890986836
@@ -61658,7 +61604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 116.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6615624504027895525

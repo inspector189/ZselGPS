@@ -6381,7 +6381,7 @@ GameObject:
   - component: {fileID: 200340863}
   - component: {fileID: 200340862}
   m_Layer: 5
-  m_Name: Budynek
+  m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6828,7 +6828,7 @@ GameObject:
   - component: {fileID: 222309721}
   - component: {fileID: 222309722}
   m_Layer: 5
-  m_Name: Text2
+  m_Name: PrecisionInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11769,7 +11769,7 @@ GameObject:
   - component: {fileID: 391263041}
   - component: {fileID: 391263040}
   m_Layer: 5
-  m_Name: Kieruj
+  m_Name: Direct
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 98d001ce6b3b53242911dcc3d1415f59, type: 3}
   m_NavMeshLayer: 0
@@ -12918,7 +12918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 424780085}
   m_Layer: 5
-  m_Name: DrzwiPietroDrugie
+  m_Name: DoorsSecondF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13042,7 +13042,7 @@ GameObject:
   - component: {fileID: 427119475}
   - component: {fileID: 427119474}
   m_Layer: 5
-  m_Name: OpisSali
+  m_Name: DescRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13597,7 +13597,7 @@ GameObject:
   - component: {fileID: 446662146}
   - component: {fileID: 446662145}
   m_Layer: 5
-  m_Name: TytulSali
+  m_Name: TitleRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16007,7 +16007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554745281}
   m_Layer: 5
-  m_Name: DrzwiParter
+  m_Name: DoorsGroundF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18187,7 +18187,7 @@ GameObject:
   - component: {fileID: 611507465}
   - component: {fileID: 611507464}
   m_Layer: 5
-  m_Name: Pietro1
+  m_Name: CorridorsFirstF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27227,8 +27227,9 @@ GameObject:
   - component: {fileID: 919872160}
   - component: {fileID: 919872162}
   - component: {fileID: 919872161}
+  - component: {fileID: 919872163}
   m_Layer: 5
-  m_Name: Parter
+  m_Name: GroundFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27294,6 +27295,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919872159}
   m_CullTransparentMesh: 1
+--- !u!114 &919872163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919872159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorGOs: {fileID: 919872159}
+  floorSprites: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
+  supportArea: {fileID: 620885032}
+  map: {fileID: 200340862}
+  ClassRoomButtons:
+  - {fileID: 0}
 --- !u!1 &925607927
 GameObject:
   m_ObjectHideFlags: 0
@@ -27516,8 +27535,9 @@ GameObject:
   - component: {fileID: 929168310}
   - component: {fileID: 929168312}
   - component: {fileID: 929168311}
+  - component: {fileID: 929168313}
   m_Layer: 5
-  m_Name: 2_pietro
+  m_Name: SecondFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27583,6 +27603,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929168309}
   m_CullTransparentMesh: 1
+--- !u!114 &929168313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929168309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorGOs: {fileID: 929168309}
+  floorSprites: {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
+  supportArea: {fileID: 969928849}
+  map: {fileID: 200340862}
+  ClassRoomButtons: []
 --- !u!1 &941131940
 GameObject:
   m_ObjectHideFlags: 0
@@ -30083,7 +30120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1013448616}
   m_Layer: 5
-  m_Name: DrzwiPietroPierwsze
+  m_Name: DoorsFirstF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31713,7 +31750,7 @@ GameObject:
   - component: {fileID: 1072992044}
   - component: {fileID: 1072992046}
   m_Layer: 5
-  m_Name: Person
+  m_Name: PersonReal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32362,7 +32399,7 @@ GameObject:
   - component: {fileID: 1082449221}
   - component: {fileID: 1082449220}
   m_Layer: 5
-  m_Name: "Wysoko\u015B\u0107:"
+  m_Name: HeightTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35671,8 +35708,9 @@ GameObject:
   - component: {fileID: 1227516129}
   - component: {fileID: 1227516131}
   - component: {fileID: 1227516130}
+  - component: {fileID: 1227516132}
   m_Layer: 5
-  m_Name: 1_pietro
+  m_Name: FirstFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35738,6 +35776,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227516128}
   m_CullTransparentMesh: 1
+--- !u!114 &1227516132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227516128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorGOs: {fileID: 1227516128}
+  floorSprites: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
+  supportArea: {fileID: 620885032}
+  map: {fileID: 200340862}
+  ClassRoomButtons: []
 --- !u!1 &1233663220
 GameObject:
   m_ObjectHideFlags: 0
@@ -38331,7 +38386,7 @@ GameObject:
   - component: {fileID: 1303932039}
   - component: {fileID: 1303932040}
   m_Layer: 5
-  m_Name: ZdjecieSali1
+  m_Name: ImageRoom1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41358,7 +41413,7 @@ GameObject:
   - component: {fileID: 1413045523}
   - component: {fileID: 1413045522}
   m_Layer: 5
-  m_Name: 'Precyzja:'
+  m_Name: PrecisionTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42811,7 +42866,7 @@ GameObject:
   - component: {fileID: 1453418943}
   - component: {fileID: 1453418942}
   m_Layer: 5
-  m_Name: Person2
+  m_Name: PersonInterpolated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45137,7 +45192,7 @@ GameObject:
   - component: {fileID: 1599497629}
   - component: {fileID: 1599497628}
   m_Layer: 5
-  m_Name: Szukanie lokalizacji...
+  m_Name: Search Localisation...
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54926,7 +54981,6 @@ GameObject:
   - component: {fileID: 1808030356}
   - component: {fileID: 1808030355}
   - component: {fileID: 1808030354}
-  - component: {fileID: 1808030370}
   - component: {fileID: 1808030359}
   - component: {fileID: 1808030364}
   - component: {fileID: 1808030362}
@@ -55048,77 +55102,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fa82a349b507c409971f29599d1308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personRect2: {fileID: 1453418945}
-  personRect: {fileID: 1072992043}
-  supportArea:
-  - {fileID: 620885032}
-  - {fileID: 969928849}
-  parterList:
-  - {fileID: 983394638}
-  - {fileID: 864340248}
-  - {fileID: 1693208599}
-  - {fileID: 602677447}
-  - {fileID: 253810205}
-  - {fileID: 669915703}
-  - {fileID: 425444255}
-  - {fileID: 1176326074}
-  - {fileID: 55928442}
-  - {fileID: 1765201402}
-  - {fileID: 262755471}
-  - {fileID: 907063022}
-  - {fileID: 1423030267}
-  - {fileID: 1408672252}
-  - {fileID: 220632286}
-  - {fileID: 1885493310}
-  - {fileID: 906376404}
-  - {fileID: 31193785}
-  - {fileID: 1598883061}
-  - {fileID: 1264040817}
-  - {fileID: 1683996726}
-  - {fileID: 965965569}
-  - {fileID: 1014213593}
-  pietro1List:
-  - {fileID: 267896759}
-  - {fileID: 1516356895}
-  - {fileID: 704330869}
-  - {fileID: 775492736}
-  - {fileID: 1074969135}
-  - {fileID: 1799558465}
-  - {fileID: 25221301}
-  - {fileID: 702084001}
-  - {fileID: 1857595487}
-  - {fileID: 696808497}
-  - {fileID: 843269730}
-  - {fileID: 237580761}
-  - {fileID: 1715746402}
-  - {fileID: 675952024}
-  - {fileID: 564201256}
-  - {fileID: 731877135}
-  - {fileID: 967844135}
-  - {fileID: 239838182}
-  pietro2List:
-  - {fileID: 1407651283}
-  - {fileID: 1779795974}
+  personReal: {fileID: 1072992043}
+  personInterpolated: {fileID: 1453418945}
   texts:
   - {fileID: 2119943039}
   - {fileID: 725992093}
   - {fileID: 1904352751}
-  floorGOs:
-  - {fileID: 919872159}
-  - {fileID: 1227516128}
-  - {fileID: 929168309}
-  RedneredMap: {fileID: 1599872606}
-  BrakPolaczenia: {fileID: 1973198625}
-  Spinner: {fileID: 106824309}
-  mapa: {fileID: 200340862}
-  floorSprites:
-  - {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
-  - {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
-  - {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
-  precyzjaTekst: {fileID: 1413045522}
-  wysokoscTekst: {fileID: 1082449220}
-  informacja: {fileID: 1599497628}
-  informacja2: {fileID: 222309722}
+  redneredMap: {fileID: 1599872606}
+  noneConnection: {fileID: 1973198625}
+  spinner: {fileID: 106824309}
+  map: {fileID: 200340862}
+  precisionTexts: {fileID: 1413045522}
+  heightTexts: {fileID: 1082449220}
+  searchLocalization: {fileID: 1599497628}
+  precision: {fileID: 222309722}
+  floors:
+  - {fileID: 919872163}
+  - {fileID: 1227516132}
+  - {fileID: 929168313}
 --- !u!114 &1808030362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55213,76 +55214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   symbol: wloclawek
---- !u!114 &1808030370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808030353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floorGOs:
-  - {fileID: 919872159}
-  - {fileID: 1227516128}
-  - {fileID: 929168309}
-  floorSprites:
-  - {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
-  - {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
-  - {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
-  supportArea:
-  - {fileID: 620885032}
-  - {fileID: 969928849}
-  mapa: {fileID: 200340862}
-  parterList:
-  - {fileID: 983394638}
-  - {fileID: 864340248}
-  - {fileID: 1693208599}
-  - {fileID: 602677447}
-  - {fileID: 253810205}
-  - {fileID: 669915703}
-  - {fileID: 425444255}
-  - {fileID: 1176326074}
-  - {fileID: 55928442}
-  - {fileID: 1765201402}
-  - {fileID: 262755471}
-  - {fileID: 907063022}
-  - {fileID: 1423030267}
-  - {fileID: 1408672252}
-  - {fileID: 220632286}
-  - {fileID: 1885493310}
-  - {fileID: 906376404}
-  - {fileID: 31193785}
-  - {fileID: 1598883061}
-  - {fileID: 1264040817}
-  - {fileID: 1683996726}
-  - {fileID: 965965569}
-  - {fileID: 1014213593}
-  pietro1List:
-  - {fileID: 267896759}
-  - {fileID: 1516356895}
-  - {fileID: 704330869}
-  - {fileID: 775492736}
-  - {fileID: 1074969135}
-  - {fileID: 1799558465}
-  - {fileID: 25221301}
-  - {fileID: 702084001}
-  - {fileID: 1857595487}
-  - {fileID: 696808497}
-  - {fileID: 843269730}
-  - {fileID: 237580761}
-  - {fileID: 1715746402}
-  - {fileID: 675952024}
-  - {fileID: 564201256}
-  - {fileID: 731877135}
-  - {fileID: 967844135}
-  - {fileID: 239838182}
-  pietro2List:
-  - {fileID: 1407651283}
-  - {fileID: 1779795974}
 --- !u!1 &1809456251
 GameObject:
   m_ObjectHideFlags: 0
@@ -56970,7 +56901,7 @@ GameObject:
   - component: {fileID: 1892456521}
   - component: {fileID: 1892456520}
   m_Layer: 5
-  m_Name: Pietro2
+  m_Name: CorridorsSecondF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59650,7 +59581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973198626}
   m_Layer: 5
-  m_Name: BrakPolaczenia
+  m_Name: NoConnection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60435,7 +60366,7 @@ GameObject:
   - component: {fileID: 2016773323}
   - component: {fileID: 2016773322}
   m_Layer: 5
-  m_Name: Parter
+  m_Name: CorridorsGroundF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64156,7 +64087,7 @@ GameObject:
   - component: {fileID: 2120161083}
   - component: {fileID: 2120161082}
   m_Layer: 5
-  m_Name: Korytarze
+  m_Name: Floors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64528,7 +64459,7 @@ GameObject:
   - component: {fileID: 1857110565644625034}
   - component: {fileID: 442810644}
   m_Layer: 5
-  m_Name: "Powr\xF3t"
+  m_Name: BackToMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 98d001ce6b3b53242911dcc3d1415f59, type: 3}
   m_NavMeshLayer: 0

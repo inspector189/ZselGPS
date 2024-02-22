@@ -57,33 +57,6 @@ public class WspieraniePerson : MonoBehaviour
         return new Vector2(x, y);
     }
 
-    RectTransform FindClosestObject()
-    {
-        RectTransform closest = null;
-        float minDistance = float.MaxValue;
-
-        foreach (var obj in parterList)
-        {
-            float distance = Vector2.Distance(personRect.position, obj.position);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                closest = obj;
-            }
-        }
-
-        return closest;
-    }
-    bool IsContained(RectTransform inner, RectTransform outer)
-    {
-        // Pobierz globalne granice dla obu RectTransform
-        Rect innerRect = GetWorldSpaceRect(inner);
-        Rect outerRect = GetWorldSpaceRect(outer);
-
-        // SprawdŸ, czy granice innerRect s¹ w pe³ni zawarte w outerRect
-        return outerRect.Contains(new Vector2(innerRect.xMin, innerRect.yMin))
-            && outerRect.Contains(new Vector2(innerRect.xMax, innerRect.yMax));
-    }
     bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
         Rect rect1Bounds = GetWorldSpaceRect(rect1);
