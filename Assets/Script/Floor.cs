@@ -53,7 +53,7 @@ public class Floor : MonoBehaviour
     {
         Vector2 act = avg.GetAveragePosition();
         double rlong = 111200.0f; // Jeden stopień łuku południka ma długość ok. 111,2 km lub 111200 metrów.
-        double ralt = Math.Cos(ToRadians(act.y)) * ToRadians(r); // funkcja radiany Math2Rad
+        double ralt = Math.Cos(Mathf.Deg2Rad * act.y) * Mathf.Deg2Rad * r;
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {     
             Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
@@ -79,7 +79,7 @@ public class Floor : MonoBehaviour
     {
         Vector2 closestPosition = Vector2.zero;
         float minDistance = float.MaxValue;
-        foreach (var obj in ClassRoomButtons)
+        foreach (var obj in classRoomButtons)
         {
             Vector2 closestPoint = ClosestPointOnRect(obj, personInterpolated.position);
             float distance = Vector2.Distance(personInterpolated.position, closestPoint);
@@ -124,18 +124,18 @@ public class Floor : MonoBehaviour
                 {
                     if (!buttons0Added)
                     {
-                        ClassRoomButtons.Add(buttonRect);
+                        classRoomButtons.Add(buttonRect);
                         buttons0Added = true;
                     }
                     else
                     {
-                        ClassRoomButtons.Add(buttonRect);
+                        classRoomButtons.Add(buttonRect);
                     }
                 }
             }
-            for (int i = 1; i < ClassRoomButtons.Count; i++)
+            for (int i = 1; i < classRoomButtons.Count; i++)
             {
-                ClassRoomButtons[i - 1] = ClassRoomButtons[i];
+                classRoomButtons[i - 1] = classRoomButtons[i];
             }
         }  
     }
