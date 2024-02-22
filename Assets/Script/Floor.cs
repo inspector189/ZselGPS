@@ -10,7 +10,7 @@ public class Floor : MonoBehaviour
     [SerializeField] private Sprite floorSprites;
     [SerializeField] private RectTransform supportArea;
     [SerializeField] private Image map;
-    [SerializeField] private List<RectTransform> ClassRoomButtons = new List<RectTransform>();
+    [SerializeField] private List<RectTransform> classRoomButtons = new List<RectTransform>();
     const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
     const double origin_longi = 19.042718f;  // -||-
     const double r = 6371000.0f; //średni promień równika - 6371 km / tu w metrach
