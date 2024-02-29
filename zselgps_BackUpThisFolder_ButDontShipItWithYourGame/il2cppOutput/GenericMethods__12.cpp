@@ -364,6 +364,8 @@ struct Func_2_t213311159653563BDCC21CC060B449705C96791F;
 struct Func_2_t92904CE6AE729E23667675B2858ABE16106A0837;
 // System.Func`2<System.Object,System.Object>
 struct Func_2_tACBF5A1656250800CE861707354491F0611F6624;
+// System.Func`2<System.Object,System.Single>
+struct Func_2_tB5C40A90702B6A6A2E315FD927EEFC9FB69F2B12;
 // System.Func`2<System.Object,System.String>
 struct Func_2_t8A4E59735D50CEA34C30F6CD6B5804A38327CD0B;
 // System.Func`2<System.Object,System.UInt32>
@@ -398,6 +400,8 @@ struct ICollection_1_tD7413105CA5DBF6629BE5E9EE453204D7C0D90FB;
 struct IComparer_1_t4483F9B9F43C7B0F8D4FEEAE12FAFDD3F9CF81FD;
 // System.Collections.Generic.IComparer`1<System.Object>
 struct IComparer_1_tC0A12A847AF97F369A5CE9A0CCE71CE18EE1440E;
+// System.Collections.Generic.IComparer`1<System.Single>
+struct IComparer_1_t76B18C44D8838F955CF8C0F53336D6C7006E0B53;
 // System.Collections.Generic.IComparer`1<System.UInt32>
 struct IComparer_1_t2823311A1816BF1DC53D0C642C909DD5E1804382;
 // System.Collections.Generic.IEnumerable`1<System.Linq.IGrouping`2<System.Object,System.Object>>
@@ -3308,6 +3312,19 @@ struct OrderedEnumerable_2_tA9DEFB149DAA0F612AACE71C5D5A35D6308A052D  : public O
 	OrderedEnumerable_1_t635FACC705EB8D479616971CD818376DC3A5AF51* ___parent_1;
 	// System.Func`2<TElement,TKey> System.Linq.OrderedEnumerable`2::keySelector
 	Func_2_tACBF5A1656250800CE861707354491F0611F6624* ___keySelector_2;
+	// System.Collections.Generic.IComparer`1<TKey> System.Linq.OrderedEnumerable`2::comparer
+	RuntimeObject* ___comparer_3;
+	// System.Boolean System.Linq.OrderedEnumerable`2::descending
+	bool ___descending_4;
+};
+
+// System.Linq.OrderedEnumerable`2<System.Object,System.Single>
+struct OrderedEnumerable_2_t306D33C8FAA17BF0735E8B83FCC8CDC039740B2F  : public OrderedEnumerable_1_t635FACC705EB8D479616971CD818376DC3A5AF51
+{
+	// System.Linq.OrderedEnumerable`1<TElement> System.Linq.OrderedEnumerable`2::parent
+	OrderedEnumerable_1_t635FACC705EB8D479616971CD818376DC3A5AF51* ___parent_1;
+	// System.Func`2<TElement,TKey> System.Linq.OrderedEnumerable`2::keySelector
+	Func_2_tB5C40A90702B6A6A2E315FD927EEFC9FB69F2B12* ___keySelector_2;
 	// System.Collections.Generic.IComparer`1<TKey> System.Linq.OrderedEnumerable`2::comparer
 	RuntimeObject* ___comparer_3;
 	// System.Boolean System.Linq.OrderedEnumerable`2::descending
@@ -8718,6 +8735,11 @@ struct Func_2_tACBF5A1656250800CE861707354491F0611F6624  : public MulticastDeleg
 {
 };
 
+// System.Func`2<System.Object,System.Single>
+struct Func_2_tB5C40A90702B6A6A2E315FD927EEFC9FB69F2B12  : public MulticastDelegate_t
+{
+};
+
 // System.Func`2<System.Object,System.String>
 struct Func_2_t8A4E59735D50CEA34C30F6CD6B5804A38327CD0B  : public MulticastDelegate_t
 {
@@ -10238,6 +10260,10 @@ struct JEnumerable_1_t3B25D0E67A0BA251980CEF1E7E15E21C611B3BB5_StaticFields
 
 // System.Linq.OrderedEnumerable`2<System.Object,System.Object>
 
+// System.Linq.OrderedEnumerable`2<System.Object,System.Single>
+
+// System.Linq.OrderedEnumerable`2<System.Object,System.Single>
+
 // System.Linq.OrderedEnumerable`2<System.Object,System.UInt32>
 
 // System.Linq.OrderedEnumerable`2<System.Object,System.UInt32>
@@ -11419,6 +11445,10 @@ struct Type_t_StaticFields
 // System.Func`2<System.Object,System.Object>
 
 // System.Func`2<System.Object,System.Object>
+
+// System.Func`2<System.Object,System.Single>
+
+// System.Func`2<System.Object,System.Single>
 
 // System.Func`2<System.Object,System.String>
 
@@ -14406,6 +14436,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_OrderBy_TisRuntimeO
 		OrderedEnumerable_2_tA9DEFB149DAA0F612AACE71C5D5A35D6308A052D* L_2 = (OrderedEnumerable_2_tA9DEFB149DAA0F612AACE71C5D5A35D6308A052D*)il2cpp_codegen_object_new(il2cpp_rgctx_data(method->rgctx_data, 0));
 		NullCheck(L_2);
 		((  void (*) (OrderedEnumerable_2_tA9DEFB149DAA0F612AACE71C5D5A35D6308A052D*, RuntimeObject*, Func_2_tACBF5A1656250800CE861707354491F0611F6624*, RuntimeObject*, bool, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 1)))(L_2, L_0, L_1, (RuntimeObject*)NULL, (bool)0, il2cpp_rgctx_method(method->rgctx_data, 1));
+		return (RuntimeObject*)L_2;
+	}
+}
+// System.Linq.IOrderedEnumerable`1<TSource> System.Linq.Enumerable::OrderBy<System.Object,System.Single>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TKey>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Enumerable_OrderBy_TisRuntimeObject_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_mB2315DD162DED6E65C9B440629954A1B156816CD_gshared (RuntimeObject* ___0_source, Func_2_tB5C40A90702B6A6A2E315FD927EEFC9FB69F2B12* ___1_keySelector, const RuntimeMethod* method) 
+{
+	{
+		RuntimeObject* L_0 = ___0_source;
+		Func_2_tB5C40A90702B6A6A2E315FD927EEFC9FB69F2B12* L_1 = ___1_keySelector;
+		OrderedEnumerable_2_t306D33C8FAA17BF0735E8B83FCC8CDC039740B2F* L_2 = (OrderedEnumerable_2_t306D33C8FAA17BF0735E8B83FCC8CDC039740B2F*)il2cpp_codegen_object_new(il2cpp_rgctx_data(method->rgctx_data, 0));
+		NullCheck(L_2);
+		((  void (*) (OrderedEnumerable_2_t306D33C8FAA17BF0735E8B83FCC8CDC039740B2F*, RuntimeObject*, Func_2_tB5C40A90702B6A6A2E315FD927EEFC9FB69F2B12*, RuntimeObject*, bool, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 1)))(L_2, L_0, L_1, (RuntimeObject*)NULL, (bool)0, il2cpp_rgctx_method(method->rgctx_data, 1));
 		return (RuntimeObject*)L_2;
 	}
 }
@@ -23226,6 +23268,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_GetComponents_TisRuntimeObjec
 		RuntimeArray* L_3;
 		L_3 = GameObject_GetComponentsInternal_m5D5FD903F9CB151AC9782E5840D397F422A82F95(__this, L_1, (bool)1, (bool)0, (bool)1, (bool)0, (RuntimeObject*)L_2, NULL);
 		return;
+	}
+}
+// T[] UnityEngine.GameObject::GetComponentsInChildren<System.Object>()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* GameObject_GetComponentsInChildren_TisRuntimeObject_m6F69570C0224EE6620FD43C4DDB0F0AB152A1B20_gshared (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) 
+{
+	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* V_0 = NULL;
+	{
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_0;
+		L_0 = ((  ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, bool, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 0)))(__this, (bool)0, il2cpp_rgctx_method(method->rgctx_data, 0));
+		V_0 = L_0;
+		goto IL_000b;
+	}
+
+IL_000b:
+	{
+		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_1 = V_0;
+		return L_1;
 	}
 }
 // T[] UnityEngine.GameObject::GetComponentsInChildren<System.Object>(System.Boolean)

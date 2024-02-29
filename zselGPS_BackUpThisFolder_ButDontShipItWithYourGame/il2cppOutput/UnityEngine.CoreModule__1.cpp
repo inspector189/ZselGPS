@@ -6178,20 +6178,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_position_Injected_mD8E9699
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_get_localPosition_Injected_m4EA29DEBBB27D41E17E6F7469217B50B7594DF22 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_ret, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Transform::set_localPosition_Injected(UnityEngine.Vector3&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_localPosition_Injected_mB0AC6C9E6298454212FD390CB010ED9F5B0B075A (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_value, const RuntimeMethod* method) ;
-// UnityEngine.Quaternion UnityEngine.Quaternion::Euler(UnityEngine.Vector3)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Euler_m5BCCC19216CFAD2426F15BC51A30421880D27B73_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_euler, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Transform::set_localRotation(UnityEngine.Quaternion)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_value, const RuntimeMethod* method) ;
 // UnityEngine.Quaternion UnityEngine.Transform::get_rotation()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+// UnityEngine.Quaternion UnityEngine.Quaternion::Euler(UnityEngine.Vector3)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Euler_m5BCCC19216CFAD2426F15BC51A30421880D27B73_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_euler, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Transform::set_rotation(UnityEngine.Quaternion)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_value, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Transform::set_localRotation(UnityEngine.Quaternion)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_value, const RuntimeMethod* method) ;
 // UnityEngine.Vector3 UnityEngine.Vector3::get_forward()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_forward_mAA55A7034304DF8B2152EAD49AE779FC4CA2EB4A_inline (const RuntimeMethod* method) ;
 // UnityEngine.Vector3 UnityEngine.Quaternion::op_Multiply(UnityEngine.Quaternion,UnityEngine.Vector3)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Quaternion_op_Multiply_mE1EBA73F9173432B50F8F17CE8190C5A7986FB8C (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_rotation, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_point, const RuntimeMethod* method) ;
 // UnityEngine.Quaternion UnityEngine.Quaternion::LookRotation(UnityEngine.Vector3)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_LookRotation_mDB2CCA75B8E1AB98104F2A6E1A1EA57D0D1298D7 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_forward, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Transform::set_rotation(UnityEngine.Quaternion)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_value, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Transform::get_rotation_Injected(UnityEngine.Quaternion&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_get_rotation_Injected_m6532D51417F17B804F56FC809B833F3BE524F0FC (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* ___0_ret, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Transform::set_rotation_Injected(UnityEngine.Quaternion&)
@@ -14874,6 +14874,40 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_localPosition_mDE1C997F7D7
 {
 	{
 		Transform_set_localPosition_Injected_mB0AC6C9E6298454212FD390CB010ED9F5B0B075A(__this, (&___0_value), NULL);
+		return;
+	}
+}
+// UnityEngine.Vector3 UnityEngine.Transform::get_eulerAngles()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_eulerAngles_mCAAF48EFCF628F1ED91C2FFE75A4FD19C039DD6A (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) 
+{
+	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_0;
+		L_0 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(__this, NULL);
+		V_0 = L_0;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
+		L_1 = Quaternion_get_eulerAngles_m2DB5158B5C3A71FD60FC8A6EE43D3AAA1CFED122_inline((&V_0), NULL);
+		V_1 = L_1;
+		goto IL_0012;
+	}
+
+IL_0012:
+	{
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2 = V_1;
+		return L_2;
+	}
+}
+// System.Void UnityEngine.Transform::set_eulerAngles(UnityEngine.Vector3)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Transform_set_eulerAngles_m9F0BC484A7915A51FAB87230644229B75BACA004 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_value, const RuntimeMethod* method) 
+{
+	{
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = ___0_value;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_1;
+		L_1 = Quaternion_Euler_m5BCCC19216CFAD2426F15BC51A30421880D27B73_inline(L_0, NULL);
+		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(__this, L_1, NULL);
 		return;
 	}
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +33,7 @@ public class Floor : MonoBehaviour
 
         return rect1Bounds.Overlaps(rect2Bounds);
     }
-    public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg)
+    public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg, Vector2 velocity)
     {
         if (IsColliding(personInterpolated))
         {
@@ -44,52 +45,43 @@ public class Floor : MonoBehaviour
         }
         else
         {
-            Vector2 calcPosition = CalcPosition(personInterpolated, avg);
+            Vector2 calcPosition = CalcPosition(personInterpolated, avg, velocity);
             personReal.position = new Vector3(calcPosition.x, calcPosition.y, personReal.position.z);
         }
     }
 
-    public Vector2 CalcPosition(RectTransform personInterpolated, AveragePosition avg)
+    public Vector2 CalcPosition(RectTransform personInterpolated, AveragePosition avg, Vector2 velocity)
     {
         Vector2 act = avg.GetAveragePosition();
         double rlong = 111200.0f; // Jeden stopień łuku południka ma długość ok. 111,2 km lub 111200 metrów.
         double ralt = Math.Cos(Mathf.Deg2Rad * act.y) * Mathf.Deg2Rad * r;
+        Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {     
-            Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
             return geoOffset / 50f; //geoOffset - przesunięcie geograficzne w skrócie
         }
         else
-        {
-            Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
-            Vector2 currentPosition = new Vector2(personInterpolated.transform.position.x, personInterpolated.transform.position.y);
+        {          
+            Vector2 currentPosition = new Vector2(personInterpolated.transform.position.x, personInterpolated.transform.position.y) + velocity;
             Vector2 targetPosition = geoOffset / 50f;
 
             float interpolationFactor = 1f;
-            Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor); 
-
+            Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor);
+           
             return newPosition;
         }
     }
-    static double ToRadians(double angleDegrees)
-    {
-        return Math.PI * angleDegrees / 180.0;
-    }
+    
     public Vector2 FindClosestEdgePosition(RectTransform personInterpolated)
     {
-        Vector2 closestPosition = Vector2.zero;
-        float minDistance = float.MaxValue;
-        foreach (var obj in classRoomButtons)
+        float Distance_Person(RectTransform button)
         {
-            Vector2 closestPoint = ClosestPointOnRect(obj, personInterpolated.position);
+            Vector2 closestPoint = ClosestPointOnRect(button, personInterpolated.position);
             float distance = Vector2.Distance(personInterpolated.position, closestPoint);
-            if (distance < minDistance) // min z predykatem - następny mentoring!
-            {
-               minDistance = distance;
-               closestPosition = closestPoint;
-            }
+            return distance;
         }
-        return closestPosition;
+        RectTransform closestButton = classRoomButtons.OrderBy(button => Distance_Person(button)).First();
+        return closestButton.position;
     }
     private Vector2 ClosestPointOnRect(RectTransform rectTransform, Vector2 point)
     {
