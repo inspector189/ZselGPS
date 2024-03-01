@@ -15,7 +15,7 @@ public class GPSMap2 : MonoBehaviour
     [SerializeField] private List<GameObject> texts;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
-    private Gyroscope gyro;
+    public Gyroscope gyro;
     [SerializeField] private Image map;
     [SerializeField] private TextMeshProUGUI precisionTexts;
     [SerializeField] private TextMeshProUGUI heightTexts;
@@ -45,6 +45,7 @@ public class GPSMap2 : MonoBehaviour
     {
         return PlayerPrefs.GetInt("liczba");
     }
+
     private IEnumerator StartGPS()
     {
         while (true) 
@@ -64,11 +65,12 @@ public class GPSMap2 : MonoBehaviour
                     GPSData();
                     UpdateUI(true);
                     InitializeUI(true);
-                    int savedFloor = GetCurrentFloorLvl();  // - zrobić funkcje pod którą to bedzie ukryte i pozbyć się tego getInt("piętro"), i tylko 1 wywołanie na cały program
+                    int savedFloor = GetCurrentFloorLvl();  
                     floors[savedFloor].SetFloor(savedFloor);
                     Vector2 lastPosition = personReal.position;
                     floors[savedFloor].UpdatePosition(personReal, personInterpolated, avg, velocity);
                     velocity = new Vector2(personReal.position.x, personReal.position.y) - lastPosition;
+                    Debug.Log(velocity);
                     TextsVisible(savedFloor);
                 }
             }
@@ -88,7 +90,7 @@ public class GPSMap2 : MonoBehaviour
             Quaternion gyroAttitude = gyro.attitude;
             float gyroYaw = gyroAttitude.eulerAngles.z;
             personInterpolated.eulerAngles = new Vector3(0, 0, gyroYaw);
-            Debug.Log(personInterpolated.eulerAngles);
+          //  Debug.Log(personInterpolated.eulerAngles);
         }
     }
 

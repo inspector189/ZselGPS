@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 public class Floor : MonoBehaviour
 {
@@ -35,18 +37,23 @@ public class Floor : MonoBehaviour
     }
     public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg, Vector2 velocity)
     {
+        Debug.Log("NIE DZIAŁA!");
         if (IsColliding(personInterpolated))
-        {
-            Vector2 newPosition = FindClosestEdgePosition(personInterpolated);
+        {          
+            Vector2 newPosition = FindClosestEdgePosition(personInterpolated);  
             if (newPosition != Vector2.zero)
             {
                 personReal.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
+                Debug.Log("prpos:" + personInterpolated.position);
+                Debug.Log("Calcpos:" + newPosition);
             }
         }
         else
         {
             Vector2 calcPosition = CalcPosition(personInterpolated, avg, velocity);
             personReal.position = new Vector3(calcPosition.x, calcPosition.y, personReal.position.z);
+            Debug.Log("prpos:" + personReal.position);
+            Debug.Log("Calcpos:" + calcPosition);
         }
     }
 
@@ -57,17 +64,18 @@ public class Floor : MonoBehaviour
         double ralt = Math.Cos(Mathf.Deg2Rad * act.y) * Mathf.Deg2Rad * r;
         Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
-        {     
+        {
+            Debug.Log("GBS");
             return geoOffset / 50f; //geoOffset - przesunięcie geograficzne w skrócie
         }
         else
-        {          
+        {
+            Debug.Log("Interpolacja");
             Vector2 currentPosition = new Vector2(personInterpolated.transform.position.x, personInterpolated.transform.position.y) + velocity;
             Vector2 targetPosition = geoOffset / 50f;
 
             float interpolationFactor = 1f;
             Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor);
-           
             return newPosition;
         }
     }
