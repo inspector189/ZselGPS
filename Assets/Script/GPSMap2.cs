@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.UI;
+using System;
 
 public class GPSMap2 : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GPSMap2 : MonoBehaviour
     [SerializeField] private GameObject redneredMap;
     [SerializeField] private GameObject noneConnection;
     [SerializeField] private GameObject spinner;
+    [SerializeField] private RectTransform supportArea;
     [SerializeField] private List<GameObject> texts;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
@@ -65,10 +67,27 @@ public class GPSMap2 : MonoBehaviour
                     GPSData();
                     UpdateUI(true);
                     InitializeUI(true);
-                    int savedFloor = GetCurrentFloorLvl();  
+                    int savedFloor = GetCurrentFloorLvl();
                     floors[savedFloor].SetFloor(savedFloor);
+
+                    if (floors[savedFloor].IsColliding(personInterpolated))
+                    {
+                        Vector2 newPosition = floors[savedFloor].FindClosestEdgePosition(personInterpolated);
+                        if (newPosition != Vector2.zero)
+                        {
+                            personReal.position = new Vector3(newPosition.x, newPosition.y, personInterpolated.position.z);
+                        }
+                        else
+                        {
+                            personReal.position = floors[savedFloor].CalcPosition(personInterpolated, avg, velocity);
+                        }
+                    }
+                    else
+                    {
+                        personReal.position = floors[savedFloor].CalcPosition(personInterpolated, avg, velocity);
+                    }
                     Vector2 lastPosition = personReal.position;
-                    floors[savedFloor].UpdatePosition(personReal, personInterpolated, avg, velocity);
+                //    floors[savedFloor].UpdatePosition(personReal, personInterpolated, avg, velocity);
                     velocity = new Vector2(personReal.position.x, personReal.position.y) - lastPosition;
                     Debug.Log(velocity);
                     TextsVisible(savedFloor);
@@ -81,7 +100,25 @@ public class GPSMap2 : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
     }
+    public bool IsColliding(RectTransform rect1)
+    {
+        Rect rect1Bounds = GetWorldSpaceRect(rect1);
+        Rect rect2Bounds = GetWorldSpaceRect(supportArea);
 
+        return rect1Bounds.Overlaps(rect2Bounds);
+    }
+    private Rect GetWorldSpaceRect(RectTransform rectTransform)
+    {
+        Vector2 sizeDelta = rectTransform.sizeDelta;
+        Vector2 position = rectTransform.position;
+
+        float width = sizeDelta.x * rectTransform.lossyScale.x;
+        float height = sizeDelta.y * rectTransform.lossyScale.y;
+
+        return new Rect(position.x - width * rectTransform.pivot.x,
+                        position.y - height * rectTransform.pivot.y,
+                        width, height);
+    }
     #region Dane
     private void GyroData()
     {

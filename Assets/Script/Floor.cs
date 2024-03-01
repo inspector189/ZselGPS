@@ -63,6 +63,7 @@ public class Floor : MonoBehaviour
         double rlong = 111200.0f; // Jeden stopień łuku południka ma długość ok. 111,2 km lub 111200 metrów.
         double ralt = Math.Cos(Mathf.Deg2Rad * act.y) * Mathf.Deg2Rad * r;
         Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
+        Debug.Log(PlayerPrefs.GetInt("sum10Accuracy"));
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
             Debug.Log("GBS");
