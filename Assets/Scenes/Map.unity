@@ -55109,7 +55109,6 @@ MonoBehaviour:
   redneredMap: {fileID: 1599872606}
   noneConnection: {fileID: 1973198625}
   spinner: {fileID: 106824309}
-  supportArea: {fileID: 620885032}
   texts:
   - {fileID: 2119943039}
   - {fileID: 725992093}
