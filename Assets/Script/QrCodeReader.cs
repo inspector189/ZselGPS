@@ -1,5 +1,3 @@
-/*
-
 using System;
 using System.Globalization;
 using System.IO;
@@ -7,71 +5,65 @@ using UnityEngine;
 using NativeGalleryNamespace;
 using ZXing;
 using Vulcanova;
-using Vulcanova.Features.Auth.ScanningQrCode;
+using System.Security.Cryptography;
+using System.Text;
 
 public class QrCodeReader : MonoBehaviour
 {
+    private const string QrKey = "tDVS4ykCBBAeN33h";
+
     public void PickImageAndScanQRCode()
     {
         NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
         {
             Debug.Log("Wybrany obraz: " + path);
 
-            if (path != null)
+            if (!string.IsNullOrEmpty(path))
             {
-                // Za�aduj wybrane zdj�cie jako Texture2D
                 Texture2D texture = NativeGallery.LoadImageAtPath(path, 1024, false);
                 if (texture == null)
                 {
-                    Debug.Log("Nie uda�o si� za�adowa� obrazu");
+                    Debug.Log("Nie udało się załadować obrazu");
                     return;
                 }
 
-                // Skanowanie kodu QR
-                ScanQRCode(texture);
+                IBarcodeReader barcodeReader = new BarcodeReader();
+                var result = barcodeReader.Decode(texture.GetPixels32(), texture.width, texture.height);
+                if (result != null)
+                {
+                    Debug.Log("Zdekodowany tekst z QR: " + result.Text);
+                    try
+                    {
+                        string decodedText = DecodeQrCode(result.Text);
+                        Debug.Log("Zdekodowany tekst z QR po AES: " + decodedText);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogError("Błąd podczas dekodowania kodu QR: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Nie znaleziono kodu QR");
+                }
             }
         }, "Wybierz obraz", "image/*");
     }
 
-    private void ScanQRCode(Texture2D image)
+    private static string DecodeQrCode(string qrCode)
     {
-        try
-        {
-            IBarcodeReader barcodeReader = new BarcodeReader();
-            // Dekoduj obraz
-            var result = barcodeReader.Decode(image.GetPixels32(), image.width, image.height);
-            if (result != null)
-            {
-                Debug.Log("Zdekodowany tekst z QR: " + result.Text);
-                AuthenticateWithVulcan(result.Text);
-            }
-            else
-            {
-                Debug.Log("Nie znaleziono kodu QR");
-            } 
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError("B��d podczas skanowania kodu QR: " + ex.Message);
-        }
-    }
-    private void AuthenticateWithVulcan(string decodedData)
-    {
-        // Rozdziel zdekodowane dane na odpowiednie cz�ci
-        var qrCodeData = AuthQrCode.FromQrString(decodedData);
+        using var aes = Aes.Create();
+        aes.Key = Encoding.UTF8.GetBytes(QrKey);
+        aes.Mode = CipherMode.ECB;
+        aes.Padding = PaddingMode.PKCS7;
 
-        // Logowanie do dziennika Vulkanowego
-        // Mo�esz potrzebowa� dodatkowej logiki w zale�no�ci od wymaga� API
-        try
-        {
-            // Przyk�adowo, je�li potrzebujesz PINu, musisz go tutaj przekaza�
-            Debug.Log(qrCodeData.Token + "Tw�j PIN" + qrCodeData.ApiAddress);
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError("B��d logowania: " + ex.Message);
-        }
+        using var dec = aes.CreateDecryptor(aes.Key, aes.IV);
+
+        using var memoryStream = new MemoryStream(Convert.FromBase64String(qrCode));
+        using var cryptoStream = new CryptoStream(memoryStream, dec, CryptoStreamMode.Read);
+        using var reader = new StreamReader(cryptoStream);
+
+        return reader.ReadToEnd();
     }
 
 }
-*/
