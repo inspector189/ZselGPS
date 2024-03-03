@@ -88,7 +88,7 @@ public class GPSMap2 : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
     }
-
+//test
     #region Dane
     private void GyroData()
     {
