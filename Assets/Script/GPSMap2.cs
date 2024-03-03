@@ -13,7 +13,6 @@ public class GPSMap2 : MonoBehaviour
     [SerializeField] private GameObject redneredMap;
     [SerializeField] private GameObject noneConnection;
     [SerializeField] private GameObject spinner;
-    [SerializeField] private RectTransform supportArea;
     [SerializeField] private List<GameObject> texts;
     private float timeBetweenLocationUpdates = 0.2f;
     private float timeSinceLastLocationUpdate = 0.0f;
@@ -32,11 +31,13 @@ public class GPSMap2 : MonoBehaviour
     {
         InitializeUI(false);
         Permissions();
+        Debug.Log("Zaczynamy coroutine!");
         StartCoroutine(StartGPS());
         Input.location.Start(1f, 0.1f);
     }
     void Update() // Wykonuje się z każdą klatką na sekundę
     {
+        Debug.Log("Tu wykonuje sie update!");
         GyroData();
     }
     public static void SetCurrentFloorLvl(int savedFloor)
@@ -50,6 +51,7 @@ public class GPSMap2 : MonoBehaviour
 
     private IEnumerator StartGPS()
     {
+        Debug.Log("Tu wykonuje sie Coroutine!");
         while (true) 
         {
             if (Input.location.isEnabledByUser)
@@ -67,29 +69,15 @@ public class GPSMap2 : MonoBehaviour
                     GPSData();
                     UpdateUI(true);
                     InitializeUI(true);
-                    int savedFloor = GetCurrentFloorLvl();
+                    int savedFloor = GetCurrentFloorLvl();                   
                     floors[savedFloor].SetFloor(savedFloor);
-
-                    if (floors[savedFloor].IsColliding(personInterpolated))
-                    {
-                        Vector2 newPosition = floors[savedFloor].FindClosestEdgePosition(personInterpolated);
-                        if (newPosition != Vector2.zero)
-                        {
-                            personReal.position = new Vector3(newPosition.x, newPosition.y, personInterpolated.position.z);
-                        }
-                        else
-                        {
-                            personReal.position = floors[savedFloor].CalcPosition(personInterpolated, avg, velocity);
-                        }
-                    }
-                    else
-                    {
-                        personReal.position = floors[savedFloor].CalcPosition(personInterpolated, avg, velocity);
-                    }
+                    Debug.Log("Obecne piętro to: " + savedFloor + " i zostało ono ustalone na aktywne");
                     Vector2 lastPosition = personReal.position;
-                //    floors[savedFloor].UpdatePosition(personReal, personInterpolated, avg, velocity);
+                    Debug.Log("Ostatnia pozycja personki to: " + lastPosition);
+                    floors[savedFloor].UpdatePosition(personReal, personInterpolated, avg, velocity);
+                    Debug.Log("A obecna pozycja personki to: " + personReal.position);
                     velocity = new Vector2(personReal.position.x, personReal.position.y) - lastPosition;
-                    Debug.Log(velocity);
+                    Debug.Log("Velocity jest równe: " + velocity);
                     TextsVisible(savedFloor);
                 }
             }
@@ -100,25 +88,7 @@ public class GPSMap2 : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
     }
-    public bool IsColliding(RectTransform rect1)
-    {
-        Rect rect1Bounds = GetWorldSpaceRect(rect1);
-        Rect rect2Bounds = GetWorldSpaceRect(supportArea);
 
-        return rect1Bounds.Overlaps(rect2Bounds);
-    }
-    private Rect GetWorldSpaceRect(RectTransform rectTransform)
-    {
-        Vector2 sizeDelta = rectTransform.sizeDelta;
-        Vector2 position = rectTransform.position;
-
-        float width = sizeDelta.x * rectTransform.lossyScale.x;
-        float height = sizeDelta.y * rectTransform.lossyScale.y;
-
-        return new Rect(position.x - width * rectTransform.pivot.x,
-                        position.y - height * rectTransform.pivot.y,
-                        width, height);
-    }
     #region Dane
     private void GyroData()
     {

@@ -21,44 +21,60 @@ public class Floor : MonoBehaviour
     void Start()
     {
         AddToTheButtonsList();
+        Debug.Log("Zaczynamy Floor.cs!");
     }
     public void SetFloor(int floorIndex)
     {
+        Debug.Log("Ustalamy tutaj aktualne pięterko");
         floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
+        Debug.Log("FloorIndex to: " + floorIndex);
         map.sprite = floorSprites;
     }
-    public bool IsColliding(RectTransform rect1)
+    public bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
+        Debug.Log("Tu jest funkcja od kolizji obszaru i personki!");
         Rect rect1Bounds = GetWorldSpaceRect(rect1);
-        Rect rect2Bounds = GetWorldSpaceRect(supportArea);
+        Rect rect2Bounds = GetWorldSpaceRect(rect2);
 
         return rect1Bounds.Overlaps(rect2Bounds);
     }
     public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg, Vector2 velocity)
     {
-        Debug.Log("NIE DZIAŁA!");
-        if (IsColliding(personInterpolated))
-        {          
-            Vector2 newPosition = FindClosestEdgePosition(personInterpolated);  
-            if (newPosition != Vector2.zero)
+        Debug.Log("Tu mamy UpdatePosition!");
+        if (IsColliding(personInterpolated, supportArea))
+        {
+            Debug.Log("Sprawdziliśmy właśnie kolizje!");
+            if(!classRoomButtons.Contains(personInterpolated))
             {
-                personReal.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
-                Debug.Log("prpos:" + personInterpolated.position);
-                Debug.Log("Calcpos:" + newPosition);
+                
+                Vector2 newPosition = FindClosestEdgePosition(personInterpolated);
+                Debug.Log("Tutaj ustalamy nową pozycję dla tej interpoalted" + newPosition);
+                if (newPosition != Vector2.zero)
+                {
+                    personReal.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
+                    Debug.Log("Pozycja personki to:" + personReal.position);
+                }
             }
+            else
+            {
+                Debug.Log("Personka jest w classRoomButtons! to kalkulujemy jej pozycje");
+                personReal.position = CalcPosition(personInterpolated, avg, velocity);
+                Debug.Log("Przekalkulowana pozycja personki: " + personReal.position);
+            }        
         }
         else
         {
+            Debug.Log("Nie ma kolizji personki i obszaru to liczymy jeszcze raz!");
             Vector2 calcPosition = CalcPosition(personInterpolated, avg, velocity);
             personReal.position = new Vector3(calcPosition.x, calcPosition.y, personReal.position.z);
-            Debug.Log("prpos:" + personReal.position);
-            Debug.Log("Calcpos:" + calcPosition);
+            Debug.Log("Kolejna pozycja personki gdy nie ma kolizji:" + personReal.position);
         }
     }
 
     public Vector2 CalcPosition(RectTransform personInterpolated, AveragePosition avg, Vector2 velocity)
     {
+        Debug.Log("Zaczynamy liczyc pozycje!");
         Vector2 act = avg.GetAveragePosition();
         double rlong = 111200.0f; // Jeden stopień łuku południka ma długość ok. 111,2 km lub 111200 metrów.
         double ralt = Math.Cos(Mathf.Deg2Rad * act.y) * Mathf.Deg2Rad * r;
@@ -66,12 +82,12 @@ public class Floor : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("sum10Accuracy"));
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
-            Debug.Log("GBS");
+            Debug.Log("Tu dzieje sie GPS!");
             return geoOffset / 50f; //geoOffset - przesunięcie geograficzne w skrócie
         }
         else
         {
-            Debug.Log("Interpolacja");
+            Debug.Log("a tu Interpolacja");
             Vector2 currentPosition = new Vector2(personInterpolated.transform.position.x, personInterpolated.transform.position.y) + velocity;
             Vector2 targetPosition = geoOffset / 50f;
 
@@ -83,14 +99,34 @@ public class Floor : MonoBehaviour
     
     public Vector2 FindClosestEdgePosition(RectTransform personInterpolated)
     {
+        Vector2 closestPosition = Vector2.zero;
+        float minDistance = float.MaxValue;
+        foreach (var obj in classRoomButtons)
+        {
+            Debug.Log("Patrzymy na dystans!");
+            Vector2 closestPoint = ClosestPointOnRect(obj, personInterpolated.position);
+            float distance = Vector2.Distance(personInterpolated.position, closestPoint);
+            if (distance < minDistance) // min z predykatem - następny mentoring!
+            {
+                minDistance = distance;
+                closestPosition = closestPoint;
+            }
+            Debug.Log("Najbliży button to: " + obj + " a jego pozycja to: " + obj.position);
+        }
+        Debug.Log("Czyli closestPosition bedzie równe: " + closestPosition);
+        return closestPosition;
+        /*
+        Debug.Log("Szukamy najbliższej krawędzi!");
         float Distance_Person(RectTransform button)
         {
+            Debug.Log("Patrzymy na dystans!");
             Vector2 closestPoint = ClosestPointOnRect(button, personInterpolated.position);
             float distance = Vector2.Distance(personInterpolated.position, closestPoint);
             return distance;
         }
         RectTransform closestButton = classRoomButtons.OrderBy(button => Distance_Person(button)).First();
-        return closestButton.position;
+        Debug.Log("Najbliży button to: " + closestButton + " a jego pozycja to: " + closestButton.position);
+        return closestButton.position; */
     }
     private Vector2 ClosestPointOnRect(RectTransform rectTransform, Vector2 point)
     {
@@ -134,7 +170,7 @@ public class Floor : MonoBehaviour
                     }
                 }
             }
-            for (int i = 1; i < classRoomButtons.Count; i++)
+            for (int i = 0; i < classRoomButtons.Count; i++)
             {
                 classRoomButtons[i - 1] = classRoomButtons[i];
             }
