@@ -8,6 +8,7 @@ public class PlusAndMinus : MonoBehaviour
 {
     public Button Plus;
     public TextMeshProUGUI text;
+    [SerializeField] private GPSMap2 gpsMap2;
     public void Start()
     {  
         text.text = GPSMap2.GetCurrentFloorLvl().ToString();
@@ -18,7 +19,7 @@ public class PlusAndMinus : MonoBehaviour
         if (liczba < 2)
         {
             liczba += 1;
-            GPSMap2.SetCurrentFloorLvl(liczba);       
+            gpsMap2.SetCurrentFloorLvl(liczba);       
             text.text = liczba.ToString();
         }
     }
@@ -29,7 +30,7 @@ public class PlusAndMinus : MonoBehaviour
         if (liczba > 0) // Ograniczenie odjęcia do wartości większych od 0
         {
             liczba -= 1;
-            GPSMap2.SetCurrentFloorLvl(liczba);
+            gpsMap2.SetCurrentFloorLvl(liczba);
             text.text = liczba.ToString();
         }
     }

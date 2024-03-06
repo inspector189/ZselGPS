@@ -23,13 +23,14 @@ public class Floor : MonoBehaviour
         AddToTheButtonsList();
         Debug.Log("Zaczynamy Floor.cs!");
     }
-    public void SetFloor(int floorIndex)
+    public void SetFloor(int floorIndex, RectTransform personInterpolated, AveragePosition avg, Vector2 velocity)
     {
         Debug.Log("Ustalamy tutaj aktualne pięterko");
         floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
         Debug.Log("FloorIndex to: " + floorIndex);
         map.sprite = floorSprites;
+        CalcPosition(personInterpolated, avg, velocity);
     }
     public bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
@@ -42,33 +43,17 @@ public class Floor : MonoBehaviour
     public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg, Vector2 velocity)
     {
         Debug.Log("Tu mamy UpdatePosition!");
+        personReal.position = CalcPosition(personInterpolated, avg, velocity);
         if (IsColliding(personInterpolated, supportArea))
         {
             Debug.Log("Sprawdziliśmy właśnie kolizje!");
-            if(!classRoomButtons.Contains(personInterpolated))
-            {
-                
                 Vector2 newPosition = FindClosestEdgePosition(personInterpolated);
                 Debug.Log("Tutaj ustalamy nową pozycję dla tej interpoalted" + newPosition);
                 if (newPosition != Vector2.zero)
                 {
-                    personReal.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
-                    Debug.Log("Pozycja personki to:" + personReal.position);
+                    personInterpolated.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
+                    Debug.Log("Pozycja personki to:" + personInterpolated.position);
                 }
-            }
-            else
-            {
-                Debug.Log("Personka jest w classRoomButtons! to kalkulujemy jej pozycje");
-                personReal.position = CalcPosition(personInterpolated, avg, velocity);
-                Debug.Log("Przekalkulowana pozycja personki: " + personReal.position);
-            }        
-        }
-        else
-        {
-            Debug.Log("Nie ma kolizji personki i obszaru to liczymy jeszcze raz!");
-            Vector2 calcPosition = CalcPosition(personInterpolated, avg, velocity);
-            personReal.position = new Vector3(calcPosition.x, calcPosition.y, personReal.position.z);
-            Debug.Log("Kolejna pozycja personki gdy nie ma kolizji:" + personReal.position);
         }
     }
 
@@ -111,7 +96,7 @@ public class Floor : MonoBehaviour
                 minDistance = distance;
                 closestPosition = closestPoint;
             }
-            Debug.Log("Najbliży button to: " + obj + " a jego pozycja to: " + obj.position);
+  //          Debug.Log("Najbliży button to: " + obj + " a jego pozycja to: " + obj.position);
         }
         Debug.Log("Czyli closestPosition bedzie równe: " + closestPosition);
         return closestPosition;
@@ -153,27 +138,7 @@ public class Floor : MonoBehaviour
     {
         if (roomButton != null)
         {
-            RectTransform[] buttonRects = roomButton.GetComponentsInChildren<RectTransform>();
-            bool buttons0Added = false;
-            foreach (var buttonRect in buttonRects)
-            {
-                if (buttonRect.gameObject.name != roomButton.name)
-                {
-                    if (!buttons0Added)
-                    {
-                        classRoomButtons.Add(buttonRect);
-                        buttons0Added = true;
-                    }
-                    else
-                    {
-                        classRoomButtons.Add(buttonRect);
-                    }
-                }
-            }
-            for (int i = 0; i < classRoomButtons.Count; i++)
-            {
-                classRoomButtons[i - 1] = classRoomButtons[i];
-            }
+            classRoomButtons = roomButton.GetComponentsInChildren<RectTransform>().Skip(1).ToList();         
         }  
     }
 }

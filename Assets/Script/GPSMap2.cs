@@ -40,9 +40,10 @@ public class GPSMap2 : MonoBehaviour
         Debug.Log("Tu wykonuje sie update!");
         GyroData();
     }
-    public static void SetCurrentFloorLvl(int savedFloor)
+    public void SetCurrentFloorLvl(int savedFloor)
     {
         PlayerPrefs.SetInt("liczba", savedFloor);
+        floors[savedFloor].SetFloor(savedFloor, personInterpolated, avg, velocity);
     }
     public static int GetCurrentFloorLvl()
     {
@@ -69,12 +70,11 @@ public class GPSMap2 : MonoBehaviour
                     GPSData();
                     UpdateUI(true);
                     InitializeUI(true);
-                    int savedFloor = GetCurrentFloorLvl();                   
-                    floors[savedFloor].SetFloor(savedFloor);
+                    int savedFloor = GetCurrentFloorLvl();                                  
                     Debug.Log("Obecne piętro to: " + savedFloor + " i zostało ono ustalone na aktywne");
                     Vector2 lastPosition = personReal.position;
                     Debug.Log("Ostatnia pozycja personki to: " + lastPosition);
-                    floors[savedFloor].UpdatePosition(personReal, personInterpolated, avg, velocity);
+                    floors[savedFloor].UpdatePosition(personInterpolated, personReal, avg, velocity);
                     Debug.Log("A obecna pozycja personki to: " + personReal.position);
                     velocity = new Vector2(personReal.position.x, personReal.position.y) - lastPosition;
                     Debug.Log("Velocity jest równe: " + velocity);
