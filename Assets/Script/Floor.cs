@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using static Unity.Burst.Intrinsics.X86;
 
 public class Floor : MonoBehaviour
 {
@@ -13,10 +14,10 @@ public class Floor : MonoBehaviour
     [SerializeField] private Sprite floorSprites;
     [SerializeField] private RectTransform supportArea;
     [SerializeField] private Image map;
+    public float speed = 1.0f;
     [SerializeField] private List<RectTransform> classRoomButtons = new List<RectTransform>();
-    private Vector2 originGeoCoordinates;
-    private Vector2 geoCoordinates;
-    private float mapScale = 50f;
+    private Vector3 centerPointGeoCoordinates = new Vector3(52.668395f, 19.042718f, 0f);
+    private float mapScale = 25f;
 
    // const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
    // const double origin_longi = 19.042718f;  // -||-
@@ -26,12 +27,12 @@ public class Floor : MonoBehaviour
     {
         AddToTheButtonsList();
     }
-    public void SetFloor(int floorIndex, RectTransform personInterpolated, AveragePosition avg, Vector2 velocity, Vector2 geoCoordinates)
+    public void SetFloor(int floorIndex, RectTransform personInterpolated, AveragePosition avg, Vector2 velocity, Vector2 geoCoordinates, Vector2 lastPosition)
     {
         floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
         map.sprite = floorSprites;
-        CalcPosition(personInterpolated, avg, velocity, geoCoordinates);
+        CalcPosition(personInterpolated, avg, velocity, geoCoordinates, lastPosition);
     }
     public bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
@@ -40,43 +41,44 @@ public class Floor : MonoBehaviour
 
         return rect1Bounds.Overlaps(rect2Bounds);
     }
-    public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg, Vector2 velocity)
+    public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg, Vector2 velocity, Vector2 lastPosition)
     {
-        personReal.position = CalcPosition(personInterpolated, avg, velocity, geoCoordinates);
+        personReal.position = CalcPosition(personInterpolated, avg, velocity, centerPointGeoCoordinates, lastPosition);
         if (IsColliding(personInterpolated, supportArea))
         {
-            Debug.Log("Sprawdziliśmy właśnie kolizje!");
-                Vector2 newPosition = FindClosestEdgePosition(personInterpolated);
-                Debug.Log("Tutaj ustalamy nową pozycję dla tej interpoalted" + newPosition);
-                if (newPosition != Vector2.zero)
+           foreach (RectTransform roomButton in classRoomButtons)
+            {
+                if(!IsColliding(personInterpolated, roomButton))
                 {
-                    personReal.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
-                    Debug.Log("Pozycja personki to:" + personInterpolated.position);
+                    Vector2 newPosition = FindClosestEdgePosition(personInterpolated);
+                    if (newPosition != Vector2.zero)
+                    {
+                        personInterpolated.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
+                    }
+                    break; // Przerwij pętlę, gdy zostanie znaleziona kolizja z jednym z pokojów
                 }
+            } 
         }
     }
 
-    public Vector2 CalcPosition(RectTransform personInterpolated, AveragePosition avg, Vector2 velocity, Vector2 geoCoordinates)
+    public Vector2 CalcPosition(RectTransform personInterpolated, AveragePosition avg, Vector2 velocity, Vector3 geoCoordinates, Vector2 lastPosition)
     {
-        double latitude = 52.668395;
-        double longitude = 19.042718;
+        LocationInfo currentLocation = Input.location.lastData;
 
-        // Oblicz odległość w metrach od punktu zerowego na mapie
-        float xMap = (float)((longitude - Input.location.lastData.longitude) * r * Math.Cos(Input.location.lastData.latitude * Math.PI / 180));
-        float yMap = (float)((latitude - Input.location.lastData.latitude) * r);
-        Vector3 screenPosition = new Vector3(xMap / mapScale, yMap / mapScale, 0f);
-        /*   Vector2 act = avg.GetAveragePosition();
-        act.x = Pozycja_X_na_mapie;
-        act.y = Pozycja_Y_na_mapie; 
-        pozycja_na_mapie = new Vector2(act.x, act.y); */
+        // Przykładowo zmień pozycję obiektu w Unity na podstawie szerokości geograficznej i długości geograficznej
+        // Możesz dostosować to mapowanie do potrzeb twojej aplikacji
+        Vector3 newPosition2 = new Vector3(currentLocation.latitude, currentLocation.longitude, 0);
+        // Zwróć nową pozycję jako Vector2 (ignorując składową Z, ponieważ używamy Vector2)
+        personInterpolated.position = Vector3.Lerp(transform.position, newPosition2, Time.deltaTime * speed);
+
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
-            return screenPosition; //geoOffset - przesunięcie geograficzne w skrócie
+            return personInterpolated.position; //geoOffset - przesunięcie geograficzne w skrócie
         }
         else
         {
             Vector2 currentPosition = new Vector2(personInterpolated.transform.position.x, personInterpolated.transform.position.y) + velocity;
-            Vector2 targetPosition = screenPosition / 50f;
+            Vector2 targetPosition = personInterpolated.position / 50f;
 
             float interpolationFactor = 1f;
             Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor);
@@ -86,20 +88,16 @@ public class Floor : MonoBehaviour
     
     public Vector2 FindClosestEdgePosition(RectTransform personInterpolated)
     {
-        Vector2 closestPosition = Vector2.zero;
-        float minDistance = float.MaxValue;
-        foreach (var obj in classRoomButtons)
+        float Distance_Person(RectTransform button)
         {
-            Vector2 closestPoint = ClosestPointOnRect(obj, personInterpolated.position);
+            Debug.Log("Patrzymy na dystans!");
+            Vector2 closestPoint = ClosestPointOnRect(button, personInterpolated.position);
             float distance = Vector2.Distance(personInterpolated.position, closestPoint);
-            if (distance < minDistance) // min z predykatem - następny mentoring!
-            {
-                minDistance = distance;
-                closestPosition = closestPoint;
-            }
-  //          Debug.Log("Najbliży button to: " + obj + " a jego pozycja to: " + obj.position);
+            return distance;
         }
-        return closestPosition;
+        RectTransform closestButton = classRoomButtons.OrderBy(button => Distance_Person(button)).First();
+        Debug.Log("Najbliży button to: " + closestButton + " a jego pozycja to: " + closestButton.position);
+        return closestButton.position;
         /*
         Debug.Log("Szukamy najbliższej krawędzi!");
         float Distance_Person(RectTransform button)

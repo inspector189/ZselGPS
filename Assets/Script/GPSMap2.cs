@@ -23,9 +23,10 @@ public class GPSMap2 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI searchLocalization;
     [SerializeField] private TextMeshProUGUI precision;
     [SerializeField] private List<Floor> floors;
+    private Vector2 lastPosition;
     [SerializeField] private float waitTime = 0.02f;
     private Vector2 velocity = new Vector2(0,0);
-    Vector2 coordinates = new Vector2(52.668395f, 19.042718f); // Przykładowe współrzędne geograficzne
+    Vector3 coordinates = new Vector3(52.668395f, 19.042718f, 0f); // Przykładowe współrzędne geograficzne
 
     
     private AveragePosition avg = new AveragePosition();
@@ -43,7 +44,7 @@ public class GPSMap2 : MonoBehaviour
     public void SetCurrentFloorLvl(int savedFloor)
     {
         PlayerPrefs.SetInt("liczba", savedFloor);
-        floors[savedFloor].SetFloor(savedFloor, personInterpolated, avg, velocity, coordinates);
+        floors[savedFloor].SetFloor(savedFloor, personInterpolated, avg, velocity, coordinates, lastPosition);
     }
     public static int GetCurrentFloorLvl()
     {
@@ -70,11 +71,11 @@ public class GPSMap2 : MonoBehaviour
                     UpdateUI(true);
                     InitializeUI(true);
                     int savedFloor = GetCurrentFloorLvl();                                  
-                    Vector2 lastPosition = personReal.position;
+                    Vector2 lastPosition = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
                     Debug.Log("Ostatnia pozycja personki to: " + lastPosition);
-                    floors[savedFloor].UpdatePosition(personInterpolated, personReal, avg, velocity);
-                    Debug.Log("A obecna pozycja personki to: " + personReal.position);
-                    velocity = new Vector2(personReal.position.x, personReal.position.y) - lastPosition;
+                    floors[savedFloor].UpdatePosition(personInterpolated, personReal, avg, velocity, lastPosition);
+                    Debug.Log("A obecna pozycja personki to: " + personInterpolated.position);
+                    velocity = new Vector2(personInterpolated.position.x, personInterpolated.position.y) - lastPosition;
                     Debug.Log("Velocity jest równe: " + velocity);
                     TextsVisible(savedFloor);
                 }
