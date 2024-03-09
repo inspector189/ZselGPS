@@ -25,25 +25,25 @@ public class GPSMap2 : MonoBehaviour
     [SerializeField] private List<Floor> floors;
     [SerializeField] private float waitTime = 0.02f;
     private Vector2 velocity = new Vector2(0,0);
+    Vector2 coordinates = new Vector2(52.668395f, 19.042718f); // Przykładowe współrzędne geograficzne
+
     
     private AveragePosition avg = new AveragePosition();
     void Start()
     {
         InitializeUI(false);
         Permissions();
-        Debug.Log("Zaczynamy coroutine!");
-        StartCoroutine(StartGPS());
         Input.location.Start(1f, 0.1f);
+        StartCoroutine(StartGPS());
     }
     void Update() // Wykonuje się z każdą klatką na sekundę
     {
-        Debug.Log("Tu wykonuje sie update!");
         GyroData();
     }
     public void SetCurrentFloorLvl(int savedFloor)
     {
         PlayerPrefs.SetInt("liczba", savedFloor);
-        floors[savedFloor].SetFloor(savedFloor, personInterpolated, avg, velocity);
+        floors[savedFloor].SetFloor(savedFloor, personInterpolated, avg, velocity, coordinates);
     }
     public static int GetCurrentFloorLvl()
     {
@@ -52,7 +52,6 @@ public class GPSMap2 : MonoBehaviour
 
     private IEnumerator StartGPS()
     {
-        Debug.Log("Tu wykonuje sie Coroutine!");
         while (true) 
         {
             if (Input.location.isEnabledByUser)
@@ -71,7 +70,6 @@ public class GPSMap2 : MonoBehaviour
                     UpdateUI(true);
                     InitializeUI(true);
                     int savedFloor = GetCurrentFloorLvl();                                  
-                    Debug.Log("Obecne piętro to: " + savedFloor + " i zostało ono ustalone na aktywne");
                     Vector2 lastPosition = personReal.position;
                     Debug.Log("Ostatnia pozycja personki to: " + lastPosition);
                     floors[savedFloor].UpdatePosition(personInterpolated, personReal, avg, velocity);

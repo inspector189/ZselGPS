@@ -16919,6 +16919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plus: {fileID: 582393372}
   text: {fileID: 469823312}
+  gpsMap2: {fileID: 1808030359}
 --- !u!114 &582393372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30829,6 +30830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plus: {fileID: 1026538965}
   text: {fileID: 469823312}
+  gpsMap2: {fileID: 1808030359}
 --- !u!114 &1026538965
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -114,7 +114,7 @@ public class AveragePosition
     {
         if (positions.Count > 0) //pamitaj cholero nie dziel przez zero
             return sumPosition / positions.Count;
-
+        
         return Vector2.zero;
     }
 

@@ -14,27 +14,27 @@ public class Floor : MonoBehaviour
     [SerializeField] private RectTransform supportArea;
     [SerializeField] private Image map;
     [SerializeField] private List<RectTransform> classRoomButtons = new List<RectTransform>();
-    const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
-    const double origin_longi = 19.042718f;  // -||-
-    const double r = 6371000.0f; //średni promień równika - 6371 km / tu w metrach
+    private Vector2 originGeoCoordinates;
+    private Vector2 geoCoordinates;
+    private float mapScale = 50f;
+
+   // const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
+   // const double origin_longi = 19.042718f;  // -||-
+    const double r = 6371.0f; //średni promień równika - 6371 km / tu w metrach
 
     void Start()
     {
         AddToTheButtonsList();
-        Debug.Log("Zaczynamy Floor.cs!");
     }
-    public void SetFloor(int floorIndex, RectTransform personInterpolated, AveragePosition avg, Vector2 velocity)
+    public void SetFloor(int floorIndex, RectTransform personInterpolated, AveragePosition avg, Vector2 velocity, Vector2 geoCoordinates)
     {
-        Debug.Log("Ustalamy tutaj aktualne pięterko");
         floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
-        Debug.Log("FloorIndex to: " + floorIndex);
         map.sprite = floorSprites;
-        CalcPosition(personInterpolated, avg, velocity);
+        CalcPosition(personInterpolated, avg, velocity, geoCoordinates);
     }
     public bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
-        Debug.Log("Tu jest funkcja od kolizji obszaru i personki!");
         Rect rect1Bounds = GetWorldSpaceRect(rect1);
         Rect rect2Bounds = GetWorldSpaceRect(rect2);
 
@@ -42,8 +42,7 @@ public class Floor : MonoBehaviour
     }
     public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, AveragePosition avg, Vector2 velocity)
     {
-        Debug.Log("Tu mamy UpdatePosition!");
-        personReal.position = CalcPosition(personInterpolated, avg, velocity);
+        personReal.position = CalcPosition(personInterpolated, avg, velocity, geoCoordinates);
         if (IsColliding(personInterpolated, supportArea))
         {
             Debug.Log("Sprawdziliśmy właśnie kolizje!");
@@ -51,30 +50,33 @@ public class Floor : MonoBehaviour
                 Debug.Log("Tutaj ustalamy nową pozycję dla tej interpoalted" + newPosition);
                 if (newPosition != Vector2.zero)
                 {
-                    personInterpolated.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
+                    personReal.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
                     Debug.Log("Pozycja personki to:" + personInterpolated.position);
                 }
         }
     }
 
-    public Vector2 CalcPosition(RectTransform personInterpolated, AveragePosition avg, Vector2 velocity)
+    public Vector2 CalcPosition(RectTransform personInterpolated, AveragePosition avg, Vector2 velocity, Vector2 geoCoordinates)
     {
-        Debug.Log("Zaczynamy liczyc pozycje!");
-        Vector2 act = avg.GetAveragePosition();
-        double rlong = 111200.0f; // Jeden stopień łuku południka ma długość ok. 111,2 km lub 111200 metrów.
-        double ralt = Math.Cos(Mathf.Deg2Rad * act.y) * Mathf.Deg2Rad * r;
-        Vector2 geoOffset = new Vector2(((float)((act.x - origin_longi) * ralt) + 700), ((float)((act.y - origin_lati) * rlong))); //wzór na przekształcenie długości/szerokości geograficznej na odległość w metrach na powierzchni Ziemi
-        Debug.Log(PlayerPrefs.GetInt("sum10Accuracy"));
+        double latitude = 52.668395;
+        double longitude = 19.042718;
+
+        // Oblicz odległość w metrach od punktu zerowego na mapie
+        float xMap = (float)((longitude - Input.location.lastData.longitude) * r * Math.Cos(Input.location.lastData.latitude * Math.PI / 180));
+        float yMap = (float)((latitude - Input.location.lastData.latitude) * r);
+        Vector3 screenPosition = new Vector3(xMap / mapScale, yMap / mapScale, 0f);
+        /*   Vector2 act = avg.GetAveragePosition();
+        act.x = Pozycja_X_na_mapie;
+        act.y = Pozycja_Y_na_mapie; 
+        pozycja_na_mapie = new Vector2(act.x, act.y); */
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
-            Debug.Log("Tu dzieje sie GPS!");
-            return geoOffset / 50f; //geoOffset - przesunięcie geograficzne w skrócie
+            return screenPosition; //geoOffset - przesunięcie geograficzne w skrócie
         }
         else
         {
-            Debug.Log("a tu Interpolacja");
             Vector2 currentPosition = new Vector2(personInterpolated.transform.position.x, personInterpolated.transform.position.y) + velocity;
-            Vector2 targetPosition = geoOffset / 50f;
+            Vector2 targetPosition = screenPosition / 50f;
 
             float interpolationFactor = 1f;
             Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor);
@@ -88,7 +90,6 @@ public class Floor : MonoBehaviour
         float minDistance = float.MaxValue;
         foreach (var obj in classRoomButtons)
         {
-            Debug.Log("Patrzymy na dystans!");
             Vector2 closestPoint = ClosestPointOnRect(obj, personInterpolated.position);
             float distance = Vector2.Distance(personInterpolated.position, closestPoint);
             if (distance < minDistance) // min z predykatem - następny mentoring!
@@ -98,7 +99,6 @@ public class Floor : MonoBehaviour
             }
   //          Debug.Log("Najbliży button to: " + obj + " a jego pozycja to: " + obj.position);
         }
-        Debug.Log("Czyli closestPosition bedzie równe: " + closestPosition);
         return closestPosition;
         /*
         Debug.Log("Szukamy najbliższej krawędzi!");
