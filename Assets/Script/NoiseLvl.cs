@@ -120,6 +120,7 @@ public class NoiseLvl : MonoBehaviour
                 float referenceValue = 260f; // Dostosuj tę wartość do swoich potrzeb
                 text1.text = (Mathf.Round((smoothDbValue + referenceValue) * 100) / 100).ToString();
                 lastDbValue = smoothDbValue; // Zaktualizuj ostatnią wartość
+                PlayerPrefs.SetFloat("db", (Mathf.Round((smoothDbValue + referenceValue) * 100) / 100));
             }
         }
         else
@@ -130,6 +131,7 @@ public class NoiseLvl : MonoBehaviour
                 lastDbValue = 0f;
                 float referenceValue = 260f; // Dostosuj tę wartość do swoich potrzeb
                 text1.text = (Mathf.Round((lastDbValue + referenceValue) * 100) / 100).ToString();
+                PlayerPrefs.SetFloat("db", (Mathf.Round((lastDbValue + referenceValue) * 100) / 100));
             }
         }
 

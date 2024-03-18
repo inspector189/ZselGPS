@@ -29,7 +29,7 @@ public class LightText : MonoBehaviour
             {
                 lightLevelText.text = lightLevel.ToString("F2");
             }
-
+            PlayerPrefs.SetFloat("lightLevel", lightLevel);
             Debug.Log("Light Level: " + lightLevel);
         }
     }
