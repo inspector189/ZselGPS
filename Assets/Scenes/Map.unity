@@ -27310,9 +27310,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorGOs: {fileID: 919872159}
   roomButton: {fileID: 2064627459}
+  corridorsButton: {fileID: 2016773320}
+  corridors: []
   floorSprites: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
   supportArea: {fileID: 620885032}
   map: {fileID: 200340862}
+  speed: 1
   classRoomButtons: []
 --- !u!1 &925607927
 GameObject:
@@ -27618,9 +27621,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorGOs: {fileID: 929168309}
   roomButton: {fileID: 92450433}
+  corridorsButton: {fileID: 1892456518}
+  corridors: []
   floorSprites: {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
   supportArea: {fileID: 969928849}
   map: {fileID: 200340862}
+  speed: 1
   classRoomButtons: []
 --- !u!1 &941131940
 GameObject:
@@ -35793,9 +35799,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorGOs: {fileID: 1227516128}
   roomButton: {fileID: 1246351231}
+  corridorsButton: {fileID: 611507462}
+  corridors: []
   floorSprites: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
   supportArea: {fileID: 620885032}
   map: {fileID: 200340862}
+  speed: 1
   classRoomButtons: []
 --- !u!1 &1233663220
 GameObject:
@@ -42957,7 +42966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3000, y: -60.799995}
+  m_AnchoredPosition: {x: 3065, y: -71}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1465776680

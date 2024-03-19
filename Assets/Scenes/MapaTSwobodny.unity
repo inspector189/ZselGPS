@@ -15470,6 +15470,7 @@ GameObject:
   - component: {fileID: 576532691}
   - component: {fileID: 576532693}
   - component: {fileID: 576532692}
+  - component: {fileID: 576532694}
   m_Layer: 5
   m_Name: Parter
   m_TagString: Untagged
@@ -15537,6 +15538,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576532690}
   m_CullTransparentMesh: 1
+--- !u!114 &576532694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576532690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorGOs: {fileID: 0}
+  roomButton: {fileID: 0}
+  corridorsButton: {fileID: 0}
+  corridors: []
+  floorSprites: {fileID: 0}
+  supportArea: {fileID: 0}
+  map: {fileID: 0}
+  speed: 1
+  classRoomButtons: []
 --- !u!1 &577201404
 GameObject:
   m_ObjectHideFlags: 0
@@ -45152,6 +45174,7 @@ GameObject:
   - component: {fileID: 1555672256}
   - component: {fileID: 1555672258}
   - component: {fileID: 1555672257}
+  - component: {fileID: 1555672259}
   m_Layer: 5
   m_Name: 1_pietro
   m_TagString: Untagged
@@ -45219,6 +45242,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555672255}
   m_CullTransparentMesh: 1
+--- !u!114 &1555672259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555672255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorGOs: {fileID: 0}
+  roomButton: {fileID: 0}
+  corridorsButton: {fileID: 0}
+  corridors: []
+  floorSprites: {fileID: 0}
+  supportArea: {fileID: 0}
+  map: {fileID: 0}
+  speed: 1
+  classRoomButtons: []
 --- !u!1 &1556640060
 GameObject:
   m_ObjectHideFlags: 0
@@ -57822,6 +57866,7 @@ GameObject:
   - component: {fileID: 2026936423}
   - component: {fileID: 2026936425}
   - component: {fileID: 2026936424}
+  - component: {fileID: 2026936426}
   m_Layer: 5
   m_Name: 2_pietro
   m_TagString: Untagged
@@ -57889,6 +57934,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026936422}
   m_CullTransparentMesh: 1
+--- !u!114 &2026936426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026936422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorGOs: {fileID: 0}
+  roomButton: {fileID: 0}
+  corridorsButton: {fileID: 0}
+  corridors: []
+  floorSprites: {fileID: 0}
+  supportArea: {fileID: 0}
+  map: {fileID: 0}
+  speed: 1
+  classRoomButtons: []
 --- !u!1 &2027608268
 GameObject:
   m_ObjectHideFlags: 0
@@ -61343,7 +61409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 116.5, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &5727194881443969860
@@ -61537,7 +61603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 116.5, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5929614718890986836
@@ -61755,7 +61821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 116.5, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6615624504027895525

@@ -4407,6 +4407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plus: {fileID: 151802943}
   text: {fileID: 1469954212}
+  gpsMap2: {fileID: 0}
 --- !u!114 &151802943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52390,72 +52391,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fa82a349b507c409971f29599d1308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personRect2: {fileID: 1779879177}
-  person2: {fileID: 1779879173}
-  personRect: {fileID: 1973623968}
-  ObszarWsparcia: {fileID: 955208123}
-  ObszarWsparcia2: {fileID: 1693883442}
-  parterList:
-  - {fileID: 842409995}
-  - {fileID: 1948589058}
-  - {fileID: 1406862478}
-  - {fileID: 2030345642}
-  - {fileID: 892239729}
-  - {fileID: 570473261}
-  - {fileID: 1554959224}
-  - {fileID: 1131537135}
-  - {fileID: 87183718}
-  - {fileID: 583762790}
-  - {fileID: 2102149511}
-  - {fileID: 1777724956}
-  - {fileID: 1138524242}
-  - {fileID: 1756822992}
-  - {fileID: 861204269}
-  - {fileID: 1143854533}
-  - {fileID: 1745385786}
-  - {fileID: 1607503141}
-  - {fileID: 849913026}
-  - {fileID: 1892390981}
-  - {fileID: 1982347496}
-  - {fileID: 1656879771}
-  pietro1List:
-  - {fileID: 1744577326}
-  - {fileID: 954565399}
-  - {fileID: 237776750}
-  - {fileID: 1789922279}
-  - {fileID: 1028411719}
-  - {fileID: 2003317485}
-  - {fileID: 1634775309}
-  - {fileID: 400039536}
-  - {fileID: 1341170629}
-  - {fileID: 297855456}
-  - {fileID: 1527098220}
-  - {fileID: 2048150674}
-  - {fileID: 236592790}
-  pietro2List:
-  - {fileID: 997410929}
-  - {fileID: 2050087279}
-  parterGO: {fileID: 418835604}
-  pietro1GO: {fileID: 749411015}
-  pietro2GO: {fileID: 410063399}
-  texts0: {fileID: 664230343}
-  texts1: {fileID: 1305580943}
-  texts2: {fileID: 1795785677}
-  person: {fileID: 1973623964}
-  tgl: {fileID: 0}
-  slidertext: {fileID: 0}
-  mapa: {fileID: 456986465}
-  parter: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
-  pietro1: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
-  pietro2: {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
-  slider: {fileID: 0}
-  precyzjaTekst: {fileID: 1523140590}
-  wysokoscTekst: {fileID: 1830555594}
-  informacja: {fileID: 1792780067}
-  informacja2: {fileID: 672890522}
-  RedneredMap: {fileID: 458812601}
-  BrakPolaczenia: {fileID: 2036426607}
-  Spinner: {fileID: 511714632}
+  personReal: {fileID: 0}
+  personInterpolated: {fileID: 0}
+  redneredMap: {fileID: 0}
+  noneConnection: {fileID: 0}
+  spinner: {fileID: 0}
+  texts: []
+  map: {fileID: 0}
+  precisionTexts: {fileID: 0}
+  heightTexts: {fileID: 0}
+  searchLocalization: {fileID: 0}
+  precision: {fileID: 0}
+  floors: []
+  waitTime: 0.02
 --- !u!114 &1890525238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54825,6 +54773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plus: {fileID: 1972234535}
   text: {fileID: 1469954212}
+  gpsMap2: {fileID: 0}
 --- !u!114 &1972234535
 MonoBehaviour:
   m_ObjectHideFlags: 0

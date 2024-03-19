@@ -28,7 +28,8 @@ public class GPSMap2 : MonoBehaviour
     private Vector2 velocity = new Vector2(0,0);
     Vector3 coordinates = new Vector3(52.668395f, 19.042718f, 0f); // Przykładowe współrzędne geograficzne
 
-    
+
+
     private AveragePosition avg = new AveragePosition();
     void Start()
     {
@@ -70,13 +71,10 @@ public class GPSMap2 : MonoBehaviour
                     GPSData();
                     UpdateUI(true);
                     InitializeUI(true);
-                    int savedFloor = GetCurrentFloorLvl();                                  
+                    int savedFloor = GetCurrentFloorLvl();
                     Vector2 lastPosition = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
-                    Debug.Log("Ostatnia pozycja personki to: " + lastPosition);
-                    floors[savedFloor].UpdatePosition(personInterpolated, personReal, avg, velocity, lastPosition);
-                    Debug.Log("A obecna pozycja personki to: " + personInterpolated.position);
-                    velocity = new Vector2(personInterpolated.position.x, personInterpolated.position.y) - lastPosition;
-                    Debug.Log("Velocity jest równe: " + velocity);
+                    floors[savedFloor].UpdatePosition(personInterpolated, personReal, velocity);
+                    velocity = new Vector2(personInterpolated.anchoredPosition.x, personInterpolated.anchoredPosition.y) - lastPosition;
                     TextsVisible(savedFloor);
                 }
             }
