@@ -183,9 +183,7 @@ private List<Transform> GetNeighbors(Transform current)
         
         try
         {
-            Debug.Log("działa");
             string token = PlayerPrefs.GetString("token");
-            Debug.Log(token);
             if (token == "testowe")
             {
                 LessonData[] lessonsData = new LessonData[]
@@ -251,7 +249,6 @@ private List<Transform> GetNeighbors(Transform current)
                 string nearestLessonSubject = "";
                 DateTime nearestLessonStart = DateTime.MaxValue;
                 bool isLessonCurrentlyHappening = false;
-                Debug.Log($"Aktualna data i godzina: {currentDate}");
 
                 foreach (var lesson in sortedLessons)
                 {
@@ -265,14 +262,12 @@ private List<Transform> GetNeighbors(Transform current)
                             var lessonStartDateTime = currentDate.Add(startTime);
                             var lessonEndDateTime = currentDate.Add(endTime);
 
-                            Debug.Log($"Sprawdzam lekcję: {lesson.Subject.Name} od {lessonStartDateTime} do {lessonEndDateTime}");
 
                             if (currentDate.Add(currentTime) >= lessonStartDateTime && currentDate.Add(currentTime) < lessonEndDateTime)
                             {
                                 nearestLessonCode = lesson.Room.Code;
                                 nearestLessonSubject = lesson.Subject.Name;
                                 isLessonCurrentlyHappening = true;
-                                Debug.Log($"Lekcja w trakcie: {nearestLessonSubject} w sali {nearestLessonCode}");
                                 string doorName = "Drzwi" + nearestLessonCode;
                                 GameObject door = GameObject.Find(doorName);
                                 RectTransform doorTransform = door.GetComponent<RectTransform>();
@@ -303,7 +298,6 @@ private List<Transform> GetNeighbors(Transform current)
                     {
                         RectTransform doorTransform = door.GetComponent<RectTransform>();
                         GetComponent<LineCreator>().target = doorTransform;
-                        Debug.Log($"Pozycja docelowa zaktualizowana na drzwi sali {nearestLessonCode}");
                         GetComponent<LineCreator>().SetWaypoints(allWaypoints);
                     }
                     else

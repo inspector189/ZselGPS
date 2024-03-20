@@ -91,18 +91,10 @@ public class Floor : MonoBehaviour
             double xp2 = 3367;
             float x3 = lon;
             float y3 = lat;
-            Debug.Log("x3: " + x3);
-            Debug.Log("y3: " + y3);
             double SkalaX = (x2 - x1) / (xp2 - xp1) * 335500;  // 0,00018/432 = 4,166666666666667e-7
-            string formattedSkalaX = SkalaX.ToString("0.##########"); // Wybierz tyle #, ile chcesz mieć miejsc po przecinku
             double xp3 = xp1 + (x3 - x1) / (x2 - x1) * SkalaX * (xp2 - xp1);
             double SkalaY = (y2 - y1) / (yp2 - yp1) * 450000;
-            string formattedSkalaY = SkalaY.ToString("0.##########");
-            Debug.Log(SkalaY + " formated: " + formattedSkalaY);
             double yp3 = yp1 + (y3 - y1) / (y2 - y1) * SkalaY * (yp2 - yp1);
-            Debug.Log(yp3);
-            Debug.Log(xp3);
-            Debug.Log("Skala X: " + formattedSkalaX);
             personInterpolated.anchoredPosition = Vector2.zero;
             personInterpolated.anchoredPosition = new Vector3((float)xp3, (float)yp3, 0);
             return personInterpolated.anchoredPosition; //geoOffset - przesunięcie geograficzne w skrócie
@@ -122,13 +114,11 @@ public class Floor : MonoBehaviour
     {
         float Distance_Person(RectTransform button)
         {
-            Debug.Log("Patrzymy na dystans!");
             Vector2 closestPoint = ClosestPointOnRect(button, personInterpolated.position);
             float distance = Vector2.Distance(personInterpolated.position, closestPoint);
             return distance;
         }
         RectTransform closestButton = corridors.OrderBy(button => Distance_Person(button)).First();
-        Debug.Log("Najbliży button to: " + closestButton + " a jego pozycja to: " + closestButton.position);
         return closestButton.position;
     }
     private Vector2 ClosestPointOnRect(RectTransform rectTransform, Vector2 point)

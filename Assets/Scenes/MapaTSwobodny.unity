@@ -6895,7 +6895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plus: {fileID: 241238620}
   text: {fileID: 1500320757}
-  gpsMap2: {fileID: 0}
+  gpsMap2: {fileID: 906806230}
 --- !u!114 &241238620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15774,13 +15774,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorGOs: {fileID: 0}
-  roomButton: {fileID: 0}
-  corridorsButton: {fileID: 0}
+  floorGOs: {fileID: 576532690}
+  roomButton: {fileID: 779419325}
+  corridorsButton: {fileID: 1002618534}
   corridors: []
-  floorSprites: {fileID: 0}
-  supportArea: {fileID: 0}
-  map: {fileID: 0}
+  floorSprites: {fileID: 21300000, guid: a55bc574cab00934a89c5d163fe7d32e, type: 3}
+  supportArea: {fileID: 247410800}
+  map: {fileID: 737528711}
   speed: 1
   classRoomButtons: []
 --- !u!1 &577201404
@@ -29457,7 +29457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1091981888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37635,7 +37635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1262174362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40213,7 +40213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Plus: {fileID: 1377872153}
   text: {fileID: 1500320757}
-  gpsMap2: {fileID: 0}
+  gpsMap2: {fileID: 906806230}
 --- !u!114 &1377872153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45753,13 +45753,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorGOs: {fileID: 0}
-  roomButton: {fileID: 0}
-  corridorsButton: {fileID: 0}
+  floorGOs: {fileID: 1555672255}
+  roomButton: {fileID: 1389635516}
+  corridorsButton: {fileID: 1655689797}
   corridors: []
-  floorSprites: {fileID: 0}
-  supportArea: {fileID: 0}
-  map: {fileID: 0}
+  floorSprites: {fileID: 21300000, guid: 124f599d4a5bdc44587468020718a26f, type: 3}
+  supportArea: {fileID: 247410800}
+  map: {fileID: 737528711}
   speed: 1
   classRoomButtons: []
 --- !u!1 &1556640060
@@ -59046,13 +59046,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0aa408cc1aee4a48861ac36701f3206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorGOs: {fileID: 0}
-  roomButton: {fileID: 0}
-  corridorsButton: {fileID: 0}
+  floorGOs: {fileID: 2026936422}
+  roomButton: {fileID: 2074119389}
+  corridorsButton: {fileID: 386261139}
   corridors: []
-  floorSprites: {fileID: 0}
-  supportArea: {fileID: 0}
-  map: {fileID: 0}
+  floorSprites: {fileID: 21300000, guid: f2c8f182eda7f9041ad05be2ab39b29b, type: 3}
+  supportArea: {fileID: 825098870}
+  map: {fileID: 737528711}
   speed: 1
   classRoomButtons: []
 --- !u!1 &2027608268
