@@ -78,7 +78,9 @@ public class GetValuesFromVulcan1 : MonoBehaviour
 
                 var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
 
-                var firstAccount = registerHebeResponse.Envelope[0];
+                int lengthAccount = registerHebeResponse.Envelope.Length - 1;
+                var firstAccount = registerHebeResponse.Envelope[lengthAccount];
+
 
                 Debug.Log($"Imiê: {firstAccount.Pupil.FirstName}\n Szko³a: {firstAccount.Unit.Name}");
 

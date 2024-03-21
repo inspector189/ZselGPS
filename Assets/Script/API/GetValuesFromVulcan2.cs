@@ -187,7 +187,8 @@ public class GetValuesFromVulcan2 : MonoBehaviour
                 var instanceUrlProvider = new InstanceUrlProvider();
                 var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
                 var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
-                var firstAccount = registerHebeResponse.Envelope[0];
+                int lengthAccount = registerHebeResponse.Envelope.Length - 1;
+                var firstAccount = registerHebeResponse.Envelope[lengthAccount];
                 var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
                 var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
 

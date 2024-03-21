@@ -128,8 +128,10 @@ public class PolecenieApiVulcan : MonoBehaviour
 
 
             var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
-            var firstAccount = registerHebeResponse.Envelope[0];
-            if(firstAccount.Unit.Name != "Zespół Szkół Elektrycznych")
+            int lengthAccount = registerHebeResponse.Envelope.Length - 1;
+            var firstAccount = registerHebeResponse.Envelope[lengthAccount];
+
+            if (firstAccount.Unit.Name != "Zespół Szkół Elektrycznych")
             {
                 throw new Exception("Nie należysz do Zespołu Szkół Elektrycznych!");
             }
@@ -178,7 +180,9 @@ public class PolecenieApiVulcan : MonoBehaviour
 
             var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
 
-            var firstAccount = registerHebeResponse.Envelope[0];
+            int lengthAccount = registerHebeResponse.Envelope.Length - 1;
+            var firstAccount = registerHebeResponse.Envelope[lengthAccount];
+            Debug.Log(registerHebeResponse.Envelope.Length);
 
             PamiecPodreczna(firstAccount.Pupil.FirstName, firstAccount.Pupil.Surname, firstAccount.ClassDisplay, firstAccount.Login.Value);
 
