@@ -16,7 +16,7 @@ public class WaypointCreator : MonoBehaviour
 
     private void Update()
     {
-        int newFloor = PlayerPrefs.GetInt("pietro");
+        int newFloor = PlayerPrefs.GetInt("liczba");
         if (newFloor != currentFloor)
         {
             currentFloor = newFloor;
@@ -69,7 +69,7 @@ public class WaypointCreator : MonoBehaviour
         Vector3 corridorSize = corridor.rect.size;
         int numWaypoints = 0;
 
-        if (PlayerPrefs.GetInt("pietro") == 0)
+        if (PlayerPrefs.GetInt("liczba") == 0)
         {
             
     bool useXAxis = false;

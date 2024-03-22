@@ -15,7 +15,7 @@ using System.Linq;
 public class LineCreator : MonoBehaviour
 {
     private string symbol = "wloclawek";
-    public Transform person; // Pozycja obiektu reprezentującego użytkownika
+    public RectTransform person; // Pozycja obiektu reprezentującego użytkownika
     public RectTransform target; // Pozycja wybranego celu
     public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
 

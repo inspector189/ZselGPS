@@ -17,6 +17,8 @@ public class Floor : MonoBehaviour
     [SerializeField] private RectTransform supportArea;
     [SerializeField] private Image map;
     public float speed = 1.0f;
+    private float interpolationTimer = 0f;
+    private float interpolationDuration = 1f;
     [SerializeField] private List<RectTransform> classRoomButtons = new List<RectTransform>();
     private float lon;
     private float lat;
@@ -35,7 +37,7 @@ public class Floor : MonoBehaviour
         floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
         map.sprite = floorSprites;
-        CalcPosition(personInterpolated, velocity);
+        CalcPosition(personInterpolated, velocity, lastPosition);
     }
     public bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
@@ -45,9 +47,9 @@ public class Floor : MonoBehaviour
         return rect1Bounds.Overlaps(rect2Bounds);
     }
     
-    public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, Vector2 velocity)
+    public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, Vector2 velocity, Vector2 lastPosition)
     {
-        personReal.position = CalcPosition(personInterpolated, velocity);
+        //personReal.position = CalcPosition(personInterpolated, velocity, lastPosition);
         if (IsColliding(personInterpolated, supportArea))
         {
            foreach (RectTransform roomButton in classRoomButtons)
@@ -69,7 +71,7 @@ public class Floor : MonoBehaviour
         lat = Input.location.lastData.latitude;
         lon = Input.location.lastData.longitude;
     }
-    public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity)
+    public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)
     {
         LocationInfo currentLocation = Input.location.lastData;
 
@@ -101,12 +103,21 @@ public class Floor : MonoBehaviour
         }
         else
         {
-            Debug.Log("vel: " + velocity);
-            Vector2 currentPosition = new Vector2(personInterpolated.anchoredPosition.x, personInterpolated.anchoredPosition.y) + velocity;
-            //Vector2 targetPosition = personInterpolated.anchoredPosition;
-            //float interpolationFactor = 1f;
-            //Vector2 newPosition = Vector2.Lerp(currentPosition, targetPosition, interpolationFactor);
-            return currentPosition;
+            if (interpolationTimer < interpolationDuration)
+            {
+                interpolationTimer += Time.deltaTime;
+                float interpolationFactor = Mathf.Clamp01(interpolationTimer / interpolationDuration);
+                Vector2 currentPosition = lastPosition + velocity * interpolationFactor;
+                personInterpolated.anchoredPosition = currentPosition;
+            }
+            else
+            {
+                // Po zakończeniu interpolacji, zresetuj timer interpolacji
+                interpolationTimer = 0f;
+            }
+            Debug.Log("Position: " + personInterpolated.anchoredPosition);
+            return personInterpolated.anchoredPosition;
+            
         }
     }
     

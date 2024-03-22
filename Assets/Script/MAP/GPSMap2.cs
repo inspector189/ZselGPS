@@ -41,6 +41,7 @@ public class GPSMap2 : MonoBehaviour
     void Update() // Wykonuje się z każdą klatką na sekundę
     {
         GyroData();
+        
     }
     public void SetCurrentFloorLvl(int savedFloor)
     {
@@ -73,7 +74,7 @@ public class GPSMap2 : MonoBehaviour
                     InitializeUI(true);
                     int savedFloor = GetCurrentFloorLvl();
                     Vector2 lastPosition = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
-                    floors[savedFloor].UpdatePosition(personInterpolated, personReal, velocity);
+                    floors[savedFloor].UpdatePosition(personInterpolated, personReal, velocity, lastPosition);
                     velocity = new Vector2(personInterpolated.anchoredPosition.x, personInterpolated.anchoredPosition.y) - lastPosition;
                     TextsVisible(savedFloor);
                 }
@@ -83,6 +84,7 @@ public class GPSMap2 : MonoBehaviour
                 UpdateUI(false);
             }
             yield return new WaitForSeconds(waitTime);
+            System.GC.Collect();
         }
     }
 
