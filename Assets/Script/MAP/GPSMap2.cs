@@ -73,9 +73,9 @@ public class GPSMap2 : MonoBehaviour
                     UpdateUI(true);
                     InitializeUI(true);
                     int savedFloor = GetCurrentFloorLvl();
-                    Vector2 lastPosition = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
-                    floors[savedFloor].UpdatePosition(personInterpolated, personReal, velocity, lastPosition);
-                    velocity = new Vector2(personInterpolated.anchoredPosition.x, personInterpolated.anchoredPosition.y) - lastPosition;
+                  //  Vector2 lastPosition = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+                 //   floors[savedFloor].UpdatePosition(personInterpolated, personReal, velocity, lastPosition);
+                 //   velocity = new Vector2(personInterpolated.anchoredPosition.x, personInterpolated.anchoredPosition.y) - lastPosition;
                     TextsVisible(savedFloor);
                 }
             }
@@ -109,9 +109,9 @@ public class GPSMap2 : MonoBehaviour
         double timeSinceLastUpdate = Time.time - lastUpdateTime; // czas od ostatniego up.
         PlayerPrefs.SetFloat("accuracy", accuracy);
         float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
-        avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
-        avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
-        avg.AddMeasurement(accuracy);
+      //  avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
+       // avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
+      //  avg.AddMeasurement(accuracy);
     }
     #endregion
     #region Permisje 

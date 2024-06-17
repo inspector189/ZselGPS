@@ -6,6 +6,7 @@ using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 using static Unity.Burst.Intrinsics.X86;
+using Unity.VisualScripting;
 
 public class Floor : MonoBehaviour
 {
@@ -17,12 +18,17 @@ public class Floor : MonoBehaviour
     [SerializeField] private RectTransform supportArea;
     [SerializeField] private Image map;
     public float speed = 1.0f;
-    private float interpolationTimer = 0f;
-    private float interpolationDuration = 1f;
     [SerializeField] private List<RectTransform> classRoomButtons = new List<RectTransform>();
     private float lon;
     private float lat;
-
+    public float initialVelocity = 0f;
+    private float velocityA = 0f;
+    private float distance = 0f;
+    private float timeInterval = 1f;
+    private float elapsedTime = 0f;
+    private Vector3 accelerometerValue;
+    [SerializeField]
+    private GameObject personInterpolated;
     // const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
     // const double origin_longi = 19.042718f;  // -||-
     const double r = 6371.0f; //średni promień równika - 6371 km / tu w metrach
@@ -37,7 +43,7 @@ public class Floor : MonoBehaviour
         floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
         map.sprite = floorSprites;
-        CalcPosition(personInterpolated, velocity, lastPosition);
+       // CalcPosition(personInterpolated, velocity, lastPosition);
     }
     public bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
@@ -71,7 +77,7 @@ public class Floor : MonoBehaviour
         lat = Input.location.lastData.latitude;
         lon = Input.location.lastData.longitude;
     }
-    public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)
+    /*public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)
     {
         LocationInfo currentLocation = Input.location.lastData;
 
@@ -103,24 +109,42 @@ public class Floor : MonoBehaviour
         }
         else
         {
-            if (interpolationTimer < interpolationDuration)
+            accelerometerValue = Input.acceleration;
+            float averageAcceleration = Mathf.Sqrt(accelerometerValue.x * accelerometerValue.x + accelerometerValue.y * accelerometerValue.y);
+            Debug.Log("X: " + accelerometerValue.x);
+            Debug.Log("Y: " + accelerometerValue.y);
+            Debug.Log("average Acceleration: " + averageAcceleration);
+            velocityA = initialVelocity + averageAcceleration * elapsedTime;
+            Debug.Log("Velocity:" + velocity);
+            float deltaDistance = initialVelocity * elapsedTime + 0.5f * averageAcceleration * elapsedTime * elapsedTime;
+            if (accelerometerValue.x > 0)
             {
-                interpolationTimer += Time.deltaTime;
-                float interpolationFactor = Mathf.Clamp01(interpolationTimer / interpolationDuration);
-                Vector2 currentPosition = lastPosition + velocity * interpolationFactor;
-                personInterpolated.anchoredPosition = currentPosition;
+                distance += deltaDistance;
+            }
+            else if (accelerometerValue.x < 0)
+            {
+                distance -= deltaDistance;
             }
             else
             {
-                // Po zakończeniu interpolacji, zresetuj timer interpolacji
-                interpolationTimer = 0f;
+                distance = deltaDistance;
             }
-            Debug.Log("Position: " + personInterpolated.anchoredPosition);
+            Debug.Log("distance: " + distance);
+            elapsedTime += Time.deltaTime;
+
+            if (elapsedTime >= timeInterval)
+            {
+                elapsedTime = 0f;
+
+                //initialVelocity = velocity;
+
+            }
+            personInterpolated.anchoredPosition = new Vector3(distance / 10f, 0f, 0f);
             return personInterpolated.anchoredPosition;
-            
+
         }
     }
-    
+    */
     public Vector2 FindClosestEdgePosition(RectTransform personInterpolated)
     {
         float Distance_Person(RectTransform button)
