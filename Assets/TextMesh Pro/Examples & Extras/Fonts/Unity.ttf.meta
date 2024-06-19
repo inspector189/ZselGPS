@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0305359d141d7c345b93b1540ce56251
+guid: f4eec857a4fdf2f43be0e9f3d1a984e7
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Switzer
+  - Unity
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -41,7 +41,14 @@ namespace Michsky.MUIP
         {
             if (overrideColors == false)
             {
-                mainText.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, mainText.color.a);
+                if (UIManagerAsset != null)
+                {
+                    if (mainText != null && UIManagerAsset.inputFieldColor != null)
+                    {
+                        mainText.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, mainText.color.a);
+                    }
+                }
+
                 placeholderText.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, placeholderText.color.a);
                 if(filledImage != null)
                 {
