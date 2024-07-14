@@ -15,6 +15,7 @@ using System.Linq;
 public class LineCreator : MonoBehaviour
 {
     private string symbol = "wloclawek";
+    public int pietro;
     public RectTransform person; // Pozycja obiektu reprezentującego użytkownika
     public RectTransform target; // Pozycja wybranego celu
     public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
@@ -48,6 +49,8 @@ public class LineCreator : MonoBehaviour
         Vector2 position2 = target.anchoredPosition;
         position2.y = y;
         target.anchoredPosition = position2;
+
+        pietro = PlayerPrefs.GetInt("pietroPomieszczenia");
     }
 
     private void Update()
@@ -57,8 +60,8 @@ public class LineCreator : MonoBehaviour
      public void SetWaypoints(List<Transform> waypoints)
     {
         allWaypoints.Clear();
-    allWaypoints.AddRange(waypoints);
-    FindAndDrawPath(); // Po dodaniu nowego waypointa ponownie rysujemy ścieżkę
+        allWaypoints.AddRange(waypoints);
+        FindAndDrawPath(); // Po dodaniu nowego waypointa ponownie rysujemy ścieżkę
     }
     private void FindAndDrawPath()
     {
@@ -66,6 +69,63 @@ public class LineCreator : MonoBehaviour
         {
             return;
         }
+
+            Dictionary<string, string> doorDictionary = new Dictionary<string, string>
+        {
+            { "Drzwi501", "0a" },
+            { "Drzwi502", "0a" },
+            { "Drzwi503", "0a" },
+            { "Drzwi504", "0a" },
+            { "Drzwi505", "0a" },
+            { "Drzwi506", "0a" },
+            { "Drzwi507", "0a" },
+            { "Drzwi513", "0a" },
+            { "Drzwi512", "0a" },
+            { "Drzwi511", "0a" },
+            { "Drzwi509", "0a" },
+            { "Drzwi508", "0a" },
+            { "Drzwi318", "0a" },
+            { "Drzwi317", "0a" },
+            { "Drzwi316", "0a" },
+            { "Drzwi315", "0a" },
+            { "Drzwi344", "0a" },
+            { "Drzwi314", "0a" },
+            { "Drzwi313", "0a" },
+            { "Drzwi345", "0a" },
+            { "Drzwi346", "0a" },
+            { "Drzwi312", "0a" },
+            { "Drzwi311", "0a" },
+            { "Drzwi301", "0a" },
+            { "Drzwi308", "0a" },
+            { "Drzwi307A", "0a" },
+            { "Drzwi307B", "0a" },
+            { "Drzwi302", "0a" },
+            { "Drzwi307", "0a" },
+            { "Drzwi306", "0a" },
+            { "Drzwi304", "0a" },
+            { "Drzwi305", "0a" },
+            { "Drzwi303", "0a" },
+            { "Drzwi13", "0b" },
+            { "Drzwi14", "0b" },
+            { "Drzwi15", "0b" },
+            { "Drzwi10", "0b" },
+            { "Drzwi9", "0b" },
+            { "Drzwi8", "0b" },
+            { "Drzwi7", "0b" },
+            { "Drzwi6", "0b" },
+            { "Drzwi5", "0b" },
+            { "Drzwi21", "0b" },
+            { "Drzwi22", "0b" },
+            { "Drzwi23", "0b" },
+            { "Drzwi24", "0b" },
+            { "Drzwi25", "0b" },
+            { "Drzwi20", "0b" },
+            { "Drzwi19", "0b" },
+            { "Drzwi17", "0b" },
+            { "Drzwi26", "0b" },
+            { "Drzwi27", "0b" },
+        };
+
 
         Transform closestToPerson = FindClosestWaypoint(person.position);
         Transform closestToTarget = FindClosestWaypoint(target.position);

@@ -19,11 +19,6 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
     private const float maxClickDuration = 0.15f; // Maksymalny czas trwania pojedynczego kliknięcia
     public List<Sprite> images;
 
-    public void Start() 
-    {
-        
-    }
-
     public void OnPointerDown(PointerEventData eventData)
     {
         timeOfLastClick = Time.time; // Zapisz czas początku kliknięcia
@@ -65,6 +60,7 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
                         StartCoroutine(MoveCamera(targetPosition, targetOrthographicSize, 1f)); // 1 sekunda trwania animacji
                         PlayerPrefs.SetFloat("DrzwiSaliX", DrzwiSali.transform.localPosition.x);
                         PlayerPrefs.SetFloat("DrzwiSaliY", DrzwiSali.transform.localPosition.y);
+                        PlayerPrefs.SetInt("pietroPomieszczenia", int.Parse(pietro));
                         PlayerPrefs.SetInt("panelStatus", 1);
                         PlayerPrefs.SetInt("panelCzynnosc", 1);
                     }
