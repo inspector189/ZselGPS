@@ -21,6 +21,7 @@ public class PlusAndMinus : MonoBehaviour
             liczba += 1;
             gpsMap2.SetCurrentFloorLvl(liczba);       
             text.text = liczba.ToString();
+            PlayerPrefs.SetInt("personPietro", liczba);
         }
     }
 
@@ -32,6 +33,7 @@ public class PlusAndMinus : MonoBehaviour
             liczba -= 1;
             gpsMap2.SetCurrentFloorLvl(liczba);
             text.text = liczba.ToString();
+            PlayerPrefs.SetInt("personPietro", liczba);
         }
     }
 }

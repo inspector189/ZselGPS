@@ -19,7 +19,11 @@ public class LineCreator : MonoBehaviour
     public int ostatniePietro;
     public RectTransform person; // Pozycja obiektu reprezentującego użytkownika
     public RectTransform target; // Pozycja wybranego celu
+    public RectTransform Realtarget;
     public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
+    public Transform CorridorsGroundF;
+    public Transform CorridorsFirstF;
+    public Transform CorridorsSecondF;
 
     private LineRenderer lineRenderer; // Komponent LineRenderer do rysowania linii
     public Color lineColor = Color.blue; // Kolor linii
@@ -28,6 +32,8 @@ public class LineCreator : MonoBehaviour
     private List<string> groundFloorCorridors;
     private List<string> firstFloorCorridors;
     private List<string> secondFloorCorridors;
+
+    public int pomocnicza = 0;
     private void Start()
     {
         // Inicjalizacja LineRenderer
@@ -57,7 +63,7 @@ public class LineCreator : MonoBehaviour
         target.anchoredPosition = position2;
 
         pietro = PlayerPrefs.GetInt("pietroPomieszczenia");
-
+        pomocnicza = 1;
         if (pietro != ostatniePietro)
         {
             Transform nearestCorridor = FindNearestCorridor();
@@ -70,9 +76,80 @@ public class LineCreator : MonoBehaviour
 
     private void Update()
     {
+        if(pomocnicza == 1)
+        {
+            int pietroPomieszczenia = PlayerPrefs.GetInt("pietroPomieszczenia");
+
+            if (PlayerPrefs.GetInt("pietroPomieszczenia") != PlayerPrefs.GetInt("personPietro"))
+            {
+                RectTransform[] stairsArray = null;
+
+                if (pietroPomieszczenia == 0)
+                {
+                    stairsArray = GetStairsArray(CorridorsGroundF);
+                    RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
+                    person = nearestStairs;
+                }
+                else if (pietroPomieszczenia == 1)
+                {
+                    stairsArray = GetStairsArray(CorridorsFirstF);
+                    RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
+                    person = nearestStairs;
+                }
+                else if (pietroPomieszczenia == 2)
+                {
+                    stairsArray = GetStairsArray(CorridorsSecondF);
+                    RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
+                    person = nearestStairs;
+                }
+            }
+            else
+            {
+                float x = PlayerPrefs.GetFloat("DrzwiSaliX");
+                Vector2 position = target.anchoredPosition;
+                position.x = x;
+                target.anchoredPosition = position;
+
+                float y = PlayerPrefs.GetFloat("DrzwiSaliY");
+                Vector2 position2 = target.anchoredPosition;
+                position2.y = y;
+                target.anchoredPosition = position2;
+            }
+        }
+        
         FindAndDrawPath();
     }
-     public void SetWaypoints(List<Transform> waypoints)
+    RectTransform[] GetStairsArray(Transform corridor)
+    {
+        List<RectTransform> stairsList = new List<RectTransform>();
+        foreach (Transform child in corridor)
+        {
+            if (child.name.StartsWith("stairs"))
+            {
+                stairsList.Add(child as RectTransform);
+            }
+        }
+        return stairsList.ToArray();
+    }
+
+    RectTransform FindNearestStairsObject(RectTransform[] stairsArray)
+    {
+        RectTransform nearestStairs = null;
+        float shortestDistance = float.MaxValue;
+
+        foreach (RectTransform stairs in stairsArray)
+        {
+            float distance = Vector3.Distance(person.position, stairs.position);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                nearestStairs = stairs;
+            }
+        }
+
+        return nearestStairs;
+    }
+    public void SetWaypoints(List<Transform> waypoints)
     {
         allWaypoints.Clear();
         allWaypoints.AddRange(waypoints);
