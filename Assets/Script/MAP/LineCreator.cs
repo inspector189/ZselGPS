@@ -16,6 +16,7 @@ public class LineCreator : MonoBehaviour
 {
     private string symbol = "wloclawek";
     public int pietro;
+    public int ostatniePietro;
     public RectTransform person; // Pozycja obiektu reprezentującego użytkownika
     public RectTransform target; // Pozycja wybranego celu
     public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
@@ -24,6 +25,9 @@ public class LineCreator : MonoBehaviour
     public Color lineColor = Color.blue; // Kolor linii
     public float lineWidth = 0.01f; // Szerokość linii
 
+    private List<string> groundFloorCorridors;
+    private List<string> firstFloorCorridors;
+    private List<string> secondFloorCorridors;
     private void Start()
     {
         // Inicjalizacja LineRenderer
@@ -35,11 +39,13 @@ public class LineCreator : MonoBehaviour
         lineRenderer.endWidth = lineWidth;
         lineRenderer.useWorldSpace = true;
         lineRenderer.sortingOrder = 1; // Zapewnia, że linia jest rysowana nad innymi elementami
+        InitializeCorridors();
         System.DateTime selectedDate = System.DateTime.Now;
         LoginProcess(selectedDate);
     }
     public void buttonClicked()
     {
+        ostatniePietro = pietro;
         float x = PlayerPrefs.GetFloat("DrzwiSaliX");
         Vector2 position = target.anchoredPosition;
         position.x = x;
@@ -51,6 +57,15 @@ public class LineCreator : MonoBehaviour
         target.anchoredPosition = position2;
 
         pietro = PlayerPrefs.GetInt("pietroPomieszczenia");
+
+        if (pietro != ostatniePietro)
+        {
+            Transform nearestCorridor = FindNearestCorridor();
+            if (nearestCorridor != null)
+            {
+                person.position = nearestCorridor.position;
+            }
+        }
     }
 
     private void Update()
@@ -129,17 +144,72 @@ public class LineCreator : MonoBehaviour
 
         Transform closestToPerson = FindClosestWaypoint(person.position);
         Transform closestToTarget = FindClosestWaypoint(target.position);
-
         if (closestToPerson != null && closestToTarget != null)
+        {
+            List<Transform> path;
+            if (pietro != ostatniePietro)
+            {
+                Transform nearestCorridor = FindNearestCorridor();
+                if (nearestCorridor != null)
+                {
+                    // Find path from person to the nearest corridor on the current floor
+                    List<Transform> pathToCorridor = FindShortestPathDijkstra(closestToPerson, nearestCorridor);
+                    // Find path from the nearest corridor to the target on the new floor
+                    Transform targetCorridor = FindNearestCorridorToTarget();
+                    List<Transform> pathFromCorridorToTarget = FindShortestPathDijkstra(targetCorridor, closestToTarget);
+
+                    // Combine paths
+                    path = new List<Transform>();
+                    path.AddRange(pathToCorridor);
+                    path.AddRange(pathFromCorridorToTarget);
+                }
+                else
+                {
+                    // Fallback to direct path if corridor is not found
+                    path = FindShortestPathDijkstra(closestToPerson, closestToTarget);
+                }
+            }
+            else
+            {
+                path = FindShortestPathDijkstra(closestToPerson, closestToTarget);
+            }
+
+            if (path.Count > 0)
+            {
+                DrawPathWithLineRenderer(path);
+            }
+        }
+        /*if (closestToPerson != null && closestToTarget != null)
         {
             List<Transform> path = FindShortestPathDijkstra(closestToPerson, closestToTarget);
             if (path.Count > 0)
             {
                 DrawPathWithLineRenderer(path);
             }
-        }
+        }*/
     }
-    
+    private Transform FindNearestCorridorToTarget()
+    {
+        List<string> currentFloorCorridors = GetCorridorsForFloor(pietro);
+        Transform closestCorridor = null;
+        float minDistance = float.MaxValue;
+
+        foreach (string corridorName in currentFloorCorridors)
+        {
+            GameObject corridorObject = GameObject.Find(corridorName);
+            if (corridorObject != null)
+            {
+                float distance = Vector3.Distance(target.position, corridorObject.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestCorridor = corridorObject.transform;
+                }
+            }
+        }
+        Debug.Log("Najbliższy korytarz " + closestCorridor);
+        return closestCorridor;
+    }
     private Transform FindClosestWaypoint(Vector3 position)
     {
         Transform closest = null;
@@ -237,7 +307,67 @@ private List<Transform> GetNeighbors(Transform current)
             lineRenderer.SetPosition(i, new Vector3(pathPosition.x, pathPosition.y, 0)); // Ustawienie na płaszczyźnie 2D
         }
     }
+    private void InitializeCorridors()
+    {
+        groundFloorCorridors = new List<string>
+        {
+            "Korytarz7",
+            "Korytarz14",
+            "Korytarz22",
+            "Korytarz24",
+            "Korytarz25"
+        };
 
+        firstFloorCorridors = new List<string>
+        {
+            "Korytarz8",
+            "Korytarz10",
+            "Korytarz14",
+            "Korytarz15",
+            "Korytarz16"
+        };
+
+        secondFloorCorridors = new List<string>
+        {
+            "Korytarz3",
+            "Korytarz4"
+        };
+    }
+    private Transform FindNearestCorridor()
+    {
+        List<string> currentFloorCorridors = GetCorridorsForFloor(ostatniePietro);
+        Transform closestCorridor = null;
+        float minDistance = float.MaxValue;
+
+        foreach (string corridorName in currentFloorCorridors)
+        {
+            GameObject corridorObject = GameObject.Find(corridorName);
+            if (corridorObject != null)
+            {
+                float distance = Vector3.Distance(person.position, corridorObject.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestCorridor = corridorObject.transform;
+                }
+            }
+        }
+        return closestCorridor;
+    }
+    private List<string> GetCorridorsForFloor(int floor)
+    {
+        switch (floor)
+        {
+            case 0:
+                return groundFloorCorridors;
+            case 1:
+                return firstFloorCorridors;
+            case 2:
+                return secondFloorCorridors;
+            default:
+                return new List<string>();
+        }
+    }
     public async void LoginProcess(DateTime selectedDate)
     {
         

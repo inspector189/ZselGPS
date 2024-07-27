@@ -77,7 +77,7 @@ public class Floor : MonoBehaviour
         lat = Input.location.lastData.latitude;
         lon = Input.location.lastData.longitude;
     }
-    /*public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)
+    public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)
     {
         LocationInfo currentLocation = Input.location.lastData;
 
@@ -144,7 +144,7 @@ public class Floor : MonoBehaviour
 
         }
     }
-    */
+    
     public Vector2 FindClosestEdgePosition(RectTransform personInterpolated)
     {
         float Distance_Person(RectTransform button)
