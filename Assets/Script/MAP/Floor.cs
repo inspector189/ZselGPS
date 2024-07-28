@@ -43,7 +43,7 @@ public class Floor : MonoBehaviour
         floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
         map.sprite = floorSprites;
-       // CalcPosition(personInterpolated, velocity, lastPosition);
+        CalcPosition(personInterpolated, velocity, lastPosition);
     }
     public bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
@@ -99,10 +99,14 @@ public class Floor : MonoBehaviour
             double xp2 = 3367;
             float x3 = lon;
             float y3 = lat;
-            double SkalaX = (x2 - x1) / (xp2 - xp1) * 335500;  // 0,00018/432 = 4,166666666666667e-7
+            double SkalaX = ((x2 - x1) / (xp2 - xp1)) * 350000;  // 0,00018/432 = 4,166666666666667e-7
+            Debug.Log("SkalaX: " + SkalaX);
             double xp3 = xp1 + (x3 - x1) / (x2 - x1) * SkalaX * (xp2 - xp1);
-            double SkalaY = (y2 - y1) / (yp2 - yp1) * 450000;
+            Debug.Log("xp3: " + xp3);
+            double SkalaY = ((y2 - y1) / (yp2 - yp1)) * 490000;
+            Debug.Log("SkalaY: " + SkalaY);
             double yp3 = yp1 + (y3 - y1) / (y2 - y1) * SkalaY * (yp2 - yp1);
+            Debug.Log("yp3: " + yp3);
             personInterpolated.anchoredPosition = Vector2.zero;
             personInterpolated.anchoredPosition = new Vector3((float)xp3, (float)yp3, 0);
             return personInterpolated.anchoredPosition; //geoOffset - przesunięcie geograficzne w skrócie

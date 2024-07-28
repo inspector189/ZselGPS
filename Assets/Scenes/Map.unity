@@ -12058,9 +12058,14 @@ MonoBehaviour:
   ostatniePietro: 0
   person: {fileID: 1453418945}
   target: {fileID: 150169285}
+  Realtarget: {fileID: 0}
   allWaypoints: []
+  CorridorsGroundF: {fileID: 0}
+  CorridorsFirstF: {fileID: 0}
+  CorridorsSecondF: {fileID: 0}
   lineColor: {r: 0, g: 0, b: 1, a: 1}
   lineWidth: 0.01
+  pomocnicza: 0
 --- !u!114 &391263041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68458,9 +68463,14 @@ MonoBehaviour:
   ostatniePietro: 0
   person: {fileID: 1072992043}
   target: {fileID: 0}
+  Realtarget: {fileID: 0}
   allWaypoints: []
+  CorridorsGroundF: {fileID: 0}
+  CorridorsFirstF: {fileID: 0}
+  CorridorsSecondF: {fileID: 0}
   lineColor: {r: 0, g: 0, b: 1, a: 1}
   lineWidth: 0.01
+  pomocnicza: 0
 --- !u!114 &7738733805239443682
 MonoBehaviour:
   m_ObjectHideFlags: 0
