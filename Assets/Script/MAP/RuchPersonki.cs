@@ -7,13 +7,7 @@ using UnityEngine.UI;
 
 public class RuchPersonki : MonoBehaviour
 {
-    public float initialVelocity = 0f;
-    private float velocityA = 0f;
-    private float distance = 0f;
-    private float timeInterval = 1f;
-    private float elapsedTime = 0f;
     private Vector3 accelerometerValue;
-    private float timer = 0f;
     [SerializeField]
     public TextMeshProUGUI textX;
     [SerializeField]
@@ -23,8 +17,6 @@ public class RuchPersonki : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI textV;
     private float updateTimer = 0f;
-    private float locationUpdateTimer = 0f;
-    private float locationUpdateInterval = 1f;
     [SerializeField]
     private GameObject personInterpolated;
     private float initialPositionY;
@@ -81,8 +73,6 @@ public class RuchPersonki : MonoBehaviour
                 GPSMovement();
             }
         }
-
-        Debug.Log("Accuracy: " + PlayerPrefs.GetInt("sum10Accuracy"));
     }
 
     private void Start()

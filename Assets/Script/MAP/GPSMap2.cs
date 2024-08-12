@@ -18,8 +18,6 @@ public class GPSMap2 : MonoBehaviour
     private float timeSinceLastLocationUpdate = 0.0f;
     public Gyroscope gyro;
     [SerializeField] private Image map;
-    [SerializeField] private TextMeshProUGUI precisionTexts;
-    [SerializeField] private TextMeshProUGUI heightTexts;
     [SerializeField] private TextMeshProUGUI searchLocalization;
     [SerializeField] private TextMeshProUGUI precision;
     [SerializeField] private List<Floor> floors;
@@ -163,8 +161,6 @@ public class GPSMap2 : MonoBehaviour
     {
         if (isConnected)
         {
-            precisionTexts.text = "Precyzja: " + (Input.location.lastData.horizontalAccuracy).ToString();
-            heightTexts.text = "Wysokość: " + (Input.location.lastData.altitude).ToString();
             if (noneConnection.activeSelf)
             {
                 float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");

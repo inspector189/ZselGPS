@@ -20,7 +20,15 @@ namespace Michsky.MUIP
 
         void Awake()
         {
-            if (UIManagerAsset == null) { UIManagerAsset = Resources.Load<UIManager>("MUIP Manager"); }
+            if (UIManagerAsset == null)
+            {
+                UIManagerAsset = Resources.Load<UIManager>("MUIP Manager");
+                if (UIManagerAsset == null)
+                {
+                    Debug.LogError("UIManagerAsset could not be found or loaded.");
+                    return;
+                }
+            }
 
             this.enabled = true;
 
@@ -39,29 +47,45 @@ namespace Michsky.MUIP
 
         void UpdateInputField()
         {
+            if (UIManagerAsset == null) return;
+
             if (overrideColors == false)
             {
-                if (UIManagerAsset != null)
+                if (UIManagerAsset.inputFieldColor != null)
                 {
-                    if (mainText != null && UIManagerAsset.inputFieldColor != null)
+                    if (mainText != null)
                     {
                         mainText.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, mainText.color.a);
                     }
-                }
 
-                placeholderText.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, placeholderText.color.a);
-                if(filledImage != null)
-                {
-                    filledImage.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, filledImage.color.a);
+                    if (placeholderText != null)
+                    {
+                        placeholderText.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, placeholderText.color.a);
+                    }
+
+                    if (filledImage != null)
+                    {
+                        filledImage.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, filledImage.color.a);
+                    }
+
+                    if (backgroundImage != null)
+                    {
+                        backgroundImage.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, backgroundImage.color.a);
+                    }
                 }
-                
-                backgroundImage.color = new Color(UIManagerAsset.inputFieldColor.r, UIManagerAsset.inputFieldColor.g, UIManagerAsset.inputFieldColor.b, backgroundImage.color.a);
             }
 
-            if (overrideFonts == false)
+            if (overrideFonts == false && UIManagerAsset.inputFieldFont != null)
             {
-                mainText.font = UIManagerAsset.inputFieldFont;
-                placeholderText.font = UIManagerAsset.inputFieldFont;
+                if (mainText != null)
+                {
+                    mainText.font = UIManagerAsset.inputFieldFont;
+                }
+
+                if (placeholderText != null)
+                {
+                    placeholderText.font = UIManagerAsset.inputFieldFont;
+                }
             }
         }
     }

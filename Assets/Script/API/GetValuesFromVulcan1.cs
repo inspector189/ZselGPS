@@ -81,9 +81,6 @@ public class GetValuesFromVulcan1 : MonoBehaviour
                 int lengthAccount = registerHebeResponse.Envelope.Length - 1;
                 var firstAccount = registerHebeResponse.Envelope[lengthAccount];
 
-
-                Debug.Log($"Imiê: {firstAccount.Pupil.FirstName}\n Szko³a: {firstAccount.Unit.Name}");
-
             }
         }
         catch (Exception e)

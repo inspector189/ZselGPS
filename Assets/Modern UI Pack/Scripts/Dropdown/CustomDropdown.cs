@@ -98,30 +98,63 @@ namespace Michsky.MUIP
 
         void OnEnable()
         {
-            if (isInitialized == false) { Initialize(); }
-            if (updateOnEnable == true && index < items.Count) { SetDropdownIndex(selectedItemIndex); }
+            if (isInitialized == false)
+            {
+                Initialize();
+            }
 
-            listCG.alpha = 0;
+            if (updateOnEnable == true && index < items.Count)
+            {
+                SetDropdownIndex(selectedItemIndex);
+            }
+
+            if (listCG == null)
+            {
+                Debug.LogError("listCG is null in OnEnable.");
+                return;
+            }
+
+            listCG.alpha = 1;
             listCG.interactable = false;
             listCG.blocksRaycasts = false;
+
+            if (listRect == null)
+            {
+                Debug.LogError("listRect is null in OnEnable.");
+                return;
+            }
+
             listRect.sizeDelta = new Vector2(listRect.sizeDelta.x, 0);
         }
-
         void Initialize()
         {
             if (enableTrigger == true && triggerObject != null)
             {
-                // triggerButton = gameObject.GetComponent<Button>();
-                triggerEvent = triggerObject.AddComponent<EventTrigger>();
+                triggerEvent = triggerObject.GetComponent<EventTrigger>();
+                if (triggerEvent == null)
+                {
+                    triggerEvent = triggerObject.AddComponent<EventTrigger>();
+                }
+
                 EventTrigger.Entry entry = new EventTrigger.Entry();
                 entry.eventID = EventTriggerType.PointerClick;
                 entry.callback.AddListener((eventData) => { Animate(); });
-                triggerEvent.GetComponent<EventTrigger>().triggers.Add(entry);
+                triggerEvent.triggers.Add(entry);
             }
 
             if (setHighPriority == true)
             {
-                if (contentCG == null) { contentCG = transform.Find("Content/Item List").GetComponent<CanvasGroup>(); }
+                Transform contentTransform = transform.Find("Content/Item List");
+                if (contentTransform != null)
+                {
+                    contentCG = contentTransform.GetComponent<CanvasGroup>();
+                }
+                else
+                {
+                    Debug.LogError("Content/Item List not found.");
+                    return;
+                }
+
                 contentCG.alpha = 1;
 
                 Canvas tempCanvas = contentCG.gameObject.AddComponent<Canvas>();
@@ -130,14 +163,32 @@ namespace Michsky.MUIP
                 contentCG.gameObject.AddComponent<GraphicRaycaster>();
             }
 
-            if (listCG == null) { listCG = gameObject.GetComponentInChildren<CanvasGroup>(); }
-            if (listRect == null) { listRect = listCG.GetComponent<RectTransform>(); }
-            if (initAtStart == true && items.Count != 0) { SetupDropdown(); }
-            if (animationType == AnimationType.Modular && dropdownAnimator != null) { Destroy(dropdownAnimator); }
+            listCG = GetComponentInChildren<CanvasGroup>();
+            if (listCG == null)
+            {
+                Debug.LogError("CanvasGroup not found in Initialize.");
+                return;
+            }
+
+            listRect = listCG.GetComponent<RectTransform>();
+            if (listRect == null)
+            {
+                Debug.LogError("RectTransform not found on listCG.");
+                return;
+            }
+
+            if (initAtStart == true && items.Count != 0)
+            {
+                SetupDropdown();
+            }
+
+            if (animationType == AnimationType.Modular && dropdownAnimator != null)
+            {
+                Destroy(dropdownAnimator);
+            }
 
             isInitialized = true;
         }
-
         public void SetupDropdown()
         {
             if (dropdownAnimator == null) { dropdownAnimator = gameObject.GetComponent<Animator>(); }
