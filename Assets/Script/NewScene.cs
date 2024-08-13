@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 public class NewScene : MonoBehaviour
 {
     [SerializeField]
-    private string SceneName; 
+    private string SceneName;
     [SerializeField]
     private Button GPSButton;
-    private bool ButtonClicked = false;
 
     void Start()
     {
@@ -23,32 +21,18 @@ public class NewScene : MonoBehaviour
 
     private void OnGPSButtonClicked()
     {
-        ButtonClicked = true;
-        CheckScene();
+        PlayerPrefs.SetString("PreviousScene", SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneName);
     }
 
-    public void CheckScene()
+    public void LoadPreviousScene()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu")
-        {
-            PlayerPrefs.SetString("SelectedScene", SceneName);
-            Debug.Log("Zapisano wybraną scenę: " + SceneName);
-        }
-
-        if (SceneManager.GetActiveScene().name == "MoreSettings" && ButtonClicked)
-        {
-            string selectedScene = PlayerPrefs.GetString("SelectedScene", "DefaultSceneName");
-
-            SceneManager.LoadScene(selectedScene);
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneName);
-        }
+        string previousScene = PlayerPrefs.GetString("PreviousScene", "DefaultSceneName");
+        SceneManager.LoadScene(previousScene);
     }
     public void LoadNewScene()
     {
-        CheckScene();
+        PlayerPrefs.SetString("PreviousScene", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneName);
     }
 }

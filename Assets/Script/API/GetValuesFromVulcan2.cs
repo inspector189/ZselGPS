@@ -50,7 +50,6 @@ public class GetValuesFromVulcan2 : MonoBehaviour
         UpdateDateText();
         btnPlus.onClick.AddListener(PlusDate);
         btnMinus.onClick.AddListener(MinusDate);
-        Debug.Log(PlayerPrefs.GetString("token"));
         if (PlayerPrefs.HasKey("token") && PlayerPrefs.HasKey("firebaseToken") && PlayerPrefs.HasKey("pk") && PlayerPrefs.HasKey("cert") || PlayerPrefs.GetString("token") == "testowe")
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
@@ -59,13 +58,11 @@ public class GetValuesFromVulcan2 : MonoBehaviour
             }
             else
             {
-                Debug.Log("tutej");
                 SceneManager.LoadScene("LoginPanel");
             }
         }
         else
         {
-            Debug.Log("tutej");
             SceneManager.LoadScene("LoginPanel");
         }
         

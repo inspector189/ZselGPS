@@ -63,7 +63,7 @@ namespace Michsky.MUIP
             {
                 try
                 {
-                    contextManager = (ContextMenuManager)GameObject.FindObjectsOfType(typeof(ContextMenuManager))[0];
+                   // contextManager = (ContextMenuManager)GameObject.FindObjectsOfType(typeof(ContextMenuManager))[0];
                     itemParent = contextManager.transform.Find("Content/Item List").transform;
                 }
 

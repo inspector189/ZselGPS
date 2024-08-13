@@ -163,12 +163,15 @@ namespace Michsky.MUIP
                 contentCG.gameObject.AddComponent<GraphicRaycaster>();
             }
 
+            Debug.Log("Initializing CustomDropdown...");
+
             listCG = GetComponentInChildren<CanvasGroup>();
             if (listCG == null)
             {
                 Debug.LogError("CanvasGroup not found in Initialize.");
                 return;
             }
+            Debug.Log("listCG found.");
 
             listRect = listCG.GetComponent<RectTransform>();
             if (listRect == null)
@@ -176,6 +179,7 @@ namespace Michsky.MUIP
                 Debug.LogError("RectTransform not found on listCG.");
                 return;
             }
+            Debug.Log("RectTransform found on listCG.");
 
             if (initAtStart == true && items.Count != 0)
             {
