@@ -597,8 +597,24 @@ private List<Transform> GetNeighbors(Transform current)
             SceneManager.LoadScene("LoginPanel");
         }
     }
-
-
+    public bool CheckIfLineExist()
+    {
+        if(lineRenderer != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public void ClearLine()
+    {
+        if (lineRenderer != null)
+        {
+            lineRenderer.positionCount = 0;
+        }
+    }
 
 
 }
