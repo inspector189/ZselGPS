@@ -451,7 +451,7 @@ private List<Transform> GetNeighbors(Transform current)
         try
         {
             string token = PlayerPrefs.GetString("token");
-            if (token == "testowe")
+            if (token == "testowe" || SceneManager.GetActiveScene().name == "ToTheClassroom" || SceneManager.GetActiveScene().name == "ImportantPlaces" || SceneManager.GetActiveScene().name == "MapaTSwobodny")
             {
                 LessonData[] lessonsData = new LessonData[]
                 {
