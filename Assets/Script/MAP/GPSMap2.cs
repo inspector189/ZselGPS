@@ -72,7 +72,7 @@ public class GPSMap2 : MonoBehaviour
                     InitializeUI(true);
                     int savedFloor = GetCurrentFloorLvl();
                    // Vector2 lastPosition = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
-                  //  floors[savedFloor].UpdatePosition(personInterpolated, personReal, velocity, lastPosition);
+                   // floors[savedFloor].UpdatePosition(personInterpolated, personReal, velocity, lastPosition);
                    //  velocity = new Vector2(personInterpolated.anchoredPosition.x, personInterpolated.anchoredPosition.y) - lastPosition;
                     TextsVisible(savedFloor);
                 }

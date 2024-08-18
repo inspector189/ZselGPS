@@ -10914,7 +10914,6 @@ RectTransform:
   - {fileID: 602596090}
   - {fileID: 1789769982}
   - {fileID: 98984287}
-  - {fileID: 1053557887}
   - {fileID: 2101774617}
   - {fileID: 449681181}
   - {fileID: 885588669}
@@ -13804,142 +13803,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452178054}
   m_CullTransparentMesh: 1
---- !u!1 &452254566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 452254569}
-  - component: {fileID: 452254568}
-  - component: {fileID: 452254567}
-  m_Layer: 5
-  m_Name: PrecisionTxt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &452254567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452254566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Precyzja:'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4293716971
-  m_fontColor: {r: 0.92156863, g: 0.92156863, b: 0.9254902, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -104.79521, w: -20.030134}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &452254568
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452254566}
-  m_CullTransparentMesh: 1
---- !u!224 &452254569
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452254566}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1560090852}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -388, y: -825}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &462516458
 GameObject:
   m_ObjectHideFlags: 0
@@ -25155,7 +25018,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start Aceleration
+  m_text: Akceleracja
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -25609,142 +25472,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946868934}
   m_CullTransparentMesh: 1
---- !u!1 &954561257
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 954561260}
-  - component: {fileID: 954561259}
-  - component: {fileID: 954561258}
-  m_Layer: 5
-  m_Name: HeightTxt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &954561258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954561257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "Wysoko\u015B\u0107:"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4293716971
-  m_fontColor: {r: 0.92156863, g: 0.92156863, b: 0.9254902, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -166.65132, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &954561259
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954561257}
-  m_CullTransparentMesh: 1
---- !u!224 &954561260
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954561257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1560090852}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 162, y: -756}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &956722683
 GameObject:
   m_ObjectHideFlags: 0
@@ -27617,142 +27344,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046431290}
-  m_CullTransparentMesh: 1
---- !u!1 &1053557886
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1053557887}
-  - component: {fileID: 1053557889}
-  - component: {fileID: 1053557888}
-  m_Layer: 5
-  m_Name: Meters
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1053557887
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053557886}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.666542, y: 1.1125, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 344901384}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1989}
-  m_SizeDelta: {x: 296.3, y: 136.1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1053557888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053557886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: ~5m
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4293716971
-  m_fontColor: {r: 0.92156863, g: 0.92156863, b: 0.9254902, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -93.17441, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1053557889
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053557886}
   m_CullTransparentMesh: 1
 --- !u!1 &1055826273
 GameObject:
@@ -39957,7 +39548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GPS
+  m_text: GPS Do Sali
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -42072,14 +41663,12 @@ RectTransform:
   - {fileID: 1226371420}
   - {fileID: 1036121439}
   - {fileID: 1956826801}
-  - {fileID: 452254569}
   - {fileID: 1755683722}
-  - {fileID: 954561260}
+  - {fileID: 1100693798}
   - {fileID: 344901384}
   - {fileID: 2056687365}
   - {fileID: 425312451}
   - {fileID: 1953102616}
-  - {fileID: 1100693798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -47548,7 +47137,6 @@ GameObject:
   - component: {fileID: 1755683832}
   - component: {fileID: 1755683831}
   - component: {fileID: 1755683830}
-  - component: {fileID: 1755683829}
   - component: {fileID: 1755683828}
   - component: {fileID: 1755683827}
   - component: {fileID: 1755683826}
@@ -47559,7 +47147,6 @@ GameObject:
   - component: {fileID: 1755683821}
   - component: {fileID: 1755683820}
   - component: {fileID: 1755683819}
-  - component: {fileID: 1755683818}
   - component: {fileID: 1755683817}
   - component: {fileID: 1755683816}
   - component: {fileID: 1755683815}
@@ -47577,9 +47164,6 @@ GameObject:
   - component: {fileID: 1755683803}
   - component: {fileID: 1755683802}
   - component: {fileID: 1755683801}
-  - component: {fileID: 1755683800}
-  - component: {fileID: 1755683799}
-  - component: {fileID: 1755683798}
   - component: {fileID: 1755683797}
   - component: {fileID: 1755683796}
   - component: {fileID: 1755683795}
@@ -47587,18 +47171,12 @@ GameObject:
   - component: {fileID: 1755683793}
   - component: {fileID: 1755683792}
   - component: {fileID: 1755683791}
-  - component: {fileID: 1755683790}
-  - component: {fileID: 1755683789}
-  - component: {fileID: 1755683788}
   - component: {fileID: 1755683787}
   - component: {fileID: 1755683786}
   - component: {fileID: 1755683785}
   - component: {fileID: 1755683784}
   - component: {fileID: 1755683783}
   - component: {fileID: 1755683782}
-  - component: {fileID: 1755683781}
-  - component: {fileID: 1755683780}
-  - component: {fileID: 1755683779}
   - component: {fileID: 1755683778}
   - component: {fileID: 1755683777}
   - component: {fileID: 1755683776}
@@ -47612,16 +47190,12 @@ GameObject:
   - component: {fileID: 1755683768}
   - component: {fileID: 1755683767}
   - component: {fileID: 1755683766}
-  - component: {fileID: 1755683765}
-  - component: {fileID: 1755683764}
-  - component: {fileID: 1755683763}
   - component: {fileID: 1755683762}
   - component: {fileID: 1755683761}
   - component: {fileID: 1755683760}
   - component: {fileID: 1755683759}
   - component: {fileID: 1755683758}
   - component: {fileID: 1755683757}
-  - component: {fileID: 1755683756}
   - component: {fileID: 1755683755}
   - component: {fileID: 1755683754}
   - component: {fileID: 1755683753}
@@ -47638,8 +47212,6 @@ GameObject:
   - component: {fileID: 1755683742}
   - component: {fileID: 1755683741}
   - component: {fileID: 1755683740}
-  - component: {fileID: 1755683739}
-  - component: {fileID: 1755683738}
   - component: {fileID: 1755683737}
   - component: {fileID: 1755683736}
   - component: {fileID: 1755683735}
@@ -47648,9 +47220,6 @@ GameObject:
   - component: {fileID: 1755683732}
   - component: {fileID: 1755683731}
   - component: {fileID: 1755683730}
-  - component: {fileID: 1755683729}
-  - component: {fileID: 1755683728}
-  - component: {fileID: 1755683727}
   - component: {fileID: 1755683726}
   - component: {fileID: 1755683725}
   - component: {fileID: 1755683724}
@@ -47703,7 +47272,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1453483863}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1591885172}
-  images: []
+  images:
+  - {fileID: -6230309817833963561, guid: 098101bdc6caf8c49a17c3b6e1fac257, type: 3}
 --- !u!114 &1755683724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47723,7 +47293,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 31348513}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2111689706}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47743,7 +47314,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1765167150}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1591885172}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47763,67 +47335,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 448508097}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1564579125}
-  images: []
---- !u!114 &1755683727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta Dla Nauczycieli
-  buttonRectTransform: {fileID: 1600584727}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1239783169}
-  images: []
---- !u!114 &1755683728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: "Toaleta (M\u0119ska)"
-  buttonRectTransform: {fileID: 745719694}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 471692145}
-  images: []
---- !u!114 &1755683729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta (Damska)
-  buttonRectTransform: {fileID: 2006863127}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1866185621}
-  images: []
+  images:
+  - {fileID: -5791590783175327614, guid: 59c1ac853e3b49043bb9ea1edab7641d, type: 3}
 --- !u!114 &1755683730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47843,7 +47356,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 811912854}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 297304762}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47863,7 +47377,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1485443780}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2119599663}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47883,7 +47398,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1652484337}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 306926168}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47903,7 +47419,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1728966485}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2119765926}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47923,7 +47440,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2032115135}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1601597723}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47964,7 +47482,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1682761353}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1734435354}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47986,46 +47505,6 @@ MonoBehaviour:
   DrzwiSali: {fileID: 1725051597}
   images:
   - {fileID: 21300000, guid: 2c2ff01fc0e219e4f9498e5c927868e8, type: 3}
---- !u!114 &1755683738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta
-  buttonRectTransform: {fileID: 1278699546}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1242355765}
-  images: []
---- !u!114 &1755683739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta
-  buttonRectTransform: {fileID: 1055826274}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 780527330}
-  images: []
 --- !u!114 &1755683740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48129,7 +47608,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1493500848}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 431991375}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48149,7 +47629,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1330255734}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1640174825}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48169,7 +47650,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1992274859}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1720627307}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48190,7 +47672,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 131522218}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 536141744}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48273,7 +47756,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1609700537}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 72776061}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48314,7 +47798,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 762840808}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 396777509}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48334,7 +47819,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1175578104}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 26559113}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48354,27 +47840,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 151617114}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 918509152}
-  images: []
---- !u!114 &1755683756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta (Damska)
-  buttonRectTransform: {fileID: 492007981}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1396008505}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48436,7 +47903,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2067736373}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 44840924}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48456,7 +47924,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 2105272430}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1660581495}
-  images: []
+  images:
+  - {fileID: 6244784640438369190, guid: 7479ba574048f324e9ad31f6c30100a8, type: 3}
 --- !u!114 &1755683761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48476,7 +47945,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 99642470}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1813762899}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48496,67 +47966,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 261333142}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 404318971}
-  images: []
---- !u!114 &1755683763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta
-  buttonRectTransform: {fileID: 228012245}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 16199186}
-  images: []
---- !u!114 &1755683764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta
-  buttonRectTransform: {fileID: 789420428}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1244226622}
-  images: []
---- !u!114 &1755683765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: 'Toaleta '
-  buttonRectTransform: {fileID: 697846604}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 2077353208}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48576,7 +47987,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 991810022}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 681356928}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48596,7 +48008,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 255350723}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 598554415}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48616,7 +48029,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 663981729}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 404753096}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48636,7 +48050,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1926558031}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 273555232}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48657,7 +48072,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1067400850}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 0}
-  images: []
+  images:
+  - {fileID: -9169389621887139329, guid: a4085ff6682cc3846bd4a8397b7559d3, type: 3}
 --- !u!114 &1755683771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48677,7 +48093,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 554176036}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1334740740}
-  images: []
+  images:
+  - {fileID: -9169389621887139329, guid: a4085ff6682cc3846bd4a8397b7559d3, type: 3}
 --- !u!114 &1755683772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48718,7 +48135,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1331609274}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 982022963}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48738,7 +48156,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 158562934}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1951138055}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48759,7 +48178,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1751843951}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 488846468}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48779,7 +48199,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1495195470}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1625959196}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48799,7 +48220,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1670318498}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1686868684}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48819,67 +48241,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1899853688}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 153204894}
-  images: []
---- !u!114 &1755683779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: Magazyn 1
-  OpisSali: Magazyn
-  buttonRectTransform: {fileID: 1103447371}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1420584550}
-  images: []
---- !u!114 &1755683780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta
-  buttonRectTransform: {fileID: 1854803593}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 897735256}
-  images: []
---- !u!114 &1755683781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: 'Toaleta '
-  buttonRectTransform: {fileID: 1968685306}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 129079473}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48941,7 +48304,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 447468563}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1360810180}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48961,7 +48325,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1362137015}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1995173036}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48981,7 +48346,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1660370597}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2098503586}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49003,66 +48369,6 @@ MonoBehaviour:
   DrzwiSali: {fileID: 1253857246}
   images:
   - {fileID: 21300000, guid: 915f260778e32c148a80431567bdc903, type: 3}
---- !u!114 &1755683788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 2
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: Magazyn 201
-  OpisSali: Magazyn
-  buttonRectTransform: {fileID: 1492795142}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 714839247}
-  images: []
---- !u!114 &1755683789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 2
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta Dla Nauczycieli
-  buttonRectTransform: {fileID: 1259858329}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 121685126}
-  images: []
---- !u!114 &1755683790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 2
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: "Toaleta (M\u0119ska)"
-  buttonRectTransform: {fileID: 233571890}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 361893080}
-  images: []
 --- !u!114 &1755683791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49082,7 +48388,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 387054704}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1595655275}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49209,66 +48516,6 @@ MonoBehaviour:
   DrzwiSali: {fileID: 970340918}
   images:
   - {fileID: 21300000, guid: 520d5dfe3f73538459b7fff3728babe5, type: 3}
---- !u!114 &1755683798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 1
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta (Damska)
-  buttonRectTransform: {fileID: 1710490726}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 519738590}
-  images: []
---- !u!114 &1755683799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 1
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: "Toaleta (M\u0119ska)"
-  buttonRectTransform: {fileID: 435390467}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 225116446}
-  images: []
---- !u!114 &1755683800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 1
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: Toaleta Dla Nauczycieli
-  buttonRectTransform: {fileID: 511929403}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1775686849}
-  images: []
 --- !u!114 &1755683801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49288,7 +48535,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1065591563}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1324989206}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49371,7 +48619,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1484344745}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1566024281}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49386,8 +48635,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 2023131735}
-  NazwaSali: Gabinet v-ce Dyrektora 109
-  OpisSali: "Lepiej nie wchodzi\u0107"
+  NazwaSali: Gabinet Wicedyrektora 109
+  OpisSali: Gabinet Wicedyrektora
   buttonRectTransform: {fileID: 677739972}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 92261492}
@@ -49432,7 +48681,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 389470312}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 77076966}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49473,7 +48723,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 112737589}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1925988038}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49488,12 +48739,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pietro: 1
   CameraToMove: {fileID: 2023131735}
-  NazwaSali: Gabinet v-ce Dyrektora
+  NazwaSali: Gabinet Wicedyrektora
   OpisSali: Gabinet Wicedyrektora 406
   buttonRectTransform: {fileID: 131909500}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 920604363}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49534,7 +48786,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 623021074}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 502386300}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49575,7 +48828,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 62038063}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2147366172}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49595,7 +48849,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1665811126}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 548579201}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49615,27 +48870,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1387858122}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 2000460805}
-  images: []
---- !u!114 &1755683818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 1
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: "Toaleta (M\u0119ska)"
-  buttonRectTransform: {fileID: 309178935}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1968316791}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49657,7 +48893,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 80270214}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1817646147}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49698,7 +48935,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 792977279}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1172289198}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49718,7 +48956,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1354769571}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 42893521}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49738,7 +48977,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 316047813}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1961184931}
-  images: []
+  images:
+  - {fileID: 2140975043427686947, guid: 1aa0e15501a12484e9b1ba0c5127268d, type: 3}
 --- !u!114 &1755683824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49758,7 +48998,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 340027812}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1427263645}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49778,7 +49019,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 634256507}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 297318920}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49798,7 +49040,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1954097494}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1926895081}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49818,7 +49061,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1376214720}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 616608479}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49838,27 +49082,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1698249774}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1870761989}
-  images: []
---- !u!114 &1755683829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755683721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d391f5a4d928a246b8c17b4a566cf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 1
-  CameraToMove: {fileID: 2023131735}
-  NazwaSali: WC
-  OpisSali: "Toaleta (M\u0119ska)"
-  buttonRectTransform: {fileID: 794632925}
-  targetOrthographicSize: 0.3
-  DrzwiSali: {fileID: 1710651218}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49880,8 +49105,6 @@ MonoBehaviour:
   DrzwiSali: {fileID: 1046431291}
   images:
   - {fileID: 21300000, guid: b3f273bf6a9ac1e418669f2fe3baa1fe, type: 3}
-  - {fileID: 21300000, guid: 51c7a76f01dd25a42976b8e01b66bbba, type: 3}
-  - {fileID: 21300000, guid: 93c91732e8b2a484197ee98309617bde, type: 3}
 --- !u!114 &1755683831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49903,8 +49126,6 @@ MonoBehaviour:
   DrzwiSali: {fileID: 2046549621}
   images:
   - {fileID: 21300000, guid: 43fc6961267b9c6459ef8c308c1ab08b, type: 3}
-  - {fileID: 21300000, guid: f06cfe86968978f409ba2c0cae030acc, type: 3}
-  - {fileID: 21300000, guid: d52045d8f8df5cb43907292e00b0c165, type: 3}
 --- !u!114 &1755683832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49924,7 +49145,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 1446854785}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1823558237}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49946,8 +49168,6 @@ MonoBehaviour:
   DrzwiSali: {fileID: 1502244590}
   images:
   - {fileID: 21300000, guid: fb33ff93093a35f4a91970230b6d9e4e, type: 3}
-  - {fileID: 21300000, guid: 57746f5f7c5c75548ba4cc8969748763, type: 3}
-  - {fileID: 21300000, guid: 061d5d550e462dd459dea7a4e4c9bb50, type: 3}
 --- !u!114 &1755683834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49967,7 +49187,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 507682850}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 1911838190}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49988,7 +49209,7 @@ MonoBehaviour:
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 66272986}
   images:
-  - {fileID: 0}
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55407,7 +54628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 210, y: 1871}
+  m_AnchoredPosition: {x: 210, y: 1845}
   m_SizeDelta: {x: 0, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956826802

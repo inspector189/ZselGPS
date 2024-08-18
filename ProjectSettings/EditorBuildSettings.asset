@@ -41,4 +41,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ToTheClassroom.unity
     guid: a112b2dd425e3474ca1906e2c75bd6f4
+  - enabled: 1
+    path: Assets/Scenes/Instruction.unity
+    guid: 43b4ec54ddc43d94f830476df119336f
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
