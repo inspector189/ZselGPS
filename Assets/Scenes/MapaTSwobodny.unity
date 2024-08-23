@@ -54751,7 +54751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraToMove: {fileID: 2064702857}
-  objectToCenter: {fileID: 1067731367}
+  objectToCenter: {fileID: 1543543751}
   object2: {fileID: 1813101490}
 --- !u!114 &1963776701
 MonoBehaviour:

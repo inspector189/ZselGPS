@@ -46,8 +46,10 @@ public class LineCreator : MonoBehaviour
         lineRenderer.useWorldSpace = true;
         lineRenderer.sortingOrder = 1; // Zapewnia, że linia jest rysowana nad innymi elementami
         InitializeCorridors();
+        ClearLine();
         System.DateTime selectedDate = System.DateTime.Now;
         LoginProcess(selectedDate);
+
     }
     public void buttonClicked()
     {

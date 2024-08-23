@@ -40,7 +40,7 @@ public class ChooseImportantPlace : MonoBehaviour
     }
 
     // Funkcja wywoływana po kliknięciu przycisku
-    void OnButtonClicked(RectTransform targetRectTransform)
+    public void OnButtonClicked(RectTransform targetRectTransform)
     {
         if(lineCreator.CheckIfLineExist())
         {

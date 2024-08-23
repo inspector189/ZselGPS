@@ -26269,7 +26269,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509746664}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -30225,11 +30225,7 @@ GameObject:
   - component: {fileID: 588986661}
   - component: {fileID: 588986664}
   - component: {fileID: 588986663}
-  - component: {fileID: 588986668}
-  - component: {fileID: 588986667}
   - component: {fileID: 588986662}
-  - component: {fileID: 588986666}
-  - component: {fileID: 588986665}
   - component: {fileID: 588986669}
   m_Layer: 5
   m_Name: Sekretariat
@@ -30367,43 +30363,7 @@ MonoBehaviour:
   animationSolution: 1
   onClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 588986665}
-        m_TargetAssemblyTypeName: LineCreator, Assembly-CSharp
-        m_MethodName: buttonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 588986667}
-        m_TargetAssemblyTypeName: ShowAndHidePanel, Assembly-CSharp
-        m_MethodName: HidePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 588986668}
-        m_TargetAssemblyTypeName: ChooseImportantPlace, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDoubleClick:
     m_PersistentCalls:
       m_Calls: []
@@ -30423,120 +30383,6 @@ MonoBehaviour:
   centered: 0
   isPreset: 1
   latestTabIndex: 0
---- !u!114 &588986665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588986660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27b598b2d5c0c34d849a663fccfa05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  ostatniePietro: 0
-  person: {fileID: 521734899}
-  target: {fileID: 1106799905}
-  Realtarget: {fileID: 0}
-  allWaypoints: []
-  CorridorsGroundF: {fileID: 0}
-  CorridorsFirstF: {fileID: 0}
-  CorridorsSecondF: {fileID: 0}
-  lineColor: {r: 0, g: 0, b: 1, a: 1}
-  lineWidth: 0.01
-  pomocnicza: 0
---- !u!114 &588986666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588986660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f09607848b1c6479608873e4512d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KorytarzeParter:
-  - {fileID: 460213142}
-  - {fileID: 2093383329}
-  - {fileID: 342215937}
-  - {fileID: 1199430435}
-  - {fileID: 1851860425}
-  - {fileID: 572086855}
-  - {fileID: 1264784665}
-  - {fileID: 520541809}
-  - {fileID: 172543891}
-  - {fileID: 788069752}
-  - {fileID: 24815978}
-  - {fileID: 297829225}
-  - {fileID: 1204583178}
-  - {fileID: 920857049}
-  - {fileID: 1862257324}
-  - {fileID: 185313827}
-  - {fileID: 608875144}
-  - {fileID: 1803064015}
-  - {fileID: 204374419}
-  - {fileID: 310432319}
-  - {fileID: 583016921}
-  - {fileID: 816505707}
-  - {fileID: 2054982046}
-  KorytarzePietro:
-  - {fileID: 1901884556}
-  - {fileID: 1502769602}
-  - {fileID: 1003975770}
-  - {fileID: 75627507}
-  - {fileID: 1000499345}
-  - {fileID: 181210456}
-  - {fileID: 1671138910}
-  - {fileID: 2094561439}
-  - {fileID: 1234111029}
-  - {fileID: 41777226}
-  - {fileID: 624385390}
-  - {fileID: 1101961619}
-  - {fileID: 1596097402}
-  - {fileID: 2123054287}
-  - {fileID: 1941105148}
-  - {fileID: 1233842973}
-  KorytarzePietro2:
-  - {fileID: 1397639391}
-  - {fileID: 471916501}
-  waypointParent: {fileID: 845358865}
-  waypointPrefab: {fileID: 148173200}
-  waypointManager: {fileID: 588986665}
-  createdWaypoints: []
---- !u!114 &588986667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588986660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56163c20b321f784d81f5431e8a198f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 273502645}
-  panelCG: {fileID: 273502649}
---- !u!114 &588986668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588986660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00392674b3771784fb939e8da576781c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons: []
-  rectTransforms: []
-  lineCreator: {fileID: 588986665}
-  showAndHidePanel: {fileID: 0}
 --- !u!114 &588986669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47632,10 +47478,6 @@ GameObject:
   - component: {fileID: 947913495}
   - component: {fileID: 947913494}
   - component: {fileID: 947913493}
-  - component: {fileID: 947913497}
-  - component: {fileID: 947913499}
-  - component: {fileID: 947913496}
-  - component: {fileID: 947913498}
   - component: {fileID: 947913500}
   m_Layer: 5
   m_Name: VceDyrektor2
@@ -47674,7 +47516,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947913491}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -47688,7 +47530,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947913491}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
@@ -47723,7 +47565,7 @@ MonoBehaviour:
   buttonText: Gabinet Vice Dyrektora s.406
   iconScale: 1
   textSize: 18
-  autoFitContent: 0
+  autoFitContent: 1
   padding:
     left: 10
     right: 10
@@ -47773,43 +47615,7 @@ MonoBehaviour:
   animationSolution: 1
   onClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 947913498}
-        m_TargetAssemblyTypeName: LineCreator, Assembly-CSharp
-        m_MethodName: buttonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 947913499}
-        m_TargetAssemblyTypeName: ShowAndHidePanel, Assembly-CSharp
-        m_MethodName: HidePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 947913497}
-        m_TargetAssemblyTypeName: ChooseImportantPlace, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDoubleClick:
     m_PersistentCalls:
       m_Calls: []
@@ -47829,120 +47635,6 @@ MonoBehaviour:
   centered: 0
   isPreset: 1
   latestTabIndex: 0
---- !u!114 &947913496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947913491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f09607848b1c6479608873e4512d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KorytarzeParter:
-  - {fileID: 460213142}
-  - {fileID: 2093383329}
-  - {fileID: 342215937}
-  - {fileID: 1199430435}
-  - {fileID: 1851860425}
-  - {fileID: 572086855}
-  - {fileID: 1264784665}
-  - {fileID: 520541809}
-  - {fileID: 172543891}
-  - {fileID: 788069752}
-  - {fileID: 24815978}
-  - {fileID: 297829225}
-  - {fileID: 1204583178}
-  - {fileID: 920857049}
-  - {fileID: 1862257324}
-  - {fileID: 185313827}
-  - {fileID: 608875144}
-  - {fileID: 1803064015}
-  - {fileID: 204374419}
-  - {fileID: 310432319}
-  - {fileID: 583016921}
-  - {fileID: 816505707}
-  - {fileID: 2054982046}
-  KorytarzePietro:
-  - {fileID: 1901884556}
-  - {fileID: 1502769602}
-  - {fileID: 1003975770}
-  - {fileID: 75627507}
-  - {fileID: 1000499345}
-  - {fileID: 181210456}
-  - {fileID: 1671138910}
-  - {fileID: 2094561439}
-  - {fileID: 1234111029}
-  - {fileID: 41777226}
-  - {fileID: 624385390}
-  - {fileID: 1101961619}
-  - {fileID: 1596097402}
-  - {fileID: 2123054287}
-  - {fileID: 1941105148}
-  - {fileID: 1233842973}
-  KorytarzePietro2:
-  - {fileID: 1397639391}
-  - {fileID: 471916501}
-  waypointParent: {fileID: 845358865}
-  waypointPrefab: {fileID: 148173200}
-  waypointManager: {fileID: 947913498}
-  createdWaypoints: []
---- !u!114 &947913497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947913491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00392674b3771784fb939e8da576781c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons: []
-  rectTransforms: []
-  lineCreator: {fileID: 947913498}
-  showAndHidePanel: {fileID: 0}
---- !u!114 &947913498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947913491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27b598b2d5c0c34d849a663fccfa05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  ostatniePietro: 0
-  person: {fileID: 521734899}
-  target: {fileID: 288871455}
-  Realtarget: {fileID: 0}
-  allWaypoints: []
-  CorridorsGroundF: {fileID: 0}
-  CorridorsFirstF: {fileID: 0}
-  CorridorsSecondF: {fileID: 0}
-  lineColor: {r: 0, g: 0, b: 1, a: 1}
-  lineWidth: 0.01
-  pomocnicza: 0
---- !u!114 &947913499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947913491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56163c20b321f784d81f5431e8a198f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 273502645}
-  panelCG: {fileID: 273502649}
 --- !u!114 &947913500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81112,12 +80804,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1663258077}
   - component: {fileID: 1663258080}
-  - component: {fileID: 1663258084}
   - component: {fileID: 1663258079}
   - component: {fileID: 1663258078}
-  - component: {fileID: 1663258083}
-  - component: {fileID: 1663258082}
-  - component: {fileID: 1663258081}
   - component: {fileID: 1663258085}
   m_Layer: 5
   m_Name: VceDyrektor1
@@ -81156,7 +80844,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663258076}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -81170,7 +80858,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663258076}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
@@ -81205,7 +80893,7 @@ MonoBehaviour:
   buttonText: Gabinet Vice Dyrektora s.109
   iconScale: 1
   textSize: 18
-  autoFitContent: 0
+  autoFitContent: 1
   padding:
     left: 10
     right: 10
@@ -81255,43 +80943,7 @@ MonoBehaviour:
   animationSolution: 1
   onClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1663258082}
-        m_TargetAssemblyTypeName: LineCreator, Assembly-CSharp
-        m_MethodName: buttonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1663258081}
-        m_TargetAssemblyTypeName: ShowAndHidePanel, Assembly-CSharp
-        m_MethodName: HidePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1663258084}
-        m_TargetAssemblyTypeName: ChooseImportantPlace, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDoubleClick:
     m_PersistentCalls:
       m_Calls: []
@@ -81311,120 +80963,6 @@ MonoBehaviour:
   centered: 0
   isPreset: 1
   latestTabIndex: 0
---- !u!114 &1663258081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663258076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56163c20b321f784d81f5431e8a198f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 273502645}
-  panelCG: {fileID: 273502649}
---- !u!114 &1663258082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663258076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27b598b2d5c0c34d849a663fccfa05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  ostatniePietro: 0
-  person: {fileID: 521734899}
-  target: {fileID: 41602813}
-  Realtarget: {fileID: 0}
-  allWaypoints: []
-  CorridorsGroundF: {fileID: 0}
-  CorridorsFirstF: {fileID: 0}
-  CorridorsSecondF: {fileID: 0}
-  lineColor: {r: 0, g: 0, b: 1, a: 1}
-  lineWidth: 0.01
-  pomocnicza: 0
---- !u!114 &1663258083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663258076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f09607848b1c6479608873e4512d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KorytarzeParter:
-  - {fileID: 460213142}
-  - {fileID: 2093383329}
-  - {fileID: 342215937}
-  - {fileID: 1199430435}
-  - {fileID: 1851860425}
-  - {fileID: 572086855}
-  - {fileID: 1264784665}
-  - {fileID: 520541809}
-  - {fileID: 172543891}
-  - {fileID: 788069752}
-  - {fileID: 24815978}
-  - {fileID: 297829225}
-  - {fileID: 1204583178}
-  - {fileID: 920857049}
-  - {fileID: 1862257324}
-  - {fileID: 185313827}
-  - {fileID: 608875144}
-  - {fileID: 1803064015}
-  - {fileID: 204374419}
-  - {fileID: 310432319}
-  - {fileID: 583016921}
-  - {fileID: 816505707}
-  - {fileID: 2054982046}
-  KorytarzePietro:
-  - {fileID: 1901884556}
-  - {fileID: 1502769602}
-  - {fileID: 1003975770}
-  - {fileID: 75627507}
-  - {fileID: 1000499345}
-  - {fileID: 181210456}
-  - {fileID: 1671138910}
-  - {fileID: 2094561439}
-  - {fileID: 1234111029}
-  - {fileID: 41777226}
-  - {fileID: 624385390}
-  - {fileID: 1101961619}
-  - {fileID: 1596097402}
-  - {fileID: 2123054287}
-  - {fileID: 1941105148}
-  - {fileID: 1233842973}
-  KorytarzePietro2:
-  - {fileID: 1397639391}
-  - {fileID: 471916501}
-  waypointParent: {fileID: 845358865}
-  waypointPrefab: {fileID: 148173200}
-  waypointManager: {fileID: 1663258082}
-  createdWaypoints: []
---- !u!114 &1663258084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663258076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00392674b3771784fb939e8da576781c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons: []
-  rectTransforms: []
-  lineCreator: {fileID: 1663258082}
-  showAndHidePanel: {fileID: 0}
 --- !u!114 &1663258085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92537,7 +92075,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881710978}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -101335,7 +100873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraToMove: {fileID: 333288336}
-  objectToCenter: {fileID: 92509623}
+  objectToCenter: {fileID: 521734894}
   object2: {fileID: 144394186}
 --- !u!114 &2084804807
 MonoBehaviour:
@@ -104855,8 +104393,6 @@ GameObject:
   - component: {fileID: 2134253535}
   - component: {fileID: 2134253534}
   - component: {fileID: 2134253533}
-  - component: {fileID: 2134253537}
-  - component: {fileID: 2134253536}
   - component: {fileID: 2134253538}
   m_Layer: 5
   m_Name: Dyrektor
@@ -105014,90 +104550,6 @@ MonoBehaviour:
   centered: 0
   isPreset: 1
   latestTabIndex: 0
---- !u!114 &2134253536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134253531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27b598b2d5c0c34d849a663fccfa05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pietro: 0
-  ostatniePietro: 0
-  person: {fileID: 521734899}
-  target: {fileID: 63013994}
-  Realtarget: {fileID: 0}
-  allWaypoints: []
-  CorridorsGroundF: {fileID: 0}
-  CorridorsFirstF: {fileID: 0}
-  CorridorsSecondF: {fileID: 0}
-  lineColor: {r: 0, g: 0, b: 1, a: 1}
-  lineWidth: 0.01
-  pomocnicza: 0
---- !u!114 &2134253537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134253531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f09607848b1c6479608873e4512d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KorytarzeParter:
-  - {fileID: 460213142}
-  - {fileID: 2093383329}
-  - {fileID: 342215937}
-  - {fileID: 1199430435}
-  - {fileID: 1851860425}
-  - {fileID: 572086855}
-  - {fileID: 1264784665}
-  - {fileID: 520541809}
-  - {fileID: 172543891}
-  - {fileID: 788069752}
-  - {fileID: 24815978}
-  - {fileID: 297829225}
-  - {fileID: 1204583178}
-  - {fileID: 920857049}
-  - {fileID: 1862257324}
-  - {fileID: 185313827}
-  - {fileID: 608875144}
-  - {fileID: 1803064015}
-  - {fileID: 204374419}
-  - {fileID: 310432319}
-  - {fileID: 583016921}
-  - {fileID: 816505707}
-  - {fileID: 2054982046}
-  KorytarzePietro:
-  - {fileID: 1901884556}
-  - {fileID: 1502769602}
-  - {fileID: 1003975770}
-  - {fileID: 75627507}
-  - {fileID: 1000499345}
-  - {fileID: 181210456}
-  - {fileID: 1671138910}
-  - {fileID: 2094561439}
-  - {fileID: 1234111029}
-  - {fileID: 41777226}
-  - {fileID: 624385390}
-  - {fileID: 1101961619}
-  - {fileID: 1596097402}
-  - {fileID: 2123054287}
-  - {fileID: 1941105148}
-  - {fileID: 1233842973}
-  KorytarzePietro2:
-  - {fileID: 1397639391}
-  - {fileID: 471916501}
-  waypointParent: {fileID: 845358865}
-  waypointPrefab: {fileID: 148173200}
-  waypointManager: {fileID: 2134253536}
-  createdWaypoints: []
 --- !u!114 &2134253538
 MonoBehaviour:
   m_ObjectHideFlags: 0

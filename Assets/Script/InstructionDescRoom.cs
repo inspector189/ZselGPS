@@ -5,8 +5,6 @@ using UnityEngine;
 public class InstructionDescRoom : MonoBehaviour
 {
     [SerializeField]
-    private GameObject descFirst;
-    [SerializeField]
     private GameObject descSecond;
     [SerializeField]
     private GameObject descThird;
@@ -19,7 +17,6 @@ public class InstructionDescRoom : MonoBehaviour
 
     private void Start()
     {
-        descFirst.SetActive(true);
         descSecond.SetActive(true);
         descThird.SetActive(false);
         descFour.SetActive(false);
@@ -28,7 +25,6 @@ public class InstructionDescRoom : MonoBehaviour
     }
     public void DownDirectionClick()
     {
-        descFirst.SetActive(false);
         descSecond.SetActive(false);
         descThird.SetActive(true);
         descFour.SetActive(true);
@@ -37,7 +33,6 @@ public class InstructionDescRoom : MonoBehaviour
     }
     public void UpDirectionClick()
     {
-        descFirst.SetActive(true);
         descSecond.SetActive(true);
         descThird.SetActive(false);
         descFour.SetActive(false);
