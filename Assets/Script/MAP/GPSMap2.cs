@@ -39,7 +39,8 @@ public class GPSMap2 : MonoBehaviour
     void Update() // Wykonuje się z każdą klatką na sekundę
     {
         GyroData();
-        
+        int savedFloor = GetCurrentFloorLvl();
+        floors[savedFloor].CalcPosition(personInterpolated, velocity, lastPosition);
     }
     public void SetCurrentFloorLvl(int savedFloor)
     {

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -37,15 +37,15 @@ public class RuchPersonki : MonoBehaviour
     private RectTransform person;
     [SerializeField]
     private Button buttonAcc;
-    private float interval = 1.0f; // Zaktualizowano na 1 sekundê
+    private float interval = 1.0f; // Zaktualizowano na 1 sekundÃª
 
     private bool isMoving = false;
-    private bool isGPSActive = false; // Nowe pole do zarz¹dzania stanem GPS Movement
+    private bool isGPSActive = false; // Nowe pole do zarzÂ¹dzania stanem GPS Movement
     private float initialCompassDirection;
 
-    // Nowe pola na teksty przycisków
-    private string startButtonText = "Start Acceleration";
-    private string stopButtonText = "Stop Acceleration";
+    // Nowe pola na teksty przyciskÃ³w
+    private string startButtonText = "WÅ‚. Akceleracja";
+    private string stopButtonText = "WyÅ‚. Akceleracja";
 
     void Update()
     {
@@ -83,13 +83,13 @@ public class RuchPersonki : MonoBehaviour
         lastTime = Time.time;
         initialPositionY = person.anchoredPosition.y;
 
-        // Upewnij siê, ¿e kompas jest w³¹czony
+        // Upewnij siÃª, Â¿e kompas jest wÂ³Â¹czony
         Input.compass.enabled = true;
 
-        // Ustaw pocz¹tkowy tekst przycisku
+        // Ustaw poczÂ¹tkowy tekst przycisku
         buttonAcc.GetComponentInChildren<TextMeshProUGUI>().text = startButtonText;
 
-        // Dodanie obs³ugi przycisku
+        // Dodanie obsÂ³ugi przycisku
         buttonAcc.onClick.AddListener(OnButtonAccClicked);
     }
 
@@ -98,15 +98,15 @@ public class RuchPersonki : MonoBehaviour
         isMoving = !isMoving;
         if (isMoving)
         {
-            // Zapisz pocz¹tkowy kierunek kompasu
+            // Zapisz poczÂ¹tkowy kierunek kompasu
             initialCompassDirection = Input.compass.trueHeading;
             buttonAcc.GetComponentInChildren<TextMeshProUGUI>().text = stopButtonText;
-            isGPSActive = false; // Wy³¹cz GPS Movement, gdy jest aktywna akceleracja
+            isGPSActive = false; // WyÂ³Â¹cz GPS Movement, gdy jest aktywna akceleracja
         }
         else
         {
             buttonAcc.GetComponentInChildren<TextMeshProUGUI>().text = startButtonText;
-            isGPSActive = true; // W³¹cz GPS Movement, gdy akceleracja jest zatrzymana
+            isGPSActive = true; // WÂ³Â¹cz GPS Movement, gdy akceleracja jest zatrzymana
         }
     }
 
@@ -125,16 +125,16 @@ public class RuchPersonki : MonoBehaviour
         // Oblicz czas od ostatniej klatki
         float deltaTime = Time.time - lastTime;
 
-        // Zresetuj prêdkoœæ na chwilê do 0
+        // Zresetuj prÃªdkoÅ“Ã¦ na chwilÃª do 0
         ySpeed = 0;
 
-        // Oblicz prêdkoœæ wzd³u¿ osi Y
+        // Oblicz prÃªdkoÅ“Ã¦ wzdÂ³uÂ¿ osi Y
         ySpeed += (currentAcceleration.y) * interval * 100;
 
-        // Zmieñ kierunek prêdkoœci w zale¿noœci od znaku przyspieszenia
+        // ZmieÃ± kierunek prÃªdkoÅ“ci w zaleÂ¿noÅ“ci od znaku przyspieszenia
         if (ySpeed > 0)
         {
-            // Przemieszczaj siê w górê
+            // Przemieszczaj siÃª w gÃ³rÃª
             predictedPositionY = person.anchoredPosition.y + Mathf.Abs(ySpeed) * interval;
         }
         else if (ySpeed == 0)
@@ -143,11 +143,11 @@ public class RuchPersonki : MonoBehaviour
         }
         else
         {
-            // Przemieszczaj siê w dó³
+            // Przemieszczaj siÃª w dÃ³Â³
             predictedPositionY = person.anchoredPosition.y - Mathf.Abs(ySpeed) * interval;
         }
 
-        // SprawdŸ aktualny kierunek kompasu
+        // SprawdÅ¸ aktualny kierunek kompasu
         float currentCompassDirection = Input.compass.trueHeading;
         float directionDifference = Mathf.DeltaAngle(initialCompassDirection, currentCompassDirection);
 
@@ -157,11 +157,11 @@ public class RuchPersonki : MonoBehaviour
             ySpeed = -ySpeed;
         }
 
-        Debug.Log("Przewidywana prêdkoœæ Y: " + ySpeed);
+        Debug.Log("Przewidywana prÃªdkoÅ“Ã¦ Y: " + ySpeed);
         Debug.Log("Przewidywana pozycja Y: " + predictedPositionY);
 
         person.anchoredPosition = new Vector2(person.anchoredPosition.x, predictedPositionY);
-        Debug.Log("Prêdkoœæ wzd³u¿ osi Y: " + ySpeed);
+        Debug.Log("PrÃªdkoÅ“Ã¦ wzdÂ³uÂ¿ osi Y: " + ySpeed);
         textV.text = ySpeed.ToString("F2");
 
         // Zaktualizuj ostatnie przyspieszenie i czas

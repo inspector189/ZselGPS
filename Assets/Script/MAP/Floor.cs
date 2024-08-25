@@ -52,15 +52,15 @@ public class Floor : MonoBehaviour
 
         return rect1Bounds.Overlaps(rect2Bounds);
     }
-    
+
     public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, Vector2 velocity, Vector2 lastPosition)
     {
         //personReal.position = CalcPosition(personInterpolated, velocity, lastPosition);
         if (IsColliding(personInterpolated, supportArea))
         {
-           foreach (RectTransform roomButton in classRoomButtons)
+            foreach (RectTransform roomButton in classRoomButtons)
             {
-                if(!IsColliding(personInterpolated, roomButton))
+                if (!IsColliding(personInterpolated, roomButton))
                 {
                     Vector2 newPosition = FindClosestEdgePosition(personInterpolated);
                     if (newPosition != Vector2.zero)
@@ -69,7 +69,7 @@ public class Floor : MonoBehaviour
                     }
                     break; // Przerwij pętlę, gdy zostanie znaleziona kolizja z jednym z pokojów
                 }
-            } 
+            }
         }
     }
     private void Update()
@@ -148,7 +148,7 @@ public class Floor : MonoBehaviour
 
         }
     }
-    
+
     public Vector2 FindClosestEdgePosition(RectTransform personInterpolated)
     {
         float Distance_Person(RectTransform button)
@@ -185,12 +185,12 @@ public class Floor : MonoBehaviour
     {
         if (roomButton != null)
         {
-            classRoomButtons = roomButton.GetComponentsInChildren<RectTransform>().Skip(1).ToList();         
-        }  
+            classRoomButtons = roomButton.GetComponentsInChildren<RectTransform>().Skip(1).ToList();
+        }
     }
     private void AddToTheCorridorsList()
     {
-        if(corridorsButton != null)
+        if (corridorsButton != null)
         {
             corridors = corridorsButton.GetComponentsInChildren<RectTransform>().Skip(1).ToList();
         }
