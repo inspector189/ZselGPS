@@ -43,12 +43,19 @@ namespace Michsky.MUIP
         {
             if (UIManagerAsset == null) { return; }
             if (UIManagerAsset.enableDynamicUpdate == true) { UpdateInputField(); }
+            if ((mainText.text).Length > 1)
+            {
+                placeholderText.text = "";
+            }
+            else
+            {
+                placeholderText.text = "Wpisz nazwę sali lub numer...";
+            }
         }
 
         void UpdateInputField()
         {
             if (UIManagerAsset == null) return;
-
             if (overrideColors == false)
             {
                 if (UIManagerAsset.inputFieldColor != null)
