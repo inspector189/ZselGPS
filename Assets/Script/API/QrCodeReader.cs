@@ -2,7 +2,6 @@ using System;
 using System.Globalization;
 using System.IO;
 using UnityEngine;
-using NativeGalleryNamespace;
 using ZXing;
 using Vulcanova;
 using System.Security.Cryptography;
