@@ -45,19 +45,28 @@ public class NoiseLvl : MonoBehaviour
 
     void RequestMicrophonePermission()
     {
+        #if UNITY_ANDROID
         if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
             Permission.RequestUserPermission(Permission.Microphone);
         }
+        #elif UNITY_IOS
+        // Na iOSie uprawnienia są obsługiwane automatycznie, więc nie trzeba ich ręcznie żądać
+        #endif
     }
 
     IEnumerator WaitForMicrophonePermission()
     {
-        // Wait until the user grants or denies permission
+        #if UNITY_ANDROID
+        // Wait until the user grants or denies permission on Android
         while (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
             yield return null;
         }
+        #elif UNITY_IOS
+        // Na iOS zakładamy, że uprawnienia są przyznane, więc nie musimy czekać
+        yield return null;
+        #endif
     }
 
     // Start recording audio (changed to public)
@@ -105,31 +114,31 @@ public class NoiseLvl : MonoBehaviour
                 sum += sample * sample;
             }
 
-            // Oblicz średnią amplitudę
+            // Calculate the average amplitude
             float averageAmplitude = sum / samples.Length;
 
-            // Konwertuj średnią amplitudę na decybele
+            // Convert average amplitude to decibels
             float dbValue = 20 * Mathf.Log10(averageAmplitude / 32767.0f + Mathf.Epsilon);
 
             smoothDbValue = Mathf.Lerp(smoothDbValue, dbValue, smoothFactor);
             smoothDbValue = Mathf.Round(smoothDbValue * 100) / 100;
-            // Aktualizuj tekst tylko wtedy, gdy wartość się zmieni
+            // Update the text only if the value changes
             if (Mathf.Abs(smoothDbValue - lastDbValue) > 1f)
             {
                 // Play the recorded audio if it's not already playing
-                float referenceValue = 260f; // Dostosuj tę wartość do swoich potrzeb
+                float referenceValue = 260f; // Adjust this value to your needs
                 text1.text = (Mathf.Round((smoothDbValue + referenceValue) * 100) / 100).ToString();
-                lastDbValue = smoothDbValue; // Zaktualizuj ostatnią wartość
+                lastDbValue = smoothDbValue; // Update the last value
                 PlayerPrefs.SetFloat("db", (Mathf.Round((smoothDbValue + referenceValue) * 100) / 100));
             }
         }
         else
         {
-            // Jeśli nie nagrywasz, ale wartość dbValue zmieniła się, zaktualizuj tekst
+            // If not recording but dbValue changed, update the text
             if (lastDbValue != 0f)
             {
                 lastDbValue = 0f;
-                float referenceValue = 260f; // Dostosuj tę wartość do swoich potrzeb
+                float referenceValue = 260f; // Adjust this value to your needs
                 text1.text = (Mathf.Round((lastDbValue + referenceValue) * 100) / 100).ToString();
                 PlayerPrefs.SetFloat("db", (Mathf.Round((lastDbValue + referenceValue) * 100) / 100));
             }

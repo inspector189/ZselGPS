@@ -8,9 +8,9 @@ using System;
 
 public class GPSMap2 : MonoBehaviour
 {
-    [SerializeField] private RectTransform personReal; 
+    [SerializeField] private RectTransform personReal;
     [SerializeField] private RectTransform personInterpolated;
-    [SerializeField] private GameObject redneredMap;
+    [SerializeField] private GameObject renderedMap;
     [SerializeField] private GameObject noneConnection;
     [SerializeField] private GameObject spinner;
     [SerializeField] private List<GameObject> texts;
@@ -23,30 +23,31 @@ public class GPSMap2 : MonoBehaviour
     [SerializeField] private List<Floor> floors;
     private Vector2 lastPosition;
     [SerializeField] private float waitTime = 0.02f;
-    private Vector2 velocity = new Vector2(0,0);
+    private Vector2 velocity = new Vector2(0, 0);
     Vector3 coordinates = new Vector3(52.668395f, 19.042718f, 0f); // Przykładowe współrzędne geograficzne
 
-
-
     private AveragePosition avg = new AveragePosition();
+
     void Start()
     {
         InitializeUI(false);
         Permissions();
-        Input.location.Start(1f, 0.1f);
         StartCoroutine(StartGPS());
     }
-    void Update() // Wykonuje się z każdą klatką na sekundę
+
+    void Update()
     {
         GyroData();
         int savedFloor = GetCurrentFloorLvl();
         floors[savedFloor].CalcPosition(personInterpolated, velocity, lastPosition);
     }
+
     public void SetCurrentFloorLvl(int savedFloor)
     {
         PlayerPrefs.SetInt("liczba", savedFloor);
         floors[savedFloor].SetFloor(savedFloor, personInterpolated, avg, velocity, coordinates, lastPosition);
     }
+
     public static int GetCurrentFloorLvl()
     {
         return PlayerPrefs.GetInt("liczba");
@@ -54,36 +55,46 @@ public class GPSMap2 : MonoBehaviour
 
     private IEnumerator StartGPS()
     {
-        while (true) 
+        if (!Input.location.isEnabledByUser)
         {
-            if (Input.location.isEnabledByUser)
-            {
-                if (Input.location.status != LocationServiceStatus.Running)
-                {
-                    if (Input.location.status != LocationServiceStatus.Initializing)
-                    {
-                        Input.location.Start(1f, 0.1f);
-                    }
-                }
+            UpdateUI(false);
+            yield break;
+        }
 
+        Input.location.Start(1f, 0.1f);
+
+        int maxWait = 20;
+        while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        {
+            yield return new WaitForSeconds(1);
+            maxWait--;
+        }
+
+        if (Input.location.status == LocationServiceStatus.Failed)
+        {
+            UpdateUI(false);
+            yield break;
+        }
+        else
+        {
+            while (true)
+            {
                 if (Input.location.status == LocationServiceStatus.Running)
                 {
                     GPSData();
                     UpdateUI(true);
                     InitializeUI(true);
                     int savedFloor = GetCurrentFloorLvl();
-                   // Vector2 lastPosition = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
-                   // floors[savedFloor].UpdatePosition(personInterpolated, personReal, velocity, lastPosition);
-                   //  velocity = new Vector2(personInterpolated.anchoredPosition.x, personInterpolated.anchoredPosition.y) - lastPosition;
                     TextsVisible(savedFloor);
                 }
+                else
+                {
+                    UpdateUI(false);
+                }
+
+                yield return new WaitForSeconds(waitTime);
+                System.GC.Collect();
             }
-            else
-            {
-                UpdateUI(false);
-            }
-            yield return new WaitForSeconds(waitTime);
-            System.GC.Collect();
         }
     }
 
@@ -92,37 +103,40 @@ public class GPSMap2 : MonoBehaviour
     {
         if (SystemInfo.supportsGyroscope)
         {
-            Quaternion gyroAttitude = gyro.attitude;
+            Quaternion gyroAttitude = Input.gyro.attitude;
             float gyroYaw = gyroAttitude.eulerAngles.z;
             personInterpolated.eulerAngles = new Vector3(0, 0, gyroYaw);
-          //  Debug.Log(personInterpolated.eulerAngles);
         }
     }
 
     private void GPSData()
     {
-        float latitude = Input.location.lastData.latitude; // szerokosc geograficzna
-        float longitude = Input.location.lastData.longitude; //dlugosc geograficzna
-        float accuracy = Input.location.lastData.horizontalAccuracy; //precyzja
-        double lastUpdateTime = Input.location.lastData.timestamp; //czas ostatniej up.
-        double timeSinceLastUpdate = Time.time - lastUpdateTime; // czas od ostatniego up.
+        float latitude = Input.location.lastData.latitude;
+        float longitude = Input.location.lastData.longitude;
+        float accuracy = Input.location.lastData.horizontalAccuracy;
+        double lastUpdateTime = Input.location.lastData.timestamp;
+        double timeSinceLastUpdate = Time.time - lastUpdateTime;
+
         PlayerPrefs.SetFloat("accuracy", accuracy);
         float timeWeight = Mathf.Clamp01(1.0f - timeSinceLastLocationUpdate / timeBetweenLocationUpdates);
-      //  avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
-       // avg.AddPosition(new Vector2(Input.location.lastData.longitude, Input.location.lastData.latitude));
-      //  avg.AddMeasurement(accuracy);
+
+        // avg.AddWeightedPosition(new Vector2(longitude, latitude), timeWeight);
+        // avg.AddPosition(new Vector2(longitude, latitude));
+        // avg.AddMeasurement(accuracy);
     }
     #endregion
+
     #region Permisje 
     private void Permissions()
     {
-        if (Application.platform == RuntimePlatform.Android)
+#if UNITY_ANDROID
+        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
         {
-            if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
-            {
-                Permission.RequestUserPermission(Permission.FineLocation);
-            }
+            Permission.RequestUserPermission(Permission.FineLocation);
         }
+#elif UNITY_IOS
+        // Na iOS uprawnienia do lokalizacji są zarządzane przez system i nie wymagają ręcznego żądania
+#endif
 
         Input.compass.enabled = true;
         if (SystemInfo.supportsGyroscope)
@@ -132,32 +146,35 @@ public class GPSMap2 : MonoBehaviour
         }
     }
     #endregion
+
     #region UI
     private void InitializeUI(bool isConnected)
     {
-        if(!isConnected)
+        if (!isConnected)
         {
-            redneredMap.SetActive(false);
+            renderedMap.SetActive(false);
             noneConnection.SetActive(true);
         }
-        else 
+        else
         {
-            redneredMap.SetActive(true); 
-            noneConnection.SetActive(false); 
+            renderedMap.SetActive(true);
+            noneConnection.SetActive(false);
             searchLocalization.text = "";
         }
     }
+
     private void TextsVisible(int floorIndex)
     {
         foreach (var textObject in texts)
         {
             textObject.SetActive(false);
-            if (floorIndex >= 0 && floorIndex < texts.Count)
-            {
-                texts[floorIndex].SetActive(true);
-            }
-        } 
+        }
+        if (floorIndex >= 0 && floorIndex < texts.Count)
+        {
+            texts[floorIndex].SetActive(true);
+        }
     }
+
     private void UpdateUI(bool isConnected)
     {
         if (isConnected)
