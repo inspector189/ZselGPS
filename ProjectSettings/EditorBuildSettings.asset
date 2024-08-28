@@ -20,13 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoginPanel.unity
     guid: d0635e3160509ea4cb02848197e43935
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MoreSettings.unity
     guid: 241317c833c91c14199608c5ee56e240
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Account.unity
     guid: 5ecee3d1835c8cb4e9773cef9035f8d8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Timetable.unity
     guid: c43ed79b659794e438e3cab3b382c45b
   - enabled: 1

@@ -103971,7 +103971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personReal: {fileID: 1226371420}
   personInterpolated: {fileID: 1036121439}
-  renderedMap: {fileID: 0}
+  renderedMap: {fileID: 1755683721}
   noneConnection: {fileID: 1953102615}
   spinner: {fileID: 1573485965}
   texts:
@@ -104067,11 +104067,11 @@ RectTransform:
   - {fileID: 1956826801}
   - {fileID: 1755683722}
   - {fileID: 1100693798}
+  - {fileID: 1936280417}
   - {fileID: 344901384}
   - {fileID: 2056687365}
   - {fileID: 425312451}
   - {fileID: 1953102616}
-  - {fileID: 1936280417}
   - {fileID: 1091066501}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -119323,7 +119323,8 @@ MonoBehaviour:
   buttonRectTransform: {fileID: 677739972}
   targetOrthographicSize: 0.3
   DrzwiSali: {fileID: 92261492}
-  images: []
+  images:
+  - {fileID: 1783838839610804713, guid: a75b81207935448448ceaaaac3b74cc2, type: 3}
 --- !u!114 &1755683807
 MonoBehaviour:
   m_ObjectHideFlags: 0
