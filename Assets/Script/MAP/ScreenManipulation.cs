@@ -7,12 +7,12 @@ public class ScreenManipulation : MonoBehaviour
 {
     public float zoomSpeed = 0.05f;
     public float rotateSpeed = 2f;
-    public float panSpeed = 0.5f; // Szybko�� przesuwania kamery
+    public float panSpeed = 0.5f; // Podstawowa szybkość przesuwania kamery
     public Camera cameraToZoom;
     public GameObject mapObject; // Obiekt mapy do obracania
-    public GameObject rawImageGameObject; // Obiekt RawImage do wykrywania dotkni��
+    public GameObject rawImageGameObject; // Obiekt RawImage do wykrywania dotknięć
 
-    private const float maxCameraSize = 4f; // Maksymalna wielko�� kamery
+    private const float maxCameraSize = 4f; // Maksymalna wielkość kamery
     private const float maxX = 19f; // Maksymalny zakres na osi X
     private const float minX = 8f; // Minimalny zakres na osi X
     private const float maxY = 4f; // Maksymalny zakres na osi Y
@@ -41,7 +41,7 @@ public class ScreenManipulation : MonoBehaviour
                     }
                     else if (touchCount == 2)
                     {
-                        // Zoom i obr�t, je�li s� dwa dotkni�cia
+                        // Zoom i obrót, jeśli są dwa dotknięcia
                         Touch touchTwo = Input.GetTouch(1);
 
                         // Zoom
@@ -54,7 +54,7 @@ public class ScreenManipulation : MonoBehaviour
                         float difference = currentMagnitude - prevMagnitude;
                         ZoomCamera(difference * zoomSpeed);
 
-                        // Obr�t
+                        // Obrót
                         Vector2 prevDir = touchZeroPrevPos - touchOnePrevPos;
                         Vector2 currentDir = touch.position - touchTwo.position;
 
@@ -68,10 +68,13 @@ public class ScreenManipulation : MonoBehaviour
 
     private void PanCamera(Vector2 newPanPosition)
     {
-        Vector2 offset = cameraToZoom.ScreenToViewportPoint(lastPanPosition - newPanPosition);
-        Vector3 move = new Vector3(offset.x * panSpeed, offset.y * panSpeed, 0);
+        // Zależność szybkości przesuwania od aktualnego rozmiaru kamery
+        float adjustedPanSpeed = panSpeed * (cameraToZoom.orthographicSize / maxCameraSize);
 
-        // Uwzgl�dnienie rotacji kamery
+        Vector2 offset = cameraToZoom.ScreenToViewportPoint(lastPanPosition - newPanPosition);
+        Vector3 move = new Vector3(offset.x * adjustedPanSpeed, offset.y * adjustedPanSpeed, 0);
+
+        // Uwzględnienie rotacji kamery
         move = cameraToZoom.transform.rotation * move;
 
         // Ograniczenie ruchu kamery
@@ -82,7 +85,8 @@ public class ScreenManipulation : MonoBehaviour
         cameraToZoom.transform.position = newPosition;
         lastPanPosition = newPanPosition;
     }
-private void ZoomCamera(float increment)
+
+    private void ZoomCamera(float increment)
     {
         if (cameraToZoom.orthographic)
         {

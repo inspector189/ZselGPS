@@ -12,6 +12,8 @@ public class PlusAndMinus : MonoBehaviour
     public void Start()
     {  
         text.text = GPSMap2.GetCurrentFloorLvl().ToString();
+        gpsMap2.SetCurrentFloorLvl(GPSMap2.GetCurrentFloorLvl());
+        PlayerPrefs.SetInt("personPietro", GPSMap2.GetCurrentFloorLvl());
     }
     public void AddOneToText()
     {

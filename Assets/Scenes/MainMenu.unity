@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ver. 0.0.1 (alpha)
+  m_text: ver. 0.0.2 (alpha)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -361,20 +361,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1292355547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112295441169796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 158141423d2bb494c9712c74f3b4bd2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: ToTheClassroom
-  GPSButton: {fileID: 0}
 --- !u!1 &1449089676
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,34 +436,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449089676}
   m_CullTransparentMesh: 1
---- !u!114 &1457548926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112295283381287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 158141423d2bb494c9712c74f3b4bd2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: MapaTSwobodny
-  GPSButton: {fileID: 0}
---- !u!114 &1612691586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112294989726243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 158141423d2bb494c9712c74f3b4bd2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: ImportantPlaces
-  GPSButton: {fileID: 0}
 --- !u!1 &1953710098
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +657,7 @@ GameObject:
   - component: {fileID: 2562876749805525604}
   - component: {fileID: 2313925343254968603}
   - component: {fileID: 1857110565003206116}
-  - component: {fileID: 1612691586}
+  - component: {fileID: 2562876749805525605}
   m_Layer: 5
   m_Name: WazneMiejsca
   m_TagString: Untagged
@@ -719,7 +677,7 @@ GameObject:
   - component: {fileID: 2562876750652230752}
   - component: {fileID: 2313925344161410847}
   - component: {fileID: 1857110564629367776}
-  - component: {fileID: 1457548926}
+  - component: {fileID: 2562876750652230753}
   m_Layer: 5
   m_Name: TrybSwobodny
   m_TagString: Untagged
@@ -739,7 +697,7 @@ GameObject:
   - component: {fileID: 2562876750528538051}
   - component: {fileID: 2313925343706351292}
   - component: {fileID: 1857110564249821763}
-  - component: {fileID: 1292355547}
+  - component: {fileID: 2562876750528538052}
   m_Layer: 5
   m_Name: GPSdoSali
   m_TagString: Untagged
@@ -3239,9 +3197,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1612691586}
-        m_TargetAssemblyTypeName: NewScene, Assembly-CSharp
-        m_MethodName: LoadNewScene
+      - m_Target: {fileID: 2562876749805525605}
+        m_TargetAssemblyTypeName: LocationChecker, Assembly-CSharp
+        m_MethodName: CheckLocationServices
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3270,6 +3228,19 @@ MonoBehaviour:
   centered: 0
   isPreset: 1
   latestTabIndex: 0
+--- !u!114 &2562876749805525605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112294989726243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b165612a0076404bba2abf6231b4715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scena: ImportantPlaces
 --- !u!114 &2562876750528538051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3337,9 +3308,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1292355547}
-        m_TargetAssemblyTypeName: NewScene, Assembly-CSharp
-        m_MethodName: LoadNewScene
+      - m_Target: {fileID: 2562876750528538052}
+        m_TargetAssemblyTypeName: LocationChecker, Assembly-CSharp
+        m_MethodName: CheckLocationServices
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3368,6 +3339,19 @@ MonoBehaviour:
   centered: 0
   isPreset: 1
   latestTabIndex: 0
+--- !u!114 &2562876750528538052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112295441169796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b165612a0076404bba2abf6231b4715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scena: ToTheClassroom
 --- !u!114 &2562876750652230752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3435,9 +3419,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1457548926}
-        m_TargetAssemblyTypeName: NewScene, Assembly-CSharp
-        m_MethodName: LoadNewScene
+      - m_Target: {fileID: 2562876750652230753}
+        m_TargetAssemblyTypeName: LocationChecker, Assembly-CSharp
+        m_MethodName: CheckLocationServices
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3466,6 +3450,19 @@ MonoBehaviour:
   centered: 0
   isPreset: 1
   latestTabIndex: 0
+--- !u!114 &2562876750652230753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112295283381287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b165612a0076404bba2abf6231b4715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scena: MapaTSwobodny
 --- !u!114 &2583008642044869839
 MonoBehaviour:
   m_ObjectHideFlags: 0

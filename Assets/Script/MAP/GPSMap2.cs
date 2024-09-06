@@ -194,7 +194,7 @@ public class GPSMap2 : MonoBehaviour
             spinner.SetActive(false);
             searchLocalization.text = "";
             precision.color = Color.red;
-            precision.text = "Brak dostępu do lokalizacji!";
+            precision.text = "Usługi lokalizacyjne są wyłączone. Proszę je włączyć.";
         }
     }
     #endregion
