@@ -7,7 +7,7 @@ public class ScreenManipulation : MonoBehaviour
 {
     public float zoomSpeed = 0.05f;
     public float rotateSpeed = 2f;
-    public float panSpeed = 0.5f; // Podstawowa szybkość przesuwania kamery
+    public float panSpeed = 0.65f; // Podstawowa szybkość przesuwania kamery
     public Camera cameraToZoom;
     public GameObject mapObject; // Obiekt mapy do obracania
     public GameObject rawImageGameObject; // Obiekt RawImage do wykrywania dotknięć

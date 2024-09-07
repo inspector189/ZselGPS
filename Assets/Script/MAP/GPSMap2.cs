@@ -179,15 +179,12 @@ public class GPSMap2 : MonoBehaviour
     {
         if (isConnected)
         {
-            if (noneConnection.activeSelf)
-            {
-                float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
-                spinner.SetActive(true);
-                int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
-                searchLocalization.text = "Szukanie lokalizacji...";
-                precision.color = Color.white;
-                precision.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
-            }
+            float sredniaPrecyzja = PlayerPrefs.GetFloat("sredniaPrecyzja");
+            spinner.SetActive(true);
+            int sredniaPrecyzjaRound = Mathf.RoundToInt(sredniaPrecyzja);
+            searchLocalization.text = "Szukanie lokalizacji...";
+            precision.color = Color.white;
+            precision.text = $"Aktualna precyzja pomiaru:\n {sredniaPrecyzjaRound}m \n";
         }
         else
         {
