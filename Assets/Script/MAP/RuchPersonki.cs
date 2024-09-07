@@ -40,7 +40,7 @@ public class RuchPersonki : MonoBehaviour
     private float interval = 1.0f; // Zaktualizowano na 1 sekundê
 
     private bool isMoving = false;
-    private bool isGPSActive = false; // Nowe pole do zarz¹dzania stanem GPS Movement
+    private bool isGPSActive = true; // Nowe pole do zarz¹dzania stanem GPS Movement
     private float initialCompassDirection;
 
     // Nowe pola na teksty przycisków
@@ -90,7 +90,7 @@ public class RuchPersonki : MonoBehaviour
         buttonAcc.GetComponentInChildren<TextMeshProUGUI>().text = startButtonText;
 
         // Dodanie obs³ugi przycisku
-        buttonAcc.onClick.AddListener(OnButtonAccClicked);
+        //buttonAcc.onClick.AddListener(OnButtonAccClicked);
     }
 
     private void OnButtonAccClicked()
