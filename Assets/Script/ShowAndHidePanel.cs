@@ -9,10 +9,7 @@ public class ShowAndHidePanel : MonoBehaviour
     [SerializeField]
     private GameObject panel;
     public CanvasGroup panelCG;
-    void Start()
-    {
-        panel.SetActive(false);
-    }
+
     public void ShowPanel()
     {
         panel.SetActive(true);
@@ -23,6 +20,7 @@ public class ShowAndHidePanel : MonoBehaviour
     }
     public void HidePanel()
     {
+        panel.SetActive(false);
         panelCG.alpha = 0f;
         panelCG.interactable = true;
         panelCG.blocksRaycasts = false;

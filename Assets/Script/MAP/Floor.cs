@@ -76,6 +76,7 @@ public class Floor : MonoBehaviour
     {
         lat = Input.location.lastData.latitude;
         lon = Input.location.lastData.longitude;
+
     }
     public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)
     {

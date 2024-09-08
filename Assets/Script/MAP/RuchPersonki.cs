@@ -192,10 +192,10 @@ public class RuchPersonki : MonoBehaviour
     void GPSMovement()
     {
         LocationInfo currentLocation = Input.location.lastData;
-
+        
         Vector3 newPosition2 = new Vector3(currentLocation.latitude, currentLocation.longitude, 0);
         personInterpolated.transform.position = Vector3.Lerp(personInterpolated.transform.position, newPosition2, Time.deltaTime);
-
+        
         if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
         {
             double x2 = 19.04371892765748;
@@ -214,6 +214,7 @@ public class RuchPersonki : MonoBehaviour
             double yp3 = yp1 + (y3 - y1) / (y2 - y1) * SkalaY * (yp2 - yp1);
             personInterpolated.transform.position = Vector3.zero;
             personInterpolated.transform.position = new Vector3((float)xp3, (float)yp3, 0);
+            
         }
     }
 }

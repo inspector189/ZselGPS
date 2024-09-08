@@ -289,8 +289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000080466, y: -3419}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 13.000002, y: -2310.9995}
+  m_SizeDelta: {x: 100, y: 181.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &72104371
 MonoBehaviour:
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4627619788526272282, guid: 25c7a8a948df0414ea0b3d5e01f11d93, type: 3}
+  m_Sprite: {fileID: -7456226328604799205, guid: 696d082def64b54459b0134c85fb84b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -683,8 +683,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1. Na powy\u017Cszym obrazku widzimy zielono-niebieski przycisk Powr\xF3t.
-    Po jego klikni\u0119ciu zostaniemy przekierowani do menu g\u0142\xF3wnego. \n\n2.
+  m_text: "1. Na powy\u017Cszym obrazku widzimy bia\u0142y przycisk Powr\xF3t. Po
+    jego klikni\u0119ciu zostaniemy przekierowani do menu g\u0142\xF3wnego. \n\n2.
     Wida\u0107 r\xF3wnie\u017C pasek, na kt\xF3rym widnieje aktualna data, oraz dzie\u0144
     tygodnia. Nad dat\u0105 znajduje si\u0119 aktualnie wybrany tryb."
   m_isRightToLeft: 0
@@ -799,7 +799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2112.9998}
+  m_AnchoredPosition: {x: 4.9975114, y: -1070.9998}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164336937
@@ -874,8 +874,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000020117, y: -3419}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 13, y: -2305.8}
+  m_SizeDelta: {x: 100, y: 179.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165357166
 MonoBehaviour:
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 225293649}
   m_Direction: 2
   m_Value: 1.0000001
-  m_Size: 0.18374313
+  m_Size: 0.18368818
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1200,7 +1200,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 620497485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8162569}
+  m_AnchorMin: {x: 0, y: 0.81631184}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.024971008, y: -191}
   m_SizeDelta: {x: 0.050003, y: -142.1}
@@ -1389,7 +1389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0024884024, y: 2581}
+  m_AnchoredPosition: {x: 17.752487, y: 4612}
   m_SizeDelta: {x: 802.5, y: 939.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250963562
@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4677679675261743596, guid: 6f81a589094dddb48b1b45a5c8b20054, type: 3}
+  m_Sprite: {fileID: 1085933351797441117, guid: b3e18dd7449719e41ab7392d15da84d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1464,7 +1464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.099, y: -1819.9998}
+  m_AnchoredPosition: {x: 2.8985114, y: -777.99976}
   m_SizeDelta: {x: 737, y: 266.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &269132886
@@ -1905,7 +1905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.099, y: -1844}
+  m_AnchoredPosition: {x: -6.7989993, y: -931}
   m_SizeDelta: {x: 737, y: 266.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317074559
@@ -2156,7 +2156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.7, y: -896.0003}
+  m_AnchoredPosition: {x: 11, y: 16.999672}
   m_SizeDelta: {x: 669.9, y: 1275.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323866188
@@ -2306,8 +2306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000020117, y: -2685.999}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 4.9975095, y: -1649.7}
+  m_SizeDelta: {x: 100, y: 167.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &347170062
 MonoBehaviour:
@@ -2381,7 +2381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2846}
+  m_AnchoredPosition: {x: 13.000002, y: -1737.9995}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370259866
@@ -2488,15 +2488,8 @@ MonoBehaviour:
     niebieska linia do tego miejsca.\n\n3. W lewym g\xF3rnym rogu widzimy r\xF3wnie\u017C
     zielon\u0105 ikonk\u0119 satelity. Ta ikonka b\u0119dzie zielona gdy nasz zasi\u0119g
     b\u0119dzie odpowiedni by lokalizowanie odbywa\u0142o si\u0119 za pomoc\u0105
-    GPS. Jednak gdy ikonka b\u0119dzie czerwona, sygna\u0142 jest bardzo s\u0142aby
-    \u2014 warto wtedy uruchomi\u0107 kierowanie za pomoc\u0105 akceleracji. \n\n4.
-    Zielony przycisk o tre\u015Bci \"W\u0142. Akceleracja\" - Po jego klikni\u0119ciu
-    uruchomi nam si\u0119 kierowanie u\u017Cytkownika za pomoc\u0105 akceleracji
-    \u2014 czyli jego przy\u015Bpieszenia. Gdy korzystamy z tego trybu nale\u017Cy
-    mie\u0107 telefon skierowany prosto przed nas, i r\xF3wnolegle do ziemi! To bardzo
-    istotne, poniewa\u017C w przypadku niepoprawnego u\u0142o\u017Cenia telefonu
-    kierowanie u\u017Cytkownika mo\u017Ce dzia\u0142a\u0107 nie odpowiednio, lub
-    nie dzia\u0142a\u0107. \n"
+    GPS. Jednak gdy ikonka b\u0119dzie czerwona, sygna\u0142 jest bardzo s\u0142aby.
+    \n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2613,7 +2606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00036621094}
+  m_AnchoredPosition: {x: 0, y: -0.0009765625}
   m_SizeDelta: {x: 0, y: 8300.2}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &392715853
@@ -2761,8 +2754,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1579584987}
   m_HandleRect: {fileID: 1579584986}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.13923126
+  m_Value: 1.0000001
+  m_Size: 0.14129306
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2876,7 +2869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.099, y: -2386.9993}
+  m_AnchoredPosition: {x: 2.8985114, y: -1344.9993}
   m_SizeDelta: {x: 737, y: 266.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461259121
@@ -3203,7 +3196,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.0024884024, y: 3101}
-  m_SizeDelta: {x: 802.5, y: 765.4}
+  m_SizeDelta: {x: 698.4, y: 857.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &479901014
 MonoBehaviour:
@@ -3225,7 +3218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3911872275715924482, guid: 6d9dd1360248bcb41870488432712f8d, type: 3}
+  m_Sprite: {fileID: -6291059192007202486, guid: 0d3c31ff00cadb64b9ba8b607e8fc36c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3519,7 +3512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2582}
+  m_AnchoredPosition: {x: -4.6999993, y: -1669}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509854387
@@ -3631,7 +3624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.099, y: -3120.0005}
+  m_AnchoredPosition: {x: 10.901001, y: -2012}
   m_SizeDelta: {x: 737, y: 266.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605917486
@@ -4051,14 +4044,7 @@ MonoBehaviour:
     rogu widzimy r\xF3wnie\u017C zielon\u0105 ikonk\u0119 satelity. Ta ikonka b\u0119dzie
     zielona gdy nasz zasi\u0119g b\u0119dzie odpowiedni by lokalizowanie odbywa\u0142o
     si\u0119 za pomoc\u0105 GPS. Jednak gdy ikonka b\u0119dzie czerwona, sygna\u0142
-    jest bardzo s\u0142aby \u2014 warto wtedy uruchomi\u0107 kierowanie za pomoc\u0105
-    akceleracji. \n\n5. Zielony przycisk o tre\u015Bci \"W\u0142. Akceleracja\" -
-    Po jego klikni\u0119ciu uruchomi nam si\u0119 kierowanie u\u017Cytkownika za
-    pomoc\u0105 akceleracji \u2014 czyli jego przy\u015Bpieszenia. Gdy korzystamy
-    z tego trybu nale\u017Cy mie\u0107 telefon skierowany prosto przed nas, i r\xF3wnolegle
-    do ziemi! To bardzo istotne, poniewa\u017C w przypadku niepoprawnego u\u0142o\u017Cenia
-    telefonu kierowanie u\u017Cytkownika mo\u017Ce dzia\u0142a\u0107 nie odpowiednio,
-    lub nie dzia\u0142a\u0107. \n"
+    jest bardzo s\u0142aby. \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4171,8 +4157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000080466, y: -2685.999}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 4.9975104, y: -1643.999}
+  m_SizeDelta: {x: 96.4, y: 169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679302230
 MonoBehaviour:
@@ -4194,7 +4180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4627619788526272282, guid: 25c7a8a948df0414ea0b3d5e01f11d93, type: 3}
+  m_Sprite: {fileID: -7456226328604799205, guid: c8c564f6d52bdb14e8abd966b1cb9789, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4309,8 +4295,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1. Na powy\u017Cszym obrazku widzimy zielono-niebieski przycisk Powr\xF3t.
-    Po jego klikni\u0119ciu zostaniemy przekierowani do menu g\u0142\xF3wnego. \n\n2.
+  m_text: "1. Na powy\u017Cszym obrazku widzimy bia\u0142y przycisk Powr\xF3t. Po
+    jego klikni\u0119ciu zostaniemy przekierowani do menu g\u0142\xF3wnego. \n\n2.
     Wida\u0107 r\xF3wnie\u017C pasek, na kt\xF3rym widnieje aktualna data, oraz dzie\u0144
     tygodnia. Nad dat\u0105 znajduje si\u0119 aktualnie wybrany tryb."
   m_isRightToLeft: 0
@@ -4425,7 +4411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: -1713}
+  m_AnchoredPosition: {x: 19, y: -605}
   m_SizeDelta: {x: 700.1, y: 1238}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753408486
@@ -5150,7 +5136,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 406.99997, y: -242}
-  m_SizeDelta: {x: 820, y: 95}
+  m_SizeDelta: {x: 366.7, y: 5.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937180990
 MonoBehaviour:
@@ -5520,8 +5506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00048828125}
-  m_SizeDelta: {x: 0, y: 7366.8}
+  m_AnchoredPosition: {x: 0, y: -0.00024414062}
+  m_SizeDelta: {x: 0, y: 7369.501}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1066145747
 MonoBehaviour:
@@ -5605,7 +5591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.099, y: -2856}
+  m_AnchoredPosition: {x: -6.7989993, y: -1943}
   m_SizeDelta: {x: 737, y: 266.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070688038
@@ -5884,7 +5870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 416.25, y: -1890.85}
+  m_AnchoredPosition: {x: 416.25, y: -1893.55}
   m_SizeDelta: {x: 802.5, y: 1083.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1101718828
@@ -5922,7 +5908,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 407.25, y: -232}
-  m_SizeDelta: {x: 802.5, y: 91.7}
+  m_SizeDelta: {x: 802.5, y: 56.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101718830
 MonoBehaviour:
@@ -5944,7 +5930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3683006372859994065, guid: 492ee3dec2eb9e24781d0aedc7a0fa5e, type: 3}
+  m_Sprite: {fileID: -6017769037428063772, guid: e970b33849b492b41871de3ab4e26779, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6132,8 +6118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 416.25, y: -674.6}
-  m_SizeDelta: {x: 802.5, y: 1319.2}
+  m_AnchoredPosition: {x: 416.25, y: -675.95}
+  m_SizeDelta: {x: 802.5, y: 1321.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126086732
 MonoBehaviour:
@@ -6155,7 +6141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7262300816291012519, guid: f23441cdf8471f34a990b5c360298f7d, type: 3}
+  m_Sprite: {fileID: -6072159590023989094, guid: 57bacffe0216f804d82a23ac6ddf33e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6207,8 +6193,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 406.99997, y: -231.99979}
-  m_SizeDelta: {x: 820, y: 95}
+  m_AnchoredPosition: {x: 406.99997, y: -257.8}
+  m_SizeDelta: {x: 820, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141317816
 MonoBehaviour:
@@ -6282,7 +6268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.9, y: 517}
+  m_AnchoredPosition: {x: -0.00000095367, y: 663}
   m_SizeDelta: {x: 752.1, y: 68.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1146766349
@@ -6308,19 +6294,7 @@ MonoBehaviour:
   m_text: "1. Na powy\u017Cszym obrazku widzimy zielono-niebieski przycisk Powr\xF3t.
     Po jego klikni\u0119ciu zostaniemy przekierowani do menu g\u0142\xF3wnego. \n\n2.
     Wida\u0107 r\xF3wnie\u017C pasek, na kt\xF3rym widnieje aktualna data, oraz dzie\u0144
-    tygodnia. Nad dat\u0105 znajduje si\u0119 aktualnie wybrany tryb.\n\n3. Po prawej
-    stronie widzimy r\xF3wnie\u017C dwie wa\u017Cne infromacje. Pierwsza dotyczy
-    d\u017Awi\u0119ku - gdy b\u0119dziemy przebywa\u0107 w miejscu w kt\xF3rym jest
-    za g\u0142o\u015Bno dostaniemy ostrze\u017Cenie. \nGdy w danym pomieszczeniu
-    jest za g\u0142o\u015Bno - kwadracik b\u0119dzie czerwony. Gdy g\u0142o\u015Bno\u015B\u0107
-    b\u0119dzie w normie - kwadracik b\u0119dzie zielony.\n\nDruga informacja dotyczy
-    \u015Bwiat\u0142a. Gdy b\u0119dziemy przebywa\u0107 w miejscu w kt\xF3rym jest
-    za jasno dostaniemy ostrze\u017Cenie. \nGdy w danym pomieszczeniu b\u0119dzie
-    za jasno - kwadracik b\u0119dzie czerwony.\nGdy w pomieszczeniu nat\u0119\u017Cenie
-    \u015Bwiat\u0142a b\u0119dzie w normie - kwadracik b\u0119dzie zielony.\n\nPamietaj,
-    przebywanie w miejscach gdzie jest bardzo g\u0142o\u015Bno mo\u017Ce prowadzi\u0107
-    do uszkodzenia s\u0142uchu! \nZ kolei przebywanie pomieszczeniach w kt\xF3rych
-    jest zbyt jasno mo\u017Ce prowadzi\u0107 do uszkodzenia wzroku!"
+    tygodnia. Nad dat\u0105 znajduje si\u0119 aktualnie wybrany tryb.\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6570,7 +6544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.1, y: 1750}
+  m_AnchoredPosition: {x: 15.649998, y: 3781}
   m_SizeDelta: {x: 737, y: 435.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1177099122
@@ -6606,13 +6580,19 @@ MonoBehaviour:
     zielona gdy nasz zasi\u0119g b\u0119dzie odpowiedni by lokalizowanie odbywa\u0142o
     si\u0119 za pomoc\u0105 GPS. Jednak gdy ikonka b\u0119dzie czerwona, sygna\u0142
     jest bardzo s\u0142aby \u2014 warto wtedy uruchomi\u0107 kierowanie za pomoc\u0105
-    akceleracji. \n\n6. Zielony przycisk o tre\u015Bci \"W\u0142. Akceleracja\" -
-    Po jego klikni\u0119ciu uruchomi nam si\u0119 kierowanie u\u017Cytkownika za
-    pomoc\u0105 akceleracji \u2014 czyli jego przy\u015Bpieszenia. Gdy korzystamy
-    z tego trybu nale\u017Cy mie\u0107 telefon skierowany prosto przed nas, i r\xF3wnolegle
-    do ziemi! To bardzo istotne, poniewa\u017C w przypadku niepoprawnego u\u0142o\u017Cenia
-    telefonu kierowanie u\u017Cytkownika mo\u017Ce dzia\u0142a\u0107 nie odpowiednio,
-    lub nie dzia\u0142a\u0107. \n"
+    akceleracji. \n\n6. W prawym g\xF3rnym rogu widzimy r\xF3wnie\u017C dwie wa\u017Cne
+    infromacje. Pierwsza dotyczy d\u017Awi\u0119ku - gdy b\u0119dziemy przebywa\u0107
+    w miejscu w kt\xF3rym jest za g\u0142o\u015Bno dostaniemy ostrze\u017Cenie.\r\nGdy
+    w danym pomieszczeniu jest za g\u0142o\u015Bno - kwadracik b\u0119dzie czerwony.
+    Gdy g\u0142o\u015Bno\u015B\u0107 b\u0119dzie w normie - kwadracik b\u0119dzie
+    zielony.\r\n\r\nDruga informacja dotyczy \u015Bwiat\u0142a. Gdy b\u0119dziemy
+    przebywa\u0107 w miejscu w kt\xF3rym jest za jasno dostaniemy ostrze\u017Cenie.
+    \r\nGdy w danym pomieszczeniu b\u0119dzie za jasno - kwadracik b\u0119dzie czerwony.\r\nGdy
+    w pomieszczeniu nat\u0119\u017Cenie \u015Bwiat\u0142a b\u0119dzie w normie -
+    kwadracik b\u0119dzie zielony.\r\n\r\nPamietaj, przebywanie w miejscach gdzie
+    jest bardzo g\u0142o\u015Bno mo\u017Ce prowadzi\u0107 do uszkodzenia s\u0142uchu!
+    \r\nZ kolei przebywanie pomieszczeniach w kt\xF3rych jest zbyt jasno mo\u017Ce
+    prowadzi\u0107 do uszkodzenia wzroku!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6725,7 +6705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.0995, y: -3441.9993}
+  m_AnchoredPosition: {x: -6.7994995, y: -2528.9993}
   m_SizeDelta: {x: 737, y: 263.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1177740257
@@ -6938,7 +6918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.099, y: -2528}
+  m_AnchoredPosition: {x: 10.901001, y: -1419.9995}
   m_SizeDelta: {x: 737, y: 266.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243570572
@@ -7084,8 +7064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 416.25, y: -7747.3}
-  m_SizeDelta: {x: 802.5, y: 8296.2}
+  m_AnchoredPosition: {x: 416.25, y: -7663.35}
+  m_SizeDelta: {x: 802.5, y: 8116.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1255538229
 GameObject:
@@ -7269,7 +7249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2112.9993}
+  m_AnchoredPosition: {x: 4.9975114, y: -1070.9993}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263970287
@@ -7344,8 +7324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000020117, y: -3154.9995}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -4.7000012, y: -2241.9995}
+  m_SizeDelta: {x: 100, y: 152.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270855057
 MonoBehaviour:
@@ -7558,7 +7538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 416.25, y: -2466.7}
+  m_AnchoredPosition: {x: 416.25, y: -2472.6}
   m_SizeDelta: {x: 802.5, y: 2235}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1317444254
@@ -7731,7 +7711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 401.25, y: -855}
+  m_AnchoredPosition: {x: 419, y: 1176}
   m_SizeDelta: {x: 802.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360061547
@@ -7993,7 +7973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 416.25, y: -5728.8}
+  m_AnchoredPosition: {x: 416.25, y: -5731.5}
   m_SizeDelta: {x: 802.5, y: 6562.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1429067720
@@ -8030,8 +8010,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 416.25, y: -674.6}
-  m_SizeDelta: {x: 802.5, y: 1319.2}
+  m_AnchoredPosition: {x: 416.25, y: -677.55}
+  m_SizeDelta: {x: 802.5, y: 1325.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1429067722
 MonoBehaviour:
@@ -8053,7 +8033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1818376601727633125, guid: 56e35932fd082b14baa4886048b09fb1, type: 3}
+  m_Sprite: {fileID: -4274825037717121144, guid: b4f8b5d89de34d340b0fdf97f5fd5a33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8103,8 +8083,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1382641982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.83347887}
-  m_AnchorMax: {x: 1, y: 0.99999994}
+  m_AnchorMin: {x: 0, y: 0.8334789}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.024971008, y: -191}
   m_SizeDelta: {x: 0.050003, y: -142.1}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8318,7 +8298,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1467048519}
   m_HandleRect: {fileID: 1467048518}
   m_Direction: 2
-  m_Value: 0.99999994
+  m_Value: 1.0000001
   m_Size: 0.16652107
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8703,8 +8683,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 320659464}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8607687}
-  m_AnchorMax: {x: 1, y: 0.99999994}
+  m_AnchorMin: {x: 0, y: 0.85870695}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.024971008, y: -191}
   m_SizeDelta: {x: 0.050003, y: -142.1}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8781,7 +8761,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 407.25, y: -232.49973}
-  m_SizeDelta: {x: 802.5, y: 91.7}
+  m_SizeDelta: {x: 802.5, y: 54.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595072903
 MonoBehaviour:
@@ -8803,7 +8783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3058978066953948067, guid: 82a0412e0f8053440bb314f4f4950758, type: 3}
+  m_Sprite: {fileID: -6955399123851908792, guid: 8f48ecdfd47314a4da885ad8bf2bf03a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8855,7 +8835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0024884024, y: -1049.9998}
+  m_AnchoredPosition: {x: 5, y: -8}
   m_SizeDelta: {x: 802.5, y: 956.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1618240106
@@ -8931,7 +8911,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 407.25, y: -242.49994}
-  m_SizeDelta: {x: 802.5, y: 91.7}
+  m_SizeDelta: {x: 802.5, y: 51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639562448
 MonoBehaviour:
@@ -8953,7 +8933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -840248713417895921, guid: 4a5fa6dac9120ef4ea641dbd457b407d, type: 3}
+  m_Sprite: {fileID: 3383035365972920879, guid: 53dc1a409845ce24abd7f2932516c1b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9120,7 +9100,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 406.99997, y: -231.99979}
-  m_SizeDelta: {x: 820, y: 95}
+  m_SizeDelta: {x: 714.3, y: 31.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1771616602
 MonoBehaviour:
@@ -9294,7 +9274,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2039608020616390066, guid: 54b9a27654befc54cb28138e9d433f1d, type: 3}
+  m_Sprite: {fileID: 5705554214246214692, guid: bb652e2bd8f3fb54f81ec8135eb93835, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9467,7 +9447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.0995, y: -2972.9988}
+  m_AnchoredPosition: {x: 2.8980114, y: -1930.9988}
   m_SizeDelta: {x: 737, y: 263.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813487090
@@ -9643,7 +9623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2582}
+  m_AnchoredPosition: {x: -4.6999993, y: -1669}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1856784156
@@ -9718,7 +9698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.7, y: -896}
+  m_AnchoredPosition: {x: 11, y: 17}
   m_SizeDelta: {x: 669.9, y: 1275.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872369623
@@ -10065,7 +10045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.0995, y: -3705.9995}
+  m_AnchoredPosition: {x: 10.900501, y: -2597.999}
   m_SizeDelta: {x: 737, y: 263.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889858428
@@ -10340,7 +10320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2845.9998}
+  m_AnchoredPosition: {x: 13.000002, y: -1737.9993}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937086968
@@ -11049,8 +11029,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000080466, y: -3154.9995}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -4.7000003, y: -2241.9995}
+  m_SizeDelta: {x: 96, y: 161.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067886043
 MonoBehaviour:
@@ -11072,7 +11052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4627619788526272282, guid: 25c7a8a948df0414ea0b3d5e01f11d93, type: 3}
+  m_Sprite: {fileID: -7456226328604799205, guid: b8b7eaa6fb2feca4e8fad4a6e834a92b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11249,8 +11229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00036621094}
-  m_SizeDelta: {x: 0, y: 10252.101}
+  m_AnchoredPosition: {x: 0, y: -0.00048828125}
+  m_SizeDelta: {x: 0, y: 10078.3}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2104728309
 MonoBehaviour:
@@ -11470,8 +11450,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0024884024, y: 2736}
-  m_SizeDelta: {x: 802.5, y: 765.4}
+  m_AnchoredPosition: {x: 0.0025025, y: 2694}
+  m_SizeDelta: {x: 802.5, y: 872.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136037018
 MonoBehaviour:
@@ -11493,7 +11473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3565969469829536075, guid: 91b34d7db9a3a43488b4000d4903749b, type: 3}
+  m_Sprite: {fileID: 3828830461443300110, guid: b55c25993bf317d48baeb408725809ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

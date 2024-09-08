@@ -21,7 +21,7 @@ public class ColorChanger : MonoBehaviour
     {
 
         float quietThreshold = 20f; // granica ciszy
-        float loudThreshold = 80f; // granica g³oœnoœci
+        float loudThreshold = 90f; // granica g³oœnoœci
 
         // Normalizacja poziomu dŸwiêku do zakresu 0-1
         float normalizedLevel = Mathf.InverseLerp(quietThreshold, loudThreshold, soundLevel);
@@ -38,8 +38,8 @@ public class ColorChanger : MonoBehaviour
     void UpdateLightRawImageColor(float lightLevel)
     {
 
-        float darkThreshold = 0.1f; // granica ciemnoœci
-        float brightThreshold = 1f; // granica jasnoœci
+        float darkThreshold = 0f; // granica ciemnoœci
+        float brightThreshold = 1000f; // granica jasnoœci
 
         float normalizedLevel = Mathf.InverseLerp(darkThreshold, brightThreshold, lightLevel);
 
