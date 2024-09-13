@@ -1,43 +1,67 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Android;
-using UnityEngine.UI;
-
 
 public class Kompasik : MonoBehaviour
 {
-    public GameObject Ikonka;
+    public GameObject Ikonka; // Persona na mapie
     private bool gyroEnabled;
     private Gyroscope gyro;
+    private float compassUpdateInterval = 3.5f; // Czas miêdzy aktualizacjami kompasu
+    private float lerpSpeed = 5f; // Szybkoœæ p³ynnego obracania
+    private float mapRotationOffset = -32.1f; // Offset obrotu mapy
+
     // Start is called before the first frame update
     void Start()
     {
-         if (SystemInfo.supportsGyroscope)
+        // Sprawdzenie i w³¹czenie ¿yroskopu
+        if (SystemInfo.supportsGyroscope)
         {
             gyro = Input.gyro;
             gyro.enabled = true;
+            gyroEnabled = true;
+        }
+        else
+        {
+            gyroEnabled = false;
+        }
+
+        // Sprawdzenie i w³¹czenie kompasu
+        if (Input.compass.enabled)
+        {
+            Input.compass.enabled = true;
+            StartCoroutine(UpdateCompass());
+        }
+        else
+        {
+            Debug.LogWarning("Kompas nie jest dostêpny.");
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Korutyna do aktualizacji kompasu
+    private IEnumerator UpdateCompass()
     {
-      
-        gyroEnabled = SystemInfo.supportsGyroscope;
-        if (gyroEnabled)
+        while (true)
         {
-            Quaternion gyroAttitude = gyro.attitude;
-            float gyroYaw = gyroAttitude.eulerAngles.z;
-             float rotatedAngle = gyroYaw + 180f;
-             if (rotatedAngle > 360f) {
-                rotatedAngle -= 360f;
+            if (Input.compass.enabled)
+            {
+                // U¿yj kompasu do obliczenia kierunku
+                float compassHeading = Input.compass.trueHeading;
+
+                // Oblicz rotacjê opart¹ na gyroskopie i kompasie
+                Quaternion targetRotation = Quaternion.Euler(0, 0, -(compassHeading + mapRotationOffset)); // Ujêcie rotacji mapy
+
+                if (gyroEnabled)
+                {
+                    Quaternion gyroAttitude = gyro.attitude;
+                    float gyroYaw = gyroAttitude.eulerAngles.z;
+                    targetRotation *= Quaternion.Euler(0, 0, gyroYaw); // Dodaj rotacjê z gyroskopu
+                }
+
+                // P³ynne obracanie za pomoc¹ Lerp
+                Ikonka.transform.rotation = Quaternion.Lerp(Ikonka.transform.rotation, targetRotation, Time.deltaTime * lerpSpeed);
             }
-            Ikonka.transform.rotation = Quaternion.Euler(0, 0, rotatedAngle);
+
+            yield return new WaitForSeconds(compassUpdateInterval); // Czekaj przed kolejn¹ aktualizacj¹
         }
     }
 }

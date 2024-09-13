@@ -24792,10 +24792,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 872190168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.5, y: -32.75}
-  m_SizeDelta: {x: 0, y: 55.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 116.5, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018399669
 MonoBehaviour:
@@ -42360,10 +42360,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1073299111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.5, y: -32.75}
-  m_SizeDelta: {x: 0, y: 55.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 116.5, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1587671627
 MonoBehaviour:
@@ -47624,10 +47624,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436423404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.5, y: -32.75}
-  m_SizeDelta: {x: 0, y: 55.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 116.5, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750367144
 MonoBehaviour:
@@ -53998,6 +53998,8 @@ MonoBehaviour:
   cameraToMove: {fileID: 2064702857}
   objectToCenter: {fileID: 1543543751}
   object2: {fileID: 1813101490}
+  moveSpeed: 2
+  smoothFactor: 0.1
 --- !u!114 &1963776701
 MonoBehaviour:
   m_ObjectHideFlags: 0
