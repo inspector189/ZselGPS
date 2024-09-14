@@ -40,6 +40,7 @@ public class GPSMap2 : MonoBehaviour
         GyroData();
         int savedFloor = GetCurrentFloorLvl();
         floors[savedFloor].CalcPosition(personInterpolated, velocity, lastPosition);
+        floors[savedFloor].UpdatePosition(personInterpolated, velocity, lastPosition);
     }
 
     public void SetCurrentFloorLvl(int savedFloor)

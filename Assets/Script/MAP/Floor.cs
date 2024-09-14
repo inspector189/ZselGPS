@@ -44,16 +44,16 @@ public class Floor : MonoBehaviour
         PlayerPrefs.SetInt("pietro", floorIndex);
         map.sprite = floorSprites;
         CalcPosition(personInterpolated, velocity, lastPosition);
+        
     }
     public bool IsColliding(RectTransform rect1, RectTransform rect2)
     {
         Rect rect1Bounds = GetWorldSpaceRect(rect1);
         Rect rect2Bounds = GetWorldSpaceRect(rect2);
-
         return rect1Bounds.Overlaps(rect2Bounds);
     }
 
-    public void UpdatePosition(RectTransform personInterpolated, RectTransform personReal, Vector2 velocity, Vector2 lastPosition)
+    public void UpdatePosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)
     {
         //personReal.position = CalcPosition(personInterpolated, velocity, lastPosition);
         if (IsColliding(personInterpolated, supportArea))
@@ -65,7 +65,7 @@ public class Floor : MonoBehaviour
                     Vector2 newPosition = FindClosestEdgePosition(personInterpolated);
                     if (newPosition != Vector2.zero)
                     {
-                        personInterpolated.position = new Vector3(newPosition.x, newPosition.y, personReal.position.z);
+                        personInterpolated.position = new Vector2(newPosition.x, newPosition.y);
                     }
                     break; // Przerwij pętlę, gdy zostanie znaleziona kolizja z jednym z pokojów
                 }
@@ -76,6 +76,7 @@ public class Floor : MonoBehaviour
     {
         lat = Input.location.lastData.latitude;
         lon = Input.location.lastData.longitude;
+
 
     }
     public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)

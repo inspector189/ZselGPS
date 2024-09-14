@@ -136176,6 +136176,8 @@ MonoBehaviour:
   cameraToMove: {fileID: 2023131735}
   objectToCenter: {fileID: 1036121434}
   object2: {fileID: 135481978}
+  moveSpeed: 2
+  smoothFactor: 0.1
 --- !u!114 &1990800372
 MonoBehaviour:
   m_ObjectHideFlags: 0
