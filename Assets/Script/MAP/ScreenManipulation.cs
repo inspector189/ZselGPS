@@ -5,14 +5,15 @@ using System.Collections.Generic;
 
 public class ScreenManipulation : MonoBehaviour
 {
-    public float zoomSpeed = 0.05f;
-    public float rotateSpeed = 2f;
+    public float zoomSpeed = 0.035f; // Zwiększona prędkość zoomu
+    public float rotateSpeed = 0.45f; // Zmniejszona prędkość obrotu
     public float panSpeed = 0.65f; // Podstawowa szybkość przesuwania kamery
     public Camera cameraToZoom;
     public GameObject mapObject; // Obiekt mapy do obracania
     public GameObject rawImageGameObject; // Obiekt RawImage do wykrywania dotknięć
 
     private const float maxCameraSize = 4f; // Maksymalna wielkość kamery
+    private const float minCameraSize = 0.1f; // Zmniejszona minimalna wielkość kamery
     private const float maxX = 19f; // Maksymalny zakres na osi X
     private const float minX = 8f; // Minimalny zakres na osi X
     private const float maxY = 4f; // Maksymalny zakres na osi Y
@@ -41,7 +42,6 @@ public class ScreenManipulation : MonoBehaviour
                     }
                     else if (touchCount == 2)
                     {
-                        // Zoom i obrót, jeśli są dwa dotknięcia
                         Touch touchTwo = Input.GetTouch(1);
 
                         // Zoom
@@ -68,16 +68,13 @@ public class ScreenManipulation : MonoBehaviour
 
     private void PanCamera(Vector2 newPanPosition)
     {
-        // Zależność szybkości przesuwania od aktualnego rozmiaru kamery
         float adjustedPanSpeed = panSpeed * (cameraToZoom.orthographicSize / maxCameraSize);
 
         Vector2 offset = cameraToZoom.ScreenToViewportPoint(lastPanPosition - newPanPosition);
         Vector3 move = new Vector3(offset.x * adjustedPanSpeed, offset.y * adjustedPanSpeed, 0);
 
-        // Uwzględnienie rotacji kamery
         move = cameraToZoom.transform.rotation * move;
 
-        // Ograniczenie ruchu kamery
         Vector3 newPosition = cameraToZoom.transform.position + move;
         newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
         newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
@@ -90,11 +87,9 @@ public class ScreenManipulation : MonoBehaviour
     {
         if (cameraToZoom.orthographic)
         {
-            cameraToZoom.orthographicSize = Mathf.Clamp(cameraToZoom.orthographicSize - increment / 30, 0.1f, maxCameraSize);
-        }
-        else
-        {
-            cameraToZoom.fieldOfView = Mathf.Clamp(cameraToZoom.fieldOfView - increment / 30, 0.1f, CameraFOVForMaxSize(maxCameraSize));
+            float currentSize = cameraToZoom.orthographicSize;
+            cameraToZoom.orthographicSize = Mathf.Clamp(currentSize - increment / 30, minCameraSize, maxCameraSize);
+            AdjustZoomAndRotationSpeeds(currentSize);
         }
     }
 
@@ -122,9 +117,10 @@ public class ScreenManipulation : MonoBehaviour
         return false;
     }
 
-    // Oblicz odpowiednie pole widzenia kamery dla maksymalnego rozmiaru
-    private float CameraFOVForMaxSize(float maxSize)
+    private void AdjustZoomAndRotationSpeeds(float currentSize)
     {
-        return 2f * Mathf.Atan(maxSize / (2f * cameraToZoom.nearClipPlane)) * Mathf.Rad2Deg;
+        // Dynamiczne dostosowanie prędkości zoomu i obrotu w zależności od rozmiaru kamery
+        zoomSpeed = Mathf.Lerp(0.05f, 0.1f, (currentSize - minCameraSize) / (maxCameraSize - minCameraSize));
+        rotateSpeed = Mathf.Lerp(0.2f, 2f, (currentSize - minCameraSize) / (maxCameraSize - minCameraSize));
     }
 }

@@ -104485,6 +104485,7 @@ MonoBehaviour:
   pole: {fileID: 1694840345}
   napis: {fileID: 883826643}
   swiatloidzwiek: {fileID: 0}
+  wysrodkujPerson: {fileID: 1990800369}
   napisYPositionWhenOn: 477
   napisYPositionWhenOff: 722
 --- !u!1 &1560554124

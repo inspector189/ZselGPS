@@ -7,6 +7,7 @@ public class ToggleMapByRectTransform : MonoBehaviour
     public RectTransform pole;
     public RectTransform napis;
     public GameObject swiatloidzwiek;
+    public GameObject wysrodkujPerson;
     public float napisYPositionWhenOn = 477f;
     public float napisYPositionWhenOff = 722f;
 
@@ -29,6 +30,7 @@ public class ToggleMapByRectTransform : MonoBehaviour
         // Sprawdzenie, czy RectTransform person znajduje siê w RectTransform pole
         bool isOverlapping = IsRectTransformOverlapping(person, pole);
         napis.gameObject.SetActive(!isOverlapping);
+        wysrodkujPerson.gameObject.SetActive(isOverlapping);
         SetPersonVisible(isOverlapping);
     }
 

@@ -95753,6 +95753,7 @@ MonoBehaviour:
   pole: {fileID: 832598578}
   napis: {fileID: 841337063}
   swiatloidzwiek: {fileID: 0}
+  wysrodkujPerson: {fileID: 2084804804}
   napisYPositionWhenOn: 477
   napisYPositionWhenOff: 722
 --- !u!1 &2022462596
@@ -99364,6 +99365,8 @@ MonoBehaviour:
   cameraToMove: {fileID: 333288336}
   objectToCenter: {fileID: 521734894}
   object2: {fileID: 144394186}
+  moveSpeed: 2
+  smoothFactor: 0.1
 --- !u!114 &2084804807
 MonoBehaviour:
   m_ObjectHideFlags: 0
