@@ -13,9 +13,9 @@ Aplikacja mobilna stworzona z myślą o nowych uczniach Zespołu Szkół Elektry
 <br/>
 <a href="#">Zgłoś błąd</a>
 </p>
-</div>
-
+  
 ![Twórcy](https://img.shields.io/github/contributors/inspector189/ZselGPS) ![Błędy](https://img.shields.io/github/issues/inspector189/ZselGPS)
+</div>
 
 ## Spis treści
 
