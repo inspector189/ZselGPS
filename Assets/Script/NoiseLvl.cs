@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Android;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class NoiseLvl : MonoBehaviour
 {
@@ -45,10 +46,12 @@ public class NoiseLvl : MonoBehaviour
 
         // Rozpocznij nagrywanie
         StartRecording();
+        
     }
 
     void Update()
     {
+
         // Sprawdzaj, czy są uprawnienia do mikrofonu
         if (!microphonePermissionGranted)
         {
@@ -62,6 +65,7 @@ public class NoiseLvl : MonoBehaviour
             soundAndLight.SetActive(true);
             GetDecibelLevel();
         }
+        
     }
 
     void RequestMicrophonePermission()
