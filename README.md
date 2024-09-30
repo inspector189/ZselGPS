@@ -8,6 +8,8 @@
 Aplikacja mobilna stworzona z myślą o nowych uczniach Zespołu Szkół Elektrycznych we Włocławku, aby pomóc im w nawigacji po szkole i uniknięciu gubienia się w jej budynku.
 <br/>
 <br/>
+<a href="google.com"><img src="Assets/Images/GooglePlay.png" alt="Google Play Download" height="65"></a>
+<br/>
 <a href="#"><strong>Zobacz dokumentację »</strong></a>
 <br/>
 <br/>
