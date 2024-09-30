@@ -8,7 +8,7 @@
 Aplikacja mobilna stworzona z myślą o nowych uczniach Zespołu Szkół Elektrycznych we Włocławku, aby pomóc im w nawigacji po szkole i uniknięciu gubienia się w jej budynku.
 <br/>
 <br/>
-<a href="google.com"><img src="Assets/Images/GooglePlay.png" alt="Google Play Download" height="65"></a>
+<a href="https://play.google.com/store/apps/details?id=com.DefaultCompany.ZSELGps"><img src="Assets/Images/GooglePlay.png" alt="Google Play Download" height="65"></a>
 <br/>
 <a href="#"><strong>Zobacz dokumentację »</strong></a>
 <br/>
@@ -39,9 +39,9 @@ Aplikacja mobilna stworzona z myślą o nowych uczniach Zespołu Szkół Elektry
 
 ### Instalacja
 
-Aktualną wersję beta aplikacji możesz pobrać bezpośrednio z naszego serwera szkolnego: Pobierz ZSEL GPS.
+Aktualną wersję beta aplikacji możesz pobrać bezpośrednio z <a href="https://play.google.com/store/apps/details?id=com.DefaultCompany.ZSELGps">Google Play</a>!
 
-Wersja na Google Play pojawi się wkrótce.
+Wersja na Google Play jest we wczesnym dostępie.
 
 ### Technologie 
 <img src="https://i.redd.it/tu3gt6ysfxq71.png" alt="Unity" height="50"> <img src="https://www.javacodegeeks.com/wp-content/uploads/2024/01/pngegg-1-1.png" alt="C#" height="50"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/1173px-Android_logo_2019_%28stacked%29.svg.png" alt="Android" height="50">
@@ -52,10 +52,9 @@ Wersja na Google Play pojawi się wkrótce.
 
 ### Wersja
 
-Aplikacja znajduje się w wersji beta (0.0.3), co oznacza, że może zawierać błędy i niedociągnięcia. Pracujemy nad poprawą jej funkcjonalności oraz stabilnością przed oficjalnym wydaniem na Google Play.
+Aplikacja znajduje się w wersji beta (0.1.0), co oznacza, że może zawierać błędy i niedociągnięcia. Pracujemy nad poprawą jej funkcjonalności oraz stabilnością przed oficjalnym wydaniem na Google Play.
 
 ### Plany na przyszłość
-- Publikacja aplikacji na Google Play.
 - Dodanie nowych funkcji i usprawnień.
 - Udoskonalenie nawigacji i mapy szkolnej.
 
