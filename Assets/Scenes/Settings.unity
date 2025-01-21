@@ -291,8 +291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000019073, y: 618}
-  m_SizeDelta: {x: 884.6, y: 226.9}
+  m_AnchoredPosition: {x: 0.000049591, y: 618}
+  m_SizeDelta: {x: 1080, y: 226.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470155557
 MonoBehaviour:
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9081145679902195461, guid: 35b60e6f5fdd6cc45b978e1132832071, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -994,6 +994,7 @@ GameObject:
   - component: {fileID: 1420289526}
   - component: {fileID: 1420289525}
   - component: {fileID: 1420289524}
+  - component: {fileID: 1420289528}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1086,6 +1087,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1420289528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420289523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2c848243bff404d8fedaedbbc0449b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 535744289}
 --- !u!1 &1497588713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1706,9 @@ GameObject:
   - component: {fileID: 1870369794}
   - component: {fileID: 1870369792}
   - component: {fileID: 1870369793}
+  - component: {fileID: 1870369797}
+  - component: {fileID: 1870369796}
+  - component: {fileID: 1870369795}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1709,7 +1726,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.14509805, g: 0.15686275, b: 0.21176471, a: 0}
+  m_BackGroundColor: {r: 0.14901961, g: 0.15294118, b: 0.16078432, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1773,6 +1790,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1870369795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870369791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a24b7309a651594f911ee9f5b849a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  themeToApply: 2
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedColor: {r: 0, g: 0, b: 0, a: 1}
+  selectedColor: {r: 0, g: 0, b: 1, a: 1}
+  disabledColor: {r: 1, g: 0, b: 0, a: 1}
+  cameraBackgroundColor: {r: 1, g: 0, b: 0.082383156, a: 1}
+  imageColor: {r: 1, g: 1, b: 1, a: 1}
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1870369796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870369791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a24b7309a651594f911ee9f5b849a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  themeToApply: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedColor: {r: 0, g: 0, b: 0, a: 1}
+  selectedColor: {r: 0, g: 0, b: 1, a: 1}
+  disabledColor: {r: 1, g: 0, b: 0, a: 1}
+  cameraBackgroundColor: {r: 0, g: 1, b: 1, a: 1}
+  imageColor: {r: 1, g: 1, b: 1, a: 1}
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1870369797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870369791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a24b7309a651594f911ee9f5b849a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  themeToApply: 0
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedColor: {r: 0, g: 0, b: 0, a: 1}
+  selectedColor: {r: 0, g: 0, b: 1, a: 1}
+  disabledColor: {r: 1, g: 0, b: 0, a: 1}
+  cameraBackgroundColor: {r: 1, g: 0.79884464, b: 0, a: 1}
+  imageColor: {r: 1, g: 1, b: 1, a: 1}
+  textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1942380091
 GameObject:
   m_ObjectHideFlags: 0

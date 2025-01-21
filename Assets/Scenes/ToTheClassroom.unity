@@ -27259,7 +27259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 71471ab662db16f439bb0fa9890a682e, type: 2}
-  m_Color: {r: 0.18431373, g: 0.19215687, b: 0.25882354, a: 1}
+  m_Color: {r: 0.14901961, g: 0.15294118, b: 0.16078432, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -27961,8 +27961,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294667806
-  m_fontColor: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -35665,10 +35665,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 425312451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5, y: -96.97363}
-  m_SizeDelta: {x: 151.1, y: 3.2}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -0.003479004, y: -96.97363}
+  m_SizeDelta: {x: -930.14, y: 3.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538696687
 MonoBehaviour:
@@ -50468,10 +50468,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2056687365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.449997, y: 95.7}
-  m_SizeDelta: {x: 151.1, y: 3.2}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -0.61535645, y: 95.7}
+  m_SizeDelta: {x: -935.6, y: 3.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766644585
 MonoBehaviour:
@@ -54207,8 +54207,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294944856
+  m_fontColor: {r: 0.34509805, g: 0.65882355, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -56557,8 +56557,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9999789, y: 30.819973}
-  m_SizeDelta: {x: 93, y: 70}
+  m_AnchoredPosition: {x: 1.1299996, y: 35}
+  m_SizeDelta: {x: 92.74, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &839264376
 MonoBehaviour:
@@ -56599,7 +56599,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
     m_PressedColor: {r: 0.21568628, g: 0.34901962, b: 0.54901963, a: 1}
     m_SelectedColor: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
@@ -63674,7 +63674,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.14509805, g: 0.15686275, b: 0.21176471, a: 1}
+  m_BackGroundColor: {r: 0.14901961, g: 0.15294118, b: 0.16078432, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -65166,15 +65166,15 @@ RectTransform:
   m_GameObject: {fileID: 1001418284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7375, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 589583401}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -427, y: 1}
-  m_SizeDelta: {x: 125.3, y: 137}
+  m_AnchoredPosition: {x: -425.58, y: 3.48}
+  m_SizeDelta: {x: 192.59, y: 141.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001418286
 MonoBehaviour:
@@ -65189,7 +65189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39119795, g: 0.409994, b: 0.5566038, a: 0.83137256}
+  m_Color: {r: 0.14117648, g: 0.22745098, b: 0.32156864, a: 0.83137256}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -74345,7 +74345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.34509805, g: 0.65882355, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -112965,8 +112965,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294667806
-  m_fontColor: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -113021,7 +113021,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 1.1390972, z: 0.62724495, w: 1.220558}
+  m_margin: {x: 0, y: -7.3727207, z: 0.62724495, w: 1.220558}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -113051,8 +113051,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9999789, y: -34.49001}
-  m_SizeDelta: {x: 46.18, y: 107.59}
+  m_AnchoredPosition: {x: 2.57, y: -31.9}
+  m_SizeDelta: {x: 46.18, y: 87.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1676905456
 GameObject:
@@ -122715,7 +122715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b60e50891420575449e247794d3bc70d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c6c37ad888745c4193e333fbcaed97e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -124743,7 +124743,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -107}
+  m_AnchoredPosition: {x: 2.57, y: -107.4}
   m_SizeDelta: {x: 93, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845451149
@@ -124785,7 +124785,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
     m_PressedColor: {r: 0.21568628, g: 0.34901962, b: 0.54901963, a: 1}
     m_SelectedColor: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
@@ -135109,7 +135109,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970033442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9d2f9067277ade4e9b47012ea4d9e17, type: 3}
   m_Name: 
@@ -135182,7 +135182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03137255, g: 0.39607844, b: 0.99607843, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -136255,7 +136255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3621b8e08fea0264bb01fa347fcf16c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b02a13dbd8aa6694892ce9f8b29d0afd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -141541,7 +141541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 71471ab662db16f439bb0fa9890a682e, type: 2}
-  m_Color: {r: 0.18431373, g: 0.19215687, b: 0.25882354, a: 1}
+  m_Color: {r: 0.14901961, g: 0.15294118, b: 0.16078432, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -146948,8 +146948,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.025, y: 79.209984}
-  m_SizeDelta: {x: 122.32, y: 4.78}
+  m_AnchoredPosition: {x: 0.12, y: 79.209984}
+  m_SizeDelta: {x: 122.6, y: 4.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136392471
 MonoBehaviour:
@@ -146964,7 +146964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11764706, g: 0.43137255, b: 0.9843137, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
