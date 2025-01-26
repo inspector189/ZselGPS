@@ -4,6 +4,7 @@ using UnityEngine.Android;
 
 public class LocationChecker : MonoBehaviour
 {
+    public int wyborSceny;
     public string scena;
 
     public void CheckLocationServices()
@@ -32,6 +33,9 @@ public class LocationChecker : MonoBehaviour
                 if (Input.location.status == LocationServiceStatus.Running)
                 {
                     Input.location.Stop();
+                    PlayerPrefs.SetInt("WybranaScena", wyborSceny);
+                    
+
                     SceneManager.LoadScene(scena);
                 }
                 else
