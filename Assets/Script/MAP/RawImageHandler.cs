@@ -58,8 +58,6 @@ public class RawImageHandler : MonoBehaviour, IPointerClickHandler, IPointerDown
                         OpisSaliText.text = OpisSali;
                         Vector3 targetPosition = new Vector3(buttonRectTransform.position.x, buttonRectTransform.position.y, CameraToMove.transform.position.z);
                         StartCoroutine(MoveCamera(targetPosition, targetOrthographicSize, 1f)); // 1 sekunda trwania animacji
-                        PlayerPrefs.SetFloat("DrzwiSaliX", DrzwiSali.transform.localPosition.x);
-                        PlayerPrefs.SetFloat("DrzwiSaliY", DrzwiSali.transform.localPosition.y);
                         PlayerPrefs.SetInt("pietroPomieszczenia", int.Parse(pietro));
                         PlayerPrefs.SetInt("panelStatus", 1);
                         PlayerPrefs.SetInt("panelCzynnosc", 1);

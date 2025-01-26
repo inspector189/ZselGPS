@@ -14,11 +14,13 @@ using System.Linq;
 
 public class LineCreator : MonoBehaviour
 {
+    public ChooseImportantPlace chooseImportantPlace;
+    public RectTransform targetRectTransform;
     private string symbol = "wloclawek";
     public int pietro;
     public int ostatniePietro;
     public RectTransform person; // Pozycja obiektu reprezentującego użytkownika
-    public RectTransform target; // Pozycja wybranego celu
+    public RectTransform target = null; // Pozycja wybranego celu
     public RectTransform Realtarget;
     public List<Transform> allWaypoints = new List<Transform>(); // Wszystkie waypointy w sieci
     public Transform CorridorsGroundF;
@@ -28,12 +30,15 @@ public class LineCreator : MonoBehaviour
     private LineRenderer lineRenderer; // Komponent LineRenderer do rysowania linii
     public Color lineColor = Color.blue; // Kolor linii
     public float lineWidth = 0.01f; // Szerokość linii
-
+    private RectTransform[] corridors;
     private List<string> groundFloorCorridors;
     private List<string> firstFloorCorridors;
     private List<string> secondFloorCorridors;
+    private RectTransform previousTarget;
+
 
     public int pomocnicza = 0;
+    public int pomocnicza2 = 0;
     private void Start()
     {
         // Inicjalizacja LineRenderer
@@ -45,11 +50,18 @@ public class LineCreator : MonoBehaviour
         lineRenderer.endWidth = lineWidth;
         lineRenderer.useWorldSpace = true;
         lineRenderer.sortingOrder = 1; // Zapewnia, że linia jest rysowana nad innymi elementami
-        InitializeCorridors();
-        ClearLine();
-        System.DateTime selectedDate = System.DateTime.Now;
-        LoginProcess(selectedDate);
+        pomocnicza2 = PlayerPrefs.GetInt("personPietro", 0);
+        //ClearLine();
 
+    }
+    public void SetTarget(RectTransform targetRectTransform)
+    {
+        if (target != null && target != previousTarget) 
+        {
+            previousTarget = target;
+        }
+        target = targetRectTransform;
+        Debug.Log("Target ustawiony na: " + target);
     }
     public void buttonClicked()
     {
@@ -78,48 +90,79 @@ public class LineCreator : MonoBehaviour
 
     private void Update()
     {
-        if(pomocnicza == 1)
+        if (PlayerPrefs.GetInt("pomocnicza") == 1)
         {
             int pietroPomieszczenia = PlayerPrefs.GetInt("pietroPomieszczenia");
 
-            if (PlayerPrefs.GetInt("pietroPomieszczenia") != PlayerPrefs.GetInt("personPietro"))
+            if (PlayerPrefs.GetInt("personPietro") != PlayerPrefs.GetInt("pietroPomieszczenia"))
             {
-                RectTransform[] stairsArray = null;
-
-                if (pietroPomieszczenia == 0)
-                {
-                    stairsArray = GetStairsArray(CorridorsGroundF);
-                    RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
-                    person = nearestStairs;
-                }
-                else if (pietroPomieszczenia == 1)
-                {
-                    stairsArray = GetStairsArray(CorridorsFirstF);
-                    RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
-                    person = nearestStairs;
-                }
-                else if (pietroPomieszczenia == 2)
-                {
-                    stairsArray = GetStairsArray(CorridorsSecondF);
-                    RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
-                    person = nearestStairs;
-                }
+                RectTransform[] stairsArray = SelectArrayStairsForFloor(PlayerPrefs.GetInt("personPietro"));
+                //ClearLine();
+                RectTransform nearestStair = GetNearestStairs(stairsArray, PlayerPrefs.GetInt("personPietro"));
+                target = nearestStair;
+                //FindAndDrawPath();
             }
             else
             {
-                float x = PlayerPrefs.GetFloat("DrzwiSaliX");
-                Vector2 position = target.anchoredPosition;
-                position.x = x;
-                target.anchoredPosition = position;
-
-                float y = PlayerPrefs.GetFloat("DrzwiSaliY");
-                Vector2 position2 = target.anchoredPosition;
-                position2.y = y;
-                target.anchoredPosition = position2;
+                //ClearLine();
+                FindAndDrawPath();
             }
+
+            PlayerPrefs.SetInt("pomocnicza", 0);
         }
         
-        FindAndDrawPath();
+        
+        if(target != null)
+        {
+            Debug.Log(target);
+            ClearLineOnFloorChange();
+            FindAndDrawPath();
+        }
+    }
+    public void ClearLineOnFloorChange()
+    {
+        if (PlayerPrefs.GetInt("checkifFloorChange") == 1)
+        {
+            int currentFloor = PlayerPrefs.GetInt("personPietro");
+            int targetFloor = PlayerPrefs.GetInt("pietroPomieszczenia");
+
+            // Jeśli wrócono na pierwotne piętro, przywróć previousTarget
+            if (currentFloor == targetFloor && previousTarget != null)
+            {
+                target = previousTarget;
+                Debug.Log("Przywrócono target do: " + previousTarget);
+            }
+            else
+            {
+                // Ustaw najbliższe schody
+                RectTransform[] stairsArray = SelectArrayStairsForFloor(currentFloor);
+                target = GetNearestStairs(stairsArray, currentFloor);
+                Debug.Log("Target ustawiony na schody: " + target);
+            }
+
+            PlayerPrefs.SetInt("checkifFloorChange", 0);
+            FindAndDrawPath();
+        }
+    }
+    public RectTransform GetNearestStairs(RectTransform[] stairsArray, int pietroPomieszczenia)
+    {
+        if (pietroPomieszczenia == 0)
+        {
+            RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
+            return nearestStairs;
+
+        }
+        else if (pietroPomieszczenia == 1)
+        {
+            RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
+            return nearestStairs;
+        }
+        else if (pietroPomieszczenia == 2)
+        {
+            RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
+            return nearestStairs;
+        }
+        return null;
     }
     RectTransform[] GetStairsArray(Transform corridor)
     {
@@ -148,7 +191,6 @@ public class LineCreator : MonoBehaviour
                 nearestStairs = stairs;
             }
         }
-
         return nearestStairs;
     }
     public void SetWaypoints(List<Transform> waypoints)
@@ -157,7 +199,7 @@ public class LineCreator : MonoBehaviour
         allWaypoints.AddRange(waypoints);
         FindAndDrawPath(); // Po dodaniu nowego waypointa ponownie rysujemy ścieżkę
     }
-    private void FindAndDrawPath()
+    public void FindAndDrawPath()
     {
         if (person == null || target == null || allWaypoints.Count == 0)
         {
@@ -386,32 +428,62 @@ private List<Transform> GetNeighbors(Transform current)
             lineRenderer.SetPosition(i, new Vector3(pathPosition.x, pathPosition.y, 0)); // Ustawienie na płaszczyźnie 2D
         }
     }
-    private void InitializeCorridors()
+    public RectTransform[] SelectArrayStairsForFloor(int currentFloor)
     {
-        groundFloorCorridors = new List<string>
-        {
-            "Korytarz7",
-            "Korytarz14",
-            "Korytarz22",
-            "Korytarz24",
-            "Korytarz25"
-        };
+        currentFloor = PlayerPrefs.GetInt("personPietro");
+        string[] corridorNames;
 
-        firstFloorCorridors = new List<string>
+        switch (currentFloor)
         {
-            "Korytarz8",
-            "Korytarz10",
-            "Korytarz14",
-            "Korytarz15",
-            "Korytarz16"
-        };
+            case 0:
+                corridorNames = new string[]
+                {
+                "Korytarz7",
+                "Korytarz14",
+                "Korytarz22",
+                "Korytarz24",
+                "Korytarz25"
+                };
+                break;
+            case 1:
+                corridorNames = new string[]
+                {
+                "Korytarz8",
+                "Korytarz10",
+                "Korytarz14",
+                "Korytarz15",
+                "Korytarz16"
+                };
+                break;
+            case 2:
+                corridorNames = new string[]
+                {
+                "Korytarz3",
+                "Korytarz4"
+                };
+                break;
+            default:
+                return null; 
+        }
 
-        secondFloorCorridors = new List<string>
+        corridors = new RectTransform[corridorNames.Length];
+        for (int i = 0; i < corridorNames.Length; i++)
         {
-            "Korytarz3",
-            "Korytarz4"
-        };
+            GameObject corridorObject = GameObject.Find(corridorNames[i]);
+            if (corridorObject != null)
+            {
+                corridors[i] = corridorObject.GetComponent<RectTransform>();
+            }
+            else
+            {
+                Debug.LogWarning($"Nie znaleziono obiektu o nazwie {corridorNames[i]}");
+                corridors[i] = null;
+            }
+        }
+
+        return corridors;
     }
+
     private Transform FindNearestCorridor()
     {
         List<string> currentFloorCorridors = GetCorridorsForFloor(ostatniePietro);
@@ -447,158 +519,7 @@ private List<Transform> GetNeighbors(Transform current)
                 return new List<string>();
         }
     }
-    public async void LoginProcess(DateTime selectedDate)
-    {
-        
-        try
-        {
-            string token = PlayerPrefs.GetString("token");
-            if (token == "testowe" || SceneManager.GetActiveScene().name == "ToTheClassroom" || SceneManager.GetActiveScene().name == "ImportantPlaces" || SceneManager.GetActiveScene().name == "MapaTSwobodny")
-            {
-                LessonData[] lessonsData = new LessonData[]
-                {
-                    new LessonData { Position = 1, SubjectName = "Matematyka", TeacherName = "Pan Kowalski", StartTime = "08:00", EndTime = "08:45", RoomCode = "101", SubjectCode = "MAT" },
-                    new LessonData { Position = 2, SubjectName = "Historia", TeacherName = "Pani Nowak", StartTime = "08:50", EndTime = "09:35", RoomCode = "102", SubjectCode = "HIS" },
-                    new LessonData { Position = 3, SubjectName = "Biologia", TeacherName = "Pan Wiśniewski", StartTime = "09:50", EndTime = "10:35", RoomCode = "103", SubjectCode = "BIO" },
-                    new LessonData { Position = 4, SubjectName = "Chemia", TeacherName = "Pani Kowalczyk", StartTime = "10:50", EndTime = "11:35", RoomCode = "104", SubjectCode = "CHE" },
-                    new LessonData { Position = 5, SubjectName = "Język angielski", TeacherName = "Pan Wojciechowski", StartTime = "11:50", EndTime = "12:35", RoomCode = "105", SubjectCode = "ENG" },
-                    new LessonData { Position = 6, SubjectName = "Wychowanie fizyczne", TeacherName = "Pani Lewandowska", StartTime = "12:50", EndTime = "13:35", RoomCode = "Gym", SubjectCode = "PE" },
-                    new LessonData { Position = 7, SubjectName = "Informatyka", TeacherName = "Pan Dąbrowski", StartTime = "13:50", EndTime = "14:35", RoomCode = "106", SubjectCode = "INF" },
-                    new LessonData { Position = 8, SubjectName = "Plastyka", TeacherName = "Pani Mazur", StartTime = "14:40", EndTime = "15:25", RoomCode = "107", SubjectCode = "ART" }
-                };
-
-                foreach (var lessonData in lessonsData)
-                {
-
-                    try
-                    {
-
-                        // Wypisz szczeg y lekcji, nazwy w a ciwo ci mog  si  r ni 
-                        Debug.Log($"nr: {lessonData.Position}, przedmiot: {lessonData.SubjectName}, nauczyciel: {lessonData.TeacherName}, godziny: {lessonData.StartTime} - {lessonData.EndTime}");
-
-
-
-
-
-                    }
-                    catch (System.Exception) { }
-                }
-
-            }
-            else
-            {
-                var firebaseToken = PlayerPrefs.GetString("firebaseToken");
-                var pk = PlayerPrefs.GetString("pk");
-                string certString = PlayerPrefs.GetString("cert");
-                byte[] cert = Convert.FromBase64String(certString);
-                var x509Cert2 = new X509Certificate2(cert);
-
-                var requestSigner = new RequestSigner(x509Cert2.Thumbprint, pk, firebaseToken);
-                var instanceUrlProvider = new InstanceUrlProvider();
-                var apiClient = new ApiClient(requestSigner, await instanceUrlProvider.GetInstanceUrlAsync(token, symbol));
-                var registerHebeResponse = await apiClient.GetAsync(RegisterHebeClientQuery.ApiEndpoint, new RegisterHebeClientQuery());
-                var firstAccount = registerHebeResponse.Envelope[0];
-                var contextualSigner = new ContextualRequestSigner(x509Cert2.Thumbprint, pk, firebaseToken, firstAccount.Context);
-                var unitApiClient = new ApiClient(contextualSigner, firstAccount.Unit.RestUrl.ToString());
-
-
-                var lessonsResponse = await unitApiClient.GetAsync(GetScheduleEntriesByPupilQuery.ApiEndpoint, new GetScheduleEntriesByPupilQuery(
-                                firstAccount.Pupil.Id,
-                                selectedDate,
-                                selectedDate,
-                                DateTime.MinValue,
-                                500,
-                                int.MinValue));
-
-                var sortedLessons = lessonsResponse.Envelope.OrderBy(lesson => lesson.TimeSlot.Position);
-                var currentDate = DateTime.Now;
-                var currentTime = DateTime.Now.TimeOfDay;
-
-                string nearestLessonCode = "";
-                string nearestLessonSubject = "";
-                DateTime nearestLessonStart = DateTime.MaxValue;
-                bool isLessonCurrentlyHappening = false;
-
-                foreach (var lesson in sortedLessons)
-                {
-                    try
-                    {
-                        if (lesson.Visible)
-                        {
-                            var startTime = TimeSpan.Parse(lesson.TimeSlot.Start);
-                            var endTime = TimeSpan.Parse(lesson.TimeSlot.End);
-
-                            var lessonStartDateTime = currentDate.Add(startTime);
-                            var lessonEndDateTime = currentDate.Add(endTime);
-
-
-                            if (currentDate.Add(currentTime) >= lessonStartDateTime && currentDate.Add(currentTime) < lessonEndDateTime)
-                            {
-                                nearestLessonCode = lesson.Room.Code;
-                                nearestLessonSubject = lesson.Subject.Name;
-                                isLessonCurrentlyHappening = true;
-                                string doorName = "Drzwi" + nearestLessonCode;
-                                GameObject door = GameObject.Find(doorName);
-                                RectTransform doorTransform = door.GetComponent<RectTransform>();
-                                GetComponent<LineCreator>().target = doorTransform;
-                                GetComponent<LineCreator>().SetWaypoints(allWaypoints);
-                                break; 
-                            }
-
-                            else if (currentDate.Add(currentTime) < lessonStartDateTime && lessonStartDateTime < nearestLessonStart)
-                            {
-                                nearestLessonStart = lessonStartDateTime;
-                                nearestLessonCode = lesson.Room.Code;
-                                nearestLessonSubject = lesson.Subject.Name;
-                            }
-                        }
-                    }
-                    catch (System.Exception ex)
-                    {
-                        Debug.LogError($"Wystąpił wyjątek: {ex.Message}");
-                    }
-                }
-
-                if (!isLessonCurrentlyHappening && !string.IsNullOrEmpty(nearestLessonCode) && nearestLessonStart > currentDate.Add(currentTime))
-                {
-                    string doorName = "Drzwi" + nearestLessonCode;
-                    GameObject door = GameObject.Find(doorName);
-                    if (door != null)
-                    {
-                        RectTransform doorTransform = door.GetComponent<RectTransform>();
-                        GetComponent<LineCreator>().target = doorTransform;
-                        GetComponent<LineCreator>().SetWaypoints(allWaypoints);
-                    }
-                    else
-                    {
-                        Debug.LogError($"Drzwi o nazwie {doorName} nie zostały znalezione.");
-                    }
-                }
-                else if (string.IsNullOrEmpty(nearestLessonCode))
-                {
-                    Debug.Log("Nie znaleziono lekcji spełniającej kryteria.");
-                }
-
-
-
-
-            }
-        }
-        catch (Exception e)
-        {
-            if (Application.internetReachability != NetworkReachability.NotReachable)
-            {
-                SceneManager.LoadScene("LoginPanel");
-            }
-            else
-            {
-                Debug.Log("Brak połączenia z internetem.");
-                SceneManager.LoadScene("LoginPanel");
-            }
-            Debug.Log($"Błąd w logowaniu: {e}");
-            SceneManager.LoadScene("LoginPanel");
-        }
-    }
+    
     public bool CheckIfLineExist()
     {
         if(lineRenderer != null)

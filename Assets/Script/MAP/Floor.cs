@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using static Unity.Burst.Intrinsics.X86;
 using Unity.VisualScripting;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class Floor : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Floor : MonoBehaviour
     private float timeInterval = 1f;
     private float elapsedTime = 0f;
     private Vector3 accelerometerValue;
+    private int checkIfFloorChange = 0;
     [SerializeField]
     private GameObject personInterpolated;
     // const double origin_lati = 52.668395f;  //współrzędne środka obszaru szkoły (tak +/- nie są dokładne)
@@ -43,6 +45,7 @@ public class Floor : MonoBehaviour
         floorGOs.SetActive(true);
         PlayerPrefs.SetInt("pietro", floorIndex);
         map.sprite = floorSprites;
+        PlayerPrefs.SetInt("checkifFloorChange", 1);
         CalcPosition(personInterpolated, velocity, lastPosition);
         
     }
@@ -74,81 +77,85 @@ public class Floor : MonoBehaviour
     }
     private void Update()
     {
-        lat = Input.location.lastData.latitude;
-        lon = Input.location.lastData.longitude;
+        if(Input.location.status == LocationServiceStatus.Running)
+        {
+            lat = Input.location.lastData.latitude;
+            lon = Input.location.lastData.longitude;
+        }
+        
 
 
     }
     public Vector2 CalcPosition(RectTransform personInterpolated, Vector2 velocity, Vector2 lastPosition)
     {
-        LocationInfo currentLocation = Input.location.lastData;
-
-        // Przykładowo zmień pozycję obiektu w Unity na podstawie szerokości geograficznej i długości geograficznej
-        // Możesz dostosować to mapowanie do potrzeb twojej aplikacji
-        Vector3 newPosition2 = new Vector3(currentLocation.latitude, currentLocation.longitude, 0);
-        // Zwróć nową pozycję jako Vector2 (ignorując składową Z, ponieważ używamy Vector2)
-        personInterpolated.anchoredPosition = Vector3.Lerp(transform.position, newPosition2, Time.deltaTime * speed);
-
-        if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
+        if (Input.location.status == LocationServiceStatus.Running)
         {
-            double x2 = 19.04371892765748;
-            double x1 = 19.041285353040706;
-            double y2 = 52.66901856963243;
-            double y1 = 52.6685644858482;
-            double yp1 = 59;
-            double yp2 = 331;
-            double xp1 = 2572;
-            double xp2 = 3367;
-            float x3 = lon;
-            float y3 = lat;
-            double SkalaX = ((x2 - x1) / (xp2 - xp1)) * 350000;  // 0,00018/432 = 4,166666666666667e-7
-            Debug.Log("SkalaX: " + SkalaX);
-            double xp3 = xp1 + (x3 - x1) / (x2 - x1) * SkalaX * (xp2 - xp1);
-            Debug.Log("xp3: " + xp3);
-            double SkalaY = ((y2 - y1) / (yp2 - yp1)) * 490000;
-            Debug.Log("SkalaY: " + SkalaY);
-            double yp3 = yp1 + (y3 - y1) / (y2 - y1) * SkalaY * (yp2 - yp1);
-            Debug.Log("yp3: " + yp3);
-            personInterpolated.anchoredPosition = Vector2.zero;
-            personInterpolated.anchoredPosition = new Vector3((float)xp3, (float)yp3, 0);
-            return personInterpolated.anchoredPosition; //geoOffset - przesunięcie geograficzne w skrócie
-        }
-        else
-        {
-            accelerometerValue = Input.acceleration;
-            float averageAcceleration = Mathf.Sqrt(accelerometerValue.x * accelerometerValue.x + accelerometerValue.y * accelerometerValue.y);
-            Debug.Log("X: " + accelerometerValue.x);
-            Debug.Log("Y: " + accelerometerValue.y);
-            Debug.Log("average Acceleration: " + averageAcceleration);
-            velocityA = initialVelocity + averageAcceleration * elapsedTime;
-            Debug.Log("Velocity:" + velocity);
-            float deltaDistance = initialVelocity * elapsedTime + 0.5f * averageAcceleration * elapsedTime * elapsedTime;
-            if (accelerometerValue.x > 0)
+            LocationInfo currentLocation = Input.location.lastData;
+
+            // Przykładowo zmień pozycję obiektu w Unity na podstawie szerokości geograficznej i długości geograficznej
+            // Możesz dostosować to mapowanie do potrzeb twojej aplikacji
+            Vector3 newPosition2 = new Vector3(currentLocation.latitude, currentLocation.longitude, 0);
+            // Zwróć nową pozycję jako Vector2 (ignorując składową Z, ponieważ używamy Vector2)
+            personInterpolated.anchoredPosition = Vector3.Lerp(transform.position, newPosition2, Time.deltaTime * speed);
+
+            if (PlayerPrefs.GetInt("sum10Accuracy") == 0)
             {
-                distance += deltaDistance;
-            }
-            else if (accelerometerValue.x < 0)
-            {
-                distance -= deltaDistance;
+                double x2 = 19.04371892765748;
+                double x1 = 19.041285353040706;
+                double y2 = 52.66901856963243;
+                double y1 = 52.6685644858482;
+                double yp1 = 59;
+                double yp2 = 331;
+                double xp1 = 2572;
+                double xp2 = 3367;
+                float x3 = lon;
+                float y3 = lat;
+                double SkalaX = ((x2 - x1) / (xp2 - xp1)) * 350000;  // 0,00018/432 = 4,166666666666667e-7
+                double xp3 = xp1 + (x3 - x1) / (x2 - x1) * SkalaX * (xp2 - xp1);
+                double SkalaY = ((y2 - y1) / (yp2 - yp1)) * 490000;
+                double yp3 = yp1 + (y3 - y1) / (y2 - y1) * SkalaY * (yp2 - yp1);
+                personInterpolated.anchoredPosition = Vector2.zero;
+                personInterpolated.anchoredPosition = new Vector3((float)xp3, (float)yp3, 0);
+                return personInterpolated.anchoredPosition; //geoOffset - przesunięcie geograficzne w skrócie
             }
             else
             {
-                distance = deltaDistance;
+                accelerometerValue = Input.acceleration;
+                float averageAcceleration = Mathf.Sqrt(accelerometerValue.x * accelerometerValue.x + accelerometerValue.y * accelerometerValue.y);
+                Debug.Log("X: " + accelerometerValue.x);
+                Debug.Log("Y: " + accelerometerValue.y);
+                Debug.Log("average Acceleration: " + averageAcceleration);
+                velocityA = initialVelocity + averageAcceleration * elapsedTime;
+                Debug.Log("Velocity:" + velocity);
+                float deltaDistance = initialVelocity * elapsedTime + 0.5f * averageAcceleration * elapsedTime * elapsedTime;
+                if (accelerometerValue.x > 0)
+                {
+                    distance += deltaDistance;
+                }
+                else if (accelerometerValue.x < 0)
+                {
+                    distance -= deltaDistance;
+                }
+                else
+                {
+                    distance = deltaDistance;
+                }
+                Debug.Log("distance: " + distance);
+                elapsedTime += Time.deltaTime;
+
+                if (elapsedTime >= timeInterval)
+                {
+                    elapsedTime = 0f;
+
+                    //initialVelocity = velocity;
+
+                }
+                personInterpolated.anchoredPosition = new Vector3(distance / 10f, 0f, 0f);
+                return personInterpolated.anchoredPosition;
+
             }
-            Debug.Log("distance: " + distance);
-            elapsedTime += Time.deltaTime;
-
-            if (elapsedTime >= timeInterval)
-            {
-                elapsedTime = 0f;
-
-                //initialVelocity = velocity;
-
-            }
-            personInterpolated.anchoredPosition = new Vector3(distance / 10f, 0f, 0f);
-            return personInterpolated.anchoredPosition;
-
         }
+        return Vector2.zero;
     }
 
     public Vector2 FindClosestEdgePosition(RectTransform personInterpolated)

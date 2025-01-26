@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class ChooseImportantPlace : MonoBehaviour
 {
     public List<GameObject> buttons = new List<GameObject>(26);
@@ -12,9 +13,11 @@ public class ChooseImportantPlace : MonoBehaviour
     public LineCreator lineCreator;
 
     public ShowAndHidePanel showAndHidePanel;
+    
 
     void Start()
     {
+        PlayerPrefs.SetInt("pomocnicza", 0);
         // Sprawdzenie, czy liczba przycisków i rectTransformów jest taka sama
         if (buttons.Count != rectTransforms.Count)
         {
@@ -42,15 +45,14 @@ public class ChooseImportantPlace : MonoBehaviour
     // Funkcja wywoływana po kliknięciu przycisku
     public void OnButtonClicked(RectTransform targetRectTransform)
     {
-        if(lineCreator.CheckIfLineExist())
+/*        if(lineCreator.CheckIfLineExist())
         {
             lineCreator.ClearLine();
-        }
-        // Zmiana targetu w LineCreator
-        lineCreator.target = targetRectTransform;
-
-        // Wywołanie funkcji HidePanel z klasy ShowAndHidePanel
-        showAndHidePanel.HidePanel();
+        }*/
+        lineCreator.SetTarget(targetRectTransform);
+        PlayerPrefs.SetInt("pomocnicza", 1);
+        
+        //showAndHidePanel.HidePanel();
     }
 }
 
