@@ -13,7 +13,13 @@ public class ChooseImportantPlace : MonoBehaviour
     public LineCreator lineCreator;
 
     public ShowAndHidePanel showAndHidePanel;
-    
+
+    public RectTransform target;
+
+    [SerializeField] private GPSMap2 gpsMap2;
+
+    public Button btnUp;
+    public Button btnDown;
 
     void Start()
     {
@@ -33,7 +39,7 @@ public class ChooseImportantPlace : MonoBehaviour
 
             if (buttonComponent != null)
             {
-                buttonComponent.onClick.AddListener(() => OnButtonClicked(rectTransforms[index]));
+                buttonComponent.onClick.AddListener(() => OnButtonClicked2(rectTransforms[index]));
             }
             else
             {
@@ -54,5 +60,22 @@ public class ChooseImportantPlace : MonoBehaviour
         
         //showAndHidePanel.HidePanel();
     }
+    public void OnButtonClicked2(RectTransform targetRectTransform)
+    {
+        if(lineCreator.CheckIfLineExist())
+        {
+             lineCreator.ClearLine();
+        }
+        target = targetRectTransform;
+        lineCreator.SetTarget(targetRectTransform);
+        showAndHidePanel.HidePanel();
+    }
+
+    public RectTransform TargetReturn()
+    {
+        return target;
+    }
 }
+
+
 

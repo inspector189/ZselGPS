@@ -23,6 +23,10 @@ public class WaypointCreator : MonoBehaviour
             SwitchFloor();
         }
     }
+    private void Start()
+    {
+        SwitchFloor();
+    }
 
     private void SwitchFloor()
     {

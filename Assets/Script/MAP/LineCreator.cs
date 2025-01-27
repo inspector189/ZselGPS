@@ -51,7 +51,7 @@ public class LineCreator : MonoBehaviour
         lineRenderer.useWorldSpace = true;
         lineRenderer.sortingOrder = 1; // Zapewnia, że linia jest rysowana nad innymi elementami
         pomocnicza2 = PlayerPrefs.GetInt("personPietro", 0);
-        //ClearLine();
+        ClearLine();
 
     }
     public void SetTarget(RectTransform targetRectTransform)
@@ -90,7 +90,9 @@ public class LineCreator : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerPrefs.GetInt("pomocnicza") == 1)
+        Realtarget = chooseImportantPlace.TargetReturn();
+        
+        /*if (PlayerPrefs.GetInt("pomocnicza") == 1)
         {
             int pietroPomieszczenia = PlayerPrefs.GetInt("pietroPomieszczenia");
 
@@ -110,11 +112,10 @@ public class LineCreator : MonoBehaviour
 
             PlayerPrefs.SetInt("pomocnicza", 0);
         }
-        
+        */
         
         if(target != null)
         {
-            Debug.Log(target);
             ClearLineOnFloorChange();
             FindAndDrawPath();
         }
@@ -126,22 +127,21 @@ public class LineCreator : MonoBehaviour
             int currentFloor = PlayerPrefs.GetInt("personPietro");
             int targetFloor = PlayerPrefs.GetInt("pietroPomieszczenia");
 
-            // Jeśli wrócono na pierwotne piętro, przywróć previousTarget
-            if (currentFloor == targetFloor && previousTarget != null)
+            if (currentFloor == targetFloor && Realtarget != null)
             {
-                target = previousTarget;
-                Debug.Log("Przywrócono target do: " + previousTarget);
+                target = Realtarget;
+                
             }
             else
             {
                 // Ustaw najbliższe schody
                 RectTransform[] stairsArray = SelectArrayStairsForFloor(currentFloor);
                 target = GetNearestStairs(stairsArray, currentFloor);
-                Debug.Log("Target ustawiony na schody: " + target);
+                
             }
 
             PlayerPrefs.SetInt("checkifFloorChange", 0);
-            FindAndDrawPath();
+            
         }
     }
     public RectTransform GetNearestStairs(RectTransform[] stairsArray, int pietroPomieszczenia)
