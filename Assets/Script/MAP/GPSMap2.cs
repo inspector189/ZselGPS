@@ -32,6 +32,19 @@ public class GPSMap2 : MonoBehaviour
     {
         InitializeUI(false);
         Permissions();
+
+        StartCoroutine(StartGPSWithDelay());
+    }
+
+    IEnumerator StartGPSWithDelay()
+    {
+        // Jeśli jesteśmy w Unity Editor, czekamy 3 sekundy
+        if (Application.isEditor)
+        {
+            Debug.Log("Uruchomiono w edytorze Unity, czekam 2 sekundy...");
+            yield return new WaitForSeconds(2);
+        }
+
         StartCoroutine(StartGPS());
     }
 

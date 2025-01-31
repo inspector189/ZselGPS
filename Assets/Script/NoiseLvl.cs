@@ -51,19 +51,26 @@ public class NoiseLvl : MonoBehaviour
 
     void Update()
     {
-
-        // Sprawdzaj, czy są uprawnienia do mikrofonu
-        if (!microphonePermissionGranted)
+        int wybor = PlayerPrefs.GetInt("WybranaScena");
+        if(wybor == 2)
         {
-            // Jeśli brak uprawnień, wyłącz obiekt i nie wykonuj dalszego kodu
-            soundAndLight.SetActive(false);
-            return;
+            // Sprawdzaj, czy są uprawnienia do mikrofonu
+            if (!microphonePermissionGranted)
+            {
+                // Jeśli brak uprawnień, wyłącz obiekt i nie wykonuj dalszego kodu
+                soundAndLight.SetActive(false);
+                return;
+            }
+            else
+            {
+                // Jeśli uprawnienia są przyznane, włącz obiekt i kontynuuj
+                soundAndLight.SetActive(true);
+                GetDecibelLevel();
+            }
         }
         else
         {
-            // Jeśli uprawnienia są przyznane, włącz obiekt i kontynuuj
-            soundAndLight.SetActive(true);
-            GetDecibelLevel();
+            soundAndLight.SetActive(false);
         }
         
     }

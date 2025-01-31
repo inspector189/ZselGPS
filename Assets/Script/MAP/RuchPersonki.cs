@@ -157,11 +157,7 @@ public class RuchPersonki : MonoBehaviour
             ySpeed = -ySpeed;
         }
 
-        Debug.Log("Przewidywana prêdkoœæ Y: " + ySpeed);
-        Debug.Log("Przewidywana pozycja Y: " + predictedPositionY);
-
         person.anchoredPosition = new Vector2(person.anchoredPosition.x, predictedPositionY);
-        Debug.Log("Prêdkoœæ wzd³u¿ osi Y: " + ySpeed);
         textV.text = ySpeed.ToString("F2");
 
         // Zaktualizuj ostatnie przyspieszenie i czas

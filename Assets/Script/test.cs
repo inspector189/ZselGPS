@@ -6,10 +6,15 @@ public class test : MonoBehaviour
 
     void Start()
     {
-        RawImageHandler[] handlers = renderMap.GetComponents<RawImageHandler>();
-        foreach (var handler in handlers)
+        int wybor = PlayerPrefs.GetInt("WybranaScena");
+        if(wybor == 1 || wybor == 2)
         {
-            Destroy(handler);
+            RawImageHandler[] handlers = renderMap.GetComponents<RawImageHandler>();
+            foreach (var handler in handlers)
+            {
+                Destroy(handler);
+            }
         }
+        
     }
 }
