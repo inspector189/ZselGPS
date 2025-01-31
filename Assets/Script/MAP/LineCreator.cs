@@ -11,6 +11,7 @@ using Vulcanova.Uonet.Api.Schedule;
 using Vulcanova.Uonet.Api;
 using Vulcanova.Uonet.Signing;
 using System.Linq;
+using UnityEngine.Rendering;
 
 public class LineCreator : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class LineCreator : MonoBehaviour
     private List<string> secondFloorCorridors;
     private RectTransform previousTarget;
 
+    [SerializeField]
+    private RectTransform leftPartBuilding;
+    [SerializeField]
+    private RectTransform rightPartBuilding;
 
     public int pomocnicza = 0;
     public int pomocnicza2 = 0;
@@ -90,29 +95,8 @@ public class LineCreator : MonoBehaviour
 
     private void Update()
     {
+
         Realtarget = chooseImportantPlace.TargetReturn();
-        
-        /*if (PlayerPrefs.GetInt("pomocnicza") == 1)
-        {
-            int pietroPomieszczenia = PlayerPrefs.GetInt("pietroPomieszczenia");
-
-            if (PlayerPrefs.GetInt("personPietro") != PlayerPrefs.GetInt("pietroPomieszczenia"))
-            {
-                RectTransform[] stairsArray = SelectArrayStairsForFloor(PlayerPrefs.GetInt("personPietro"));
-                //ClearLine();
-                RectTransform nearestStair = GetNearestStairs(stairsArray, PlayerPrefs.GetInt("personPietro"));
-                target = nearestStair;
-                //FindAndDrawPath();
-            }
-            else
-            {
-                //ClearLine();
-                FindAndDrawPath();
-            }
-
-            PlayerPrefs.SetInt("pomocnicza", 0);
-        }
-        */
         
         if(target != null)
         {
@@ -131,15 +115,8 @@ public class LineCreator : MonoBehaviour
             {
                 target = Realtarget;
                 
-            }
-            else
-            {
-                // Ustaw najbliższe schody
-                RectTransform[] stairsArray = SelectArrayStairsForFloor(currentFloor);
-                target = GetNearestStairs(stairsArray, currentFloor);
-                
-            }
-
+            }  
+           
             PlayerPrefs.SetInt("checkifFloorChange", 0);
             
         }
@@ -150,7 +127,6 @@ public class LineCreator : MonoBehaviour
         {
             RectTransform nearestStairs = FindNearestStairsObject(stairsArray);
             return nearestStairs;
-
         }
         else if (pietroPomieszczenia == 1)
         {
@@ -163,18 +139,6 @@ public class LineCreator : MonoBehaviour
             return nearestStairs;
         }
         return null;
-    }
-    RectTransform[] GetStairsArray(Transform corridor)
-    {
-        List<RectTransform> stairsList = new List<RectTransform>();
-        foreach (Transform child in corridor)
-        {
-            if (child.name.StartsWith("stairs"))
-            {
-                stairsList.Add(child as RectTransform);
-            }
-        }
-        return stairsList.ToArray();
     }
 
     RectTransform FindNearestStairsObject(RectTransform[] stairsArray)
@@ -197,7 +161,20 @@ public class LineCreator : MonoBehaviour
     {
         allWaypoints.Clear();
         allWaypoints.AddRange(waypoints);
-        FindAndDrawPath(); // Po dodaniu nowego waypointa ponownie rysujemy ścieżkę
+        FindAndDrawPath(); 
+    }
+    private bool IsRectTransformOverlapping(RectTransform rect1, RectTransform rect2)
+    {
+        Vector3[] corners1 = new Vector3[4];
+        rect1.GetWorldCorners(corners1);
+
+        Vector3[] corners2 = new Vector3[4];
+        rect2.GetWorldCorners(corners2);
+
+        return RectTransformUtility.RectangleContainsScreenPoint(rect2, corners1[0]) ||
+               RectTransformUtility.RectangleContainsScreenPoint(rect2, corners1[1]) ||
+               RectTransformUtility.RectangleContainsScreenPoint(rect2, corners1[2]) ||
+               RectTransformUtility.RectangleContainsScreenPoint(rect2, corners1[3]);
     }
     public void FindAndDrawPath()
     {
@@ -206,63 +183,93 @@ public class LineCreator : MonoBehaviour
             return;
         }
 
-            Dictionary<string, string> doorDictionary = new Dictionary<string, string>
+        if((IsRectTransformOverlapping(person, leftPartBuilding) && IsRectTransformOverlapping(Realtarget, rightPartBuilding)))
         {
-            { "Drzwi501", "0a" },
-            { "Drzwi502", "0a" },
-            { "Drzwi503", "0a" },
-            { "Drzwi504", "0a" },
-            { "Drzwi505", "0a" },
-            { "Drzwi506", "0a" },
-            { "Drzwi507", "0a" },
-            { "Drzwi513", "0a" },
-            { "Drzwi512", "0a" },
-            { "Drzwi511", "0a" },
-            { "Drzwi509", "0a" },
-            { "Drzwi508", "0a" },
-            { "Drzwi318", "0a" },
-            { "Drzwi317", "0a" },
-            { "Drzwi316", "0a" },
-            { "Drzwi315", "0a" },
-            { "Drzwi344", "0a" },
-            { "Drzwi314", "0a" },
-            { "Drzwi313", "0a" },
-            { "Drzwi345", "0a" },
-            { "Drzwi346", "0a" },
-            { "Drzwi312", "0a" },
-            { "Drzwi311", "0a" },
-            { "Drzwi301", "0a" },
-            { "Drzwi308", "0a" },
-            { "Drzwi307A", "0a" },
-            { "Drzwi307B", "0a" },
-            { "Drzwi302", "0a" },
-            { "Drzwi307", "0a" },
-            { "Drzwi306", "0a" },
-            { "Drzwi304", "0a" },
-            { "Drzwi305", "0a" },
-            { "Drzwi303", "0a" },
-            { "Drzwi13", "0b" },
-            { "Drzwi14", "0b" },
-            { "Drzwi15", "0b" },
-            { "Drzwi10", "0b" },
-            { "Drzwi9", "0b" },
-            { "Drzwi8", "0b" },
-            { "Drzwi7", "0b" },
-            { "Drzwi6", "0b" },
-            { "Drzwi5", "0b" },
-            { "Drzwi21", "0b" },
-            { "Drzwi22", "0b" },
-            { "Drzwi23", "0b" },
-            { "Drzwi24", "0b" },
-            { "Drzwi25", "0b" },
-            { "Drzwi20", "0b" },
-            { "Drzwi19", "0b" },
-            { "Drzwi17", "0b" },
-            { "Drzwi26", "0b" },
-            { "Drzwi27", "0b" },
-        };
-
-
+            int currentFloor = PlayerPrefs.GetInt("personPietro");
+            int targetFloor = PlayerPrefs.GetInt("pietroPomieszczenia");
+            RectTransform[] stairsArray = SelectArrayStairsForFloor(currentFloor);
+            if (currentFloor == targetFloor)
+            {
+                if(currentFloor == 0)
+                {
+                    target = GetNearestStairs(stairsArray, currentFloor);
+                }
+                else
+                {
+                    target = Realtarget;
+                }
+            }
+            else
+            {
+                if(currentFloor == 0)
+                {
+                    target = GetNearestStairs(stairsArray, currentFloor);
+                }
+                else
+                {
+                    foreach (RectTransform nearestStair in stairsArray)
+                    {
+                        if (IsRectTransformOverlapping(nearestStair, rightPartBuilding))
+                        {
+                            target = nearestStair;
+                        }
+                    }
+                }
+            }
+        }
+        else if ((IsRectTransformOverlapping(person, rightPartBuilding) && IsRectTransformOverlapping(Realtarget, leftPartBuilding)))
+        {
+            int currentFloor = PlayerPrefs.GetInt("personPietro");
+            int targetFloor = PlayerPrefs.GetInt("pietroPomieszczenia");
+            RectTransform[] stairsArray = SelectArrayStairsForFloor(currentFloor);
+            if (currentFloor == targetFloor)
+            {
+                if (currentFloor == 0)
+                {
+                    target = GetNearestStairs(stairsArray, currentFloor);
+                }
+                else
+                {
+                    target = Realtarget;
+                }
+            }
+            else
+            {
+                if (currentFloor == 0 || currentFloor == 2)
+                {
+                    target = GetNearestStairs(stairsArray, currentFloor);
+                }
+                else if(currentFloor == 1)
+                {
+                    foreach (RectTransform nearestStair in stairsArray)
+                    {
+                        if (IsRectTransformOverlapping(nearestStair, leftPartBuilding))
+                        {
+                            target = nearestStair;
+                            Debug.Log(" W foreachu: " + target.name);
+                            break;
+                        }
+                    }
+                    Debug.Log(" PO foreachu: " + target.name);
+                }
+            }
+        }
+        else if ((IsRectTransformOverlapping(person, leftPartBuilding) && IsRectTransformOverlapping(Realtarget, leftPartBuilding)) ||
+                  (IsRectTransformOverlapping(person, rightPartBuilding) && IsRectTransformOverlapping(Realtarget, rightPartBuilding)))
+        {
+            int currentFloor = PlayerPrefs.GetInt("personPietro");
+            int targetFloor = PlayerPrefs.GetInt("pietroPomieszczenia");
+            if (currentFloor == targetFloor)
+            {
+               target = Realtarget;
+            }
+            else
+            {
+                RectTransform[] stairsArray = SelectArrayStairsForFloor(currentFloor);
+                target = GetNearestStairs(stairsArray, currentFloor);
+            }
+        }
+        //Draw
         Transform closestToPerson = FindClosestWaypoint(person.position);
         Transform closestToTarget = FindClosestWaypoint(target.position);
         if (closestToPerson != null && closestToTarget != null)
@@ -300,14 +307,6 @@ public class LineCreator : MonoBehaviour
                 DrawPathWithLineRenderer(path);
             }
         }
-        /*if (closestToPerson != null && closestToTarget != null)
-        {
-            List<Transform> path = FindShortestPathDijkstra(closestToPerson, closestToTarget);
-            if (path.Count > 0)
-            {
-                DrawPathWithLineRenderer(path);
-            }
-        }*/
     }
     private Transform FindNearestCorridorToTarget()
     {
@@ -489,7 +488,6 @@ private List<Transform> GetNeighbors(Transform current)
         List<string> currentFloorCorridors = GetCorridorsForFloor(ostatniePietro);
         Transform closestCorridor = null;
         float minDistance = float.MaxValue;
-
         foreach (string corridorName in currentFloorCorridors)
         {
             GameObject corridorObject = GameObject.Find(corridorName);
@@ -505,15 +503,30 @@ private List<Transform> GetNeighbors(Transform current)
         }
         return closestCorridor;
     }
+    private List<string> SetTransformChildName(Transform parent)
+    {
+        List<string> listToAdd = new List<string>();
+        foreach (Transform child in parent.GetComponentInChildren<Transform>())
+        {
+            if (child != parent)
+            {
+                listToAdd.Add(child.name);
+            }
+        }
+        return listToAdd;
+    }
     private List<string> GetCorridorsForFloor(int floor)
     {
         switch (floor)
         {
             case 0:
+                groundFloorCorridors = SetTransformChildName(CorridorsGroundF);
                 return groundFloorCorridors;
             case 1:
+                firstFloorCorridors = SetTransformChildName(CorridorsFirstF);
                 return firstFloorCorridors;
             case 2:
+                secondFloorCorridors = SetTransformChildName(CorridorsSecondF);
                 return secondFloorCorridors;
             default:
                 return new List<string>();

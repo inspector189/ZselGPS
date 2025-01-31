@@ -48,18 +48,6 @@ public class ChooseImportantPlace : MonoBehaviour
         }
     }
 
-    // Funkcja wywoływana po kliknięciu przycisku
-    public void OnButtonClicked(RectTransform targetRectTransform)
-    {
-/*        if(lineCreator.CheckIfLineExist())
-        {
-            lineCreator.ClearLine();
-        }*/
-        lineCreator.SetTarget(targetRectTransform);
-        PlayerPrefs.SetInt("pomocnicza", 1);
-        
-        //showAndHidePanel.HidePanel();
-    }
     public void OnButtonClicked2(RectTransform targetRectTransform)
     {
         if(lineCreator.CheckIfLineExist())
