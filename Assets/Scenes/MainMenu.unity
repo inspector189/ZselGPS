@@ -5766,7 +5766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wyborSceny: 1
-  scena: ImportantPlaces
+  scena: ToTheClassroom
 --- !u!114 &2562876750528538051
 MonoBehaviour:
   m_ObjectHideFlags: 0
