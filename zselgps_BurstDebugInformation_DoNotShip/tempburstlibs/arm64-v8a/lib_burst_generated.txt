@@ -38,7 +38,7 @@ Library: E:\ZselGPS\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --assembly-defines=zxing.unity;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=E:\ZselGPS\Temp\Burst
---key-folder=C:/UnityHub/2023.2.15f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=C:/Program Files/Unity/Hub/Editor/2023.2.15f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=E:\ZselGPS\Library\Burst
 --output=E:\ZselGPS\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
