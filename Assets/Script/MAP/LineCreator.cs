@@ -387,7 +387,7 @@ public class LineCreator : MonoBehaviour
         return new List<Transform>();
     }
 
-   private const float NEIGHBOR_DISTANCE_THRESHOLD = 0.05f; // Ustaw zasięg, w jakim waypointy są uznawane za sąsiadujące
+   private const float NEIGHBOR_DISTANCE_THRESHOLD = 0.05f; // Zasięg, w jakim waypointy są uznawane za sąsiadujące
 
 private List<Transform> GetNeighbors(Transform current)
 {
