@@ -27,7 +27,6 @@ public class LineCreator : MonoBehaviour
     public Transform CorridorsGroundF;
     public Transform CorridorsFirstF;
     public Transform CorridorsSecondF;
-
     private LineRenderer lineRenderer; // Komponent LineRenderer do rysowania linii
     public Color lineColor = Color.blue; // Kolor linii
     public float lineWidth = 0.01f; // Szerokość linii
@@ -36,14 +35,15 @@ public class LineCreator : MonoBehaviour
     private List<string> firstFloorCorridors;
     private List<string> secondFloorCorridors;
     private RectTransform previousTarget;
-
-    [SerializeField]
-    private RectTransform leftPartBuilding;
-    [SerializeField]
-    private RectTransform rightPartBuilding;
-
+    private List<Transform> waypointsForTarget = new List<Transform>();
+    public RectTransform leftPartBuilding;
+    public RectTransform rightPartBuilding;
+    private RectTransform nearestStairs;
     public int pomocnicza = 0;
     public int pomocnicza2 = 0;
+    public List<ImportantPlace> importantPlaces;
+    private CheckerForAudio checkerForAudio;
+
     private void Start()
     {
         // Inicjalizacja LineRenderer
@@ -56,6 +56,7 @@ public class LineCreator : MonoBehaviour
         lineRenderer.useWorldSpace = true;
         lineRenderer.sortingOrder = 1; // Zapewnia, że linia jest rysowana nad innymi elementami
         pomocnicza2 = PlayerPrefs.GetInt("personPietro", 0);
+        checkerForAudio = FindObjectOfType<CheckerForAudio>();
         ClearLine();
 
     }
@@ -66,7 +67,6 @@ public class LineCreator : MonoBehaviour
             previousTarget = target;
         }
         target = targetRectTransform;
-        Debug.Log("Target ustawiony na: " + target);
     }
     public void buttonClicked()
     {
@@ -96,13 +96,25 @@ public class LineCreator : MonoBehaviour
     private void Update()
     {
 
-        Realtarget = chooseImportantPlace.TargetReturn();
-        
-        if(target != null)
+        if(chooseImportantPlace.TargetReturn() != null)
+        {
+            Realtarget = chooseImportantPlace.TargetReturn();
+        }
+
+        if (target != null)
         {
             ClearLineOnFloorChange();
             FindAndDrawPath();
+
+            checkerForAudio.CheckDistanceToStairs();
+            checkerForAudio.CheckDistanceToTarget();
+            CheckPersonRotation();
         }
+        else if (Realtarget == null)
+        {
+            checkerForAudio.CheckDistanceToImportantPlaces();
+        }
+
     }
     public void ClearLineOnFloorChange()
     {
@@ -141,7 +153,7 @@ public class LineCreator : MonoBehaviour
         return null;
     }
 
-    RectTransform FindNearestStairsObject(RectTransform[] stairsArray)
+    public RectTransform FindNearestStairsObject(RectTransform[] stairsArray)
     {
         RectTransform nearestStairs = null;
         float shortestDistance = float.MaxValue;
@@ -163,7 +175,7 @@ public class LineCreator : MonoBehaviour
         allWaypoints.AddRange(waypoints);
         FindAndDrawPath(); 
     }
-    private bool IsRectTransformOverlapping(RectTransform rect1, RectTransform rect2)
+    public bool IsRectTransformOverlapping(RectTransform rect1, RectTransform rect2)
     {
         Vector3[] corners1 = new Vector3[4];
         rect1.GetWorldCorners(corners1);
@@ -246,11 +258,9 @@ public class LineCreator : MonoBehaviour
                         if (IsRectTransformOverlapping(nearestStair, leftPartBuilding))
                         {
                             target = nearestStair;
-                            Debug.Log(" W foreachu: " + target.name);
                             break;
                         }
                     }
-                    Debug.Log(" PO foreachu: " + target.name);
                 }
             }
         }
@@ -261,15 +271,17 @@ public class LineCreator : MonoBehaviour
             int targetFloor = PlayerPrefs.GetInt("pietroPomieszczenia");
             if (currentFloor == targetFloor)
             {
-               target = Realtarget;
+                Debug.Log("ustawione pietro (wyzej): " + target + " rt " + Realtarget);
+                target = Realtarget;
+               Debug.Log("ustawione pietro: " + target + " rt " + Realtarget);
             }
             else
             {
                 RectTransform[] stairsArray = SelectArrayStairsForFloor(currentFloor);
                 target = GetNearestStairs(stairsArray, currentFloor);
+                Debug.Log(target.name + " schodki wybrane");
             }
         }
-        //Draw
         Transform closestToPerson = FindClosestWaypoint(person.position);
         Transform closestToTarget = FindClosestWaypoint(target.position);
         if (closestToPerson != null && closestToTarget != null)
@@ -280,20 +292,16 @@ public class LineCreator : MonoBehaviour
                 Transform nearestCorridor = FindNearestCorridor();
                 if (nearestCorridor != null)
                 {
-                    // Find path from person to the nearest corridor on the current floor
                     List<Transform> pathToCorridor = FindShortestPathDijkstra(closestToPerson, nearestCorridor);
-                    // Find path from the nearest corridor to the target on the new floor
                     Transform targetCorridor = FindNearestCorridorToTarget();
                     List<Transform> pathFromCorridorToTarget = FindShortestPathDijkstra(targetCorridor, closestToTarget);
 
-                    // Combine paths
                     path = new List<Transform>();
                     path.AddRange(pathToCorridor);
                     path.AddRange(pathFromCorridorToTarget);
                 }
                 else
                 {
-                    // Fallback to direct path if corridor is not found
                     path = FindShortestPathDijkstra(closestToPerson, closestToTarget);
                 }
             }
@@ -305,8 +313,40 @@ public class LineCreator : MonoBehaviour
             if (path.Count > 0)
             {
                 DrawPathWithLineRenderer(path);
+                CalculateLineLength();
+                CountTurnsInPath();
             }
         }
+    }
+    private int CountTurnsInPath()
+    {
+        int turnCount = 0;
+
+        if (waypointsForTarget == null || waypointsForTarget.Count < 3)
+        {
+            Debug.Log("Za mało punktów na linii, aby wykryć zakręty.");
+            return turnCount;
+        }
+
+        for (int i = 1; i < waypointsForTarget.Count - 1; i++)
+        {
+            Vector3 prevPoint = waypointsForTarget[i - 1].position;
+            Vector3 currentPoint = waypointsForTarget[i].position;
+            Vector3 nextPoint = waypointsForTarget[i + 1].position;
+
+            Vector3 dir1 = (currentPoint - prevPoint).normalized;
+            Vector3 dir2 = (nextPoint - currentPoint).normalized;
+
+            float angle = Vector3.Angle(dir1, dir2);
+            Vector3 direction = GetLineDirection(waypointsForTarget[i], waypointsForTarget[i + 1]);
+            Debug.Log($"Kierunek od punktu {i} do {i + 1}: {direction}");
+            if (angle >= 30f) 
+            {
+                turnCount++;
+            }
+        }
+        Debug.Log($"Liczba zakrętów na trasie: {turnCount}");
+        return turnCount;
     }
     private Transform FindNearestCorridorToTarget()
     {
@@ -327,7 +367,6 @@ public class LineCreator : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Najbliższy korytarz " + closestCorridor);
         return closestCorridor;
     }
     private Transform FindClosestWaypoint(Vector3 position)
@@ -407,17 +446,35 @@ private List<Transform> GetNeighbors(Transform current)
     {
         List<Transform> path = new List<Transform>();
         Transform current = goal;
-
+        waypointsForTarget.Clear();
         while (current != null)
         {
             path.Add(current);
+            waypointsForTarget.Add(current);
             current = predecessors[current];
         }
-
         path.Reverse();
         return path;
     }
+    public float CalculateLineLength()
+    {
+        float totalLength = 0f;
 
+        if (waypointsForTarget != null && waypointsForTarget.Count > 1)
+        {
+            for (int i = 0; i < waypointsForTarget.Count - 1; i++)
+            {
+                float distance = Vector3.Distance(waypointsForTarget[i].position, waypointsForTarget[i + 1].position);
+                totalLength += distance;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Brak punktów do obliczenia długości linii.");
+        }
+
+        return totalLength;
+    }
     private void DrawPathWithLineRenderer(List<Transform> path)
     {   
         lineRenderer.positionCount = path.Count;
@@ -532,7 +589,166 @@ private List<Transform> GetNeighbors(Transform current)
                 return new List<string>();
         }
     }
-    
+    private void CheckPersonRotation()
+    {
+        if (waypointsForTarget == null || waypointsForTarget.Count < 2)
+        {
+            return;
+        }
+
+        // Zmiana na HashSet, aby automatycznie unikać duplikatów
+        HashSet<int> leftTurns = new HashSet<int>();
+        HashSet<int> rightTurns = new HashSet<int>();
+        HashSet<int> straightPaths = new HashSet<int>();
+
+        // Iterujemy przez wszystkie punkty, ale zawsze zaczynamy od punktu i i sprawdzamy do 5 następnych
+        for (int i = 0; i < waypointsForTarget.Count - 1; i++)
+        {
+            Vector3 currentPoint = waypointsForTarget[i].position;
+
+            // Sprawdzamy tylko punkty od i do i + 5 (do 5 punktów w głąb)
+            for (int j = i + 1; j <= Mathf.Min(i + 5, waypointsForTarget.Count - 1); j++)
+            {
+                Vector3 nextPoint = waypointsForTarget[j].position;
+
+                // Obliczanie kierunku od currentPoint do nextPoint
+                Vector3 directionToNextPoint = (nextPoint - currentPoint).normalized;
+
+                // Obliczanie kąta między kierunkiem postaci (up) a kierunkiem do punktu
+                float angle = Vector3.Angle(directionToNextPoint, person.up);
+                Debug.Log("ANGLE: " + angle);
+
+                // Sprawdzamy, czy kąt jest w odpowiednim zakresie
+                if (angle >= 140 && angle <= 200)
+                {
+                    // Przekształcenie punktów na 2D
+                    Vector3 personPosition2D = new Vector3(person.position.x, person.position.y, 0);
+                    Vector3 currentPoint2D = new Vector3(currentPoint.x, currentPoint.y, 0);
+                    Vector3 nextPoint2D = new Vector3(nextPoint.x, nextPoint.y, 0);
+
+                    // Sprawdzanie, czy postać jest blisko punktu
+                    if (Vector3.Distance(personPosition2D, currentPoint2D) < 0.2f || Vector3.Distance(personPosition2D, nextPoint2D) < 0.2f)
+                    {
+                        // Jeśli jesteśmy blisko punktu, sprawdzamy zakręt
+                        Vector3 prevPoint = i > 0 ? waypointsForTarget[i - 1].position : currentPoint;
+
+                        // Obliczanie kierunków
+                        Vector3 nextDirection = (nextPoint - currentPoint).normalized;
+                        Vector3 prevDirection = (currentPoint - prevPoint).normalized;
+
+                        // Obliczanie iloczynu wektorowego w 2D, czyli w płaszczyźnie XY
+                        float crossProduct = (prevDirection.x * nextDirection.y) - (prevDirection.y * nextDirection.x);
+
+                        // Zmienna do śledzenia, czy postać jest skierowana w kierunku linii
+                        bool isFacingCorrectDirection = Vector3.Dot(person.forward, nextDirection) > 0;
+
+                        // Jeśli postać jest w odpowiednim kierunku
+                        if (isFacingCorrectDirection)
+                        {
+                            if (crossProduct > 0)
+                            {
+                                // Skręć w lewo
+                                if (!leftTurns.Contains(i)) // Sprawdzamy, czy punkt już nie jest w lewym zakręcie
+                                {
+                                    leftTurns.Add(i);
+                                    Debug.Log($"Skręć w lewo na zakręcie {i}.");
+                                }
+                            }
+                            else if (crossProduct < 0)
+                            {
+                                // Skręć w prawo
+                                if (!rightTurns.Contains(i)) // Sprawdzamy, czy punkt już nie jest w prawym zakręcie
+                                {
+                                    rightTurns.Add(i);
+                                    Debug.Log($"Skręć w prawo na zakręcie {i}.");
+                                }
+                            }
+                            else
+                            {
+                                // Ścieżka prosta
+                                if (!straightPaths.Contains(i)) // Sprawdzamy, czy punkt już nie jest ścieżką prostą
+                                {
+                                    straightPaths.Add(i);
+                                    Debug.Log($"Brak wyraźnego zakrętu na odcinku {i}.");
+                                }
+                            }
+                        }
+                        // Jeśli postać jest obrócona przeciwnie do kierunku linii
+                        else
+                        {
+                            if (crossProduct > 0)
+                            {
+                                // Skręć w prawo
+                                if (!rightTurns.Contains(i)) // Sprawdzamy, czy punkt już nie jest w prawym zakręcie
+                                {
+                                    rightTurns.Add(i);
+                                    Debug.Log($"Skręć w prawo na zakręcie {i}.");
+                                }
+                            }
+                            else if (crossProduct < 0)
+                            {
+                                // Skręć w lewo
+                                if (!leftTurns.Contains(i)) // Sprawdzamy, czy punkt już nie jest w lewym zakręcie
+                                {
+                                    leftTurns.Add(i);
+                                    Debug.Log($"Skręć w lewo na zakręcie {i}.");
+                                }
+                            }
+                            else
+                            {
+                                // Ścieżka prosta
+                                if (!straightPaths.Contains(i)) // Sprawdzamy, czy punkt już nie jest ścieżką prostą
+                                {
+                                    straightPaths.Add(i);
+                                    Debug.Log($"Brak wyraźnego zakrętu na odcinku {i}.");
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    // Jeśli postać nie jest skierowana w odpowiednim kierunku, wypisujemy odpowiedni komunikat
+                    Debug.Log($"Postać jest obrócona o {angle}° względem kierunku linii od punktu {i} do {j}.");
+                }
+
+                // Zaktualizowanie currentPoint na nextPoint, aby w kolejnym kroku przejść do następnego punktu
+                currentPoint = nextPoint;
+            }
+        }
+
+        // Wyświetlanie wyników w debugu
+        Debug.Log("Zakręty w lewo: " + string.Join(", ", leftTurns));
+        Debug.Log("Zakręty w prawo: " + string.Join(", ", rightTurns));
+        Debug.Log("Ścieżki proste: " + string.Join(", ", straightPaths));
+    }
+
+
+
+    private void CheckForTurn(Vector3 prevPoint, Vector3 currentPoint, Vector3 nextPoint, int waypointIndex)
+    {
+        Vector3 nextDirection = (nextPoint - currentPoint).normalized;
+        Vector3 prevDirection = (currentPoint - prevPoint).normalized;
+
+        float crossProduct = Vector3.Cross(prevDirection, nextDirection).y; 
+
+        if (crossProduct > 0)
+        {
+            Debug.Log($"Skręć w lewo na zakręcie {waypointIndex}.");
+        }
+        else if (crossProduct < 0)
+        {
+            Debug.Log($"Skręć w prawo na zakręcie {waypointIndex}.");
+        }
+        else
+        {
+            Debug.Log($"Brak wyraźnego zakrętu na odcinku {waypointIndex}.");
+        }
+    }
+    public Vector3 GetLineDirection(Transform start, Transform end)
+    {
+        return (end.position - start.position).normalized;
+    }
     public bool CheckIfLineExist()
     {
         if(lineRenderer != null)
@@ -551,6 +767,19 @@ private List<Transform> GetNeighbors(Transform current)
             lineRenderer.positionCount = 0;
         }
     }
+    
+}
+[System.Serializable]
+public class ImportantPlace
+{
+    public string name; 
+    public RectTransform door;
+    public int floor;
 
-
+    public ImportantPlace(string name, RectTransform door, int floor)
+    {
+        this.name = name;
+        this.door = door;
+        this.floor = floor;
+    }
 }

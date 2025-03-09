@@ -24,17 +24,15 @@ public class ChooseImportantPlace : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("pomocnicza", 0);
-        // Sprawdzenie, czy liczba przycisków i rectTransformów jest taka sama
         if (buttons.Count != rectTransforms.Count)
         {
             Debug.LogError("Liczba przycisków i RectTransformów musi być taka sama!");
             return;
         }
         lineCreator.ClearLine();
-        // Przypisanie listenerów do przycisków
         for (int i = 0; i < buttons.Count; i++)
         {
-            int index = i; // Kopia zmiennej do użycia w lambdzie
+            int index = i; 
             Button buttonComponent = buttons[index].GetComponent<Button>();
 
             if (buttonComponent != null)
@@ -57,6 +55,7 @@ public class ChooseImportantPlace : MonoBehaviour
         target = targetRectTransform;
         lineCreator.SetTarget(targetRectTransform);
         showAndHidePanel.HidePanel();
+
     }
 
     public RectTransform TargetReturn()
