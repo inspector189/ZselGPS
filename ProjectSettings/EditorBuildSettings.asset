@@ -8,15 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: d471c6da1ea3c9a418b698a75da88d48
-  - enabled: 0
-    path: Assets/Scenes/MapaTSwobodny.unity
-    guid: 2a0515a48e51ab241bd1f0b450076b1a
   - enabled: 1
     path: Assets/Scenes/Lokalizowanie.unity
     guid: 81ecb920ae163274db5d3547d209e6ae
-  - enabled: 0
-    path: Assets/Scenes/ImportantPlaces.unity
-    guid: 34fd95a8dd9fe394b8bae7aa87020f61
   - enabled: 1
     path: Assets/Scenes/ToTheClassroom.unity
     guid: a112b2dd425e3474ca1906e2c75bd6f4
@@ -29,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Theme.unity
     guid: ef78f1f4d7da08743beec96f40d27692
+  - enabled: 1
+    path: Assets/Scenes/VoiceControl.unity
+    guid: 3f78770593b821e428a22617d061f310
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
