@@ -100,11 +100,9 @@ public class CheckerForAudio : MonoBehaviour
                 Vector3 personPosition2D = new Vector3(person.position.x, person.position.y, 0);
                 Vector3 placePosition2D = new Vector3(place.door.position.x, place.door.position.y, 0);
                 float distance = Vector3.Distance(personPosition2D, placePosition2D);
-                Debug.Log($"Odleglosc do {place.name}: " + distance);
 
                 if (distance < 0.3f)
                 {
-                    Debug.Log($"Postac jest blisko {place.name}!");
                     distanceChecker.PlaySoundForPlace(place);
                     break;
                 }

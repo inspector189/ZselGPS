@@ -67,51 +67,16 @@ public class WaypointCreator : MonoBehaviour
     }
 
     public void CreateWaypointsForCorridors(List<RectTransform> corridors)
-{
-    foreach (RectTransform corridor in corridors)
     {
-        Vector3 corridorSize = corridor.rect.size;
-        int numWaypoints = 0;
+        int waypointIndex = 1; // Start numeracji waypointów
 
-        if (PlayerPrefs.GetInt("liczba") == 0)
+        foreach (RectTransform corridor in corridors)
         {
-            
-    bool useXAxis = false;
+            Vector3 corridorSize = corridor.rect.size;
+            int numWaypoints = 0;
 
-    if (corridorSize.x > corridorSize.y)
-    {
-        numWaypoints = Mathf.FloorToInt(corridorSize.x / 20);
-        useXAxis = true;
-    }
-    else
-    {
-        numWaypoints = Mathf.FloorToInt(corridorSize.y / 20);
-    }
-
-    for (int i = 0; i < numWaypoints; i++)
-    {
-        Vector3 startPoint;
-
-        if (useXAxis)
-        {
-            float posX = Mathf.Lerp(-0.5f, 0.5f, (float)i / (numWaypoints - 1));
-            startPoint = corridor.TransformPoint(new Vector3(posX * corridorSize.x, 0, 0));
-        }
-        else
-        {
-            float posY = Mathf.Lerp(-0.5f, 0.5f, (float)i / (numWaypoints - 1));
-            startPoint = corridor.TransformPoint(new Vector3(0, posY * corridorSize.y, 0));
-        }
-
-        GameObject newWaypoint = Instantiate(waypointPrefab, startPoint, Quaternion.identity, waypointParent.transform);
-        newWaypoint.transform.localScale = new Vector3(1f, 1f, 1f);
-        createdWaypoints.Add(newWaypoint);
-    }
-        }
-        else // Dla pięter 1 i 2
-        {
-            numWaypoints = Mathf.FloorToInt(Mathf.Max(corridorSize.x, corridorSize.y) / 20);
             bool useXAxis = corridorSize.x > corridorSize.y;
+            numWaypoints = Mathf.FloorToInt(Mathf.Max(corridorSize.x, corridorSize.y) / 20);
 
             for (int i = 0; i < numWaypoints; i++)
             {
@@ -130,11 +95,15 @@ public class WaypointCreator : MonoBehaviour
 
                 GameObject newWaypoint = Instantiate(waypointPrefab, startPoint, Quaternion.identity, waypointParent.transform);
                 newWaypoint.transform.localScale = new Vector3(1f, 1f, 1f);
+
+                // Nadajemy waypointowi unikalną nazwę
+                newWaypoint.name = "Waypoint" + waypointIndex;
+                waypointIndex++; // Zwiększamy indeks dla kolejnego waypointa
+
                 createdWaypoints.Add(newWaypoint);
             }
         }
     }
-      
-}
 
 }
+
